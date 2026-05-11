@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "title": "PROFIX - Producent farb, tynków i materiałów budowlanych w Skawinie",
+    "titleTemplate": "%s | PROFIX",
+    "description": "PROFIX to polski producent farb fasadowych, tynków cementowo wapiennych, klejów do dociepleń i materiałów wykończeniowych. Hala produkcyjna w Skawinie pod Krakowem, od 2007 roku.",
+    "keywords": "tynki cementowo wapienne, farby elewacyjne, kleje do dociepleń, ETICS, gładzie gipsowe, producent chemii budowlanej, Skawina, Małopolska",
+    "ogTitle": "PROFIX - producent materiałów wykończeniowo budowlanych",
+    "ogDescription": "Farby, tynki, kleje, systemy dociepleń. Produkcja w Skawinie pod Krakowem, dostawa własnym transportem na terenie całej Polski."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "O firmie",
+    "products": "Produkty",
+    "professional": "Dla fachowca",
+    "investor": "Dla inwestora",
+    "funds": "Fundusze UE",
+    "tenders": "Przetargi",
+    "contact": "Kontakt",
+    "cta": "Zapytaj o ofertę"
+  },
+  "hero": {
+    "eyebrow": "Producent od 2007 roku",
+    "title": "Kolory dla Twojego domu",
+    "subtitle": "Farby, tynki, kleje i systemy dociepleń. Polska produkcja w Skawinie pod Krakowem, własny transport, gwarantowane atesty.",
+    "ctaPrimary": "Zobacz produkty",
+    "ctaSecondary": "Zapytaj o ofertę",
+    "scroll": "Przewiń niżej"
+  },
+  "usp": {
+    "items": [
+      {
+        "title": "Od 2007 roku",
+        "description": "Niemal dwie dekady doświadczenia w produkcji chemii budowlanej."
+      },
+      {
+        "title": "Atesty i certyfikaty",
+        "description": "Pełna dokumentacja techniczna, deklaracje zgodności, oznaczenia CE."
+      },
+      {
+        "title": "Własna logistyka",
+        "description": "Auta małotonażowe, HDS, cysterny do materiałów sypkich. Dostawa wprost na budowę."
+      },
+      {
+        "title": "Fundusze Europejskie",
+        "description": "Rozwijamy się w oparciu o dotacje unijne. Inwestujemy w technologię i jakość."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "O firmie",
+    "title": "Producent z Małopolski, z myślą o profesjonalistach",
+    "lead": "PROFIX rozpoczął działalność w 2007 roku w Skawinie pod Krakowem, gdzie do dziś mieści się nasza hala produkcyjna. Robimy chemię budowlaną z myślą o ludziach, którzy z niej żyją: ekipach wykonawczych, hurtowniach, inwestorach.",
+    "paragraphs": [
+      "Asortyment obejmuje tynki cementowo wapienne i gipsowe, kleje, kompletne systemy dociepleń, farby akrylowe, silikonowe i lateksowe, grunty oraz produkty uzupełniające.",
+      "Stawiamy na powtarzalną jakość i krótkie terminy. Każdy produkt jest objęty pełną dokumentacją techniczną, atestami i deklaracją zgodności."
+    ],
+    "stats": [
+      { "value": "17+", "label": "lat na rynku" },
+      { "value": "11", "label": "kategorii produktów" },
+      { "value": "100%", "label": "polska produkcja" }
+    ],
+    "cta": "Przeczytaj więcej o nas"
+  },
+  "categoriesSection": {
+    "eyebrow": "Produkty",
+    "title": "Bogata oferta produktów budowlanych",
+    "subtitle": "Wszystko czego potrzebujesz, od stanu surowego po wykończenie. Wybierz kategorię, żeby zobaczyć szczegóły.",
+    "cta": "Zobacz wszystkie produkty"
+  },
+  "audiences": {
+    "eyebrow": "Dwie ścieżki",
+    "title": "Tworzymy dla fachowców i inwestorów",
+    "subtitle": "Inna potrzeba, inny język. Wybierz swój widok oferty.",
+    "professional": {
+      "title": "Dla fachowca",
+      "description": "Parametry techniczne, zużycia, paleta kolorów, karty produktów. Wszystko czego potrzebujesz przy wycenie i wykonaniu.",
+      "bullets": [
+        "Karty techniczne i deklaracje zgodności",
+        "Hurtowe warunki dostawy własnym transportem",
+        "Wsparcie technologa w doborze produktów"
+      ],
+      "cta": "Wejdź do strefy fachowca"
+    },
+    "investor": {
+      "title": "Dla inwestora",
+      "description": "Realizacje, zdjęcia, paleta kolorów, kalkulacja ile materiału potrzebujesz. Jasno i bez branżowego żargonu.",
+      "bullets": [
+        "Realizacje i inspiracje kolorystyczne",
+        "Mapa najbliższych punktów sprzedaży",
+        "Bezpłatna konsultacja przed zakupem"
+      ],
+      "cta": "Wejdź do strefy inwestora"
+    }
+  },
+  "logistics": {
+    "eyebrow": "Transport",
+    "title": "Dostarczamy materiały na miejsce budowy",
+    "lead": "Rozwinięty dział logistyczny pozwala nam realizować dostawy szybko i w rozsądnych cenach. Mamy w taborze różne pojazdy, dobieramy je do skali zamówienia.",
+    "fleet": [
+      { "name": "Auta małotonażowe", "description": "Punktowe dostawy do mniejszych budów i sklepów." },
+      { "name": "Auta wysokotonażowe", "description": "Pełne palety i większe zamówienia hurtowe." },
+      { "name": "Wózki widłowe", "description": "Sprawny rozładunek bezpośrednio na placu budowy." },
+      { "name": "Auto z HDS", "description": "Dźwig hydrauliczny do trudniej dostępnych miejsc." },
+      { "name": "Cysterny", "description": "Transport materiałów sypkich w dużych objętościach." }
+    ]
+  },
+  "funds": {
+    "eyebrow": "Fundusze Europejskie",
+    "title": "Rozwój wspierany dotacjami UE",
+    "description": "Inwestujemy w rozwój produkcji, technologii i jakości w oparciu o środki Unii Europejskiej. Pełna informacja o realizowanych projektach i obowiązki informacyjne dostępne na osobnej podstronie.",
+    "cta": "Zobacz informację o projektach"
+  },
+  "distributorsSection": {
+    "eyebrow": "Gdzie kupić",
+    "title": "Znajdź najbliższy punkt sprzedaży",
+    "subtitle": "Współpracujemy ze sklepami i hurtowniami budowlanymi w całej Polsce. Pełna lista dystrybutorów dostępna na osobnej podstronie.",
+    "cta": "Zobacz listę punktów sprzedaży",
+    "empty": "Lista dystrybutorów w trakcie aktualizacji. Skontaktuj się z nami, doradzimy najbliższy punkt."
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Porozmawiajmy o twoim projekcie",
+    "subtitle": "Wycena, próbka, pytanie o dostępność, doradztwo technologa. Odpowiadamy najpóźniej następnego dnia roboczego.",
+    "form": {
+      "name": "Imię i nazwisko",
+      "namePlaceholder": "Jan Kowalski",
+      "email": "Adres email",
+      "emailPlaceholder": "jan@example.com",
+      "phone": "Telefon (opcjonalnie)",
+      "phonePlaceholder": "+48 600 000 000",
+      "topic": "Czego dotyczy zapytanie",
+      "topicOptions": {
+        "offer": "Wycena lub oferta",
+        "technical": "Pytanie techniczne",
+        "distributor": "Współpraca handlowa",
+        "other": "Inne"
+      },
+      "message": "Wiadomość",
+      "messagePlaceholder": "Krótko opisz czego potrzebujesz.",
+      "consent": "Wyrażam zgodę na przetwarzanie danych w celu odpowiedzi na zapytanie.",
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie...",
+      "successTitle": "Trafiło!",
+      "successBody": "Odezwiemy się najpóźniej następnego dnia roboczego po godzinie 7:00. Sprawdź skrzynkę, w tym folder spam.",
+      "successUrgent": "Pilne? Zadzwoń {phone}",
+      "error": "Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na biuro@producent-profix.pl."
+    },
+    "directLabels": {
+      "address": "Adres",
+      "phone": "Telefon",
+      "email": "Email",
+      "hours": "Godziny pracy"
+    },
+    "hours": "Poniedziałek - piątek, 7:00 - 16:00"
+  },
+  "footer": {
+    "tagline": "PROFIX. Kolory dla Twojego domu. Polski producent farb, tynków i klejów od 2007 roku.",
+    "sections": {
+      "company": "Firma",
+      "products": "Produkty",
+      "info": "Informacje",
+      "contact": "Kontakt"
+    },
+    "links": {
+      "about": "O firmie",
+      "products": "Wszystkie produkty",
+      "professional": "Dla fachowca",
+      "investor": "Dla inwestora",
+      "funds": "Fundusze Europejskie",
+      "tenders": "Przetargi",
+      "distributors": "Gdzie kupić",
+      "privacy": "Polityka prywatności"
+    },
+    "rights": "Wszelkie prawa zastrzeżone."
+  },
+  "common": {
+    "more": "Czytaj więcej",
+    "back": "Powrót",
+    "loading": "Ładowanie...",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu",
+    "skipToContent": "Przejdź do treści",
+    "phone": "Zadzwoń",
+    "email": "Napisz"
+  },
+  "aboutPage": {
+    "title": "O firmie PROFIX",
+    "subtitle": "Producent chemii budowlanej ze Skawiny",
+    "intro": "PROFIX rozpoczął działalność w 2007 roku w Skawinie pod Krakowem. W naszej hali produkcyjnej powstają tynki cementowo wapienne i gipsowe, kleje, systemy dociepleń, farby akrylowe, silikonowe, lateksowe, grunty oraz wiele innych produktów wykończeniowo budowlanych.",
+    "missionTitle": "Co dla nas jest ważne",
+    "mission": "Konsekwentnie wprowadzamy nowe technologie i ulepszamy asortyment. Pracujemy tak, żeby ekipy wykonawcze chętnie do nas wracały, a inwestorzy mieli pewność trwałego efektu.",
+    "valuesTitle": "Wartości w codziennej pracy",
+    "values": [
+      { "title": "Powtarzalna jakość", "description": "Kontrola jakości na każdym etapie produkcji, ta sama receptura w każdej partii." },
+      { "title": "Krótkie terminy", "description": "Dzięki własnej produkcji i flocie reagujemy szybko, nawet na duże zamówienia." },
+      { "title": "Doradztwo", "description": "Technolog pomaga dobrać produkt do podłoża i warunków na budowie." }
+    ]
+  },
+  "productsPage": {
+    "title": "Produkty PROFIX",
+    "subtitle": "Pełny asortyment chemii budowlanej",
+    "intro": "Wybierz kategorię, żeby zobaczyć opis i dostępne produkty. Karty techniczne, atesty i deklaracje zgodności udostępniamy na życzenie.",
+    "categoriesTitle": "Wszystkie kategorie",
+    "ctaTitle": "Nie widzisz produktu, którego szukasz?",
+    "ctaDescription": "Wyceniamy też produkty na zamówienie. Napisz lub zadzwoń, doradzimy.",
+    "ctaButton": "Zapytaj o produkt"
+  },
+  "categoryPage": {
+    "intro": "Skontaktuj się z nami, żeby uzyskać kartę techniczną, atest lub indywidualną wycenę dla tej kategorii.",
+    "applicableFor": "Dla kogo",
+    "professional": "Fachowiec",
+    "investor": "Inwestor",
+    "cta": "Zapytaj o ten produkt",
+    "back": "Wróć do listy kategorii"
+  },
+  "professionalPage": {
+    "title": "Dla fachowca",
+    "subtitle": "Chemia budowlana pod ekipę wykonawczą",
+    "intro": "Produkujemy tynki, kleje, systemy dociepleń i farby z myślą o ludziach, którzy z nich żyją. Krótkie terminy, stabilna jakość, pełna dokumentacja techniczna.",
+    "sections": [
+      { "title": "Karty techniczne i atesty", "description": "Pełna dokumentacja produktu, deklaracje zgodności i oznaczenia CE. Wysyłamy mailem albo dorzucamy do dostawy." },
+      { "title": "Wsparcie technologa", "description": "Dobór produktu do podłoża, warunków atmosferycznych i specyfiki obiektu. Wycena indywidualna na większe zlecenia." },
+      { "title": "Hurtowy transport", "description": "Auta wysokotonażowe, HDS, cysterny do materiałów sypkich. Dostawa wprost na plac budowy w skali kraju." }
+    ],
+    "ctaTitle": "Chcesz nawiązać stałą współpracę?",
+    "ctaButton": "Porozmawiajmy"
+  },
+  "investorPage": {
+    "title": "Dla inwestora",
+    "subtitle": "Materiały do twojego domu, mieszkania, lokalu",
+    "intro": "Budujesz, remontujesz, planujesz docieplenie domu? Pomożemy dobrać produkt, znaleźć najbliższy punkt sprzedaży i policzyć ile materiału potrzebujesz.",
+    "sections": [
+      { "title": "Dobór produktów", "description": "Inny tynk pod ogrzewanie podłogowe, inna farba do łazienki, inny klej do gresu wielkoformatowego. Doradzimy bez branżowego żargonu." },
+      { "title": "Mapa punktów sprzedaży", "description": "Współpracujemy ze sklepami i hurtowniami w całej Polsce. Pokażemy najbliższy punkt." },
+      { "title": "Konsultacja przed zakupem", "description": "Wstępna kalkulacja zużycia, dobór kolorystyki, pytania o gwarancję. Wszystko zanim podejmiesz decyzję." }
+    ],
+    "ctaTitle": "Masz pytanie do swojej budowy?",
+    "ctaButton": "Napisz do nas"
+  },
+  "fundsPage": {
+    "title": "Fundusze Europejskie",
+    "subtitle": "Projekty współfinansowane ze środków UE",
+    "intro": "Realizujemy projekty rozwojowe i inwestycyjne w oparciu o środki Unii Europejskiej. Informacje o poszczególnych projektach zostaną uzupełnione w trakcie wdrożenia strony.",
+    "placeholder": "Lista projektów dotacyjnych w przygotowaniu. Skontaktuj się z nami, jeśli potrzebujesz szczegółów konkretnego projektu."
+  },
+  "tendersPage": {
+    "title": "Przetargi",
+    "subtitle": "Aktualne i archiwalne postępowania",
+    "intro": "Bierzemy udział w postępowaniach przetargowych na dostawę materiałów wykończeniowo budowlanych. Aktualne ogłoszenia będą publikowane w tym miejscu.",
+    "placeholder": "Brak aktywnych postępowań. Skontaktuj się z nami w sprawie indywidualnych zapytań ofertowych dla sektora publicznego."
+  },
+  "contactPage": {
+    "title": "Kontakt",
+    "subtitle": "Jedna wiadomość, jeden telefon, jedna odpowiedź",
+    "intro": "Niezależnie czy jesteś wykonawcą, hurtownią, czy budujesz dom, możesz się z nami skontaktować w dogodny dla siebie sposób. Adres do wizyty na dole strony."
+  },
+  "privacyPage": {
+    "title": "Polityka prywatności",
+    "subtitle": "Informacja o przetwarzaniu danych osobowych",
+    "placeholder": "Pełna treść polityki prywatności zostanie uzupełniona w trakcie wdrożenia. Jeśli masz pytanie o przetwarzanie danych, napisz na biuro@producent-profix.pl."
+  }
+}

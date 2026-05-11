@@ -1,26 +1,210 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  --font-sans: var(--font-sans-display), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-display), system-ui, sans-serif;
+  --font-mono: var(--font-mono-display), ui-monospace, "SF Mono", Menlo, monospace;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Light theme - oatmeal industrial */
+  --color-bg: #f5f1ea;
+  --color-bg-2: #efe9de;
+  --color-fg: #14110d;
+  --color-fg-muted: #5a5147;
+  --color-fg-subtle: #8b8276;
+
+  --color-surface: rgb(255 255 255 / 0.6);
+  --color-surface-strong: rgb(255 255 255 / 0.85);
+  --color-surface-2: rgb(255 255 255 / 0.35);
+  --color-border: rgb(20 17 13 / 0.1);
+  --color-border-strong: rgb(20 17 13 / 0.2);
+
+  --color-accent: #c2581f;
+  --color-accent-hover: #a8481a;
+  --color-accent-fg: #ffffff;
+  --color-accent-soft: rgb(194 88 31 / 0.12);
+
+  --atmo-1: #f4a261;
+  --atmo-2: #e9c46a;
+  --atmo-3: #b08968;
+  --atmo-4: #c87a3f;
+  --atmo-opacity: 0.35;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-drift: drift 32s ease-in-out infinite alternate;
+  --animate-marquee: marquee 60s linear infinite;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes drift {
+    0%   { transform: translate3d(-4%, -2%, 0) scale(1); }
+    50%  { transform: translate3d(3%, 3%, 0) scale(1.08); }
+    100% { transform: translate3d(-2%, 4%, 0) scale(1.03); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.dark {
+  --color-bg: #0c0b0e;
+  --color-bg-2: #131217;
+  --color-fg: #ece7df;
+  --color-fg-muted: #a59f96;
+  --color-fg-subtle: #6f6a62;
+
+  --color-surface: rgb(255 255 255 / 0.04);
+  --color-surface-strong: rgb(255 255 255 / 0.08);
+  --color-surface-2: rgb(255 255 255 / 0.02);
+  --color-border: rgb(255 255 255 / 0.08);
+  --color-border-strong: rgb(255 255 255 / 0.18);
+
+  --color-accent: #e8843a;
+  --color-accent-hover: #c8702f;
+  --color-accent-fg: #0c0b0e;
+  --color-accent-soft: rgb(232 132 58 / 0.16);
+
+  --atmo-1: #c2581f;
+  --atmo-2: #7c4e2d;
+  --atmo-3: #5d3a20;
+  --atmo-4: #d97a3c;
+  --atmo-opacity: 0.28;
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Atmosphere gradient - fixed background */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: var(--atmo-opacity);
+    background:
+      radial-gradient(45% 40% at 18% 22%, var(--atmo-1) 0%, transparent 62%),
+      radial-gradient(40% 45% at 82% 18%, var(--atmo-2) 0%, transparent 65%),
+      radial-gradient(50% 45% at 75% 82%, var(--atmo-3) 0%, transparent 60%),
+      radial-gradient(40% 40% at 22% 78%, var(--atmo-4) 0%, transparent 60%);
+    filter: blur(90px) saturate(125%);
+    animation: var(--animate-drift);
+  }
+
+  /* Subtle grain on top to add material texture */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  body > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-fg);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    body::before { animation: none; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    box-shadow:
+      0 1px 0 0 rgb(255 255 255 / 0.06) inset,
+      0 24px 60px -28px rgb(0 0 0 / 0.45);
+  }
+
+  .glass-strong {
+    background-color: var(--color-surface-strong);
+    border: 1px solid var(--color-border);
+    backdrop-filter: blur(36px) saturate(170%);
+    -webkit-backdrop-filter: blur(36px) saturate(170%);
+    box-shadow:
+      0 1px 0 0 rgb(255 255 255 / 0.08) inset,
+      0 28px 70px -28px rgb(0 0 0 / 0.5);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .reveal.in {
+    animation: var(--animate-fade-up);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .text-fg-muted {
+    color: var(--color-fg-muted);
+  }
+  .text-fg-subtle {
+    color: var(--color-fg-subtle);
+  }
 }
