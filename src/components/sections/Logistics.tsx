@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Truck, ArrowUpFromLine, Forklift, Container as ContainerIcon, Package } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
@@ -31,12 +32,25 @@ export async function Logistics() {
       />
       <Container size="xl">
         <div className="grid items-start gap-16 lg:grid-cols-[1fr_1.2fr]">
-          <Reveal className="lg:sticky lg:top-32">
+          <Reveal className="space-y-8 lg:sticky lg:top-32">
             <SectionHeading
               eyebrow={t('eyebrow')}
               title={t('title')}
               subtitle={t('lead')}
             />
+            <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-[var(--color-border)]">
+              <Image
+                src="/photos/truck-profix.jpg"
+                alt="Ciężarówka PROFIX z HDS w trakcie dostawy materiałów"
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent" />
+              <p className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur">
+                Flota PROFIX
+              </p>
+            </div>
           </Reveal>
 
           <Reveal delay={0.15} className="space-y-3">

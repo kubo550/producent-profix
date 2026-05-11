@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { ArrowRight, HardHat, Home, Check } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
@@ -41,6 +42,7 @@ export async function Audiences() {
               cta={pro.cta}
               href="/dla-fachowca"
               accent="primary"
+              image="/stock/worker.jpg"
             />
           </Reveal>
           <Reveal delay={0.12}>
@@ -52,6 +54,7 @@ export async function Audiences() {
               cta={inv.cta}
               href="/dla-inwestora"
               accent="neutral"
+              image="/stock/facade.jpg"
             />
           </Reveal>
         </div>
@@ -68,6 +71,7 @@ function Card({
   cta,
   href,
   accent,
+  image,
 }: {
   icon: React.ReactNode;
   title: string;
@@ -76,6 +80,7 @@ function Card({
   cta: string;
   href: '/dla-fachowca' | '/dla-inwestora';
   accent: 'primary' | 'neutral';
+  image?: string;
 }) {
   const isPrimary = accent === 'primary';
   return (
@@ -86,6 +91,16 @@ function Card({
           : 'border-[var(--color-border)] bg-[var(--color-surface)] backdrop-blur-xl hover:border-[var(--color-border-strong)] hover:bg-[var(--color-surface-strong)]'
       }`}
     >
+      {image && (
+        <Image
+          src={image}
+          alt=""
+          aria-hidden
+          fill
+          sizes="(min-width: 1024px) 40vw, 100vw"
+          className="pointer-events-none absolute inset-0 -z-10 object-cover opacity-20 mix-blend-luminosity transition-opacity duration-500 group-hover:opacity-30"
+        />
+      )}
       <div className="relative">
         <div
           className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${

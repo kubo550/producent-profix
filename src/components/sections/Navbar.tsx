@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Menu, X, Phone } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
@@ -15,7 +16,6 @@ const navLinks = [
   { href: '/produkty', key: 'products' },
   { href: '/dla-fachowca', key: 'professional' },
   { href: '/dla-inwestora', key: 'investor' },
-  { href: '/przetargi', key: 'tenders' },
   { href: '/fundusze-europejskie', key: 'funds' },
   { href: '/kontakt', key: 'contact' },
 ] as const;
@@ -56,12 +56,16 @@ export function Navbar() {
               : 'border-transparent bg-transparent'
           )}
         >
-          <Link href="/" className="group flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-accent)] font-display text-base font-bold text-[var(--color-accent-fg)] transition-transform group-hover:rotate-6">
-              P
-            </span>
-            <span className="font-display text-lg font-semibold tracking-tight">
-              {siteConfig.name}
+          <Link href="/" aria-label={siteConfig.name} className="group flex items-center">
+            <span className="inline-flex items-center justify-center rounded-xl bg-white px-2 py-1.5 shadow-sm transition-transform group-hover:scale-105 dark:shadow-none">
+              <Image
+                src="/brand/logo.png"
+                alt={siteConfig.name}
+                width={800}
+                height={451}
+                priority
+                className="h-7 w-auto"
+              />
             </span>
           </Link>
 

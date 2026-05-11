@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
@@ -26,14 +27,19 @@ export async function Footer() {
       <Container size="xl">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="space-y-5">
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-accent)] font-display text-base font-bold text-[var(--color-accent-fg)]">
-                P
-              </span>
-              <span className="font-display text-lg font-semibold tracking-tight">
-                {siteConfig.name}
-              </span>
-            </div>
+            <Link
+              href="/"
+              aria-label={siteConfig.name}
+              className="inline-flex items-center justify-center rounded-2xl bg-white px-3 py-2 shadow-sm"
+            >
+              <Image
+                src="/brand/logo.png"
+                alt={siteConfig.name}
+                width={800}
+                height={451}
+                className="h-12 w-auto"
+              />
+            </Link>
             <p className="max-w-sm text-sm leading-relaxed text-fg-muted">{t('tagline')}</p>
             <div className="space-y-2 text-sm text-fg-muted">
               <p className="flex items-start gap-2.5">

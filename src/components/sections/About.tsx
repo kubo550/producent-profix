@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { ArrowRight, Factory } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
@@ -38,11 +39,18 @@ export async function About() {
           </Reveal>
 
           <Reveal delay={0.15} className="space-y-4">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[var(--color-border)] bg-gradient-to-br from-[var(--color-accent)] via-[#a8481a] to-[#3d2614]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.2),transparent_60%)]" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[var(--color-border)]">
+              <Image
+                src="/stock/factory.jpg"
+                alt="Hala produkcyjna"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-between p-8">
-                <div className="flex items-center gap-3 text-white/80">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 backdrop-blur">
+                <div className="flex items-center gap-3 text-white/85">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-accent)] text-[var(--color-accent-fg)]">
                     <Factory size={18} strokeWidth={1.75} />
                   </div>
                   <p className="font-mono text-xs uppercase tracking-[0.18em]">
@@ -53,7 +61,7 @@ export async function About() {
                   <p className="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
                     Skawina, ul. Piłsudskiego 23
                   </p>
-                  <p className="mt-2 text-sm text-white/80">
+                  <p className="mt-2 text-sm text-white/85">
                     Pełen cykl produkcji chemii budowlanej pod jednym dachem.
                   </p>
                 </div>
