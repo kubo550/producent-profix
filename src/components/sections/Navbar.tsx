@@ -52,21 +52,24 @@ export function Navbar() {
           className={cn(
             'flex items-center justify-between gap-6 rounded-full border px-4 py-2 transition-all duration-300 sm:px-6',
             scrolled
-              ? 'border-[var(--color-border)] bg-[var(--color-surface-strong)] shadow-[0_12px_40px_-20px_rgba(0,0,0,0.4)] backdrop-blur-xl'
-              : 'border-transparent bg-transparent'
+              ? 'border-[var(--color-border-strong)] shadow-[0_18px_50px_-20px_rgba(0,0,0,0.45)] backdrop-blur-2xl'
+              : 'border-[var(--color-border)] backdrop-blur-md'
           )}
+          style={{
+            backgroundColor: scrolled
+              ? 'color-mix(in srgb, var(--color-bg) 88%, transparent)'
+              : 'color-mix(in srgb, var(--color-bg) 35%, transparent)',
+          }}
         >
           <Link href="/" aria-label={siteConfig.name} className="group flex items-center">
-            <span className="inline-flex items-center justify-center rounded-xl bg-white px-2 py-1.5 shadow-sm transition-transform group-hover:scale-105 dark:shadow-none">
-              <Image
-                src="/brand/logo.png"
-                alt={siteConfig.name}
-                width={800}
-                height={451}
-                priority
-                className="h-7 w-auto"
-              />
-            </span>
+            <Image
+              src="/brand/logo-v2.png"
+              alt={siteConfig.name}
+              width={800}
+              height={451}
+              priority
+              className="-mt-1.5 h-12 w-auto transition-transform group-hover:scale-105 dark:brightness-0 dark:invert sm:-mt-2 sm:h-14"
+            />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">

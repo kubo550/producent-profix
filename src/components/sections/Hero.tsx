@@ -38,39 +38,31 @@ export function Hero() {
       <Container size="xl">
         <motion.div style={{ y, opacity }} className="grid items-center gap-16 lg:grid-cols-[1.1fr_1fr]">
           <div className="space-y-8">
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-surface)] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-accent)] backdrop-blur"
+            <p
+              className="reveal-fade-up inline-flex items-center gap-2 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-surface)] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-accent)] backdrop-blur"
+              style={{ '--reveal-delay': '0s' } as React.CSSProperties}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
               {t('eyebrow')}
-            </motion.p>
+            </p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="text-balance text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-[5rem]"
+            <h1
+              className="reveal-fade-up text-balance text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-[5rem]"
+              style={{ '--reveal-delay': '0.1s' } as React.CSSProperties}
             >
               {t('title')}
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-xl text-pretty text-lg leading-relaxed text-fg-muted sm:text-xl"
+            <p
+              className="reveal-fade-up max-w-xl text-pretty text-lg leading-relaxed text-fg-muted sm:text-xl"
+              style={{ '--reveal-delay': '0.2s' } as React.CSSProperties}
             >
               {t('subtitle')}
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-wrap items-center gap-3"
+            <div
+              className="reveal-fade-up flex flex-wrap items-center gap-3"
+              style={{ '--reveal-delay': '0.3s' } as React.CSSProperties}
             >
               <LinkButton href="#produkty" variant="primary" size="lg">
                 {t('ctaPrimary')}
@@ -79,26 +71,22 @@ export function Hero() {
               <LinkButton href="#kontakt" variant="secondary" size="lg">
                 {t('ctaSecondary')}
               </LinkButton>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative hidden aspect-square lg:block"
+          <div
+            className="reveal-fade-up relative hidden aspect-square lg:block"
+            style={{ '--reveal-delay': '0.25s', '--reveal-y': '0px' } as React.CSSProperties}
           >
             <HeroComposition />
-          </motion.div>
+          </div>
         </motion.div>
 
-        <motion.a
+        <a
           href="#o-firmie"
           aria-label={t('scroll')}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.18em] text-fg-subtle sm:flex"
+          className="reveal-fade-up absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.18em] text-fg-subtle sm:flex"
+          style={{ '--reveal-delay': '0.5s' } as React.CSSProperties}
         >
           {t('scroll')}
           <motion.span
@@ -107,7 +95,7 @@ export function Hero() {
           >
             <ChevronDown size={18} strokeWidth={1.5} />
           </motion.span>
-        </motion.a>
+        </a>
       </Container>
     </section>
   );

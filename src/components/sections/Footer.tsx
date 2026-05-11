@@ -27,17 +27,13 @@ export async function Footer() {
       <Container size="xl">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="space-y-5">
-            <Link
-              href="/"
-              aria-label={siteConfig.name}
-              className="inline-flex items-center justify-center rounded-2xl bg-white px-3 py-2 shadow-sm"
-            >
+            <Link href="/" aria-label={siteConfig.name} className="inline-block">
               <Image
-                src="/brand/logo.png"
+                src="/brand/logo-v2.png"
                 alt={siteConfig.name}
                 width={800}
                 height={451}
-                className="h-12 w-auto"
+                className="h-24 w-auto dark:brightness-0 dark:invert sm:h-28"
               />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-fg-muted">{t('tagline')}</p>
