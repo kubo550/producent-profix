@@ -3,9 +3,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: var(--font-sans-display), system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: var(--font-display), system-ui, sans-serif;
-  --font-mono: var(--font-mono-display), ui-monospace, "SF Mono", Menlo, monospace;
+  /* These fonts are injected at runtime by next/font (see layout.tsx). Fallbacks let
+   * the IDE/CSS linter resolve them at static-analysis time. */
+  --font-sans: var(--font-sans-display, ui-sans-serif), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-display, ui-sans-serif), system-ui, sans-serif;
+  --font-mono: var(--font-mono-display, ui-monospace), ui-monospace, "SF Mono", Menlo, monospace;
 
   /* Light theme - oatmeal industrial */
   --color-bg: #f5f1ea;
@@ -83,17 +85,23 @@
 @layer base {
   :root {
     color-scheme: light dark;
+    /* Defaults for vars set inline (via style prop) on reveal targets.
+     * Declared here so static CSS tooling can resolve them. */
+    --reveal-delay: 0s;
+    --reveal-y: 24px;
   }
 
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* Safety net against horizontal scroll on mobile when decorative absolutes overflow. */
+    overflow-x: clip;
   }
 
   body {
     background-color: var(--color-bg);
     color: var(--color-fg);
-    font-family: var(--font-sans);
+    font-family: var(--font-sans), sans-serif;
     font-feature-settings: "ss01", "cv11";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -137,7 +145,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
+    font-family: var(--font-display), sans-serif;
     letter-spacing: -0.02em;
   }
 

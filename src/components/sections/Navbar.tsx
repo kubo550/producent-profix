@@ -1,35 +1,89 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ArrowRight, ChevronDown, ChevronRight } from 'lucide-react';
 import { Link, usePathname } from '@/i18n/navigation';
 import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { siteConfig } from '@/content/site';
+import { categories, getCategory } from '@/content/categories';
 import { cn } from '@/lib/cn';
 
-const navLinks = [
+/** Mega-menu organization: top-level entries + optional cascading children.
+ * Keeps categories.ts flat (data) while presenting a hierarchical menu (view). */
+type MenuEntry = { slug: string; children?: string[] };
+
+const productMenu: MenuEntry[] = [
+  { slug: 'farby-fasadowe-elewacyjne' },
+  {
+    slug: 'tynki-cementowo-wapienne',
+    children: [
+      'tynki-cienkowarstwowe',
+      'tynki-produkty-uzupelniajace',
+      'zaprawy-klejace-do-systemow-docieplen',
+    ],
+  },
+  { slug: 'grunty' },
+  { slug: 'betony' },
+  { slug: 'farby-wewnetrzne' },
+  { slug: 'docieplenia-produkty-uzupelniajace' },
+  { slug: 'szpachle-i-gladzie' },
+  { slug: 'kleje' },
+  { slug: 'inne-produkty' },
+];
+
+type NavLink = {
+  href: '/o-firmie' | '/produkty' | '/dla-fachowca' | '/dla-inwestora' | '/fundusze-europejskie' | '/kontakt';
+  key: string;
+  /** If true, this nav item shows a mega-menu of product categories on hover. */
+  hasMegaMenu?: boolean;
+};
+
+const navLinks: readonly NavLink[] = [
   { href: '/o-firmie', key: 'about' },
-  { href: '/produkty', key: 'products' },
+  { href: '/produkty', key: 'products', hasMegaMenu: true },
   { href: '/dla-fachowca', key: 'professional' },
   { href: '/dla-inwestora', key: 'investor' },
   { href: '/fundusze-europejskie', key: 'funds' },
   { href: '/kontakt', key: 'contact' },
 ] as const;
 
+const MEGA_CLOSE_DELAY_MS = 140;
+
 export function Navbar() {
   const t = useTranslations('nav');
   const tCommon = useTranslations('common');
+  const tCategories = useTranslations('categoriesSection');
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const [expandedSlug, setExpandedSlug] = useState<string | null>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/');
+
+  const openMega = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setMegaOpen(true);
+  };
+
+  const scheduleCloseMega = () => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => {
+      setMegaOpen(false);
+      setExpandedSlug(null);
+    }, MEGA_CLOSE_DELAY_MS);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -44,6 +98,22 @@ export function Navbar() {
       document.body.style.overflow = '';
     };
   }, [open]);
+
+  // Close mega-menu when navigating to a new path
+  useEffect(() => {
+    setMegaOpen(false);
+    setExpandedSlug(null);
+  }, [pathname]);
+
+  // Esc closes mega-menu
+  useEffect(() => {
+    if (!megaOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMegaOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [megaOpen]);
 
   return (
     <header
@@ -80,6 +150,41 @@ export function Navbar() {
           <nav className="hidden items-center gap-1 lg:flex">
             {navLinks.map((link) => {
               const active = isActive(link.href);
+              if (link.hasMegaMenu) {
+                return (
+                  <div
+                    key={link.key}
+                    className="relative"
+                    onMouseEnter={openMega}
+                    onMouseLeave={scheduleCloseMega}
+                    onFocus={openMega}
+                    onBlur={scheduleCloseMega}
+                  >
+                    <Link
+                      href={link.href}
+                      aria-current={active ? 'page' : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={megaOpen}
+                      className={cn(
+                        'inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm transition-colors',
+                        active
+                          ? 'bg-[var(--color-accent-soft)] font-medium text-[var(--color-accent)]'
+                          : 'text-fg-muted hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]'
+                      )}
+                    >
+                      {t(link.key)}
+                      <ChevronDown
+                        size={13}
+                        strokeWidth={2}
+                        className={cn(
+                          'transition-transform duration-200',
+                          megaOpen && '-rotate-180'
+                        )}
+                      />
+                    </Link>
+                  </div>
+                );
+              }
               return (
                 <Link
                   key={link.key}
@@ -125,6 +230,166 @@ export function Navbar() {
           </div>
         </div>
       </Container>
+
+      {/* Desktop mega-menu under Products link */}
+      <AnimatePresence>
+        {megaOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+            onMouseEnter={openMega}
+            onMouseLeave={scheduleCloseMega}
+            className="absolute inset-x-0 top-full hidden px-4 pt-3 lg:block"
+          >
+            <Container size="xl">
+              <div
+                className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-[var(--color-border-strong)] shadow-[0_28px_60px_-20px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
+                style={{
+                  backgroundColor: 'color-mix(in srgb, var(--color-bg) 94%, transparent)',
+                }}
+              >
+                <div className="grid grid-cols-[1fr_1fr]">
+                  {/* Left: top-level items */}
+                  <ul className="space-y-0.5 p-3">
+                    {productMenu.map((entry, i) => {
+                      const cat = getCategory(entry.slug);
+                      if (!cat) return null;
+                      const hasChildren = (entry.children?.length ?? 0) > 0;
+                      const isExpanded = expandedSlug === entry.slug;
+                      return (
+                        <li
+                          key={entry.slug}
+                          onMouseEnter={() => setExpandedSlug(hasChildren ? entry.slug : null)}
+                        >
+                          <Link
+                            href={`/produkty/${cat.slug}`}
+                            onClick={() => setMegaOpen(false)}
+                            className={cn(
+                              'group flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors',
+                              isExpanded
+                                ? 'bg-[var(--color-accent-soft)]'
+                                : 'hover:bg-[var(--color-surface)]'
+                            )}
+                          >
+                            <span
+                              className={cn(
+                                'inline-flex h-6 w-6 flex-none items-center justify-center rounded-md font-mono text-[10px] uppercase tracking-[0.12em] transition-colors',
+                                isExpanded
+                                  ? 'bg-[var(--color-accent)] text-[var(--color-accent-fg)]'
+                                  : 'bg-[var(--color-surface)] text-fg-subtle group-hover:bg-[var(--color-accent-soft)] group-hover:text-[var(--color-accent)]'
+                              )}
+                            >
+                              {String(i + 1).padStart(2, '0')}
+                            </span>
+                            <span
+                              className={cn(
+                                'flex-1 truncate text-sm font-medium transition-colors',
+                                isExpanded ? 'text-[var(--color-accent)]' : 'group-hover:text-[var(--color-fg)]'
+                              )}
+                            >
+                              {cat.name}
+                            </span>
+                            {hasChildren && (
+                              <ChevronRight
+                                size={14}
+                                strokeWidth={2}
+                                className={cn(
+                                  'flex-none transition-colors',
+                                  isExpanded ? 'text-[var(--color-accent)]' : 'text-fg-subtle'
+                                )}
+                              />
+                            )}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+
+                  {/* Right: children panel OR default summary */}
+                  <div
+                    className="relative border-l border-[var(--color-border)] bg-[var(--color-surface)]/40 p-3"
+                    onMouseEnter={() => {
+                      // keep current expanded - just enter the panel
+                    }}
+                  >
+                    <AnimatePresence mode="wait">
+                      {expandedSlug ? (
+                        <motion.div
+                          key={expandedSlug}
+                          initial={{ opacity: 0, x: -6 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -6 }}
+                          transition={{ duration: 0.15 }}
+                          className="space-y-0.5"
+                        >
+                          <p className="px-3 pb-1 pt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-fg-subtle">
+                            {getCategory(expandedSlug)?.name}
+                          </p>
+                          {productMenu
+                            .find((m) => m.slug === expandedSlug)
+                            ?.children?.map((childSlug) => {
+                              const child = getCategory(childSlug);
+                              if (!child) return null;
+                              return (
+                                <Link
+                                  key={childSlug}
+                                  href={`/produkty/${child.slug}`}
+                                  onClick={() => setMegaOpen(false)}
+                                  className="group flex items-start gap-2.5 rounded-xl px-3 py-2.5 transition-colors hover:bg-[var(--color-surface)]"
+                                >
+                                  <span className="mt-1 inline-flex h-1.5 w-1.5 flex-none rounded-full bg-[var(--color-accent)]/40 transition-colors group-hover:bg-[var(--color-accent)]" />
+                                  <span className="flex-1">
+                                    <span className="block text-sm font-medium text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-accent)]">
+                                      {child.name}
+                                    </span>
+                                    <span className="mt-0.5 block text-xs leading-relaxed text-fg-muted">
+                                      {child.short}
+                                    </span>
+                                  </span>
+                                </Link>
+                              );
+                            })}
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="default"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.15 }}
+                          className="flex h-full flex-col justify-between gap-4 p-3"
+                        >
+                          <div>
+                            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
+                              {tCategories('eyebrow')}
+                            </p>
+                            <p className="mt-2 font-display text-lg font-semibold leading-tight">
+                              {tCategories('title')}
+                            </p>
+                            <p className="mt-2 text-xs leading-relaxed text-fg-muted">
+                              {tCategories('subtitle')}
+                            </p>
+                          </div>
+                          <Link
+                            href="/produkty"
+                            onClick={() => setMegaOpen(false)}
+                            className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-[var(--color-accent)] transition-all hover:gap-2.5"
+                          >
+                            {tCategories('cta')}
+                            <ArrowRight size={14} strokeWidth={2} />
+                          </Link>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {open && (
         <div className="fixed inset-x-0 top-[68px] z-30 mx-4 mt-2 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-4 shadow-2xl backdrop-blur-xl lg:hidden">
