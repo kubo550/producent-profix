@@ -1,32 +1,24 @@
 import { getTranslations } from 'next-intl/server';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { Link } from '@/i18n/navigation';
-import { LinkButton } from '@/components/ui/Button';
 import { categories } from '@/content/categories';
 
 export async function Categories() {
   const t = await getTranslations('categoriesSection');
 
+  const featured = categories.filter((c) => c.featuredOnHome);
+  const remaining = categories.length - featured.length;
+
   return (
     <section id="produkty" className="section-alt relative py-24 sm:py-32">
       <Container size="xl">
-        <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
-          <SectionHeading
-            eyebrow={t('eyebrow')}
-            title={t('title')}
-            subtitle={t('subtitle')}
-          />
-          <LinkButton href="/produkty" variant="secondary" size="md">
-            {t('cta')}
-            <ArrowUpRight size={16} strokeWidth={1.75} />
-          </LinkButton>
-        </div>
+        <SectionHeading eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} />
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((cat, i) => (
+          {featured.map((cat, i) => (
             <Reveal key={cat.slug} delay={(i % 3) * 0.08}>
               <Link
                 href={`/produkty/${cat.slug}`}
@@ -58,6 +50,27 @@ export async function Categories() {
             </Reveal>
           ))}
         </div>
+
+        {remaining > 0 && (
+          <Reveal delay={0.2} className="mt-10 flex justify-center">
+            <Link
+              href="/produkty"
+              className="group inline-flex items-center gap-3 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-surface)] px-6 py-3 text-sm font-medium text-[var(--color-fg)] backdrop-blur transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-surface-strong)] hover:text-[var(--color-accent)]"
+            >
+              <span>
+                {t('cta')}
+                <span className="ml-1.5 font-mono text-xs text-fg-subtle">
+                  ({categories.length})
+                </span>
+              </span>
+              <ArrowRight
+                size={16}
+                strokeWidth={1.75}
+                className="transition-transform group-hover:translate-x-0.5"
+              />
+            </Link>
+          </Reveal>
+        )}
       </Container>
     </section>
   );

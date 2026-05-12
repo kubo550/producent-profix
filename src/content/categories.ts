@@ -6,6 +6,9 @@ export type Category = {
   audience: Array<'fachowiec' | 'inwestor'>;
   /** Path under /public, e.g. /photos/products/beton-c-20-25.jpg */
   coverImage?: string;
+  /** When true, this category is highlighted on the homepage grid.
+   * Non-featured categories still appear in /produkty (full catalog) and the mega-menu. */
+  featuredOnHome?: boolean;
 };
 
 export const categories: Category[] = [
@@ -16,6 +19,7 @@ export const categories: Category[] = [
     description:
       'Trwałe powłoki zewnętrzne odporne na promieniowanie UV i zmienne warunki atmosferyczne. Stosowane na elewacjach domów, budynków użyteczności publicznej i obiektów przemysłowych.',
     audience: ['fachowiec', 'inwestor'],
+    featuredOnHome: true,
   },
   {
     slug: 'tynki-cementowo-wapienne',
@@ -24,6 +28,7 @@ export const categories: Category[] = [
     description:
       'Klasyczne tynki maszynowe i ręczne. Wysoka paroprzepuszczalność, dobra przyczepność do typowych podłoży budowlanych, długoletnia trwałość.',
     audience: ['fachowiec'],
+    featuredOnHome: true,
   },
   {
     slug: 'tynki-cienkowarstwowe',
@@ -56,6 +61,7 @@ export const categories: Category[] = [
     description:
       'Grunty głęboko penetrujące, kontaktowe, pod farby i tynki. Poprawiają przyczepność i ujednolicają chłonność podłoża.',
     audience: ['fachowiec', 'inwestor'],
+    featuredOnHome: true,
   },
   {
     slug: 'farby-wewnetrzne',
@@ -64,6 +70,7 @@ export const categories: Category[] = [
     description:
       'Farby do pomieszczeń mieszkalnych i użytkowych. Odporność na szorowanie, paroprzepuszczalność, gotowe bazy kolorystyczne i barwienie na zamówienie.',
     audience: ['fachowiec', 'inwestor'],
+    featuredOnHome: true,
   },
   {
     slug: 'docieplenia-produkty-uzupelniajace',
@@ -88,6 +95,7 @@ export const categories: Category[] = [
     description:
       'Kleje do gresu, terakoty, glazury oraz płytek wielkoformatowych. Wewnątrz i na zewnątrz, na typowe i trudne podłoża.',
     audience: ['fachowiec', 'inwestor'],
+    featuredOnHome: true,
   },
   {
     slug: 'betony',
@@ -97,6 +105,7 @@ export const categories: Category[] = [
       'Gotowe suche mieszanki betonowe w trzech klasach wytrzymałości. Do podkładów podłogowych, słupków, kotwień, napraw konstrukcyjnych i posadzek. Zgodne z normami EN 13813:2002 i EN 1504-3:2005.',
     audience: ['fachowiec', 'inwestor'],
     coverImage: '/photos/products/beton-c-20-25.jpg',
+    featuredOnHome: true,
   },
   {
     slug: 'inne-produkty',
