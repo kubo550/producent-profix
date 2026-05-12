@@ -14,7 +14,14 @@ export type Product = {
   tempRange?: string;
   shelfLife?: string;
   notes?: string[];
+  /** Path under /public, e.g. /photos/products/beton-c-16-20.jpg */
   image?: string;
+  /** Additional images for gallery */
+  gallery?: string[];
+  /** Norm compliance, e.g. ["EN 13813:2002"] */
+  norms?: string[];
+  /** Extra spec fields shown in the technical sidebar */
+  extraSpecs?: Array<{ label: string; value: string }>;
 };
 
 export const products: Product[] = [
@@ -22,27 +29,30 @@ export const products: Product[] = [
   {
     slug: 'grunt-betonkontakt',
     categorySlug: 'grunty',
-    name: 'Grunt Beton-Kontakt',
-    brand: 'Beton-Kontakt',
-    tagline: 'Grunt z piaskiem kwarcowym pod gładkie i trudne podłoża',
+    name: 'Beton Kontakt - grunt polimerowo-kwarcowy',
+    brand: 'PROFIX BK',
+    tagline: 'Grunt sczepny pod tynki, gładzie i posadzki na trudnych podłożach',
     description:
-      'Wodna dyspersja kopolimerów akrylowych z piaskiem kwarcowym. Szybkoschnąca, o łagodnym zapachu. Wzmacnia podłoże i zwiększa przyczepność kolejnych warstw.',
+      'Grunt polimerowo-kwarcowy o silnej sile sczepnej. Dzięki zawartości kruszywa kwarcowego tworzy szorstką powierzchnię, która znacząco zwiększa przyczepność tynków cementowych i gipsowych do gładkich podłoży takich jak beton.',
     features: [
-      'Wzmacnia podłoże',
-      'Zwiększa przyczepność',
-      'Wyrównuje chłonność',
-      'Szybkoschnący',
-      'Łagodny zapach',
+      'Zwiększa przyczepność tynków do betonu',
+      'Z kruszywem kwarcowym (efekt szorstkości)',
+      'Szybki czas schnięcia (~2 h)',
+      'Wodorozcieńczalny - łagodny zapach',
+      'Do stosowania wewnątrz i na zewnątrz',
     ],
     usage:
-      'Pod okładziny ceramiczne i kamionkowe, gładzie szpachlowe, tapety, płyty paździerzowe i drewnopochodne. Wewnątrz i na zewnątrz.',
+      'Gruntowanie i wzmacnianie podłoży budowlanych. Zwiększa przyczepność tynków cementowych i gipsowych do betonu. Pod kleje, gładzie, posadzki, farby, okładziny ceramiczne, betonowe i kamionkowe. Również pod gładzie szpachlowe, tapety, płyty paździerzowe i drewnopochodne.',
     application:
-      'Podłoże musi być czyste, suche, wolne od kurzu, oleju, wapna, wosku i starych farb. Nanosić pędzlem lub wałkiem. Unikać opadów i silnego nasłonecznienia.',
-    consumption: 'ok. 0,2 kg/m² (zależnie od chłonności podłoża)',
-    packaging: '25 kg',
+      'Podłoże musi być czyste, suche i wolne od substancji obniżających przyczepność (kurz, brud, wapno, olej, tłuszcz, wosk, stare farby). Nanosić pędzlem, wałkiem lub pistoletem. Unikać opadów i silnego nasłonecznienia. Czas schnięcia ok. 2 godzin.',
+    consumption: 'ok. 0,25 kg/m² (zależnie od chłonności podłoża)',
+    packaging: '15 kg / 25 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym opakowaniu',
-    notes: ['Chronić przed przemrożeniem - produkt przemrożony nie nadaje się do użytku'],
+    notes: [
+      'Chronić przed dziećmi. Stosować rękawice i okulary ochronne.',
+      'Produkt który uległ przemrożeniu nie nadaje się do użytku.',
+    ],
   },
   {
     slug: 'grunt-gleboko-penetrujacy',
@@ -118,28 +128,32 @@ export const products: Product[] = [
   {
     slug: 'grunt-tynkarski-koncentrat',
     categorySlug: 'grunty',
-    name: 'Grunt tynkarski - koncentrat',
-    brand: 'MaxGrunt',
-    tagline: 'Wydajny koncentrat 1:5 do rozcieńczania',
+    name: 'Hydro Primer - polimerowy grunt tynkarski koncentrat',
+    brand: 'Hydro Primer',
+    tagline: 'Wydajny koncentrat 1:5 pod tynki, gładzie, kleje i farby',
     description:
-      'Koncentrat z wodnej dyspersji kopolimerów akrylowych z dodatkami modyfikującymi. Jednorodna ciecz o łagodnym zapachu. Po rozcieńczeniu pełni rolę uniwersalnego gruntu pod tynki i wykończenia.',
+      'Polimerowy grunt tynkarski w formie koncentratu. Szybkoschnąca wodna dyspersja kopolimerów akrylowych z dodatkami modyfikującymi - jednorodna ciecz o łagodnym zapachu. Po rozcieńczeniu wzmacnia podłoże, ujednolica chłonność i znacząco zwiększa przyczepność kolejnych warstw.',
     features: [
       'Wzmacnia podłoże',
       'Zwiększa przyczepność',
       'Wyrównuje chłonność',
-      'Szybko schnie',
+      'Paroprzepuszczalny',
+      'Szybkoschnący (~2 h)',
       'Łagodny zapach',
     ],
     usage:
-      'Pod kleje, gładzie, tynki, posadzki, farby. Pod okładziny ceramiczne, gładzie szpachlowe, tapety, płyty drewnopochodne. Wewnątrz i na zewnątrz.',
+      'Pod tynki cementowe i gipsowe, kleje, gładzie, posadzki, farby. Pod okładziny ceramiczne, kamionkowe, gładzie szpachlowe, tapety, płyty paździerzowe i drewnopochodne. Wewnątrz i na zewnątrz obiektów.',
     application:
-      'Czyste, suche podłoże bez kurzu, oleju, wapna i starych farb. Nanosić pędzlem lub wałkiem.',
+      'Podłoże musi być czyste, suche, wolne od kurzu, oleju, wapna, wosku i starych farb. Nanosić pędzlem, wałkiem lub pistoletem. Unikać opadów i silnego nasłonecznienia. Czas schnięcia ok. 2 godziny.',
     mixing: 'Rozcieńczyć z czystą wodą w stosunku 1:5 (lub dobrać do chłonności podłoża)',
     consumption: 'ok. 0,2 kg/m² gotowej cieczy',
-    packaging: '18 kg',
+    packaging: '12 kg / 18 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym opakowaniu',
-    notes: ['Chronić przed przemrożeniem'],
+    notes: [
+      'Chronić przed dziećmi. Stosować rękawice i okulary ochronne.',
+      'Produkt, który uległ przemrożeniu nie nadaje się do użytku.',
+    ],
   },
   {
     slug: 'grunt-tynkarski-silikonowy',
@@ -516,17 +530,7 @@ export const products: Product[] = [
     usage: 'Wyrównywanie istniejących wylewek i podłoży przed układaniem płytek, paneli, wykładzin.',
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
-  {
-    slug: 'zaprawa-beton-b-20',
-    categorySlug: 'inne-produkty',
-    name: 'Zaprawa - beton B-20',
-    tagline: 'Beton drobnoziarnisty klasy B-20 (C16/20)',
-    description:
-      'Sucha mieszanka betonowa klasy wytrzymałości B-20 (C16/20). Do napraw i drobnych prac konstrukcyjnych - fundamenty, słupki, schody, naprawy ubytków.',
-    features: ['Klasa B-20 / C16/20', 'Wytrzymały na ściskanie', 'Sucha mieszanka', 'Łatwy w użyciu'],
-    usage: 'Drobne prace betoniarskie, fundamenty pomocnicze, naprawy ubytków, podbetonowanie.',
-    notes: ['Pełna karta techniczna dostępna na życzenie'],
-  },
+  // (Beton B-20 przeniesiony do nowej kategorii 'betony' jako beton-c-16-20)
   {
     slug: 'zaprawa-murarska',
     categorySlug: 'inne-produkty',
@@ -715,6 +719,126 @@ export const products: Product[] = [
     features: ['Asortyment na zamówienie'],
     usage: 'Uzupełnienie typowego cyklu tynkowania.',
     notes: ['Skontaktuj się z nami, by ustalić zakres dostawy'],
+  },
+
+  // === BETONY ===
+  {
+    slug: 'beton-c-16-20',
+    categorySlug: 'betony',
+    name: 'Beton C16/20',
+    brand: 'PROFIX',
+    tagline: 'Mrozoodporna mieszanka konstrukcyjna do typowych prac betoniarskich',
+    description:
+      'Sucha mieszanka betonowa klasy wytrzymałości C16/20 (dawniej B-20). Skomponowana z cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Wystarczy dodać czystą wodę - po 28 dniach uzyskuje wytrzymałość ≥ 20 MPa.',
+    features: [
+      'Klasa wytrzymałości C16/20 (≥ 20 MPa po 28 dniach)',
+      'Mrozoodporna',
+      'Duża wytrzymałość',
+      'Gotowa mieszanka - wystarczy dodać wodę',
+      'Drobne uziarnienie 0-4 mm',
+    ],
+    usage:
+      'Podkłady podłogowe na bazie cementu wewnątrz obiektów budowlanych. Mocowanie słupków i kotwień. Wykonywanie posadzek użytkowych.',
+    application:
+      'Do odmierzonej zimnej wody (3,4 l) wsypać zawartość worka 25 kg i mieszać 2-3 minuty mieszadłem mechanicznym lub w betoniarce do uzyskania jednorodnej konsystencji. Efektywne mieszanie powinno trwać nie krócej niż 5 min od dodania całej wody zarobowej. Zaprawę wyrobić w ciągu około 1 godziny. Beton zagęścić, ściągnąć i wygładzić powierzchnię.',
+    mixing: '3,4 l wody na worek 25 kg (≈ 0,13-0,14 l/kg)',
+    consumption: 'ok. 20 kg/m² przy grubości 1 cm (min. 10 mm)',
+    packaging: '25 kg',
+    tempRange: '+5°C / +25°C',
+    shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
+    image: '/photos/products/beton-c-16-20.jpg',
+    norms: ['EN 13813:2002'],
+    extraSpecs: [
+      { label: 'Klasa wytrzymałości', value: 'C16/20 (≥ 20 MPa @ 28 dni)' },
+      { label: 'Uziarnienie', value: '0-4 mm' },
+      { label: 'Min. grubość warstwy', value: '10 mm' },
+      { label: 'Min. czas mieszania', value: '5 min od dodania wody' },
+      { label: 'Czas roboczy po zarobieniu', value: 'ok. 1 godzina' },
+    ],
+    notes: [
+      'Pielęgnacja wilgotnościowa przez 3-7 dni po wykonaniu (zwilżanie i przykrycie).',
+      'Nie wykonywać prac na przemrożonym podłożu ani przy ryzyku przymrozków.',
+    ],
+  },
+  {
+    slug: 'beton-c-20-25',
+    categorySlug: 'betony',
+    name: 'Beton C20/25',
+    brand: 'PROFIX',
+    tagline: 'Mrozoodporna mieszanka do prac konstrukcyjnych, naprawczych i remontowych',
+    description:
+      'Sucha mieszanka betonowa klasy wytrzymałości C20/25 na bazie cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Wszechstronna - sprawdza się w pracach konstrukcyjnych, remontowych i naprawczych. Po 28 dniach uzyskuje wytrzymałość ≥ 25 MPa i staje się odporna na warunki atmosferyczne.',
+    features: [
+      'Klasa wytrzymałości C20/25 (≥ 25 MPa po 28 dniach)',
+      'Mrozoodporna',
+      'Duża wytrzymałość',
+      'Odporna na warunki atmosferyczne',
+      'Do prac wewnętrznych i zewnętrznych',
+      'Drobne uziarnienie 0-4 mm',
+    ],
+    usage:
+      'Prace konstrukcyjne, naprawcze i remontowe - podkłady podłogowe, posadzki, mury, nadproża, belki, kotwienie słupków. Stosowana wewnątrz i na zewnątrz budynków.',
+    application:
+      'Do 3,4 l zimnej wody wsypać zawartość worka 25 kg i mieszać 2-3 minuty mieszadłem mechanicznym lub w betoniarce do uzyskania jednorodnej konsystencji. Efektywne mieszanie powinno trwać nie krócej niż 5 min od dodania całej wody zarobowej. Zaprawę wyrobić w ciągu około 1 godziny. Po nałożeniu starannie zagęścić, ściągnąć, zatrzeć i wygładzić powierzchnię.',
+    mixing: '3,4 l wody na worek 25 kg (≈ 0,13-0,14 l/kg)',
+    consumption: 'ok. 20 kg/m² przy grubości 1 cm (min. 10 mm)',
+    packaging: '25 kg',
+    tempRange: '+5°C / +25°C',
+    shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
+    image: '/photos/products/beton-c-20-25.jpg',
+    norms: ['PN-EN 206:2013'],
+    extraSpecs: [
+      { label: 'Klasa wytrzymałości', value: 'C20/25 (≥ 25 MPa @ 28 dni)' },
+      { label: 'Uziarnienie', value: '0-4 mm' },
+      { label: 'Min. grubość warstwy', value: '10 mm' },
+      { label: 'Min. czas mieszania', value: '5 min od dodania wody' },
+      { label: 'Czas roboczy po zarobieniu', value: 'ok. 1 godzina' },
+      { label: 'Zastosowanie', value: 'wewnątrz i na zewnątrz' },
+    ],
+    notes: [
+      'Pielęgnacja wilgotnościowa przez 3-7 dni - zwilżanie i przykrycie powierzchni.',
+      'Nie wykonywać prac na przemrożonym podłożu ani przy ryzyku przymrozków.',
+    ],
+  },
+  {
+    slug: 'beton-c-25-30',
+    categorySlug: 'betony',
+    name: 'Beton C25/30',
+    brand: 'PROFIX',
+    tagline: 'Najwyższa klasa - mrozoodporny beton konstrukcyjny i naprawczy',
+    description:
+      'Najwyższa klasa wytrzymałości w serii betonów PROFIX - C25/30 (≥ 30 MPa po 28 dniach). Skomponowany z cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Mrozoodporny i odporny na warunki atmosferyczne - sprawdza się w pracach konstrukcyjnych, naprawczych i remontowych, zarówno wewnątrz jak i na zewnątrz.',
+    features: [
+      'Klasa wytrzymałości C25/30 (≥ 30 MPa po 28 dniach)',
+      'Mrozoodporna',
+      'Duża wytrzymałość',
+      'Odporna na warunki atmosferyczne',
+      'Do prac wewnętrznych i zewnętrznych',
+      'Do napraw elementów konstrukcyjnych',
+    ],
+    usage:
+      'Prace konstrukcyjne, naprawcze i remontowe - podkłady podłogowe, posadzki, mury, nadproża, belki, kotwienie słupków, naprawy elementów konstrukcyjnych. Stosowana wewnątrz i na zewnątrz budynków.',
+    application:
+      'Do 3,4 l zimnej wody wsypać worek 25 kg, mieszać 2-3 minuty mieszadłem mechanicznym lub w betoniarce do uzyskania jednorodnej konsystencji. Efektywne mieszanie powinno trwać nie krócej niż 5 min od dodania całej wody zarobowej. Zaprawę zużyć w ciągu około 1 godziny. Po nałożeniu starannie zagęścić, ściągnąć, zatrzeć i wygładzić powierzchnię.',
+    mixing: '3,4 l wody na worek 25 kg (≈ 0,13-0,14 l/kg)',
+    consumption: 'ok. 20 kg/m² przy grubości 1 cm (min. 10 mm)',
+    packaging: '25 kg',
+    tempRange: '+5°C / +25°C',
+    shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
+    image: '/photos/products/beton-c-25-30.jpg',
+    norms: ['PN-EN 206:2013'],
+    extraSpecs: [
+      { label: 'Klasa wytrzymałości', value: 'C25/30 (≥ 30 MPa @ 28 dni)' },
+      { label: 'Uziarnienie', value: '0-4 mm' },
+      { label: 'Min. grubość warstwy', value: '10 mm' },
+      { label: 'Min. czas mieszania', value: '5 min od dodania wody' },
+      { label: 'Czas roboczy po zarobieniu', value: 'ok. 1 godzina' },
+      { label: 'Zastosowanie', value: 'wewnątrz i na zewnątrz' },
+    ],
+    notes: [
+      'Pielęgnacja wilgotnościowa przez 3-7 dni po wykonaniu.',
+      'Nie wykonywać prac na przemrożonym podłożu ani przy ryzyku przymrozków.',
+    ],
   },
 ];
 

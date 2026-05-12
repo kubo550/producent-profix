@@ -12,7 +12,7 @@ export function USPStrip() {
   const items = t.raw('items') as Array<{ title: string; description: string }>;
 
   return (
-    <section className="relative py-20 sm:py-28">
+    <section className="section-alt relative py-20 sm:py-28">
       <Container size="xl">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => {

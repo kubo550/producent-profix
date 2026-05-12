@@ -66,12 +66,12 @@ export function Navbar() {
         >
           <Link href="/" aria-label={siteConfig.name} className="group flex items-center">
             <Image
-              src="/brand/logo-v2.png"
+              src="/brand/logo-transparent.png"
               alt={siteConfig.name}
-              width={800}
-              height={451}
+              width={2400}
+              height={1500}
               priority
-              className="-mt-1.5 h-12 w-auto transition-transform group-hover:scale-105 sm:-mt-2 sm:h-14"
+              className="-mt-1.5 h-10 w-auto transition-transform group-hover:scale-105 sm:-mt-2 sm:h-12"
             />
           </Link>
 

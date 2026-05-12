@@ -239,6 +239,7 @@
     "back": "Wróć do listy kategorii",
     "productsTitle": "Produkty w tej kategorii",
     "productsCountOne": "produkt",
+    "productsCountFew": "produkty",
     "productsCountMany": "produktów"
   },
   "productPage": {

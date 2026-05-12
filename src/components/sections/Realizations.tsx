@@ -72,7 +72,7 @@ export async function Realizations() {
   ];
 
   return (
-    <section id="realizacje" className="relative py-24 sm:py-32">
+    <section id="realizacje" className="section-alt relative py-24 sm:py-32">
       <div
         aria-hidden
         className="pointer-events-none absolute -right-32 top-32 -z-10 h-96 w-96 rounded-full bg-[var(--color-accent)] opacity-[0.06] blur-[120px]"

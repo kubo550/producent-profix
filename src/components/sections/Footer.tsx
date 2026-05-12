@@ -29,11 +29,11 @@ export async function Footer() {
           <div className="space-y-5">
             <Link href="/" aria-label={siteConfig.name} className="inline-block">
               <Image
-                src="/brand/logo-v2.png"
+                src="/brand/logo-transparent.png"
                 alt={siteConfig.name}
-                width={800}
-                height={451}
-                className="h-24 w-auto sm:h-28"
+                width={2400}
+                height={1500}
+                className="h-20 w-auto sm:h-24"
               />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-fg-muted">{t('tagline')}</p>

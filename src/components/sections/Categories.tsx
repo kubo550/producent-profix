@@ -11,7 +11,7 @@ export async function Categories() {
   const t = await getTranslations('categoriesSection');
 
   return (
-    <section id="produkty" className="relative py-24 sm:py-32">
+    <section id="produkty" className="section-alt relative py-24 sm:py-32">
       <Container size="xl">
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
           <SectionHeading

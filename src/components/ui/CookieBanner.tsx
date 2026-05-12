@@ -4,6 +4,7 @@ import { useState, useSyncExternalStore } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cookie } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
+import { Button } from '@/components/ui/Button';
 
 const STORAGE_KEY = 'profix.cookies.consent';
 
@@ -62,20 +63,24 @@ export function CookieBanner() {
             </p>
           </div>
           <div className="flex w-full flex-shrink-0 gap-2 sm:w-auto">
-            <button
+            <Button
               type="button"
+              variant="secondary"
+              size="sm"
               onClick={() => accept('rejected')}
-              className="flex-1 rounded-full border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-fg-muted transition-colors hover:text-[var(--color-fg)] sm:flex-none"
+              className="flex-1 sm:flex-none"
             >
               Odrzuć
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
+              variant="primary"
+              size="sm"
               onClick={() => accept('accepted')}
-              className="flex-1 rounded-full bg-[var(--color-accent)] px-5 py-2 text-sm font-semibold text-[var(--color-accent-fg)] transition-all hover:bg-[var(--color-accent-hover)] sm:flex-none"
+              className="flex-1 sm:flex-none"
             >
               Akceptuję
-            </button>
+            </Button>
           </div>
         </div>
       </motion.div>

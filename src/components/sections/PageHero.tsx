@@ -14,6 +14,8 @@ export function PageHero({
 }) {
   return (
     <section className="relative pb-12 pt-36 sm:pb-20 sm:pt-44">
+      {/* Marker triggers body:has(.atmo-quiet)::before to dim atmospheric on detail pages. */}
+      <span className="atmo-quiet sr-only" aria-hidden />
       <Container size="xl">
         <div className="max-w-3xl space-y-5">
           {eyebrow && (

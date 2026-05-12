@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
@@ -26,6 +27,24 @@ export default async function InvestorPage({
       <PageHero eyebrow="Dla inwestora" title={t('title')} subtitle={t('subtitle')}>
         <p className="text-base leading-relaxed text-fg-muted sm:text-lg">{t('intro')}</p>
       </PageHero>
+
+      <section className="relative pb-12">
+        <Container size="xl">
+          <Reveal>
+            <div className="relative aspect-[22/9] overflow-hidden rounded-3xl border border-[var(--color-border)]">
+              <Image
+                src="/photos/investor-house.jpg"
+                alt="Nowoczesny dom jednorodzinny - przykład realizacji z wykorzystaniem materiałów PROFIX"
+                fill
+                priority
+                sizes="(min-width: 1024px) 1200px, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+            </div>
+          </Reveal>
+        </Container>
+      </section>
 
       <section className="relative pb-20">
         <Container size="xl">

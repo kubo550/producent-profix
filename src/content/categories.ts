@@ -4,6 +4,8 @@ export type Category = {
   short: string;
   description: string;
   audience: Array<'fachowiec' | 'inwestor'>;
+  /** Path under /public, e.g. /photos/products/beton-c-20-25.jpg */
+  coverImage?: string;
 };
 
 export const categories: Category[] = [
@@ -86,6 +88,15 @@ export const categories: Category[] = [
     description:
       'Kleje do gresu, terakoty, glazury oraz płytek wielkoformatowych. Wewnątrz i na zewnątrz, na typowe i trudne podłoża.',
     audience: ['fachowiec', 'inwestor'],
+  },
+  {
+    slug: 'betony',
+    name: 'Betony',
+    short: 'Suche mieszanki betonowe C16/20, C20/25, C25/30',
+    description:
+      'Gotowe suche mieszanki betonowe w trzech klasach wytrzymałości. Do podkładów podłogowych, słupków, kotwień, napraw konstrukcyjnych i posadzek. Zgodne z normami EN 13813:2002 i EN 1504-3:2005.',
+    audience: ['fachowiec', 'inwestor'],
+    coverImage: '/photos/products/beton-c-20-25.jpg',
   },
   {
     slug: 'inne-produkty',

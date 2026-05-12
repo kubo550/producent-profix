@@ -1,6 +1,19 @@
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { ArrowLeft, Check, MessageSquare, Package, Thermometer, Clock, Droplets, Brush, AlertTriangle } from 'lucide-react';
+import {
+  ArrowLeft,
+  Check,
+  MessageSquare,
+  Package,
+  Thermometer,
+  Clock,
+  Droplets,
+  Brush,
+  AlertTriangle,
+  ShieldCheck,
+  Ruler,
+} from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
@@ -87,6 +100,11 @@ export default async function ProductPage({
   if (p.mixing) specRows.push({ icon: <Brush size={16} strokeWidth={1.75} />, label: t('specs.mixing'), value: p.mixing });
   if (p.tempRange) specRows.push({ icon: <Thermometer size={16} strokeWidth={1.75} />, label: t('specs.temperature'), value: p.tempRange });
   if (p.shelfLife) specRows.push({ icon: <Clock size={16} strokeWidth={1.75} />, label: t('specs.shelfLife'), value: p.shelfLife });
+  if (p.extraSpecs) {
+    for (const s of p.extraSpecs) {
+      specRows.push({ icon: <Ruler size={16} strokeWidth={1.75} />, label: s.label, value: s.value });
+    }
+  }
 
   return (
     <>
@@ -98,17 +116,99 @@ export default async function ProductPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <PageHero
-        eyebrow={cat.name}
-        title={p.name}
-        subtitle={p.tagline}
-      >
-        {p.brand && (
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent-soft)] px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
-            {p.brand}
-          </span>
-        )}
-      </PageHero>
+      {p.image ? (
+        <section className="relative pb-12 pt-36 sm:pb-20 sm:pt-44">
+          <span className="atmo-quiet sr-only" aria-hidden />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-32 top-32 -z-10 h-96 w-96 rounded-full bg-[var(--color-accent)] opacity-[0.07] blur-[120px]"
+          />
+          <Container size="xl">
+            <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]">
+              <div className="space-y-6">
+                <nav aria-label="breadcrumb" className="flex flex-wrap items-center gap-2 text-xs text-fg-subtle">
+                  <Link href="/produkty" className="hover:text-[var(--color-fg)]">
+                    Produkty
+                  </Link>
+                  <span aria-hidden>/</span>
+                  <Link href={`/produkty/${cat.slug}`} className="hover:text-[var(--color-fg)]">
+                    {cat.name}
+                  </Link>
+                </nav>
+                <div className="flex flex-wrap items-center gap-2">
+                  {p.brand && (
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent-soft)] px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
+                      {p.brand}
+                    </span>
+                  )}
+                  {p.norms?.map((n) => (
+                    <span
+                      key={n}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-surface)] px-3 py-1.5 text-[11px] font-medium text-fg-muted backdrop-blur"
+                    >
+                      <ShieldCheck size={12} strokeWidth={2} className="text-[var(--color-accent)]" />
+                      {n}
+                    </span>
+                  ))}
+                </div>
+                <h1 className="text-balance font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
+                  {p.name}
+                </h1>
+                <p className="text-pretty text-lg leading-relaxed text-fg-muted sm:text-xl">
+                  {p.tagline}
+                </p>
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <LinkButton href="/kontakt" variant="primary" size="lg">
+                    <MessageSquare size={18} strokeWidth={1.75} />
+                    {t('cta')}
+                  </LinkButton>
+                  {p.packaging && (
+                    <span className="inline-flex items-center gap-2 text-sm text-fg-muted">
+                      <Package size={16} strokeWidth={1.75} className="text-[var(--color-accent)]" />
+                      {p.packaging}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <div className="relative">
+                <div
+                  aria-hidden
+                  className="absolute inset-0 -z-10 translate-x-6 translate-y-6 rounded-[2.5rem] bg-[var(--color-accent)] opacity-[0.08] blur-2xl"
+                />
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[2.5rem] border border-[var(--color-border-strong)] bg-white shadow-[0_40px_80px_-30px_rgba(0,0,0,0.25)]">
+                  <Image
+                    src={p.image}
+                    alt={`${p.name} - opakowanie produktu`}
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    className="object-contain p-8"
+                  />
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+      ) : (
+        <PageHero eyebrow={cat.name} title={p.name} subtitle={p.tagline}>
+          <div className="flex flex-wrap items-center gap-2">
+            {p.brand && (
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent-soft)] px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
+                {p.brand}
+              </span>
+            )}
+            {p.norms?.map((n) => (
+              <span
+                key={n}
+                className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-surface)] px-3 py-1.5 text-[11px] font-medium text-fg-muted backdrop-blur"
+              >
+                <ShieldCheck size={12} strokeWidth={2} className="text-[var(--color-accent)]" />
+                {n}
+              </span>
+            ))}
+          </div>
+        </PageHero>
+      )}
 
       <section className="relative pb-20">
         <Container size="xl">

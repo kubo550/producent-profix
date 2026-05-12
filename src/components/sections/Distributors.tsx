@@ -10,7 +10,7 @@ export async function Distributors() {
   const t = await getTranslations('distributorsSection');
 
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="section-alt relative py-24 sm:py-32">
       <Container size="xl">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 backdrop-blur-xl sm:p-12">

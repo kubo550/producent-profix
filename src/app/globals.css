@@ -202,4 +202,36 @@
   .text-fg-subtle {
     color: var(--color-fg-subtle);
   }
+
+  /* Section bg alternation. Solid bg covers the body::before atmospheric for a calmer rhythm. */
+  .section-alt {
+    background-color: var(--color-bg-2);
+  }
+
+  /* Quiet atmospheric for detail / content pages - reduces decorative gradient intensity.
+   * Applied via parent `:has()` selector since body::before reads from body. */
+  .atmo-quiet { /* marker class, see body:has rule */ }
+}
+
+/* When any element on the page is marked .atmo-quiet, dim the body atmospheric blob. */
+body:has(.atmo-quiet)::before {
+  opacity: 0.08 !important;
+}
+
+@layer components {
+  /* "Data" card - subtle shadow, smaller radius, less dramatic hover. For lists/specs/FAQ. */
+  .card-data {
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    box-shadow: 0 4px 12px -2px rgb(0 0 0 / 0.04);
+    transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  }
+  .card-data:hover {
+    border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border));
+    background-color: var(--color-surface-strong);
+    box-shadow: 0 8px 24px -6px rgb(0 0 0 / 0.08);
+  }
 }
