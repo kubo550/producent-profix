@@ -236,7 +236,27 @@
     "professional": "Fachowiec",
     "investor": "Inwestor",
     "cta": "Zapytaj o ten produkt",
-    "back": "Wróć do listy kategorii"
+    "back": "Wróć do listy kategorii",
+    "productsTitle": "Produkty w tej kategorii",
+    "productsCountOne": "produkt",
+    "productsCountMany": "produktów"
+  },
+  "productPage": {
+    "sections": {
+      "description": "Opis",
+      "features": "Cechy",
+      "usage": "Zastosowanie",
+      "application": "Sposób użycia",
+      "specs": "Dane techniczne"
+    },
+    "specs": {
+      "packaging": "Opakowanie",
+      "consumption": "Zużycie",
+      "mixing": "Mieszanie",
+      "temperature": "Temp. aplikacji",
+      "shelfLife": "Trwałość"
+    },
+    "cta": "Zapytaj o ten produkt"
   },
   "professionalPage": {
     "title": "Dla fachowca",

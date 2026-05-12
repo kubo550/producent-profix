@@ -40,7 +40,7 @@ export const categories: Category[] = [
     audience: ['fachowiec'],
   },
   {
-    slug: 'zaprawy-klejace-do-systemow-doceiplen',
+    slug: 'zaprawy-klejace-do-systemow-docieplen',
     name: 'Zaprawy klejące do systemów dociepleń',
     short: 'Mocowanie i zatapianie siatki',
     description:
