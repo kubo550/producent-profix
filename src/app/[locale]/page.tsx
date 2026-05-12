@@ -5,6 +5,7 @@ import { USPStrip } from '@/components/sections/USPStrip';
 import { About } from '@/components/sections/About';
 import { Categories } from '@/components/sections/Categories';
 import { Audiences } from '@/components/sections/Audiences';
+import { Realizations } from '@/components/sections/Realizations';
 import { Logistics } from '@/components/sections/Logistics';
 import { Funds } from '@/components/sections/Funds';
 import { Distributors } from '@/components/sections/Distributors';
@@ -25,6 +26,7 @@ export default async function HomePage({
       <About />
       <Categories />
       <Audiences />
+      <Realizations />
       <Logistics />
       <Funds />
       <Distributors />

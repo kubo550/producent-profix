@@ -92,6 +92,31 @@
       "cta": "Wejdź do strefy inwestora"
     }
   },
+  "realizations": {
+    "eyebrow": "Realizacje",
+    "title": "Efekt który zostaje na lata",
+    "subtitle": "Materiały PROFIX pracują tam, gdzie liczy się jakość wykończenia i krótki termin. Zobacz na własne oczy.",
+    "labels": {
+      "before": "Przed",
+      "after": "Po",
+      "process": "Proces",
+      "result": "Efekt"
+    },
+    "cases": {
+      "room": {
+        "label": "Realizacja - dom jednorodzinny",
+        "title": "Tynkowanie pomieszczeń pod klucz",
+        "description": "Surowy stan deweloperski - mur z ceramiki i strop. Po nałożeniu tynku PROFIX ściany i sufit są gotowe pod gładź i malowanie.",
+        "tags": ["Tynk cementowo-wapienny", "Grunt PROFIX", "Wykończenie pod malowanie"]
+      },
+      "hall": {
+        "label": "Realizacja - większe obiekty",
+        "title": "Renowacje i wykończenia powierzchniowe",
+        "description": "Od renowacji starych murów po nowe hale - nasze ekipy obsługują obiekty, w których liczy się skala, krótki termin i równe wykończenie. Materiał z naszej produkcji, robota od A do Z.",
+        "tags": ["Tynk maszynowy", "Renowacja", "Większa powierzchnia"]
+      }
+    }
+  },
   "logistics": {
     "eyebrow": "Transport",
     "title": "Dostarczamy materiały na miejsce budowy",
@@ -239,9 +264,8 @@
   },
   "fundsPage": {
     "title": "Fundusze Europejskie",
-    "subtitle": "Projekty współfinansowane ze środków UE",
-    "intro": "Realizujemy projekty rozwojowe i inwestycyjne w oparciu o środki Unii Europejskiej. Informacje o poszczególnych projektach zostaną uzupełnione w trakcie wdrożenia strony.",
-    "placeholder": "Lista projektów dotacyjnych w przygotowaniu. Skontaktuj się z nami, jeśli potrzebujesz szczegółów konkretnego projektu."
+    "subtitle": "Projekty współfinansowane ze środków Unii Europejskiej",
+    "intro": "Realizujemy projekty rozwojowe i inwestycyjne w oparciu o środki Unii Europejskiej. Poniżej znajdziesz informacje o naszych projektach badawczo-rozwojowych i inwestycyjnych."
   },
   "tendersPage": {
     "title": "Przetargi",
@@ -256,7 +280,6 @@
   },
   "privacyPage": {
     "title": "Polityka prywatności",
-    "subtitle": "Informacja o przetwarzaniu danych osobowych",
-    "placeholder": "Pełna treść polityki prywatności zostanie uzupełniona w trakcie wdrożenia. Jeśli masz pytanie o przetwarzanie danych, napisz na biuro@producent-profix.pl."
+    "subtitle": "Informacja o przetwarzaniu danych osobowych zgodnie z RODO"
   }
 }

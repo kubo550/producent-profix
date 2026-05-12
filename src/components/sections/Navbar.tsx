@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Menu, X, Phone } from 'lucide-react';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
@@ -23,8 +23,12 @@ const navLinks = [
 export function Navbar() {
   const t = useTranslations('nav');
   const tCommon = useTranslations('common');
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -73,15 +77,24 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.key}
-                href={link.href}
-                className="rounded-full px-3 py-2 text-sm text-fg-muted transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]"
-              >
-                {t(link.key)}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.key}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={cn(
+                    'relative rounded-full px-3 py-2 text-sm transition-colors',
+                    active
+                      ? 'bg-[var(--color-accent-soft)] font-medium text-[var(--color-accent)]'
+                      : 'text-fg-muted hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]'
+                  )}
+                >
+                  {t(link.key)}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-2">
@@ -112,16 +125,25 @@ export function Navbar() {
       {open && (
         <div className="fixed inset-x-0 top-[68px] z-30 mx-4 mt-2 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-4 shadow-2xl backdrop-blur-xl lg:hidden">
           <nav className="flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.key}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="rounded-xl px-4 py-3 text-base text-fg-muted transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]"
-              >
-                {t(link.key)}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.key}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? 'page' : undefined}
+                  className={cn(
+                    'rounded-xl px-4 py-3 text-base transition-colors',
+                    active
+                      ? 'bg-[var(--color-accent-soft)] font-medium text-[var(--color-accent)]'
+                      : 'text-fg-muted hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]'
+                  )}
+                >
+                  {t(link.key)}
+                </Link>
+              );
+            })}
             <a
               href={`tel:${siteConfig.phone}`}
               className="mt-2 inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] px-4 py-3 text-base font-medium text-[var(--color-fg)]"

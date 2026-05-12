@@ -1,7 +1,10 @@
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { CalendarCheck, MapPin, Sparkles, Target } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
+import { fundsProjects, statusLabel } from '@/content/funds';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -22,14 +25,117 @@ export default async function FundsPage({
     <>
       <PageHero eyebrow="Fundusze Europejskie" title={t('title')} subtitle={t('subtitle')} />
 
+      <section className="relative pb-12">
+        <Container size="xl">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-gradient-to-r from-[#003399] via-[#0040b3] to-[#ffd700]/30 p-6 sm:p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_30%,rgba(255,215,0,0.25),transparent_60%)]" />
+              <div className="relative flex flex-col items-start gap-6 lg:flex-row lg:items-center">
+                <div className="rounded-2xl bg-white/95 p-3 shadow-xl">
+                  <Image
+                    src="/legacy/logo-eu.png"
+                    alt="Fundusze Europejskie i Unia Europejska"
+                    width={300}
+                    height={68}
+                    className="h-14 w-auto sm:h-16"
+                  />
+                </div>
+                <p className="text-pretty text-base leading-relaxed text-white/90 sm:text-lg">
+                  {t('intro')}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
       <section className="relative pb-24">
         <Container size="md">
-          <Reveal className="space-y-6 text-lg leading-relaxed text-fg-muted">
-            <p className="text-pretty">{t('intro')}</p>
-            <p className="rounded-2xl border border-dashed border-[var(--color-border-strong)] bg-[var(--color-surface-2)] p-6 text-sm">
-              {t('placeholder')}
-            </p>
-          </Reveal>
+          <div className="space-y-12">
+            {fundsProjects.map((project, idx) => (
+              <Reveal
+                key={project.slug}
+                delay={idx * 0.08}
+                className="overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 backdrop-blur-xl sm:p-10"
+              >
+                <div className="mb-6 flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent-soft)] px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-accent)]">
+                    <Sparkles size={12} strokeWidth={1.75} />
+                    Projekt B+R
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] px-3 py-1 text-xs text-fg-muted">
+                    {statusLabel[project.status]}
+                  </span>
+                  {project.endDate && (
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] px-3 py-1 text-xs text-fg-muted">
+                      <CalendarCheck size={12} strokeWidth={1.75} />
+                      Do {project.endDate}
+                    </span>
+                  )}
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] px-3 py-1 text-xs text-fg-muted">
+                    <MapPin size={12} strokeWidth={1.75} />
+                    {project.location}
+                  </span>
+                </div>
+
+                <h2 className="text-balance font-display text-2xl font-semibold leading-tight sm:text-3xl">
+                  {project.title}
+                </h2>
+
+                <p className="mt-5 text-pretty text-base leading-relaxed text-fg-muted sm:text-lg">
+                  {project.summary}
+                </p>
+
+                <div className="mt-8">
+                  <h3 className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-fg-subtle">
+                    Zakres projektu
+                  </h3>
+                  <ol className="space-y-3 text-base leading-relaxed text-fg-muted">
+                    {project.scope.map((item, i) => {
+                      if (typeof item === 'string') {
+                        return (
+                          <li key={i} className="flex gap-3">
+                            <span className="flex-none font-mono text-[var(--color-accent)]">
+                              {i + 1}.
+                            </span>
+                            <span className="text-pretty">{item}</span>
+                          </li>
+                        );
+                      }
+                      return (
+                        <li key={i} className="flex gap-3">
+                          <span className="flex-none font-mono text-[var(--color-accent)]">
+                            {i + 1}.
+                          </span>
+                          <div className="space-y-2">
+                            <span className="text-pretty">{item.heading}</span>
+                            <ul className="space-y-1.5 pl-1 text-sm">
+                              {item.items.map((sub, j) => (
+                                <li key={j} className="flex gap-2 text-pretty">
+                                  <span className="text-[var(--color-accent)]">-</span>
+                                  <span>{sub}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </div>
+
+                <div className="mt-8 rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent-soft)] p-5">
+                  <div className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-accent)]">
+                    <Target size={14} strokeWidth={1.75} />
+                    Efekt
+                  </div>
+                  <p className="text-pretty text-base leading-relaxed text-[var(--color-fg)]">
+                    {project.outcome}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
     </>

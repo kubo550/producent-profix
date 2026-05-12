@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { ArrowRight, ChevronDown } from 'lucide-react';
@@ -105,28 +106,38 @@ function HeroComposition() {
   return (
     <div className="relative h-full w-full">
       <motion.div
+        aria-hidden
         animate={{ rotate: [0, 6, 0] }}
-        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute inset-0 rounded-[40%_60%_55%_45%_/_50%_45%_55%_50%] bg-gradient-to-br from-[var(--color-accent)] via-[#c8702f] to-[#5d3a20] opacity-90"
+        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute -inset-3 rounded-[40%_60%_55%_45%_/_50%_45%_55%_50%] bg-gradient-to-br from-[var(--color-accent)] via-[#c8702f] to-[#5d3a20] opacity-40 blur-2xl"
       />
       <motion.div
-        animate={{ rotate: [0, -8, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute inset-6 rounded-[55%_45%_60%_40%_/_45%_55%_45%_55%] bg-gradient-to-tl from-[#7c4e2d] via-[#a8481a] to-transparent opacity-80 mix-blend-overlay"
-      />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="rounded-3xl border border-white/15 bg-black/25 px-8 py-6 text-center backdrop-blur-xl">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/70">Skawina</p>
-          <p className="mt-2 font-display text-5xl font-bold text-white">2007</p>
-          <p className="mt-1 text-sm text-white/80">rok założenia</p>
-        </div>
+        animate={{ rotate: [0, -4, 0] }}
+        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute inset-0 overflow-hidden rounded-[40%_60%_55%_45%_/_50%_45%_55%_50%] border border-white/15 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.55)]"
+      >
+        <Image
+          src="/photos/worker-hall.jpg"
+          alt="Pracownik PROFIX w trakcie tynkowania ściany"
+          fill
+          priority
+          sizes="(min-width: 1024px) 45vw, 100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-[var(--color-accent)]/25 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
+      </motion.div>
+      <div className="absolute left-2 top-4 rounded-2xl border border-white/20 bg-black/55 px-4 py-3 backdrop-blur-xl">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/70">Skawina</p>
+        <p className="mt-0.5 font-display text-2xl font-bold leading-none text-white">2007</p>
+        <p className="mt-1 text-[11px] text-white/70">rok założenia</p>
       </div>
-      <div className="absolute -top-4 right-12 rounded-2xl border border-white/15 bg-black/35 px-4 py-3 text-sm backdrop-blur-xl">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">Atesty</p>
+      <div className="absolute -top-4 right-10 rounded-2xl border border-white/20 bg-black/55 px-4 py-3 text-sm backdrop-blur-xl">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/65">Atesty</p>
         <p className="mt-0.5 font-display text-lg font-semibold text-white">CE + PZH</p>
       </div>
-      <div className="absolute -bottom-2 left-4 rounded-2xl border border-white/15 bg-black/35 px-4 py-3 text-sm backdrop-blur-xl">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">Transport</p>
+      <div className="absolute -bottom-2 right-6 rounded-2xl border border-white/20 bg-black/55 px-4 py-3 text-sm backdrop-blur-xl">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/65">Transport</p>
         <p className="mt-0.5 font-display text-lg font-semibold text-white">HDS + cysterny</p>
       </div>
     </div>

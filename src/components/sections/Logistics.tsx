@@ -38,18 +38,40 @@ export async function Logistics() {
               title={t('title')}
               subtitle={t('lead')}
             />
-            <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-[var(--color-border)]">
-              <Image
-                src="/photos/truck-profix.jpg"
-                alt="Ciężarówka PROFIX z HDS w trakcie dostawy materiałów"
-                fill
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent" />
-              <p className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur">
-                Flota PROFIX
-              </p>
+            <div className="space-y-3">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-[var(--color-border)]">
+                <Image
+                  src="/photos/truck-delivery.jpg"
+                  alt="Ciężarówka PROFIX z materiałami dostarczająca na osiedle domów jednorodzinnych"
+                  fill
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent" />
+                <p className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur">
+                  Flota PROFIX
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--color-border)]">
+                  <Image
+                    src="/photos/truck-detail.jpg"
+                    alt="Ciężarówka Scania PROFIX z oznaczeniem producent-profix.pl"
+                    fill
+                    sizes="(min-width: 1024px) 22vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--color-border)]">
+                  <Image
+                    src="/photos/materials-pallets.jpg"
+                    alt="Palety farb PROFIX i worki materiałów gotowe do wysyłki"
+                    fill
+                    sizes="(min-width: 1024px) 22vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </Reveal>
 
