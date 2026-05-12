@@ -7,7 +7,6 @@ import { Menu, X, Phone } from 'lucide-react';
 import { Link, usePathname } from '@/i18n/navigation';
 import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { siteConfig } from '@/content/site';
 import { cn } from '@/lib/cn';
 
@@ -72,7 +71,7 @@ export function Navbar() {
               width={800}
               height={451}
               priority
-              className="-mt-1.5 h-12 w-auto transition-transform group-hover:scale-105 dark:brightness-0 dark:invert sm:-mt-2 sm:h-14"
+              className="-mt-1.5 h-12 w-auto transition-transform group-hover:scale-105 sm:-mt-2 sm:h-14"
             />
           </Link>
 
@@ -106,7 +105,6 @@ export function Navbar() {
               <Phone size={14} strokeWidth={1.75} />
               <span className="hidden xl:inline">{siteConfig.phoneDisplay}</span>
             </a>
-            <ThemeToggle />
             <LinkButton href="#kontakt" variant="primary" size="sm" className="hidden sm:inline-flex">
               {t('cta')}
             </LinkButton>

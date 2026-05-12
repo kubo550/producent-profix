@@ -117,12 +117,12 @@ function HeroComposition() {
         className="absolute inset-0 overflow-hidden rounded-[40%_60%_55%_45%_/_50%_45%_55%_50%] border border-white/15 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.55)]"
       >
         <Image
-          src="/photos/worker-hall.jpg"
-          alt="Pracownik PROFIX w trakcie tynkowania ściany"
+          src="/photos/worker-pro.jpg"
+          alt="Pracownik PROFIX w hełmie i kamizelce w trakcie tynkowania"
           fill
           priority
           sizes="(min-width: 1024px) 45vw, 100vw"
-          className="object-cover"
+          className="object-cover object-[35%_center]"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-[var(--color-accent)]/25 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />

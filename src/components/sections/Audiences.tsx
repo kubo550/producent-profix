@@ -42,7 +42,7 @@ export async function Audiences() {
               cta={pro.cta}
               href="/dla-fachowca"
               accent="primary"
-              image="/photos/worker-pro.jpg"
+              image="/photos/worker-hall.jpg"
             />
           </Reveal>
           <Reveal delay={0.12}>
