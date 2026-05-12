@@ -33,7 +33,7 @@ export async function Footer() {
                 alt={siteConfig.name}
                 width={2400}
                 height={1500}
-                className="h-20 w-auto sm:h-24"
+                className="h-20 w-auto dark:brightness-0 dark:invert sm:h-24"
               />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-fg-muted">{t('tagline')}</p>

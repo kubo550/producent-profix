@@ -8,6 +8,7 @@ import { Link, usePathname } from '@/i18n/navigation';
 import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { siteConfig } from '@/content/site';
 import { cn } from '@/lib/cn';
 
@@ -72,7 +73,7 @@ export function Navbar() {
               width={2400}
               height={1500}
               priority
-              className="-mt-1.5 h-10 w-auto transition-transform group-hover:scale-105 sm:-mt-2 sm:h-12"
+              className="-mt-1.5 h-10 w-auto transition-transform group-hover:scale-105 dark:brightness-0 dark:invert sm:-mt-2 sm:h-12"
             />
           </Link>
 
@@ -109,6 +110,7 @@ export function Navbar() {
             <div className="hidden sm:block">
               <LocaleSwitcher />
             </div>
+            <ThemeToggle />
             <LinkButton href="#kontakt" variant="primary" size="sm" className="hidden sm:inline-flex">
               {t('cta')}
             </LinkButton>
