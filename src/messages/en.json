@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "title": "PROFIX - manufacturer of paints, plasters and construction materials in Skawina",
+    "titleTemplate": "%s | PROFIX",
+    "description": "PROFIX is a Polish manufacturer of facade paints, cement-lime plasters, insulation adhesives and finishing materials. Production facility in Skawina near Krakow, since 2007.",
+    "keywords": "cement-lime plasters, facade paints, insulation adhesives, ETICS, gypsum smoothing compounds, construction chemistry manufacturer, Skawina, Lesser Poland",
+    "ogTitle": "PROFIX - manufacturer of finishing and construction materials",
+    "ogDescription": "Paints, plasters, adhesives, insulation systems. Production in Skawina near Krakow, own fleet delivery across Poland."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "professional": "Professionals",
+    "investor": "Investors",
+    "funds": "EU Funds",
+    "tenders": "Tenders",
+    "contact": "Contact",
+    "cta": "Request a quote"
+  },
+  "hero": {
+    "eyebrow": "Manufacturer since 2007",
+    "title": "Colors for your home",
+    "subtitle": "Paints, plasters, adhesives and insulation systems. Polish production in Skawina near Krakow, own transport, certified quality.",
+    "ctaPrimary": "See products",
+    "ctaSecondary": "Request a quote",
+    "scroll": "Scroll down"
+  },
+  "usp": {
+    "items": [
+      {
+        "title": "Since 2007",
+        "description": "Nearly two decades of experience in construction chemistry production."
+      },
+      {
+        "title": "Certificates and approvals",
+        "description": "Full technical documentation, declarations of conformity, CE marking."
+      },
+      {
+        "title": "Own logistics",
+        "description": "Light trucks, HDS cranes, tankers for bulk materials. Delivery straight to the site."
+      },
+      {
+        "title": "European Funds",
+        "description": "We grow with the support of EU grants. We invest in technology and quality."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "A Lesser Poland manufacturer built for professionals",
+    "lead": "PROFIX was founded in 2007 in Skawina near Krakow, where our production facility still operates today. We make construction chemistry for the people who work with it every day: contractors, wholesalers, investors.",
+    "paragraphs": [
+      "Our range covers cement-lime and gypsum plasters, adhesives, complete insulation systems, acrylic, silicone and latex paints, primers and supporting products.",
+      "We focus on repeatable quality and short lead times. Every product comes with full technical documentation, certificates and a declaration of conformity."
+    ],
+    "stats": [
+      { "value": "17+", "label": "years on the market" },
+      { "value": "11", "label": "product categories" },
+      { "value": "100%", "label": "Polish production" }
+    ],
+    "cta": "Read more about us"
+  },
+  "categoriesSection": {
+    "eyebrow": "Products",
+    "title": "A broad range of construction products",
+    "subtitle": "Everything you need, from shell to finish. Pick a category to see the details.",
+    "cta": "See all products"
+  },
+  "audiences": {
+    "eyebrow": "Two paths",
+    "title": "Built for both contractors and investors",
+    "subtitle": "Different needs, different language. Pick the offer view that fits you.",
+    "professional": {
+      "title": "For professionals",
+      "description": "Technical specs, consumption rates, color palettes, product datasheets. Everything you need for estimating and execution.",
+      "bullets": [
+        "Technical datasheets and declarations of conformity",
+        "Wholesale delivery terms with our own fleet",
+        "Technical advisor support in product selection"
+      ],
+      "cta": "Enter the professionals zone"
+    },
+    "investor": {
+      "title": "For investors",
+      "description": "Realizations, photos, color palettes, how much material you need. Plain language, no industry jargon.",
+      "bullets": [
+        "Realizations and color inspirations",
+        "Map of the nearest points of sale",
+        "Free consultation before purchase"
+      ],
+      "cta": "Enter the investors zone"
+    }
+  },
+  "realizations": {
+    "eyebrow": "Realizations",
+    "title": "A finish that lasts for years",
+    "subtitle": "PROFIX materials work where quality and short deadlines matter. See for yourself.",
+    "labels": {
+      "before": "Before",
+      "after": "After",
+      "process": "Process",
+      "result": "Result"
+    },
+    "cases": {
+      "room": {
+        "label": "Realization - single-family home",
+        "title": "Turn-key plastering of interior rooms",
+        "description": "Developer shell - ceramic brick walls and concrete ceiling. After applying PROFIX plaster, walls and ceiling are ready for finishing and painting.",
+        "tags": ["Cement-lime plaster", "PROFIX primer", "Ready for painting"]
+      },
+      "hall": {
+        "label": "Realization - larger objects",
+        "title": "Renovations and surface finishes",
+        "description": "From renovating old walls to fitting out new halls - our crews handle objects where scale, deadline and a level finish matter. Material from our production, the job done end to end.",
+        "tags": ["Machine plaster", "Renovation", "Larger surface"]
+      }
+    }
+  },
+  "logistics": {
+    "eyebrow": "Transport",
+    "title": "We deliver materials right to the site",
+    "lead": "A well-developed logistics department lets us deliver fast and at reasonable cost. Our fleet covers everything from small drops to large pallet orders.",
+    "fleet": [
+      { "name": "Light trucks", "description": "Spot deliveries to smaller sites and stores." },
+      { "name": "Heavy trucks", "description": "Full pallets and larger wholesale orders." },
+      { "name": "Forklifts", "description": "Efficient unloading right at the construction site." },
+      { "name": "Truck with HDS", "description": "Hydraulic crane for hard-to-reach locations." },
+      { "name": "Tankers", "description": "Bulk transport of dry materials in large volumes." }
+    ]
+  },
+  "funds": {
+    "eyebrow": "European Funds",
+    "title": "Growth supported by EU grants",
+    "description": "We invest in production capacity, technology and quality with support from the European Union. Full project information and required disclosures live on a dedicated subpage.",
+    "cta": "See project information"
+  },
+  "distributorsSection": {
+    "eyebrow": "Where to buy",
+    "title": "Find your nearest point of sale",
+    "subtitle": "We work with construction stores and wholesalers across Poland. The full distributor list is on a dedicated subpage.",
+    "cta": "See points of sale",
+    "empty": "The distributor list is being updated. Get in touch - we'll advise the nearest point."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your project",
+    "subtitle": "Quote, sample, availability check, technical advice. We reply by the next working day at the latest.",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "John Smith",
+      "email": "Email address",
+      "emailPlaceholder": "john@example.com",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "+48 600 000 000",
+      "topic": "What is your inquiry about",
+      "topicOptions": {
+        "offer": "Quote or offer",
+        "technical": "Technical question",
+        "distributor": "Trade cooperation",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell us briefly what you need.",
+      "consent": "I consent to my data being processed to respond to this inquiry.",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "successTitle": "Got it!",
+      "successBody": "We'll get back to you by the next working day after 7:00 AM. Check your inbox, including the spam folder.",
+      "successUrgent": "Urgent? Call {phone}",
+      "error": "Something went wrong. Please try again or write directly to biuro@producent-profix.pl."
+    },
+    "directLabels": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Working hours"
+    },
+    "hours": "Monday - Friday, 7:00 - 16:00"
+  },
+  "footer": {
+    "tagline": "PROFIX. Colors for your home. Polish manufacturer of paints, plasters and adhesives since 2007.",
+    "sections": {
+      "company": "Company",
+      "products": "Products",
+      "info": "Information",
+      "contact": "Contact"
+    },
+    "links": {
+      "about": "About",
+      "products": "All products",
+      "professional": "For professionals",
+      "investor": "For investors",
+      "funds": "European Funds",
+      "tenders": "Tenders",
+      "distributors": "Where to buy",
+      "privacy": "Privacy policy"
+    },
+    "rights": "All rights reserved."
+  },
+  "common": {
+    "more": "Read more",
+    "back": "Back",
+    "loading": "Loading...",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content",
+    "phone": "Call",
+    "email": "Write"
+  },
+  "aboutPage": {
+    "title": "About PROFIX",
+    "subtitle": "Construction chemistry manufacturer from Skawina",
+    "intro": "PROFIX was founded in 2007 in Skawina near Krakow. Our production facility makes cement-lime and gypsum plasters, adhesives, insulation systems, acrylic, silicone and latex paints, primers and many other finishing and construction products.",
+    "missionTitle": "What matters to us",
+    "mission": "We keep adopting new technologies and improving the range. We work so that contractors keep coming back and investors can trust the result will last.",
+    "valuesTitle": "Values in daily work",
+    "values": [
+      { "title": "Repeatable quality", "description": "Quality control at every production stage, the same formula in every batch." },
+      { "title": "Short lead times", "description": "Thanks to in-house production and our own fleet we respond fast, even to large orders." },
+      { "title": "Advisory", "description": "Our technical advisor helps match the product to the substrate and site conditions." }
+    ]
+  },
+  "productsPage": {
+    "title": "PROFIX products",
+    "subtitle": "The full range of construction chemistry",
+    "intro": "Pick a category to see its description and available products. Technical datasheets, certificates and declarations of conformity are available on request.",
+    "categoriesTitle": "All categories",
+    "ctaTitle": "Can't find the product you're looking for?",
+    "ctaDescription": "We also quote made-to-order products. Get in touch - we'll advise.",
+    "ctaButton": "Ask about a product"
+  },
+  "categoryPage": {
+    "intro": "Get in touch to receive a technical datasheet, certificate or an individual quote for this category.",
+    "applicableFor": "For whom",
+    "professional": "Professional",
+    "investor": "Investor",
+    "cta": "Ask about this product",
+    "back": "Back to all categories",
+    "productsTitle": "Products in this category",
+    "productsCountOne": "product",
+    "productsCountFew": "products",
+    "productsCountMany": "products"
+  },
+  "productPage": {
+    "sections": {
+      "description": "Description",
+      "features": "Features",
+      "usage": "Use cases",
+      "application": "How to apply",
+      "specs": "Technical data"
+    },
+    "specs": {
+      "packaging": "Packaging",
+      "consumption": "Consumption",
+      "mixing": "Mixing",
+      "temperature": "Application temp.",
+      "shelfLife": "Shelf life"
+    },
+    "cta": "Ask about this product"
+  },
+  "professionalPage": {
+    "title": "For professionals",
+    "subtitle": "Construction chemistry built for contractor crews",
+    "intro": "We produce plasters, adhesives, insulation systems and paints with the people who work with them in mind. Short lead times, stable quality, full technical documentation.",
+    "sections": [
+      { "title": "Datasheets and certificates", "description": "Full product documentation, declarations of conformity and CE marking. Sent by email or included with delivery." },
+      { "title": "Technical advisor support", "description": "Matching the product to substrate, weather conditions and project specifics. Individual quotes for larger jobs." },
+      { "title": "Wholesale transport", "description": "Heavy trucks, HDS cranes, tankers for bulk materials. Delivery straight to the site, nationwide." }
+    ],
+    "ctaTitle": "Want to set up an ongoing partnership?",
+    "ctaButton": "Let's talk"
+  },
+  "investorPage": {
+    "title": "For investors",
+    "subtitle": "Materials for your home, apartment or commercial space",
+    "intro": "Building, renovating, planning to insulate the house? We'll help you choose the product, find the nearest point of sale and calculate how much material you need.",
+    "sections": [
+      { "title": "Product selection", "description": "A different plaster for underfloor heating, a different paint for the bathroom, a different adhesive for large-format porcelain tile. We'll advise without industry jargon." },
+      { "title": "Map of points of sale", "description": "We work with stores and wholesalers across Poland. We'll point you to the nearest location." },
+      { "title": "Pre-purchase consultation", "description": "Initial consumption estimate, color matching, warranty questions. Everything before you decide." }
+    ],
+    "ctaTitle": "Got a question about your build?",
+    "ctaButton": "Write to us"
+  },
+  "fundsPage": {
+    "title": "European Funds",
+    "subtitle": "Projects co-financed by the European Union",
+    "intro": "We carry out development and investment projects supported by European Union funds. Below you'll find information about our R&D and investment projects."
+  },
+  "tendersPage": {
+    "title": "Tenders",
+    "subtitle": "Current and archived procedures",
+    "intro": "We take part in tender procedures for the supply of finishing and construction materials. Active calls will be published here.",
+    "placeholder": "No active procedures. Get in touch for individual public sector inquiries."
+  },
+  "contactPage": {
+    "title": "Contact",
+    "subtitle": "One message, one phone call, one reply",
+    "intro": "Whether you're a contractor, a wholesaler or building a house, reach out in whichever way works for you. Visit address at the bottom of the page."
+  },
+  "privacyPage": {
+    "title": "Privacy policy",
+    "subtitle": "Information on personal data processing under GDPR"
+  }
+}

@@ -7,6 +7,7 @@ import { Menu, X, Phone } from 'lucide-react';
 import { Link, usePathname } from '@/i18n/navigation';
 import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
+import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
 import { siteConfig } from '@/content/site';
 import { cn } from '@/lib/cn';
 
@@ -105,6 +106,9 @@ export function Navbar() {
               <Phone size={14} strokeWidth={1.75} />
               <span className="hidden xl:inline">{siteConfig.phoneDisplay}</span>
             </a>
+            <div className="hidden sm:block">
+              <LocaleSwitcher />
+            </div>
             <LinkButton href="#kontakt" variant="primary" size="sm" className="hidden sm:inline-flex">
               {t('cta')}
             </LinkButton>
