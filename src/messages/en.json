@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "PROFIX - manufacturer of paints, plasters and construction materials in Skawina",
+    "title": "PROFIX - manufacturer of paints, plasters and construction materials in Krzeszowice",
     "titleTemplate": "%s | PROFIX",
-    "description": "PROFIX is a Polish manufacturer of facade paints, cement-lime plasters, insulation adhesives and finishing materials. Production facility in Skawina near Krakow, since 2007.",
-    "keywords": "cement-lime plasters, facade paints, insulation adhesives, ETICS, gypsum smoothing compounds, construction chemistry manufacturer, Skawina, Lesser Poland",
+    "description": "PROFIX is a Polish manufacturer of facade paints, cement-lime plasters, insulation adhesives and finishing materials. Production facility in Krzeszowice near Krakow, since 2007.",
+    "keywords": "cement-lime plasters, facade paints, insulation adhesives, ETICS, gypsum smoothing compounds, construction chemistry manufacturer, Krzeszowice, Lesser Poland",
     "ogTitle": "PROFIX - manufacturer of finishing and construction materials",
-    "ogDescription": "Paints, plasters, adhesives, insulation systems. Production in Skawina near Krakow, own fleet delivery across Poland."
+    "ogDescription": "Paints, plasters, adhesives, insulation systems. Production in Krzeszowice near Krakow, own fleet delivery across Poland."
   },
   "nav": {
     "home": "Home",
@@ -21,7 +21,7 @@
   "hero": {
     "eyebrow": "Manufacturer since 2007",
     "title": "Colors for your home",
-    "subtitle": "Paints, plasters, adhesives and insulation systems. Polish production in Skawina near Krakow, own transport, certified quality.",
+    "subtitle": "Paints, plasters, adhesives and insulation systems. Polish production in Krzeszowice near Krakow, own transport, certified quality.",
     "ctaPrimary": "See products",
     "ctaSecondary": "Request a quote",
     "scroll": "Scroll down"
@@ -49,7 +49,7 @@
   "about": {
     "eyebrow": "About us",
     "title": "A Lesser Poland manufacturer built for professionals",
-    "lead": "PROFIX was founded in 2007 in Skawina near Krakow, where our production facility still operates today. We make construction chemistry for the people who work with it every day: contractors, wholesalers, investors.",
+    "lead": "PROFIX was founded in 2007 in Krzeszowice near Krakow, where our production facility still operates today. We make construction chemistry for the people who work with it every day: contractors, wholesalers, investors.",
     "paragraphs": [
       "Our range covers cement-lime and gypsum plasters, adhesives, complete insulation systems, acrylic, silicone and latex paints, primers and supporting products.",
       "We focus on repeatable quality and short lead times. Every product comes with full technical documentation, certificates and a declaration of conformity."
@@ -211,8 +211,8 @@
   },
   "aboutPage": {
     "title": "About PROFIX",
-    "subtitle": "Construction chemistry manufacturer from Skawina",
-    "intro": "PROFIX was founded in 2007 in Skawina near Krakow. Our production facility makes cement-lime and gypsum plasters, adhesives, insulation systems, acrylic, silicone and latex paints, primers and many other finishing and construction products.",
+    "subtitle": "Construction chemistry manufacturer from Krzeszowice",
+    "intro": "PROFIX was founded in 2007 in Krzeszowice near Krakow. Our production facility makes cement-lime and gypsum plasters, adhesives, insulation systems, acrylic, silicone and latex paints, primers and many other finishing and construction products.",
     "missionTitle": "What matters to us",
     "mission": "We keep adopting new technologies and improving the range. We work so that contractors keep coming back and investors can trust the result will last.",
     "valuesTitle": "Values in daily work",

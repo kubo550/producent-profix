@@ -59,7 +59,7 @@ export async function About() {
                 </div>
                 <div>
                   <p className="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
-                    Skawina, ul. Piłsudskiego 23
+                    Krzeszowice, ul. Sienkiewicza 20
                   </p>
                   <p className="mt-2 text-sm text-white/85">
                     Pełen cykl produkcji chemii budowlanej pod jednym dachem.

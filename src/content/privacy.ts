@@ -21,7 +21,7 @@ export const privacyContent: PrivacySection[] = [
   {
     type: 'ordered',
     items: [
-      'Administratorem Danych Osobowych jest: Katarzyna Sokół prowadząca działalność gospodarczą pod nazwą F.P.H.U PROFIX Katarzyna Sokół z siedzibą w Skawinie, ul. Piłsudskiego 23, 32-050 Skawina, zarejestrowaną w Centralnej Ewidencji i Informacji o Działalności Gospodarczej, REGON 120926888, NIP 944-182-25-17, zwana dalej „F.P.H.U PROFIX”.',
+      'Administratorem Danych Osobowych jest: Katarzyna Sokół prowadząca działalność gospodarczą pod nazwą F.P.H.U PROFIX Katarzyna Sokół z siedzibą w Krzeszowicach, ul. Sienkiewicza 20, 32-065 Krzeszowice, zarejestrowaną w Centralnej Ewidencji i Informacji o Działalności Gospodarczej, REGON 120926888, NIP 944-182-25-17, zwana dalej „F.P.H.U PROFIX”.',
       {
         lead: 'Podstawą prawną przetwarzania Państwa danych osobowych przez F.P.H.U PROFIX może być:',
         sub: [
@@ -65,7 +65,7 @@ export const privacyContent: PrivacySection[] = [
   {
     type: 'list',
     items: [
-      'listownie, na adres: F.P.H.U PROFIX, ul. Piłsudskiego 23, 32-050 Skawina',
+      'listownie, na adres: F.P.H.U PROFIX, ul. Sienkiewicza 20, 32-065 Krzeszowice',
       'mailowo, na adres: sokolp1@interia.pl',
     ],
   },

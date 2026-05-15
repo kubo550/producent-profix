@@ -28,7 +28,7 @@ npm run type-check
 
 - Strona produkcyjna (stara): https://producent-profix.pl/ (i wersja archiwalna https://web.archive.org/web/2026*/https://producent-profix.pl/)
 - Facebook: https://www.facebook.com/producentprofix/
-- Adres (do potwierdzenia - patrz questions.md #1): ul. Piłsudskiego 23, 32-050 Skawina **lub** ul. Sienkiewicza 20, 32-065 Krzeszowice
+- Adres: ul. Sienkiewicza 20, 32-065 Krzeszowice
 
 ## Inspiracje od klienta
 

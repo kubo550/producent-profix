@@ -128,7 +128,7 @@ function HeroComposition() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
       </motion.div>
       <div className="absolute left-2 top-4 rounded-2xl border border-white/20 bg-black/55 px-4 py-3 backdrop-blur-xl">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/70">Skawina</p>
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/70">Krzeszowice</p>
         <p className="mt-0.5 font-display text-2xl font-bold leading-none text-white">2007</p>
         <p className="mt-1 text-[11px] text-white/70">rok założenia</p>
       </div>

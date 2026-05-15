@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "PROFIX - Producent farb, tynków i materiałów budowlanych w Skawinie",
+    "title": "PROFIX - Producent farb, tynków i materiałów budowlanych w Krzeszowicach",
     "titleTemplate": "%s | PROFIX",
-    "description": "PROFIX to polski producent farb fasadowych, tynków cementowo wapiennych, klejów do dociepleń i materiałów wykończeniowych. Hala produkcyjna w Skawinie pod Krakowem, od 2007 roku.",
-    "keywords": "tynki cementowo wapienne, farby elewacyjne, kleje do dociepleń, ETICS, gładzie gipsowe, producent chemii budowlanej, Skawina, Małopolska",
+    "description": "PROFIX to polski producent farb fasadowych, tynków cementowo wapiennych, klejów do dociepleń i materiałów wykończeniowych. Hala produkcyjna w Krzeszowicach pod Krakowem, od 2007 roku.",
+    "keywords": "tynki cementowo wapienne, farby elewacyjne, kleje do dociepleń, ETICS, gładzie gipsowe, producent chemii budowlanej, Krzeszowice, Małopolska",
     "ogTitle": "PROFIX - producent materiałów wykończeniowo budowlanych",
-    "ogDescription": "Farby, tynki, kleje, systemy dociepleń. Produkcja w Skawinie pod Krakowem, dostawa własnym transportem na terenie całej Polski."
+    "ogDescription": "Farby, tynki, kleje, systemy dociepleń. Produkcja w Krzeszowicach pod Krakowem, dostawa własnym transportem na terenie całej Polski."
   },
   "nav": {
     "home": "Home",
@@ -21,7 +21,7 @@
   "hero": {
     "eyebrow": "Producent od 2007 roku",
     "title": "Kolory dla Twojego domu",
-    "subtitle": "Farby, tynki, kleje i systemy dociepleń. Polska produkcja w Skawinie pod Krakowem, własny transport, gwarantowane atesty.",
+    "subtitle": "Farby, tynki, kleje i systemy dociepleń. Polska produkcja w Krzeszowicach pod Krakowem, własny transport, gwarantowane atesty.",
     "ctaPrimary": "Zobacz produkty",
     "ctaSecondary": "Zapytaj o ofertę",
     "scroll": "Przewiń niżej"
@@ -49,7 +49,7 @@
   "about": {
     "eyebrow": "O firmie",
     "title": "Producent z Małopolski, z myślą o profesjonalistach",
-    "lead": "PROFIX rozpoczął działalność w 2007 roku w Skawinie pod Krakowem, gdzie do dziś mieści się nasza hala produkcyjna. Robimy chemię budowlaną z myślą o ludziach, którzy z niej żyją: ekipach wykonawczych, hurtowniach, inwestorach.",
+    "lead": "PROFIX rozpoczął działalność w 2007 roku w Krzeszowicach pod Krakowem, gdzie do dziś mieści się nasza hala produkcyjna. Robimy chemię budowlaną z myślą o ludziach, którzy z niej żyją: ekipach wykonawczych, hurtowniach, inwestorach.",
     "paragraphs": [
       "Asortyment obejmuje tynki cementowo wapienne i gipsowe, kleje, kompletne systemy dociepleń, farby akrylowe, silikonowe i lateksowe, grunty oraz produkty uzupełniające.",
       "Stawiamy na powtarzalną jakość i krótkie terminy. Każdy produkt jest objęty pełną dokumentacją techniczną, atestami i deklaracją zgodności."
@@ -211,8 +211,8 @@
   },
   "aboutPage": {
     "title": "O firmie PROFIX",
-    "subtitle": "Producent chemii budowlanej ze Skawiny",
-    "intro": "PROFIX rozpoczął działalność w 2007 roku w Skawinie pod Krakowem. W naszej hali produkcyjnej powstają tynki cementowo wapienne i gipsowe, kleje, systemy dociepleń, farby akrylowe, silikonowe, lateksowe, grunty oraz wiele innych produktów wykończeniowo budowlanych.",
+    "subtitle": "Producent chemii budowlanej z Krzeszowic",
+    "intro": "PROFIX rozpoczął działalność w 2007 roku w Krzeszowicach pod Krakowem. W naszej hali produkcyjnej powstają tynki cementowo wapienne i gipsowe, kleje, systemy dociepleń, farby akrylowe, silikonowe, lateksowe, grunty oraz wiele innych produktów wykończeniowo budowlanych.",
     "missionTitle": "Co dla nas jest ważne",
     "mission": "Konsekwentnie wprowadzamy nowe technologie i ulepszamy asortyment. Pracujemy tak, żeby ekipy wykonawcze chętnie do nas wracały, a inwestorzy mieli pewność trwałego efektu.",
     "valuesTitle": "Wartości w codziennej pracy",

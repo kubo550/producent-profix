@@ -4,6 +4,8 @@ Otwarte pytania, niezgodności w materiałach i decyzje czekające na odpowiedź
 
 Last update: 2026-05-15
 
+> ✅ **Rozstrzygnięte (2026-05-15):** Adres firmy → `ul. Sienkiewicza 20, 32-065 Krzeszowice` (zaktualizowane w siteConfig, stopce, mapie, schema.org, polityce prywatności, hero, sekcji "Hala produkcyjna", metadanych SEO).
+
 ---
 
 ## 🚀 Launch-readiness — szybkie decyzje
@@ -63,15 +65,7 @@ Dodałem już `LocalBusiness` schema (firma w Skawinie, godziny pracy, NIP, REGO
 
 ## 🔴 Pilne - blokują launch
 
-### 1. Adres firmy - rozbieżność
-Dwa różne adresy w materiałach klienta:
-
-- **Strona obecnie pokazuje** (siteConfig.ts, mapa Google, schema LocalBusiness, stopka, formularz kontaktu):
-  `ul. Piłsudskiego 23, 32-050 Skawina`
-- **Karty produktów (DOCX/PDF) z 2025** mają w stopce:
-  `ul. Sienkiewicza 20, 32-065 Krzeszowice`
-
-→ **Pytanie:** Który adres jest aktualny? Czy firma się przeniosła? Trzeba podjąć decyzję - od tego zależy mapa Google, schema.org, SEO local, cała komunikacja prawna.
+### 1. ~~Adres firmy~~ ✅ Rozstrzygnięte → Krzeszowice, ul. Sienkiewicza 20.
 
 ### 2. Opakowanie Beton Kontakt - rozbieżność
 - **Karta produktu DOCX** (PROFIX BK BETON KONTAKT.docx): `OPAKOWANIA: 25 Kg`

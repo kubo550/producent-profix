@@ -12,9 +12,9 @@ export const siteConfig = {
   nip: '944-182-25-17',
   regon: '120926888',
   address: {
-    street: 'ul. Piłsudskiego 23',
-    postal: '32-050',
-    city: 'Skawina',
+    street: 'ul. Sienkiewicza 20',
+    postal: '32-065',
+    city: 'Krzeszowice',
     country: 'PL',
   },
   social: {
@@ -24,8 +24,8 @@ export const siteConfig = {
   // ENV var NEXT_PUBLIC_WEB3FORMS_KEY overrides this if set.
   web3formsKey: 'f24c825f-36fe-4924-b1e8-ea8f6d826d6c',
   geo: {
-    lat: 49.9756,
-    lng: 19.8267,
+    lat: 50.1349,
+    lng: 19.6325,
   },
 } as const;
 

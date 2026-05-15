@@ -67,7 +67,7 @@ function PlaceholderImage() {
       <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/55 px-3 py-1.5 backdrop-blur-md">
         <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
         <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/90">
-          Skawina · HQ
+          Krzeszowice · HQ
         </span>
       </div>
     </div>
