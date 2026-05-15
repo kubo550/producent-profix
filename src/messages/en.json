@@ -208,7 +208,8 @@
     "closeMenu": "Close menu",
     "skipToContent": "Skip to content",
     "phone": "Call",
-    "email": "Write"
+    "email": "Write",
+    "placeholderImage": "Image to be set"
   },
   "aboutPage": {
     "title": "About PROFIX",

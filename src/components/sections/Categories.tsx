@@ -4,21 +4,35 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
+import { PlaceholderBadge } from '@/components/ui/PlaceholderBadge';
 import { Link } from '@/i18n/navigation';
 import { categories } from '@/content/categories';
 
-// CDN seeds per featured tile — swap with real product/material shots later
-const tileSeeds = [
-  'profix-cat-1',
-  'profix-cat-2',
-  'profix-cat-3',
-  'profix-cat-4',
-  'profix-cat-5',
-  'profix-cat-6',
-  'profix-cat-7',
-  'profix-cat-8',
-  'profix-cat-9',
-];
+/**
+ * Themed Loremflickr placeholder URLs per category slug. Each card gets a
+ * stable image (lock=N) tagged to the actual material category. Swap to brand
+ * imagery later — see /photos/products for the existing pattern.
+ */
+const categoryThemes: Record<string, { tag: string; lock: number }> = {
+  'farby-fasadowe-elewacyjne': { tag: 'facade', lock: 11 },
+  'tynki-cementowo-wapienne': { tag: 'plaster', lock: 12 },
+  'tynki-cienkowarstwowe': { tag: 'facade', lock: 13 },
+  'tynki-produkty-uzupelniajace': { tag: 'plaster', lock: 14 },
+  'zaprawy-klejace-do-systemow-docieplen': { tag: 'insulation', lock: 15 },
+  'grunty': { tag: 'primer', lock: 16 },
+  'farby-wewnetrzne': { tag: 'paint', lock: 17 },
+  'docieplenia-produkty-uzupelniajace': { tag: 'insulation', lock: 18 },
+  'szpachle-i-gladzie': { tag: 'wall', lock: 19 },
+  'kleje': { tag: 'tile', lock: 20 },
+  'betony': { tag: 'concrete', lock: 21 },
+  'inne-produkty': { tag: 'tools', lock: 22 },
+};
+
+function categoryImage(slug: string, coverImage?: string): string {
+  if (coverImage) return coverImage;
+  const theme = categoryThemes[slug] ?? { tag: 'construction', lock: 99 };
+  return `https://loremflickr.com/720/450/${theme.tag}?lock=${theme.lock}`;
+}
 
 export async function Categories() {
   const t = await getTranslations('categoriesSection');
@@ -31,17 +45,6 @@ export async function Categories() {
       id="produkty"
       className="section-alt relative overflow-hidden py-24 sm:py-32"
     >
-      {/* Decorative CDN material backdrop */}
-      <div aria-hidden className="pointer-events-none absolute -right-20 top-20 -z-10 h-[420px] w-[420px] overflow-hidden rounded-full opacity-30">
-        <Image
-          src="https://picsum.photos/seed/profix-cat-hero/800/800"
-          alt=""
-          fill
-          sizes="420px"
-          className="object-cover mix-blend-multiply"
-        />
-      </div>
-
       <Container size="xl">
         <SectionHeading
           eyebrow={t('eyebrow')}
@@ -56,19 +59,20 @@ export async function Categories() {
                 href={`/produkty/${cat.slug}`}
                 className="group relative flex h-full flex-col overflow-hidden rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] shadow-[var(--shadow-soft)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[rgb(31_24_21/0.22)] hover:shadow-[var(--shadow-soft-lg)]"
               >
-                {/* Photo header — material/category swatch */}
-                <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--color-border)]">
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-bg-deep)]">
                   <Image
-                    src={`https://picsum.photos/seed/${tileSeeds[i] ?? `profix-cat-${i}`}/720/450`}
+                    src={categoryImage(cat.slug, cat.coverImage)}
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 30vw, 100vw"
+                    unoptimized={!cat.coverImage}
                     className="h-photo-warm object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-bg-deep)]/30 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-deep)]/30 via-transparent to-transparent" />
+                  {!cat.coverImage && <PlaceholderBadge className="bottom-3 left-3" />}
                   <span
                     aria-hidden
-                    className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-paper)]/95 text-[var(--color-fg)] shadow-[var(--shadow-soft)] transition-all duration-300 group-hover:bg-[var(--color-accent)] group-hover:text-[var(--color-accent-fg)]"
+                    className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-paper)]/95 text-[var(--color-fg)] shadow-[var(--shadow-soft)] transition-all duration-300 group-hover:bg-[var(--color-accent)] group-hover:text-[var(--color-accent-fg)]"
                   >
                     <ArrowUpRight size={16} strokeWidth={1.75} />
                   </span>

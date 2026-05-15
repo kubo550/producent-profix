@@ -26,18 +26,15 @@ export function Hero() {
       ref={ref}
       className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-28 sm:pt-32"
     >
-      {/* Atmospheric backdrop — warm material/plaster texture, swap to brand image later */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <Image
-          src="https://picsum.photos/seed/profix-hero-texture/1600/1000"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover opacity-20 mix-blend-multiply"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)]/60 via-[var(--color-bg)]/85 to-[var(--color-bg)]" />
-      </div>
+      {/* Warm atmospheric wash — CSS-only, no CDN */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            'radial-gradient(ellipse 60% 50% at 85% 20%, rgba(184, 92, 42, 0.10), transparent 60%), radial-gradient(ellipse 50% 40% at 10% 80%, rgba(200, 157, 90, 0.10), transparent 60%)',
+        }}
+      />
 
       <Container size="xl">
         <motion.div style={{ y, opacity }} className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">

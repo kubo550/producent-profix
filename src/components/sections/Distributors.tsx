@@ -5,6 +5,7 @@ import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { LinkButton } from '@/components/ui/Button';
+import { PlaceholderBadge } from '@/components/ui/PlaceholderBadge';
 import { distributors } from '@/content/distributors';
 
 export async function Distributors() {
@@ -79,6 +80,7 @@ function PlaceholderImage() {
       >
         — Małopolska, PL
       </p>
+      <PlaceholderBadge className="bottom-4 right-4" />
     </figure>
   );
 }

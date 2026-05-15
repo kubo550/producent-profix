@@ -208,7 +208,8 @@
     "closeMenu": "Zamknij menu",
     "skipToContent": "Przejdź do treści",
     "phone": "Zadzwoń",
-    "email": "Napisz"
+    "email": "Napisz",
+    "placeholderImage": "Zdjęcie do ustawienia"
   },
   "aboutPage": {
     "title": "O firmie PROFIX",
