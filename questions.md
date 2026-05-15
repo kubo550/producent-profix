@@ -2,7 +2,62 @@
 
 Otwarte pytania, niezgodności w materiałach i decyzje czekające na odpowiedź klienta. Zapisuję na bieżąco — przed launchem trzeba przejść po liście.
 
-Last update: 2026-05-12
+Last update: 2026-05-15
+
+---
+
+## 🚀 Launch-readiness — szybkie decyzje
+
+Przy każdym punkcie jest **moja propozycja domyślna** — wystarczy potwierdzić lub odrzucić.
+
+### A. Lista dystrybutorów
+Sekcja "Znajdź najbliższy punkt sprzedaży" jest na stronie, ale lista dystrybutorów jest pusta — sekcja pokazuje stan "lista w aktualizacji".
+
+→ **Propozycja:** Klient przyśle plik (Excel/PDF) z dystrybutorami (nazwa, miasto, adres, telefon). Dosypię punkty na mapę i listę. Bez tego CTA "Zobacz listę punktów sprzedaży" prowadzi tylko do formularza kontaktowego.
+
+### B. Ochrona formularza przed spamem
+Formularz ma honeypot, ale to za mało dla produkcji — boty znajdą adres `biuro@`.
+
+→ **Propozycja:** **Cloudflare Turnstile** (darmowy, niewidzialny dla użytkownika, jak reCAPTCHA ale bez Google). Wymaga ode mnie ~30 min konfiguracji + założenia konta Cloudflare przez klienta (free).
+
+### C. Hosting / deployment
+→ **Propozycja:** **Vercel** (twórcy Next.js, darmowy plan starcza dla wizytówki, SSL + CDN out-of-the-box). Alternatywy: Netlify, własny VPS (więcej pracy).
+
+### D. Domena docelowa + SSL
+→ **Propozycja:** Zostajemy na `producent-profix.pl`, robię redirect 301 z ewentualnych starych URL. Potrzebny dostęp do DNS (lub kontakt z osobą która zarządza).
+
+### E. Google Analytics 4 + Search Console
+Obecnie kod jest gotowy, ale `NEXT_PUBLIC_GA_ID` pusty.
+
+→ **Propozycja:** Klient zakłada GA4 i Search Console (15 min, podaję instrukcję), ja podpinam. Search Console pozwoli śledzić pozycje w Google + zgłosić sitemap.
+
+### F. Strona zarządzania zgodami cookies
+RODO wymaga możliwości wycofania zgody w każdej chwili — nie wystarczy pierwszy banner.
+
+→ **Propozycja:** Mała podstrona `/preferencje-cookies` z togglem "analityka on/off" + link w stopce. ~1h pracy.
+
+### G. Dokumenty do pobrania (atesty, DoP, karty PDF)
+→ **Propozycja:** Sekcja "Pobierz" w `/dla-fachowca`, każdy plik wrzucamy do `/public/dokumenty/`. Klient przysyła PDF-y w paczce — porządkuję, opisuję, podpinam. Bez tego sekcja "Atesty" w hero to tylko deklaracja.
+
+### H. Optymalizacja zdjęć
+Część obrazków na stronie waży ~1 MB (powinno być max 200 KB). Pogarsza Lighthouse Performance i Core Web Vitals.
+
+→ **Propozycja:** Konwersja wszystkich zdjęć do WebP/AVIF + multi-rozmiary. Robione lokalnie, ~1h. Nic od klienta nie potrzebuję poza akceptacją.
+
+### I. Monitoring i powiadomienia o błędach
+Po wdrożeniu nie wiemy czy strona się sypie do czasu zgłoszenia przez klienta.
+
+→ **Propozycja:** Free plan **Sentry** (5k błędów/miesiąc) — email do mnie gdy coś pęknie. ~30 min konfiguracji.
+
+### J. OG image (preview na Facebooku / LinkedIn)
+Aktualnie strona pokazuje zdjęcie pracownika z `/photos/worker-pro.jpg` jako miniaturkę przy share.
+
+→ **Propozycja:** Albo zostawiamy zdjęcie pracownika, albo robimy dedykowaną grafikę z logo + tagline (lepsze brand recognition). Wymaga decyzji.
+
+### K. Schema.org / Local SEO
+Dodałem już `LocalBusiness` schema (firma w Skawinie, godziny pracy, NIP, REGON, telefon) — dzięki temu Google może pokazać firmę w wynikach lokalnych z mapką.
+
+→ **Pytanie do klienta:** Czy jest profil **Google Business Profile** (kiedyś Google Moja Firma)? Jeśli tak — chętnie połączę. Jeśli nie — warto założyć, zwiększy widoczność lokalną.
 
 ---
 
@@ -161,3 +216,73 @@ Strona używa pomarańczowego akcentu `#c2581f` (oatmeal industrial). Czy klient
 
 ### 18. Typografia
 Obecnie: Open Sans + display font. Czy klient ma preferowane fonty?
+
+---
+
+## 📦 Co strona już zawiera
+
+Krótkie podsumowanie zakresu prac dla Pańskiej orientacji — wszystko poniżej jest **już zaimplementowane i działa**:
+
+### Treść i struktura
+- **10 podstron**: Strona główna, O firmie, Produkty (lista kategorii), Karty kategorii (15 szt.), **Karty produktowe (97 szt.)**, Dla fachowca, Dla inwestora, Fundusze europejskie, Przetargi, Kontakt, Polityka prywatności
+- **Mega-menu z hierarchią produktów** — szybki dostęp do każdej kategorii z każdej podstrony
+- **Sekcje na home**: hero ze zdjęciem, USP strip, O firmie, Kategorie produktów (z wyróżnieniami), Strefy docelowe (fachowiec/inwestor), Realizacje, Logistyka, Fundusze UE, Dystrybutorzy, Kontakt z formularzem i mapą Google
+
+### Design i UX
+- **Pełna responsywność** — desktop, tablet, mobile (od 360 px wzwyż)
+- **Tryb jasny i ciemny** (auto-detekcja + przełącznik w nawigacji)
+- **Animacje** — subtelne reveal-on-scroll, parallax w hero, animowany mega-menu, pulsujący pin na mapie
+- **Floating CTA** na mobile (zawsze widoczny przycisk "Zadzwoń")
+- **Dostępność (a11y)**: skip-link do treści, focus rings, kontrast WCAG AA, atrybuty ARIA na menu i formularzach
+
+### Wielojęzyczność
+- **PL + EN** w pełni przetłumaczone (przełącznik flag w nawigacji)
+- Osobne adresy URL dla każdej wersji (`/pl/...`, `/en/...`) — dobre dla SEO międzynarodowego
+- Automatyczne tagi `hreflang` w sitemapie
+
+### SEO
+- **Metadane per podstrona** (title, description, Open Graph, Twitter Card)
+- **Sitemap.xml** z 130+ adresami (wszystkie produkty, kategorie, podstrony, w obu językach)
+- **Robots.txt**
+- **Schema.org / JSON-LD**: `LocalBusiness` + `Manufacturer` na home (z NIP, REGON, godzinami pracy, geolokalizacją), `Product` na każdej karcie produktu, `BreadcrumbList` dla nawigacji okruszkowej — to daje szansę na rich snippets w Google
+- **OG image** dla podglądu przy udostępnieniu na Facebooku / LinkedIn / WhatsAppie
+- Statyczne renderowanie wszystkich podstron (SSG) — błyskawiczne ładowanie, idealne dla SEO
+
+### Formularz kontaktowy
+- 4 typy zapytań (oferta, doradztwo techniczne, dystrybucja, inne)
+- Walidacja pól, honeypot anty-bot, link do polityki prywatności w klauzuli RODO
+- Wysyłka przez Web3Forms na `biuro@producent-profix.pl`
+- Komunikaty sukcesu / błędu, przycisk "Pilne? Zadzwoń" w success state
+
+### Wydajność i jakość kodu
+- **Next.js 16** + React 19 (najnowsze wersje, wsparcie do 2027+)
+- **Statyczna generacja** wszystkich podstron — strona ładuje się natychmiast, hosting kosztuje grosze
+- **Optymalizacja obrazków** przez `next/image` (lazy loading, responsywne rozmiary, formaty WebP/AVIF)
+- **Code splitting** — przeglądarka pobiera tylko kod potrzebny na danej podstronie
+- **Type-safety** (TypeScript) — błędy wyłapywane na etapie buildu, nie w produkcji
+- **Lint i type-check** przechodzą bez błędów
+
+### Bezpieczeństwo
+- **Nagłówki bezpieczeństwa** (HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy, X-Content-Type-Options) — chronią przed clickjackingiem, sniffingiem MIME, wyciekiem referrera
+- **Brak ujawniania technologii** w nagłówku `x-powered-by`
+- **Honeypot** w formularzu (filtruje proste boty)
+- **Cookie banner zgodny z RODO** — fundament pod GA4 Consent Mode
+
+### Compliance
+- Polityka prywatności jako osobna podstrona
+- Klauzula RODO przy formularzu z linkiem do polityki
+- Cookie banner z opcjami "Akceptuję" / "Odrzuć"
+- Dane firmy (legalName, NIP, REGON) w stopce i strukturze danych
+
+---
+
+## ⏭ Co zostaje do zrobienia (sygnalnie, bez decyzji klienta)
+
+Drobne usprawnienia produkcyjne, które mogę zrobić **bez wstrzymywania launchu** — w trybie iteracyjnym po wdrożeniu:
+
+- Optymalizacja zdjęć (WebP/AVIF, redukcja ciężkich plików ~1 MB → ~150 KB)
+- Strona `/preferencje-cookies` (zarządzanie zgodami)
+- Captcha (Turnstile) na formularzu
+- Sentry monitoring
+- Drobne karty techniczne uzupełnione gdy klient prześle materiały
+

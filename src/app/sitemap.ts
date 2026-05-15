@@ -1,10 +1,13 @@
 import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/content/site';
 import { categories } from '@/content/categories';
+import { products } from '@/content/products';
+import { routing } from '@/i18n/routing';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
   const now = new Date();
+  const defaultLocale = routing.defaultLocale;
 
   const staticPaths = [
     { path: '', priority: 1.0, changeFreq: 'weekly' as const },
@@ -24,10 +27,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFreq: 'monthly' as const,
   }));
 
-  return [...staticPaths, ...categoryPaths].map(({ path, priority, changeFreq }) => ({
-    url: `${base}${path}`,
+  const productPaths = products.map((p) => ({
+    path: `/produkty/${p.categorySlug}/${p.slug}`,
+    priority: 0.6,
+    changeFreq: 'monthly' as const,
+  }));
+
+  return [...staticPaths, ...categoryPaths, ...productPaths].map(({ path, priority, changeFreq }) => ({
+    url: `${base}/${defaultLocale}${path}`,
     lastModified: now,
     changeFrequency: changeFreq,
     priority,
+    alternates: {
+      languages: Object.fromEntries(
+        routing.locales.map((locale) => [locale, `${base}/${locale}${path}`])
+      ),
+    },
   }));
 }

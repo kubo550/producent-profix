@@ -56,16 +56,25 @@ export async function generateMetadata({
     alternates: { canonical: '/' },
     openGraph: {
       type: 'website',
-      locale: 'pl_PL',
+      locale: locale === 'en' ? 'en_US' : 'pl_PL',
       url: siteConfig.url,
       title: t('ogTitle'),
       description: t('ogDescription'),
       siteName: siteConfig.name,
+      images: [
+        {
+          url: '/photos/worker-pro.jpg',
+          width: 1200,
+          height: 630,
+          alt: t('ogTitle'),
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('ogTitle'),
       description: t('ogDescription'),
+      images: ['/photos/worker-pro.jpg'],
     },
     robots: {
       index: true,
@@ -101,14 +110,20 @@ export default async function LocaleLayout({
 
   const organizationJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': ['Organization', 'LocalBusiness', 'Manufacturer'],
+    '@id': `${siteConfig.url}#org`,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     url: siteConfig.url,
+    logo: `${siteConfig.url}/brand/logo-on-light.png`,
+    image: `${siteConfig.url}/photos/worker-pro.jpg`,
     email: siteConfig.email,
     telephone: siteConfig.phone,
     foundingDate: String(siteConfig.foundedYear),
     description: t('description'),
+    vatID: siteConfig.nip,
+    taxID: siteConfig.regon,
+    priceRange: '$$',
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address.street,
@@ -121,6 +136,15 @@ export default async function LocaleLayout({
       latitude: siteConfig.geo.lat,
       longitude: siteConfig.geo.lng,
     },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '07:00',
+        closes: '16:00',
+      },
+    ],
+    areaServed: { '@type': 'Country', name: 'Poland' },
     sameAs: [siteConfig.social.facebook],
   };
 

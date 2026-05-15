@@ -58,38 +58,37 @@ export default async function ProductPage({
 
   const t = await getTranslations('productPage');
 
+  const productUrl = `${siteConfig.url}/${locale}/produkty/${cat.slug}/${p.slug}`;
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: p.name,
     description: p.description,
     brand: { '@type': 'Brand', name: p.brand ?? siteConfig.name },
-    manufacturer: {
-      '@type': 'Organization',
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    manufacturer: { '@id': `${siteConfig.url}#org` },
     category: cat.name,
-    url: `${siteConfig.url}/produkty/${cat.slug}/${p.slug}`,
+    url: productUrl,
+    ...(p.image ? { image: `${siteConfig.url}${p.image}` } : {}),
+    ...(p.norms && p.norms.length > 0 ? { hasEnergyConsumptionDetails: undefined, additionalProperty: p.norms.map((n) => ({ '@type': 'PropertyValue', name: 'Norm', value: n })) } : {}),
   };
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
-      { '@type': 'ListItem', position: 2, name: 'Produkty', item: `${siteConfig.url}/produkty` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteConfig.url}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Produkty', item: `${siteConfig.url}/${locale}/produkty` },
       {
         '@type': 'ListItem',
         position: 3,
         name: cat.name,
-        item: `${siteConfig.url}/produkty/${cat.slug}`,
+        item: `${siteConfig.url}/${locale}/produkty/${cat.slug}`,
       },
       {
         '@type': 'ListItem',
         position: 4,
         name: p.name,
-        item: `${siteConfig.url}/produkty/${cat.slug}/${p.slug}`,
+        item: productUrl,
       },
     ],
   };

@@ -4,6 +4,7 @@ import { useState, type FormEvent } from 'react';
 import { useTranslations } from 'next-intl';
 import { Phone, Send } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { Link } from '@/i18n/navigation';
 import { siteConfig } from '@/content/site';
 
 type Status = 'idle' | 'sending' | 'ok' | 'error';
@@ -135,7 +136,16 @@ export function ContactForm() {
           required
           className="mt-0.5 h-4 w-4 flex-none accent-[var(--color-accent)]"
         />
-        <span>{t('consent')}</span>
+        <span>
+          {t('consent')}{' '}
+          <Link
+            href="/polityka-prywatnosci"
+            className="text-[var(--color-accent)] underline-offset-2 hover:underline"
+          >
+            {t('consentLink')}
+          </Link>
+          .
+        </span>
       </label>
 
       {/* Honeypot - bots fill, humans don't */}

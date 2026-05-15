@@ -11,7 +11,7 @@ import { LinkButton } from '@/components/ui/Button';
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { siteConfig } from '@/content/site';
-import { categories, getCategory } from '@/content/categories';
+import { getCategory } from '@/content/categories';
 import { cn } from '@/lib/cn';
 
 /** Mega-menu organization: top-level entries + optional cascading children.
@@ -65,6 +65,15 @@ export function Navbar() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [expandedSlug, setExpandedSlug] = useState<string | null>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [lastPath, setLastPath] = useState(pathname);
+
+  // Reset mega-menu on route change. Canonical "adjust state when a prop changes" pattern:
+  // setState during render is allowed when gated on a value change.
+  if (lastPath !== pathname) {
+    setLastPath(pathname);
+    if (megaOpen) setMegaOpen(false);
+    if (expandedSlug !== null) setExpandedSlug(null);
+  }
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/');
@@ -98,12 +107,6 @@ export function Navbar() {
       document.body.style.overflow = '';
     };
   }, [open]);
-
-  // Close mega-menu when navigating to a new path
-  useEffect(() => {
-    setMegaOpen(false);
-    setExpandedSlug(null);
-  }, [pathname]);
 
   // Esc closes mega-menu
   useEffect(() => {

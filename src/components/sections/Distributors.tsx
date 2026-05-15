@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { MapPin, Search } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
@@ -37,21 +38,38 @@ export async function Distributors() {
                 </LinkButton>
               </div>
 
-              <div className="relative hidden h-64 w-64 lg:block">
-                <div className="absolute inset-0 rounded-full bg-[var(--color-accent)]/15" />
-                <div className="absolute inset-6 rounded-full border-2 border-dashed border-[var(--color-accent)]/40" />
-                <div className="absolute inset-12 rounded-full border border-[var(--color-accent)]/30" />
-                <div className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--color-accent)] text-[var(--color-accent-fg)] shadow-[0_0_40px_rgba(232,132,58,0.4)]">
-                  <MapPin size={22} strokeWidth={1.75} />
-                </div>
-                <p className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-xs uppercase tracking-[0.16em] text-fg-subtle">
-                  Skawina
-                </p>
-              </div>
+              <PlaceholderImage />
             </div>
           </div>
         </Reveal>
       </Container>
     </section>
+  );
+}
+
+/**
+ * TEMP: generic placeholder image from picsum.photos (CDN).
+ * Seeded so the rendered image stays stable across deploys.
+ * Replace with branded photo / map once client provides distributors list.
+ */
+function PlaceholderImage() {
+  return (
+    <div className="relative hidden h-72 w-72 overflow-hidden rounded-2xl border border-[var(--color-border)] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.4)] lg:block">
+      <Image
+        src="https://picsum.photos/seed/profix-distributors/600/600"
+        alt=""
+        fill
+        sizes="288px"
+        className="object-cover"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[var(--color-accent)]/30 via-transparent to-transparent mix-blend-multiply" />
+      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+      <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/55 px-3 py-1.5 backdrop-blur-md">
+        <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+        <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/90">
+          Skawina · HQ
+        </span>
+      </div>
+    </div>
   );
 }

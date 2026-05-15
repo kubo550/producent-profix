@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { ArrowUpRight, MessageSquare } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
@@ -41,17 +40,6 @@ export default async function ProductsPage({
                   href={`/produkty/${cat.slug}`}
                   className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)] hover:bg-[var(--color-surface-strong)] hover:shadow-[0_20px_60px_-20px_rgba(232,132,58,0.35)]"
                 >
-                  {cat.coverImage && (
-                    <div className="relative aspect-[4/3] overflow-hidden border-b border-[var(--color-border)] bg-white">
-                      <Image
-                        src={cat.coverImage}
-                        alt={cat.name}
-                        fill
-                        sizes="(min-width: 1024px) 30vw, 100vw"
-                        className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                  )}
                   <div className="relative flex flex-1 flex-col justify-between p-6">
                     <div className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-fg-muted)] transition-all group-hover:border-[var(--color-accent)] group-hover:bg-[var(--color-accent)] group-hover:text-[var(--color-accent-fg)]">
                       <ArrowUpRight size={16} strokeWidth={1.75} />
