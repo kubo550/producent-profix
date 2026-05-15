@@ -80,20 +80,20 @@ function MapEmbed() {
   const embedSrc = `https://maps.google.com/maps?q=${query}&hl=pl&z=15&output=embed`;
   const openUrl = `https://maps.google.com/?q=${query}`;
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] backdrop-blur-xl">
+    <div className="relative overflow-hidden rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] shadow-[var(--shadow-soft)]">
       <iframe
         src={embedSrc}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         title={`Mapa: ${address}`}
         className="h-72 w-full sm:h-96"
-        style={{ border: 0, filter: 'grayscale(0.25) contrast(0.95)' }}
+        style={{ border: 0, filter: 'sepia(0.15) contrast(0.95)' }}
       />
       <a
         href={openUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-[var(--color-surface-strong)] px-3.5 py-2 text-xs font-medium text-[var(--color-fg)] shadow-lg backdrop-blur-xl transition-all hover:gap-3"
+        className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-[var(--color-paper)] px-3.5 py-2 text-xs font-medium text-[var(--color-fg)] shadow-[var(--shadow-soft)] transition-all hover:gap-3"
       >
         <MapPin size={14} strokeWidth={1.75} />
         Otwórz w Google Maps
@@ -113,13 +113,13 @@ function ContactCard({
   value: React.ReactNode;
 }) {
   return (
-    <div className="flex items-start gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 backdrop-blur-xl">
-      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+    <div className="group flex items-start gap-4 rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-5 shadow-[var(--shadow-soft)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 hover:border-[rgb(31_24_21/0.22)] hover:shadow-[var(--shadow-soft-lg)]">
+      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
         {icon}
       </div>
       <div>
-        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-fg-subtle">{label}</p>
-        <p className="mt-1 text-base text-[var(--color-fg)]">{value}</p>
+        <p className="h-eyebrow">{label}</p>
+        <p className="mt-1.5 text-base text-[var(--color-fg)]">{value}</p>
       </div>
     </div>
   );

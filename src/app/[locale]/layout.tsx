@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { Inter, Outfit, JetBrains_Mono } from 'next/font/google';
+import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -21,9 +21,10 @@ const inter = Inter({
   display: 'swap',
 });
 
-const outfit = Outfit({
+const fraunces = Fraunces({
   variable: '--font-display',
   subsets: ['latin', 'latin-ext'],
+  axes: ['SOFT', 'opsz'],
   display: 'swap',
 });
 
@@ -152,7 +153,7 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${outfit.variable} ${jetbrains.variable} relative min-h-dvh font-sans`}
+        className={`${inter.variable} ${fraunces.variable} ${jetbrains.variable} relative min-h-dvh font-sans`}
       >
         <ThemeProvider>
           <NextIntlClientProvider>

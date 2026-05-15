@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { CalendarCheck, MapPin, Sparkles, Target } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
+import { Funds } from '@/components/sections/Funds';
 import { Reveal } from '@/components/ui/Reveal';
 import { fundsProjects, statusLabel } from '@/content/funds';
 
@@ -23,31 +23,14 @@ export default async function FundsPage({
 
   return (
     <>
-      <PageHero eyebrow="Fundusze Europejskie" title={t('title')} subtitle={t('subtitle')} />
+      <PageHero eyebrow="Fundusze Europejskie" title={t('title')} subtitle={t('subtitle')}>
+        <p className="text-pretty text-base leading-[1.7] text-fg-muted sm:text-lg">
+          {t('intro')}
+        </p>
+      </PageHero>
 
-      <section className="relative pb-12">
-        <Container size="xl">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-gradient-to-r from-[#003399] via-[#0040b3] to-[#ffd700]/30 p-6 sm:p-8">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_30%,rgba(255,215,0,0.25),transparent_60%)]" />
-              <div className="relative flex flex-col items-start gap-6 lg:flex-row lg:items-center">
-                <div className="rounded-2xl bg-white/95 p-3 shadow-xl">
-                  <Image
-                    src="/legacy/logo-eu.png"
-                    alt="Fundusze Europejskie i Unia Europejska"
-                    width={300}
-                    height={68}
-                    className="h-14 w-auto sm:h-16"
-                  />
-                </div>
-                <p className="text-pretty text-base leading-relaxed text-white/90 sm:text-lg">
-                  {t('intro')}
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
+      <Funds hideCta />
+
 
       <section className="relative pb-24">
         <Container size="md">

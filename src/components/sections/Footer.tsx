@@ -13,6 +13,7 @@ export async function Footer() {
     { href: '/o-firmie' as const, key: 'about' },
     { href: '/fundusze-europejskie' as const, key: 'funds' },
     { href: '/przetargi' as const, key: 'tenders' },
+    { href: '/kontakt' as const, key: 'contact' },
     { href: '/polityka-prywatnosci' as const, key: 'privacy' },
   ];
 
@@ -25,8 +26,9 @@ export async function Footer() {
   return (
     <footer className="relative mt-16 border-t border-[var(--color-border)] bg-[var(--color-bg-2)] py-16">
       <Container size="xl">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div className="space-y-5">
+        <div className="grid items-start gap-12 lg:grid-cols-[1.6fr_1fr_1fr] lg:gap-16">
+          {/* Brand column */}
+          <div className="space-y-6">
             <Link href="/" aria-label={siteConfig.name} className="inline-block">
               <Image
                 src="/brand/logo-transparent.png"
@@ -37,7 +39,7 @@ export async function Footer() {
               />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-fg-muted">{t('tagline')}</p>
-            <div className="space-y-2 text-sm text-fg-muted">
+            <address className="not-italic space-y-2 text-sm text-fg-muted">
               <p className="flex items-start gap-2.5">
                 <MapPin
                   size={14}
@@ -71,6 +73,17 @@ export async function Footer() {
                   {siteConfig.email}
                 </a>
               </p>
+            </address>
+            <div className="flex items-center gap-3 pt-2">
+              <a
+                href={siteConfig.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-paper)] text-[var(--color-fg-muted)] shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+              >
+                <FacebookIcon />
+              </a>
             </div>
           </div>
 
@@ -89,27 +102,9 @@ export async function Footer() {
               </FooterLink>
             ))}
           </FooterCol>
-
-          <FooterCol title={t('sections.contact')}>
-            <a
-              href={siteConfig.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-fg-muted transition-colors hover:text-[var(--color-fg)]"
-            >
-              <FacebookIcon />
-              Facebook
-            </a>
-            <Link
-              href="/kontakt"
-              className="text-sm text-fg-muted transition-colors hover:text-[var(--color-fg)]"
-            >
-              {t('links.about')}
-            </Link>
-          </FooterCol>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-[var(--color-border)] pt-8 text-xs text-fg-subtle sm:flex-row sm:items-center">
+        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-[var(--color-border)] pt-8 text-xs text-fg-subtle sm:flex-row sm:items-center">
           <p>
             &copy; {year} {siteConfig.legalName}. {t('rights')}
           </p>
@@ -133,8 +128,8 @@ export async function Footer() {
 function FacebookIcon() {
   return (
     <svg
-      width="14"
-      height="14"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="currentColor"
       aria-hidden="true"
@@ -147,7 +142,7 @@ function FacebookIcon() {
 function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="space-y-4">
-      <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-fg-subtle">{title}</p>
+      <p className="h-eyebrow">{title}</p>
       <ul className="space-y-2.5">
         {Array.isArray(children) ? (
           children.map((c, i) => <li key={i}>{c}</li>)

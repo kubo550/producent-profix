@@ -14,21 +14,24 @@ export function PageHero({
 }) {
   return (
     <section className="relative pb-12 pt-36 sm:pb-20 sm:pt-44">
-      {/* Marker triggers body:has(.atmo-quiet)::before to dim atmospheric on detail pages. */}
+      {/* Dim atmospheric backdrop on detail pages */}
       <span className="atmo-quiet sr-only" aria-hidden />
       <Container size="xl">
-        <div className="max-w-3xl space-y-5">
+        <div className="max-w-3xl space-y-6">
           {eyebrow && (
-            <p className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">
-              <span className="h-px w-8 bg-[var(--color-accent)]" />
-              {eyebrow}
-            </p>
+            <div className="flex items-center gap-3">
+              <span className="h-rule" />
+              <span className="h-eyebrow text-[var(--color-fg-muted)]">{eyebrow}</span>
+            </div>
           )}
-          <h1 className="text-balance text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
+          <h1
+            className="font-display text-balance text-5xl font-medium leading-[1.02] tracking-[-0.015em] sm:text-6xl lg:text-[4.5rem]"
+            style={{ fontVariationSettings: '"SOFT" 50, "opsz" 144' }}
+          >
             {title}
           </h1>
           {subtitle && (
-            <p className="text-pretty text-lg leading-relaxed text-fg-muted sm:text-xl">
+            <p className="text-pretty text-lg leading-[1.65] text-fg-muted sm:text-xl">
               {subtitle}
             </p>
           )}

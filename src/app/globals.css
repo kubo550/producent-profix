@@ -3,90 +3,120 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* These fonts are injected at runtime by next/font (see layout.tsx). Fallbacks let
-   * the IDE/CSS linter resolve them at static-analysis time. */
+  /* Fonts injected at runtime by next/font (see layout.tsx). */
   --font-sans: var(--font-sans-display, ui-sans-serif), system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: var(--font-display, ui-sans-serif), system-ui, sans-serif;
+  --font-display: var(--font-display, ui-serif), Georgia, "Times New Roman", serif;
   --font-mono: var(--font-mono-display, ui-monospace), ui-monospace, "SF Mono", Menlo, monospace;
 
-  /* Light theme - oatmeal industrial */
-  --color-bg: #f5f1ea;
-  --color-bg-2: #efe9de;
-  --color-fg: #14110d;
-  --color-fg-muted: #5a5147;
-  --color-fg-subtle: #8b8276;
+  /* ─────────────────────────────────────────────
+     Heritage palette — warm cream paper + terracotta ink
+     ───────────────────────────────────────────── */
+  --color-bg: #f4ecde;          /* aged cream paper */
+  --color-bg-2: #ead9bd;        /* kraft, alt sections */
+  --color-bg-deep: #2a201a;     /* espresso, for dark spreads */
+  --color-fg: #1f1815;          /* dark espresso ink */
+  --color-fg-muted: #5b4a3e;    /* warm brown body */
+  --color-fg-subtle: #8c7a68;
+  --color-fg-inverse: #f4ecde;
+  --color-fg-inverse-muted: #c8b8a2;
 
-  --color-surface: rgb(255 255 255 / 0.6);
-  --color-surface-strong: rgb(255 255 255 / 0.85);
-  --color-surface-2: rgb(255 255 255 / 0.35);
-  --color-border: rgb(20 17 13 / 0.1);
-  --color-border-strong: rgb(20 17 13 / 0.2);
+  --color-paper: #faf3e6;       /* off-white card paper */
+  --color-paper-2: #f0e6d2;     /* secondary paper */
+  --color-surface: #faf3e6;
+  --color-surface-strong: #ffffff;
+  --color-surface-2: rgb(31 24 21 / 0.04);
 
-  --color-accent: #c2581f;
-  --color-accent-hover: #a8481a;
-  --color-accent-fg: #ffffff;
-  --color-accent-soft: rgb(194 88 31 / 0.12);
+  --color-border: rgb(31 24 21 / 0.12);
+  --color-border-strong: rgb(31 24 21 / 0.32);
+  --color-rule: #1f1815;
 
-  --atmo-1: #f4a261;
-  --atmo-2: #e9c46a;
-  --atmo-3: #b08968;
-  --atmo-4: #c87a3f;
-  --atmo-opacity: 0.35;
+  --color-accent: #b85c2a;      /* refined terracotta */
+  --color-accent-hover: #9c4a1f;
+  --color-accent-fg: #faf3e6;
+  --color-accent-soft: rgb(184 92 42 / 0.10);
+  --color-accent-deep: #6f3414;
 
-  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  --animate-fade-in: fade-in 0.7s ease-out forwards;
-  --animate-drift: drift 32s ease-in-out infinite alternate;
+  --color-clay: #c08560;        /* tonal warm */
+  --color-stone: #a3927e;       /* tonal cool grey-brown */
+  --color-sage: #8a8f6d;        /* tonal restful green */
+  --color-ochre: #c89d5a;       /* tonal gold */
+
+  /* Atmosphere — dimmed, warm wash */
+  --atmo-1: #d28b58;
+  --atmo-2: #c89d5a;
+  --atmo-3: #a3795a;
+  --atmo-4: #b85c2a;
+  --atmo-opacity: 0.22;
+
+  /* Soft warm-tinted shadows — refined, not brutal */
+  --shadow-soft: 0 1px 1px rgb(31 24 21 / 0.04), 0 10px 28px -14px rgb(60 30 10 / 0.18);
+  --shadow-soft-lg: 0 1px 2px rgb(31 24 21 / 0.05), 0 24px 50px -22px rgb(60 30 10 / 0.28);
+  --shadow-ink: 0 1px 2px rgb(31 24 21 / 0.08), 0 18px 48px -18px rgb(31 24 21 / 0.42);
+
+  /* Geometry — refined, not balloon */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+  --animate-drift: drift 48s ease-in-out infinite alternate;
   --animate-marquee: marquee 60s linear infinite;
 
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
   }
   @keyframes fade-in {
     from { opacity: 0; }
-    to { opacity: 1; }
+    to   { opacity: 1; }
   }
   @keyframes drift {
-    0%   { transform: translate3d(-4%, -2%, 0) scale(1); }
-    50%  { transform: translate3d(3%, 3%, 0) scale(1.08); }
-    100% { transform: translate3d(-2%, 4%, 0) scale(1.03); }
+    0%   { transform: translate3d(-3%, -1%, 0); }
+    100% { transform: translate3d(2%, 3%, 0); }
   }
   @keyframes marquee {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to   { transform: translateX(-50%); }
   }
 }
 
 .dark {
-  --color-bg: #0c0b0e;
-  --color-bg-2: #131217;
-  --color-fg: #ece7df;
-  --color-fg-muted: #a59f96;
-  --color-fg-subtle: #6f6a62;
+  --color-bg: #16100d;
+  --color-bg-2: #1d1612;
+  --color-bg-deep: #0a0706;
+  --color-fg: #f0e6d2;
+  --color-fg-muted: #b8a48c;
+  --color-fg-subtle: #7a6b5a;
+  --color-fg-inverse: #1f1815;
+  --color-fg-inverse-muted: #5b4a3e;
 
-  --color-surface: rgb(255 255 255 / 0.04);
-  --color-surface-strong: rgb(255 255 255 / 0.08);
-  --color-surface-2: rgb(255 255 255 / 0.02);
+  --color-paper: #211a16;
+  --color-paper-2: #2a201a;
+  --color-surface: #211a16;
+  --color-surface-strong: #2a201a;
+  --color-surface-2: rgb(255 255 255 / 0.04);
+
   --color-border: rgb(255 255 255 / 0.08);
-  --color-border-strong: rgb(255 255 255 / 0.18);
+  --color-border-strong: rgb(255 255 255 / 0.22);
+  --color-rule: #f0e6d2;
 
-  --color-accent: #e8843a;
-  --color-accent-hover: #c8702f;
-  --color-accent-fg: #0c0b0e;
-  --color-accent-soft: rgb(232 132 58 / 0.16);
+  --color-accent: #d97a44;
+  --color-accent-hover: #b85c2a;
+  --color-accent-fg: #16100d;
+  --color-accent-soft: rgb(217 122 68 / 0.14);
 
-  --atmo-1: #c2581f;
-  --atmo-2: #7c4e2d;
-  --atmo-3: #5d3a20;
-  --atmo-4: #d97a3c;
-  --atmo-opacity: 0.28;
+  --atmo-1: #7a3a1a;
+  --atmo-2: #5d3a20;
+  --atmo-3: #3a261a;
+  --atmo-4: #b85c2a;
+  --atmo-opacity: 0.18;
 }
 
 @layer base {
   :root {
     color-scheme: light dark;
-    /* Defaults for vars set inline (via style prop) on reveal targets.
-     * Declared here so static CSS tooling can resolve them. */
     --reveal-delay: 0s;
     --reveal-y: 24px;
   }
@@ -94,7 +124,6 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
-    /* Safety net against horizontal scroll on mobile when decorative absolutes overflow. */
     overflow-x: clip;
   }
 
@@ -108,9 +137,10 @@
     -moz-osx-font-smoothing: grayscale;
     position: relative;
     overflow-x: hidden;
+    line-height: 1.55;
   }
 
-  /* Atmosphere gradient - fixed background */
+  /* Warm atmospheric wash */
   body::before {
     content: "";
     position: fixed;
@@ -119,24 +149,23 @@
     pointer-events: none;
     opacity: var(--atmo-opacity);
     background:
-      radial-gradient(45% 40% at 18% 22%, var(--atmo-1) 0%, transparent 62%),
-      radial-gradient(40% 45% at 82% 18%, var(--atmo-2) 0%, transparent 65%),
-      radial-gradient(50% 45% at 75% 82%, var(--atmo-3) 0%, transparent 60%),
-      radial-gradient(40% 40% at 22% 78%, var(--atmo-4) 0%, transparent 60%);
-    filter: blur(90px) saturate(125%);
+      radial-gradient(38% 32% at 14% 18%, var(--atmo-1) 0%, transparent 62%),
+      radial-gradient(34% 38% at 88% 12%, var(--atmo-2) 0%, transparent 65%),
+      radial-gradient(42% 38% at 78% 88%, var(--atmo-3) 0%, transparent 60%);
+    filter: blur(120px);
     animation: var(--animate-drift);
   }
 
-  /* Subtle grain on top to add material texture */
+  /* Subtle paper grain — finer than concrete, warmer */
   body::after {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.05;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.10 0 0 0 0 0.07 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   body > * {
@@ -145,8 +174,9 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display), sans-serif;
-    letter-spacing: -0.02em;
+    font-family: var(--font-display), serif;
+    letter-spacing: -0.015em;
+    font-feature-settings: "ss01", "ss02", "liga", "kern";
   }
 
   ::selection {
@@ -173,100 +203,176 @@
 
 @layer components {
   .reveal-fade-up {
-    animation: reveal-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation: reveal-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
     animation-delay: var(--reveal-delay, 0s);
   }
 
   @keyframes reveal-fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(var(--reveal-y, 24px));
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(var(--reveal-y, 24px)); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .reveal-fade-up {
-      animation: none;
-    }
+    .reveal-fade-up { animation: none; }
   }
 
-  .glass {
-    background-color: var(--color-surface);
+  /* ─────────────────────────────────────────────
+     Editorial heritage primitives
+     ───────────────────────────────────────────── */
+
+  /* Refined paper card — soft warm shadow, light radius */
+  .heritage-card {
+    background-color: var(--color-paper);
     border: 1px solid var(--color-border);
-    backdrop-filter: blur(28px) saturate(160%);
-    -webkit-backdrop-filter: blur(28px) saturate(160%);
-    box-shadow:
-      0 1px 0 0 rgb(255 255 255 / 0.06) inset,
-      0 24px 60px -28px rgb(0 0 0 / 0.45);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 280ms cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 280ms;
+  }
+  .heritage-card:hover {
+    transform: translateY(-2px);
+    border-color: rgb(31 24 21 / 0.2);
+    box-shadow: var(--shadow-soft-lg);
   }
 
-  .glass-strong {
+  /* Editorial eyebrow — small caps + thin rule */
+  .h-eyebrow {
+    font-family: var(--font-sans), sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-fg-muted);
+  }
+
+  /* Roman chapter numeral — for section markers */
+  .h-chapter {
+    font-family: var(--font-display), serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: var(--color-accent);
+  }
+
+  /* Drop cap — for opening editorial paragraphs */
+  .h-drop-cap::first-letter {
+    font-family: var(--font-display), serif;
+    font-weight: 500;
+    font-size: 3.6em;
+    line-height: 0.85;
+    float: left;
+    margin: 0.08em 0.12em 0 0;
+    color: var(--color-accent);
+    font-style: normal;
+  }
+
+  /* Ornament rule — short orange rule above headlines */
+  .h-rule {
+    display: inline-block;
+    width: 2.5rem;
+    height: 2px;
+    background-color: var(--color-accent);
+    margin-right: 0.85rem;
+    vertical-align: middle;
+  }
+
+  /* Architectural photo tinting — duotone warm */
+  .h-photo-warm {
+    filter: contrast(1.05) saturate(0.92);
+  }
+
+  /* Subtle warm gradient overlay on photos */
+  .h-photo-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, transparent 50%, rgba(31, 24, 21, 0.55) 100%),
+      linear-gradient(160deg, rgba(184, 92, 42, 0.10) 0%, transparent 45%);
+    pointer-events: none;
+  }
+
+  /* Refined input */
+  .h-input {
+    width: 100%;
     background-color: var(--color-surface-strong);
     border: 1px solid var(--color-border);
-    backdrop-filter: blur(36px) saturate(170%);
-    -webkit-backdrop-filter: blur(36px) saturate(170%);
-    box-shadow:
-      0 1px 0 0 rgb(255 255 255 / 0.08) inset,
-      0 28px 70px -28px rgb(0 0 0 / 0.5);
+    color: var(--color-fg);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    font-family: var(--font-sans), sans-serif;
+    transition: border-color 200ms, box-shadow 200ms, background-color 200ms;
+    outline: none;
+  }
+  .h-input::placeholder {
+    color: var(--color-fg-subtle);
+  }
+  .h-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgb(184 92 42 / 0.12);
   }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
+  /* "Stamp" — small refined certification badge */
+  .h-stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.65rem;
+    background-color: var(--color-paper);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 999px;
+    font-family: var(--font-sans), sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-fg-muted);
   }
 
-  .reveal.in {
-    animation: var(--animate-fade-up);
+  /* Legacy aliases (kept so old utility classes don't break) */
+  .glass, .glass-strong, .card-data {
+    background-color: var(--color-paper);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    transition: transform 280ms ease, box-shadow 280ms ease;
+  }
+  .glass-strong { background-color: var(--color-surface-strong); }
+  .card-data:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft-lg);
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  .text-pretty {
-    text-wrap: pretty;
-  }
-  .text-fg-muted {
-    color: var(--color-fg-muted);
-  }
-  .text-fg-subtle {
-    color: var(--color-fg-subtle);
-  }
+  .text-balance { text-wrap: balance; }
+  .text-pretty  { text-wrap: pretty; }
+  .text-fg-muted    { color: var(--color-fg-muted); }
+  .text-fg-subtle   { color: var(--color-fg-subtle); }
+  .text-fg-inverse  { color: var(--color-fg-inverse); }
+  .text-fg-inverse-muted { color: var(--color-fg-inverse-muted); }
 
-  /* Section bg alternation. Solid bg covers the body::before atmospheric for a calmer rhythm. */
   .section-alt {
     background-color: var(--color-bg-2);
   }
 
-  /* Quiet atmospheric for detail / content pages - reduces decorative gradient intensity.
-   * Applied via parent `:has()` selector since body::before reads from body. */
-  .atmo-quiet { /* marker class, see body:has rule */ }
+  .section-deep {
+    background-color: var(--color-bg-deep);
+    color: var(--color-fg-inverse);
+  }
+  .section-deep h1,
+  .section-deep h2,
+  .section-deep h3 {
+    color: var(--color-fg-inverse);
+  }
+
+  .atmo-quiet { /* marker */ }
 }
 
-/* When any element on the page is marked .atmo-quiet, dim the body atmospheric blob. */
 body:has(.atmo-quiet)::before {
   opacity: 0.08 !important;
-}
-
-@layer components {
-  /* "Data" card - subtle shadow, smaller radius, less dramatic hover. For lists/specs/FAQ. */
-  .card-data {
-    border-radius: 0.75rem;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-surface);
-    backdrop-filter: blur(20px) saturate(150%);
-    -webkit-backdrop-filter: blur(20px) saturate(150%);
-    box-shadow: 0 4px 12px -2px rgb(0 0 0 / 0.04);
-    transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
-  }
-  .card-data:hover {
-    border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border));
-    background-color: var(--color-surface-strong);
-    box-shadow: 0 8px 24px -6px rgb(0 0 0 / 0.08);
-  }
 }

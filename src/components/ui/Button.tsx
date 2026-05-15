@@ -4,16 +4,20 @@ import { cn } from '@/lib/cn';
 type Variant = 'primary' | 'secondary' | 'ghost';
 type Size = 'sm' | 'md' | 'lg';
 
+/**
+ * Heritage button — refined pill with warm soft shadow.
+ * Subtle hover lift, never harsh.
+ */
 const base =
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-all duration-200 will-change-transform focus-visible:outline-2 focus-visible:outline-offset-3 disabled:cursor-not-allowed disabled:opacity-50';
+  'group/btn inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-[transform,box-shadow,background-color,color] duration-200 will-change-transform focus-visible:outline-2 focus-visible:outline-offset-3 disabled:cursor-not-allowed disabled:opacity-60';
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-[var(--color-accent)] text-[var(--color-accent-fg)] hover:bg-[var(--color-accent-hover)] hover:-translate-y-0.5 shadow-[0_8px_24px_-12px_rgba(232,132,58,0.6)]',
+    'bg-[var(--color-accent)] text-[var(--color-accent-fg)] shadow-[0_1px_2px_rgb(31_24_21/0.10),0_10px_24px_-12px_rgb(184_92_42/0.55)] hover:bg-[var(--color-accent-hover)] hover:-translate-y-0.5 hover:shadow-[0_2px_3px_rgb(31_24_21/0.12),0_18px_36px_-14px_rgb(184_92_42/0.65)]',
   secondary:
-    'border border-[var(--color-border-strong)] bg-[var(--color-surface)] text-[var(--color-fg)] hover:bg-[var(--color-surface-strong)] hover:-translate-y-0.5 backdrop-blur',
+    'bg-[var(--color-paper)] text-[var(--color-fg)] border border-[var(--color-border-strong)] shadow-[0_1px_2px_rgb(31_24_21/0.04),0_6px_18px_-10px_rgb(31_24_21/0.18)] hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]',
   ghost:
-    'text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-surface)]',
+    'text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-paper)]',
 };
 
 const sizes: Record<Size, string> = {

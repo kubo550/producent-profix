@@ -17,53 +17,66 @@ export function Hero() {
     offset: ['start start', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const blobY = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 140]);
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
+  const photoY = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
   return (
     <section
       ref={ref}
-      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-24 sm:pt-28"
+      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-28 sm:pt-32"
     >
-      <motion.div
-        aria-hidden
-        style={{ y: blobY, scale }}
-        className="pointer-events-none absolute inset-0 -z-10"
-      >
-        <div className="absolute -right-32 top-10 h-[520px] w-[520px] rounded-full bg-[var(--color-accent)] opacity-15 blur-[120px]" />
-        <div className="absolute -left-32 bottom-10 h-[480px] w-[480px] rounded-full bg-[#7c4e2d] opacity-20 blur-[120px]" />
-      </motion.div>
+      {/* Atmospheric backdrop — warm material/plaster texture, swap to brand image later */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <Image
+          src="https://picsum.photos/seed/profix-hero-texture/1600/1000"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-20 mix-blend-multiply"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)]/60 via-[var(--color-bg)]/85 to-[var(--color-bg)]" />
+      </div>
 
       <Container size="xl">
-        <motion.div style={{ y, opacity }} className="grid items-center gap-16 lg:grid-cols-[1.1fr_1fr]">
-          <div className="space-y-8">
-            <p
-              className="reveal-fade-up inline-flex items-center gap-2 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-surface)] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-accent)] backdrop-blur"
+        <motion.div style={{ y, opacity }} className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+          {/* Type column */}
+          <div className="relative space-y-8">
+            <div
+              className="reveal-fade-up flex items-center gap-3"
               style={{ '--reveal-delay': '0s' } as React.CSSProperties}
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-              {t('eyebrow')}
-            </p>
+              <span className="h-rule" />
+              <span
+                className="font-display italic text-base tracking-wide text-[var(--color-accent)]"
+                style={{ fontVariationSettings: '"SOFT" 100, "opsz" 14' }}
+              >
+                Producent
+              </span>
+              <span className="h-eyebrow">— od 2007 — Krzeszowice, PL</span>
+            </div>
 
             <h1
-              className="reveal-fade-up text-balance text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-[5rem]"
-              style={{ '--reveal-delay': '0.1s' } as React.CSSProperties}
+              className="reveal-fade-up font-display text-balance text-[clamp(3rem,7.5vw,5.75rem)] font-medium leading-[1.02] tracking-[-0.02em]"
+              style={{
+                '--reveal-delay': '0.1s',
+                fontVariationSettings: '"SOFT" 50, "opsz" 144',
+              } as React.CSSProperties}
             >
               {t('title')}
             </h1>
 
             <p
-              className="reveal-fade-up max-w-xl text-pretty text-lg leading-relaxed text-fg-muted sm:text-xl"
-              style={{ '--reveal-delay': '0.2s' } as React.CSSProperties}
+              className="reveal-fade-up max-w-xl text-pretty text-lg leading-[1.65] text-fg-muted sm:text-xl"
+              style={{ '--reveal-delay': '0.22s' } as React.CSSProperties}
             >
               {t('subtitle')}
             </p>
 
             <div
-              className="reveal-fade-up flex flex-wrap items-center gap-3"
-              style={{ '--reveal-delay': '0.3s' } as React.CSSProperties}
+              className="reveal-fade-up flex flex-wrap items-center gap-4 pt-2"
+              style={{ '--reveal-delay': '0.32s' } as React.CSSProperties}
             >
               <LinkButton href="#produkty" variant="primary" size="lg">
                 {t('ctaPrimary')}
@@ -73,26 +86,41 @@ export function Hero() {
                 {t('ctaSecondary')}
               </LinkButton>
             </div>
+
+            {/* Trust strip — refined stamps */}
+            <div
+              className="reveal-fade-up flex flex-wrap items-center gap-x-6 gap-y-3 pt-6"
+              style={{ '--reveal-delay': '0.44s' } as React.CSSProperties}
+            >
+              <span className="h-stamp">
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                Atesty CE · PZH
+              </span>
+              <span className="h-stamp">17+ lat</span>
+              <span className="h-stamp">100% PL</span>
+            </div>
           </div>
 
-          <div
-            className="reveal-fade-up relative hidden aspect-square lg:block"
-            style={{ '--reveal-delay': '0.25s', '--reveal-y': '0px' } as React.CSSProperties}
+          {/* Photo column */}
+          <motion.div
+            style={{ y: photoY }}
+            className="reveal-fade-up relative hidden aspect-[4/5] lg:block"
           >
             <HeroComposition />
-          </div>
+          </motion.div>
         </motion.div>
 
+        {/* Scroll indicator */}
         <a
           href="#o-firmie"
           aria-label={t('scroll')}
-          className="reveal-fade-up absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.18em] text-fg-subtle sm:flex"
-          style={{ '--reveal-delay': '0.5s' } as React.CSSProperties}
+          className="reveal-fade-up absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.22em] text-fg-subtle sm:flex"
+          style={{ '--reveal-delay': '0.6s' } as React.CSSProperties}
         >
           {t('scroll')}
           <motion.span
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
           >
             <ChevronDown size={18} strokeWidth={1.5} />
           </motion.span>
@@ -105,40 +133,43 @@ export function Hero() {
 function HeroComposition() {
   return (
     <div className="relative h-full w-full">
-      <motion.div
+      {/* Soft warm shadow under the photo */}
+      <div
         aria-hidden
-        animate={{ rotate: [0, 6, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute -inset-3 rounded-[40%_60%_55%_45%_/_50%_45%_55%_50%] bg-gradient-to-br from-[var(--color-accent)] via-[#c8702f] to-[#5d3a20] opacity-40 blur-2xl"
+        className="absolute -bottom-8 left-6 right-6 h-16 rounded-full bg-[var(--color-accent)]/25 blur-2xl"
       />
-      <motion.div
-        animate={{ rotate: [0, -4, 0] }}
-        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute inset-0 overflow-hidden rounded-[40%_60%_55%_45%_/_50%_45%_55%_50%] border border-white/15 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.55)]"
-      >
+      {/* Decorative offset card behind */}
+      <div
+        aria-hidden
+        className="absolute -bottom-4 -right-4 top-12 left-12 rounded-md border border-[var(--color-border)] bg-[var(--color-paper-2)]"
+      />
+      {/* Main photo plate */}
+      <div className="h-photo-overlay relative h-full w-full overflow-hidden rounded-md border border-[var(--color-border-strong)] shadow-[var(--shadow-soft-lg)]">
         <Image
           src="/photos/worker-pro.jpg"
           alt="Pracownik PROFIX w hełmie i kamizelce w trakcie tynkowania"
           fill
           priority
           sizes="(min-width: 1024px) 45vw, 100vw"
-          className="object-cover object-[35%_center]"
+          className="h-photo-warm object-cover object-[35%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-[var(--color-accent)]/25 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
-      </motion.div>
-      <div className="absolute left-2 top-4 rounded-2xl border border-white/20 bg-black/55 px-4 py-3 backdrop-blur-xl">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/70">Krzeszowice</p>
-        <p className="mt-0.5 font-display text-2xl font-bold leading-none text-white">2007</p>
-        <p className="mt-1 text-[11px] text-white/70">rok założenia</p>
-      </div>
-      <div className="absolute -top-4 right-10 rounded-2xl border border-white/20 bg-black/55 px-4 py-3 text-sm backdrop-blur-xl">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/65">Atesty</p>
-        <p className="mt-0.5 font-display text-lg font-semibold text-white">CE + PZH</p>
-      </div>
-      <div className="absolute -bottom-2 right-6 rounded-2xl border border-white/20 bg-black/55 px-4 py-3 text-sm backdrop-blur-xl">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/65">Transport</p>
-        <p className="mt-0.5 font-display text-lg font-semibold text-white">HDS + cysterny</p>
+        {/* Caption plate */}
+        <figcaption className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+          <div className="rounded-md bg-[var(--color-paper)]/95 px-4 py-3 backdrop-blur-sm shadow-[var(--shadow-soft)]">
+            <p className="font-display italic text-xs text-[var(--color-accent)]" style={{ fontVariationSettings: '"SOFT" 100, "opsz" 14' }}>
+              — Hala produkcyjna
+            </p>
+            <p
+              className="mt-0.5 font-display text-lg font-medium leading-tight tracking-tight text-[var(--color-fg)]"
+              style={{ fontVariationSettings: '"SOFT" 50, "opsz" 36' }}
+            >
+              Krzeszowice
+            </p>
+          </div>
+          <span className="rounded-full bg-[var(--color-accent)]/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-accent-fg)] backdrop-blur-sm">
+            est. 2007
+          </span>
+        </figcaption>
       </div>
     </div>
   );

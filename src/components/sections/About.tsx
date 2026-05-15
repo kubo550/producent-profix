@@ -15,73 +15,88 @@ export async function About() {
   return (
     <section id="o-firmie" className="relative py-24 sm:py-32">
       <Container size="xl">
-        <div className="grid items-start gap-16 lg:grid-cols-[1.1fr_1fr]">
-          <Reveal className="space-y-8">
+        <div className="grid items-start gap-16 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+          <Reveal className="space-y-10">
             <SectionHeading
               eyebrow={t('eyebrow')}
               title={t('title')}
               subtitle={t('lead')}
             />
-            <div className="space-y-5 text-base leading-relaxed text-fg-muted sm:text-lg">
+            <div className="space-y-6 text-[17px] leading-[1.75] text-fg-muted sm:text-lg">
               {paragraphs.map((p, i) => (
-                <p key={i} className="text-pretty">
+                <p key={i} className={i === 0 ? 'h-drop-cap text-pretty' : 'text-pretty'}>
                   {p}
                 </p>
               ))}
             </div>
             <Link
               href="/o-firmie"
-              className="inline-flex items-center gap-2 text-base font-medium text-[var(--color-accent)] transition-all hover:gap-3"
+              className="group inline-flex items-center gap-2 text-base font-medium text-[var(--color-accent)] transition-all hover:gap-3"
             >
-              {t('cta')}
-              <ArrowRight size={18} strokeWidth={1.75} />
+              <span className="border-b border-[var(--color-accent)] pb-0.5">
+                {t('cta')}
+              </span>
+              <ArrowRight size={18} strokeWidth={1.75} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </Reveal>
 
           <Reveal delay={0.15} className="space-y-4">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[var(--color-border)]">
+            {/* Primary photo — factory hall */}
+            <figure className="relative aspect-[4/5] overflow-hidden rounded-md border border-[var(--color-border-strong)] shadow-[var(--shadow-soft-lg)]">
               <Image
                 src="/stock/factory.jpg"
-                alt="Hala produkcyjna"
+                alt="Hala produkcyjna PROFIX w Krzeszowicach"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover"
+                className="h-photo-warm object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-between p-8">
-                <div className="flex items-center gap-3 text-white/85">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-accent)] text-[var(--color-accent-fg)]">
-                    <Factory size={18} strokeWidth={1.75} />
-                  </div>
-                  <p className="font-mono text-xs uppercase tracking-[0.18em]">
-                    Hala produkcyjna
-                  </p>
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-deep)]/85 via-[var(--color-bg-deep)]/20 to-transparent" />
+              <figcaption className="absolute inset-0 flex flex-col justify-between p-7 sm:p-8">
+                <div className="flex items-center gap-3 text-[var(--color-fg-inverse)]">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-accent)] text-[var(--color-accent-fg)]">
+                    <Factory size={16} strokeWidth={1.75} />
+                  </span>
+                  <span
+                    className="font-display italic text-sm tracking-wide"
+                    style={{ fontVariationSettings: '"SOFT" 100, "opsz" 14' }}
+                  >
+                    — Hala produkcyjna
+                  </span>
                 </div>
                 <div>
-                  <p className="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
-                    Krzeszowice, ul. Sienkiewicza 20
+                  <p
+                    className="font-display text-3xl font-medium leading-[1.05] text-[var(--color-fg-inverse)] sm:text-4xl"
+                    style={{ fontVariationSettings: '"SOFT" 50, "opsz" 48' }}
+                  >
+                    ul. Sienkiewicza 20
                   </p>
-                  <p className="mt-2 text-sm text-white/85">
-                    Pełen cykl produkcji chemii budowlanej pod jednym dachem.
+                  <p className="mt-2 max-w-sm text-sm leading-relaxed text-[var(--color-fg-inverse-muted)]">
+                    Pełen cykl produkcji chemii budowlanej pod jednym dachem — od surowca do palety.
                   </p>
                 </div>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
 
-            <div className="grid grid-cols-3 gap-3">
+            {/* Stat row */}
+            <dl className="grid grid-cols-3 gap-3">
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-center backdrop-blur-xl"
+                  className="rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-5 shadow-[var(--shadow-soft)]"
                 >
-                  <Counter
-                    value={s.value}
-                    className="block font-display text-2xl font-bold text-[var(--color-accent)] sm:text-3xl"
-                  />
-                  <p className="mt-1 text-xs leading-tight text-fg-muted">{s.label}</p>
+                  <dt className="sr-only">{s.label}</dt>
+                  <dd>
+                    <Counter
+                      value={s.value}
+                      className="block font-display text-4xl font-medium leading-none text-[var(--color-accent)] sm:text-5xl"
+                    />
+                    <p className="mt-3 text-[11px] uppercase tracking-[0.14em] leading-tight text-fg-muted">
+                      {s.label}
+                    </p>
+                  </dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </Reveal>
         </div>
       </Container>

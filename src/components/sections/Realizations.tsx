@@ -25,58 +25,24 @@ export async function Realizations() {
       id: 'room',
       layout: 'quad',
       tiles: [
-        {
-          src: '/photos/realization-room-before-1.jpg',
-          alt: 'Pomieszczenie przed tynkowaniem - ujęcie 1',
-          variant: 'before',
-          labelKey: 'before',
-        },
-        {
-          src: '/photos/realization-room-after-1.jpg',
-          alt: 'Pomieszczenie po tynkowaniu - ujęcie 1',
-          variant: 'after',
-          labelKey: 'after',
-        },
-        {
-          src: '/photos/realization-room-before-2.jpg',
-          alt: 'Pomieszczenie przed tynkowaniem - ujęcie 2',
-          variant: 'before',
-          labelKey: 'before',
-        },
-        {
-          src: '/photos/realization-room-after-2.jpg',
-          alt: 'Pomieszczenie po tynkowaniu - ujęcie 2',
-          variant: 'after',
-          labelKey: 'after',
-        },
+        { src: '/photos/realization-room-before-1.jpg', alt: 'Pomieszczenie przed tynkowaniem - ujęcie 1', variant: 'before', labelKey: 'before' },
+        { src: '/photos/realization-room-after-1.jpg', alt: 'Pomieszczenie po tynkowaniu - ujęcie 1', variant: 'after', labelKey: 'after' },
+        { src: '/photos/realization-room-before-2.jpg', alt: 'Pomieszczenie przed tynkowaniem - ujęcie 2', variant: 'before', labelKey: 'before' },
+        { src: '/photos/realization-room-after-2.jpg', alt: 'Pomieszczenie po tynkowaniu - ujęcie 2', variant: 'after', labelKey: 'after' },
       ],
     },
     {
       id: 'hall',
       layout: 'duo',
       tiles: [
-        {
-          src: '/photos/workers-team.jpg',
-          alt: 'Ekipa PROFIX w trakcie prac tynkarskich na większym obiekcie',
-          variant: 'before',
-          labelKey: 'process',
-        },
-        {
-          src: '/photos/realization-hall-after.jpg',
-          alt: 'Hala przemysłowa po zakończeniu prac wykończeniowych PROFIX',
-          variant: 'after',
-          labelKey: 'result',
-        },
+        { src: '/photos/workers-team.jpg', alt: 'Ekipa PROFIX w trakcie prac tynkarskich na większym obiekcie', variant: 'before', labelKey: 'process' },
+        { src: '/photos/realization-hall-after.jpg', alt: 'Hala przemysłowa po zakończeniu prac wykończeniowych PROFIX', variant: 'after', labelKey: 'result' },
       ],
     },
   ];
 
   return (
     <section id="realizacje" className="section-alt relative overflow-hidden py-24 sm:py-32">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-32 top-32 -z-10 h-96 w-96 rounded-full bg-[var(--color-accent)] opacity-[0.06] blur-[120px]"
-      />
       <Container size="xl">
         <SectionHeading
           eyebrow={t('eyebrow')}
@@ -86,40 +52,36 @@ export async function Realizations() {
           className="mb-16"
         />
 
-        <div className="space-y-8">
+        <div className="space-y-10">
           {cases.map((c, idx) => (
             <Reveal key={c.id} delay={idx * 0.1}>
-              <article className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 backdrop-blur-xl sm:p-10">
-                <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-                  <div className="max-w-2xl">
-                    <p className="font-mono text-xs uppercase tracking-[0.18em] text-fg-subtle">
-                      {t(`cases.${c.id}.label`)}
-                    </p>
-                    <h3 className="mt-2 font-display text-2xl font-semibold sm:text-3xl">
+              <article className="overflow-hidden rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] shadow-[var(--shadow-soft)]">
+                <header className="flex flex-wrap items-end justify-between gap-6 border-b border-[var(--color-border)] p-7 sm:p-9">
+                  <div className="max-w-2xl space-y-3">
+                    <span className="h-eyebrow">{t(`cases.${c.id}.label`)}</span>
+                    <h3
+                      className="font-display text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl"
+                      style={{ fontVariationSettings: '"SOFT" 50, "opsz" 48' }}
+                    >
                       {t(`cases.${c.id}.title`)}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-fg-muted sm:text-base">
+                    <p className="text-pretty text-[15px] leading-relaxed text-fg-muted sm:text-base">
                       {t(`cases.${c.id}.description`)}
                     </p>
                   </div>
-                  <ul className="flex flex-wrap gap-2 text-xs">
+                  <ul className="flex flex-wrap gap-2">
                     {(t.raw(`cases.${c.id}.tags`) as string[]).map((tag) => (
-                      <li
-                        key={tag}
-                        className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-3 py-1.5 font-medium text-fg-muted"
-                      >
+                      <li key={tag} className="h-stamp">
                         {tag}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </header>
 
                 <div
-                  className={
-                    c.layout === 'quad'
-                      ? 'grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4'
-                      : 'grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2'
-                  }
+                  className={`grid gap-3 p-6 sm:gap-4 sm:p-7 ${
+                    c.layout === 'quad' ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-1 md:grid-cols-2'
+                  }`}
                 >
                   {c.tiles.map((tile, i) => (
                     <BeforeAfterTile
@@ -155,8 +117,8 @@ function BeforeAfterTile({
   aspect: '4/5' | '16/10';
 }) {
   return (
-    <div
-      className={`group relative overflow-hidden rounded-2xl border border-[var(--color-border)] ${
+    <figure
+      className={`group relative overflow-hidden rounded-sm border border-[var(--color-border)] shadow-[var(--shadow-soft)] ${
         aspect === '4/5' ? 'aspect-[4/5]' : 'aspect-[16/10]'
       }`}
     >
@@ -165,23 +127,23 @@ function BeforeAfterTile({
         alt={alt}
         fill
         sizes="(min-width: 768px) 22vw, 45vw"
-        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        className="h-photo-warm object-cover transition-transform duration-700 group-hover:scale-[1.04]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-      <span
-        className={`absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] backdrop-blur ${
+      <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-deep)]/65 via-transparent to-transparent" />
+      <figcaption
+        className={`absolute left-3 top-3 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] ${
           variant === 'before'
-            ? 'bg-black/55 text-white/90'
+            ? 'bg-[var(--color-bg-deep)]/80 text-[var(--color-fg-inverse)] backdrop-blur-sm'
             : 'bg-[var(--color-accent)] text-[var(--color-accent-fg)]'
         }`}
       >
         <span
           className={`h-1.5 w-1.5 rounded-full ${
-            variant === 'before' ? 'bg-white/70' : 'bg-[var(--color-accent-fg)]'
+            variant === 'before' ? 'bg-[var(--color-fg-inverse)]/80' : 'bg-[var(--color-accent-fg)]'
           }`}
         />
         {label}
-      </span>
-    </div>
+      </figcaption>
+    </figure>
   );
 }

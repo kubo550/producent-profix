@@ -47,21 +47,28 @@ export function ContactForm() {
     return (
       <div
         role="status"
-        className="rounded-3xl border border-[var(--color-accent)]/40 bg-gradient-to-br from-[var(--color-accent)]/10 via-transparent to-transparent p-8 backdrop-blur-xl sm:p-12"
+        className="rounded-md border border-[var(--color-border-strong)] bg-[var(--color-paper)] p-8 shadow-[var(--shadow-soft-lg)] sm:p-12"
       >
-        <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-accent)] text-[var(--color-accent-fg)]">
+        <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-accent)] text-[var(--color-accent-fg)]">
           <Send size={22} strokeWidth={1.75} />
         </div>
-        <h3 className="font-display text-2xl font-semibold sm:text-3xl">{t('successTitle')}</h3>
-        <p className="mt-3 text-pretty text-base leading-relaxed text-fg-muted sm:text-lg">
+        <h3
+          className="font-display text-3xl font-medium leading-[1.05] sm:text-4xl"
+          style={{ fontVariationSettings: '"SOFT" 50, "opsz" 48' }}
+        >
+          {t('successTitle')}
+        </h3>
+        <p className="mt-4 text-pretty text-base leading-[1.7] text-fg-muted sm:text-lg">
           {t('successBody')}
         </p>
         <a
           href={`tel:${siteConfig.phone}`}
-          className="mt-6 inline-flex items-center gap-2 text-base font-medium text-[var(--color-accent)] transition-all hover:gap-3"
+          className="group mt-6 inline-flex items-center gap-2 text-base font-medium text-[var(--color-accent)] transition-all hover:gap-3"
         >
           <Phone size={18} strokeWidth={1.75} />
-          {t('successUrgent', { phone: siteConfig.phoneDisplay })}
+          <span className="border-b border-[var(--color-accent)] pb-0.5">
+            {t('successUrgent', { phone: siteConfig.phoneDisplay })}
+          </span>
         </a>
       </div>
     );
@@ -70,7 +77,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-5 rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 backdrop-blur-xl sm:p-8"
+      className="space-y-5 rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-6 shadow-[var(--shadow-soft)] sm:p-8"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field id="name" label={t('name')} required>
@@ -80,7 +87,7 @@ export function ContactForm() {
             type="text"
             required
             placeholder={t('namePlaceholder')}
-            className="input"
+            className="h-input"
           />
         </Field>
         <Field id="email" label={t('email')} required>
@@ -90,7 +97,7 @@ export function ContactForm() {
             type="email"
             required
             placeholder={t('emailPlaceholder')}
-            className="input"
+            className="h-input"
           />
         </Field>
       </div>
@@ -102,11 +109,11 @@ export function ContactForm() {
             name="phone"
             type="tel"
             placeholder={t('phonePlaceholder')}
-            className="input"
+            className="h-input"
           />
         </Field>
         <Field id="topic" label={t('topic')} required>
-          <select id="topic" name="topic" required defaultValue="" className="input">
+          <select id="topic" name="topic" required defaultValue="" className="h-input">
             <option value="" disabled>
               {t('topic')}
             </option>
@@ -125,11 +132,11 @@ export function ContactForm() {
           required
           rows={5}
           placeholder={t('messagePlaceholder')}
-          className="input resize-none"
+          className="h-input resize-none"
         />
       </Field>
 
-      <label className="flex items-start gap-3 text-sm text-fg-muted">
+      <label className="flex items-start gap-3 border-t border-[var(--color-border)] pt-5 text-sm text-fg-muted">
         <input
           type="checkbox"
           name="consent"
@@ -148,7 +155,7 @@ export function ContactForm() {
         </span>
       </label>
 
-      {/* Honeypot - bots fill, humans don't */}
+      {/* Honeypot */}
       <input
         type="checkbox"
         name="botcheck"
@@ -164,32 +171,11 @@ export function ContactForm() {
           {status === 'sending' ? t('sending') : t('submit')}
         </Button>
         {status === 'error' && (
-          <p className="text-sm text-red-500" role="status">
+          <p className="text-sm text-red-600" role="status">
             {t('error')}
           </p>
         )}
       </div>
-
-      <style>{`
-        .input {
-          width: 100%;
-          background-color: var(--color-surface-2);
-          border: 1px solid var(--color-border);
-          color: var(--color-fg);
-          border-radius: 0.75rem;
-          padding: 0.75rem 1rem;
-          font-size: 0.95rem;
-          transition: border-color 0.2s, background-color 0.2s;
-          outline: none;
-        }
-        .input::placeholder {
-          color: var(--color-fg-subtle);
-        }
-        .input:focus {
-          border-color: var(--color-accent);
-          background-color: var(--color-surface);
-        }
-      `}</style>
     </form>
   );
 }
