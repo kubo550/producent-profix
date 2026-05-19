@@ -2,7 +2,7 @@
   "meta": {
     "title": "PROFIX - manufacturer of paints, plasters and construction materials in Krzeszowice",
     "titleTemplate": "%s | PROFIX",
-    "description": "PROFIX is a Polish manufacturer of facade paints, cement-lime plasters, insulation adhesives and finishing materials. Production facility in Krzeszowice near Krakow, since 2007.",
+    "description": "PROFIX is a Polish family-owned manufacturer of construction chemistry since 2009 - facade paints, cement-lime plasters, insulation adhesives and finishing materials. Modern production line in Krzeszowice near Krakow.",
     "keywords": "cement-lime plasters, facade paints, insulation adhesives, ETICS, gypsum smoothing compounds, construction chemistry manufacturer, Krzeszowice, Lesser Poland",
     "ogTitle": "PROFIX - manufacturer of finishing and construction materials",
     "ogDescription": "Paints, plasters, adhesives, insulation systems. Production in Krzeszowice near Krakow, own fleet delivery across Poland."
@@ -19,7 +19,7 @@
     "cta": "Request a quote"
   },
   "hero": {
-    "eyebrow": "Manufacturer since 2007",
+    "eyebrow": "Manufacturer since 2009",
     "title": "Colors for your home",
     "subtitle": "Paints, plasters, adhesives and insulation systems. Polish production in Krzeszowice near Krakow, own transport, certified quality.",
     "ctaPrimary": "See products",
@@ -29,8 +29,8 @@
   "usp": {
     "items": [
       {
-        "title": "Since 2007",
-        "description": "Nearly two decades of experience in construction chemistry production."
+        "title": "Since 2009",
+        "description": "Polish family company with fully Polish capital. Over fifteen years in construction chemistry."
       },
       {
         "title": "Certificates and approvals",
@@ -49,10 +49,10 @@
   "about": {
     "eyebrow": "About us",
     "title": "A Lesser Poland manufacturer built for professionals",
-    "lead": "PROFIX was founded in 2007 in Krzeszowice near Krakow, where our production facility still operates today. We make construction chemistry for the people who work with it every day: contractors, wholesalers, investors.",
+    "lead": "PROFIX is a Polish family-owned company in construction chemistry since 2009. Full Polish capital and our own R&D department let us respond quickly to the needs of contractor crews, wholesalers and individual customers.",
     "paragraphs": [
-      "Our range covers cement-lime and gypsum plasters, adhesives, complete insulation systems, acrylic, silicone and latex paints, primers and supporting products.",
-      "We focus on repeatable quality and short lead times. Every product comes with full technical documentation, certificates and a declaration of conformity."
+      "We produce cement mortars, ETICS and tile adhesives, primers, facade plasters and supplementary products. Every formulation is developed by experienced technologists, and we source raw materials from established suppliers.",
+      "Since 2023 production runs on a modern technology line in Krzeszowice. Our in-house lab monitors each batch, and certified external labs verify compliance with applicable standards."
     ],
     "stats": [
       { "value": "17+", "label": "years on the market" },
@@ -180,7 +180,7 @@
     "hours": "Monday - Friday, 7:00 - 16:00"
   },
   "footer": {
-    "tagline": "PROFIX. Colors for your home. Polish manufacturer of paints, plasters and adhesives since 2007.",
+    "tagline": "PROFIX. Colors for your home. Polish family-owned manufacturer of construction chemistry since 2009.",
     "sections": {
       "company": "Company",
       "products": "Products",
@@ -214,14 +214,16 @@
   "aboutPage": {
     "title": "About PROFIX",
     "subtitle": "Construction chemistry manufacturer from Krzeszowice",
-    "intro": "PROFIX was founded in 2007 in Krzeszowice near Krakow. Our production facility makes cement-lime and gypsum plasters, adhesives, insulation systems, acrylic, silicone and latex paints, primers and many other finishing and construction products.",
-    "missionTitle": "What matters to us",
-    "mission": "We keep adopting new technologies and improving the range. We work so that contractors keep coming back and investors can trust the result will last.",
-    "valuesTitle": "Values in daily work",
+    "intro": "PROFIX is a Polish family-owned company in construction chemistry since 2009. Full Polish capital gives us independence and flexibility in decision-making, so we can respond quickly to market needs and consistently develop our offer.",
+    "missionTitle": "Specialization and development",
+    "mission": "We produce construction chemistry for contractor companies and individual customers - cement mortars, ETICS and tile adhesives, primers, facade plasters. Every formulation is developed in our R&D department and undergoes regular testing in certified laboratories.",
+    "productionTitle": "Production in Krzeszowice since 2023",
+    "production": "Since 2023 all our products are made on a modern technology line in Krzeszowice. The investment let us increase capacity and control the process more precisely. Our internal quality control department and lab monitor each batch in accordance with applicable standards.",
+    "valuesTitle": "What sets us apart",
     "values": [
-      { "title": "Repeatable quality", "description": "Quality control at every production stage, the same formula in every batch." },
-      { "title": "Short lead times", "description": "Thanks to in-house production and our own fleet we respond fast, even to large orders." },
-      { "title": "Advisory", "description": "Our technical advisor helps match the product to the substrate and site conditions." }
+      { "title": "Repeatable quality", "description": "In-house lab control at every production stage, raw materials from established suppliers, the same formula in every batch." },
+      { "title": "On-time delivery", "description": "Own fleet and efficient logistics - we respond fast, even to large orders. Reliability is as important to us as quality." },
+      { "title": "Partner relations", "description": "Technical advisor support, individual approach to every customer, openness to contractor and partner feedback." }
     ]
   },
   "productsPage": {

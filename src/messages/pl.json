@@ -2,7 +2,7 @@
   "meta": {
     "title": "PROFIX - Producent farb, tynków i materiałów budowlanych w Krzeszowicach",
     "titleTemplate": "%s | PROFIX",
-    "description": "PROFIX to polski producent farb fasadowych, tynków cementowo wapiennych, klejów do dociepleń i materiałów wykończeniowych. Hala produkcyjna w Krzeszowicach pod Krakowem, od 2007 roku.",
+    "description": "PROFIX to polska rodzinna firma produkująca chemię budowlaną od 2009 roku - farby fasadowe, tynki cementowo wapienne, kleje do dociepleń i materiały wykończeniowe. Nowoczesna linia produkcyjna w Krzeszowicach pod Krakowem.",
     "keywords": "tynki cementowo wapienne, farby elewacyjne, kleje do dociepleń, ETICS, gładzie gipsowe, producent chemii budowlanej, Krzeszowice, Małopolska",
     "ogTitle": "PROFIX - producent materiałów wykończeniowo budowlanych",
     "ogDescription": "Farby, tynki, kleje, systemy dociepleń. Produkcja w Krzeszowicach pod Krakowem, dostawa własnym transportem na terenie całej Polski."
@@ -19,7 +19,7 @@
     "cta": "Zapytaj o ofertę"
   },
   "hero": {
-    "eyebrow": "Producent od 2007 roku",
+    "eyebrow": "Producent od 2009 roku",
     "title": "Kolory dla Twojego domu",
     "subtitle": "Farby, tynki, kleje i systemy dociepleń. Polska produkcja w Krzeszowicach pod Krakowem, własny transport, gwarantowane atesty.",
     "ctaPrimary": "Zobacz produkty",
@@ -29,8 +29,8 @@
   "usp": {
     "items": [
       {
-        "title": "Od 2007 roku",
-        "description": "Niemal dwie dekady doświadczenia w produkcji chemii budowlanej."
+        "title": "Od 2009 roku",
+        "description": "Polska firma rodzinna z pełnym polskim kapitałem. Ponad piętnaście lat w branży chemii budowlanej."
       },
       {
         "title": "Atesty i certyfikaty",
@@ -49,10 +49,10 @@
   "about": {
     "eyebrow": "O firmie",
     "title": "Producent z Małopolski, z myślą o profesjonalistach",
-    "lead": "PROFIX rozpoczął działalność w 2007 roku w Krzeszowicach pod Krakowem, gdzie do dziś mieści się nasza hala produkcyjna. Robimy chemię budowlaną z myślą o ludziach, którzy z niej żyją: ekipach wykonawczych, hurtowniach, inwestorach.",
+    "lead": "PROFIX to polska firma rodzinna obecna na rynku chemii budowlanej od 2009 roku. Pełen polski kapitał i własny dział badawczo-rozwojowy pozwalają nam szybko reagować na potrzeby ekip wykonawczych, hurtowni i klientów indywidualnych.",
     "paragraphs": [
-      "Asortyment obejmuje tynki cementowo wapienne i gipsowe, kleje, kompletne systemy dociepleń, farby akrylowe, silikonowe i lateksowe, grunty oraz produkty uzupełniające.",
-      "Stawiamy na powtarzalną jakość i krótkie terminy. Każdy produkt jest objęty pełną dokumentacją techniczną, atestami i deklaracją zgodności."
+      "Produkujemy zaprawy cementowe, kleje do systemów ociepleń i płytek, grunty, tynki elewacyjne i produkty uzupełniające. Każda receptura jest opracowywana przez doświadczonych technologów, a surowce kupujemy u sprawdzonych producentów.",
+      "Od 2023 roku produkcja idzie z nowoczesnej linii technologicznej w Krzeszowicach. Wewnętrzne laboratorium kontroluje parametry każdej partii, a certyfikowane laboratoria zewnętrzne potwierdzają zgodność z normami."
     ],
     "stats": [
       { "value": "17+", "label": "lat na rynku" },
@@ -180,7 +180,7 @@
     "hours": "Poniedziałek - piątek, 7:00 - 16:00"
   },
   "footer": {
-    "tagline": "PROFIX. Kolory dla Twojego domu. Polski producent farb, tynków i klejów od 2007 roku.",
+    "tagline": "PROFIX. Kolory dla Twojego domu. Polska rodzinna firma produkująca chemię budowlaną od 2009 roku.",
     "sections": {
       "company": "Firma",
       "products": "Produkty",
@@ -214,14 +214,16 @@
   "aboutPage": {
     "title": "O firmie PROFIX",
     "subtitle": "Producent chemii budowlanej z Krzeszowic",
-    "intro": "PROFIX rozpoczął działalność w 2007 roku w Krzeszowicach pod Krakowem. W naszej hali produkcyjnej powstają tynki cementowo wapienne i gipsowe, kleje, systemy dociepleń, farby akrylowe, silikonowe, lateksowe, grunty oraz wiele innych produktów wykończeniowo budowlanych.",
-    "missionTitle": "Co dla nas jest ważne",
-    "mission": "Konsekwentnie wprowadzamy nowe technologie i ulepszamy asortyment. Pracujemy tak, żeby ekipy wykonawcze chętnie do nas wracały, a inwestorzy mieli pewność trwałego efektu.",
-    "valuesTitle": "Wartości w codziennej pracy",
+    "intro": "PROFIX to polska firma rodzinna obecna w branży chemii budowlanej od 2009 roku. Pełen polski kapitał daje nam niezależność i elastyczność w decyzjach, dzięki czemu szybko reagujemy na potrzeby rynku i konsekwentnie rozwijamy ofertę produktową.",
+    "missionTitle": "Specjalizacja i rozwój",
+    "mission": "Produkujemy chemię budowlaną dla firm wykonawczych i klientów indywidualnych - zaprawy cementowe, kleje do systemów ociepleń i płytek, grunty, tynki elewacyjne. Każda receptura powstaje w naszym dziale badawczo-rozwojowym i przechodzi regularne testy w certyfikowanych laboratoriach.",
+    "productionTitle": "Produkcja w Krzeszowicach od 2023 roku",
+    "production": "Od 2023 roku wszystkie produkty powstają na nowoczesnej linii technologicznej w Krzeszowicach. Inwestycja pozwoliła zwiększyć wydajność i dokładniej kontrolować proces produkcji. Wewnętrzny dział kontroli jakości i laboratorium monitorują parametry każdej partii zgodnie z obowiązującymi normami.",
+    "valuesTitle": "Co nas wyróżnia",
     "values": [
-      { "title": "Powtarzalna jakość", "description": "Kontrola jakości na każdym etapie produkcji, ta sama receptura w każdej partii." },
-      { "title": "Krótkie terminy", "description": "Dzięki własnej produkcji i flocie reagujemy szybko, nawet na duże zamówienia." },
-      { "title": "Doradztwo", "description": "Technolog pomaga dobrać produkt do podłoża i warunków na budowie." }
+      { "title": "Powtarzalna jakość", "description": "Kontrola w wewnętrznym laboratorium na każdym etapie produkcji, surowce od renomowanych dostawców, ta sama receptura w każdej partii." },
+      { "title": "Terminowe dostawy", "description": "Własna flota i sprawna logistyka - reagujemy szybko, nawet na duże zamówienia. Niezawodność tak samo ważna jak jakość." },
+      { "title": "Partnerskie relacje", "description": "Doradztwo technologa, indywidualne podejście do każdego kontrahenta, otwartość na sugestie wykonawców i partnerów handlowych." }
     ]
   },
   "productsPage": {

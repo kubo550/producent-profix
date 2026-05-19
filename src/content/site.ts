@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: 'F.P.H.U PROFIX Katarzyna Sokół',
   tagline: 'Kolory dla Twojego domu',
   descriptor: 'Producent materiałów wykończeniowo budowlanych',
-  foundedYear: 2007,
+  foundedYear: 2009,
   url: 'https://producent-profix.pl',
   email: 'biuro@producent-profix.pl',
   emailRodo: 'sokolp1@interia.pl',

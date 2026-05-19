@@ -51,7 +51,7 @@ export function Hero() {
               >
                 Producent
               </span>
-              <span className="h-eyebrow">— od 2007 — Krzeszowice, PL</span>
+              <span className="h-eyebrow">— od 2009 — Krzeszowice, PL</span>
             </div>
 
             <h1
@@ -164,7 +164,7 @@ function HeroComposition() {
             </p>
           </div>
           <span className="rounded-full bg-[var(--color-accent)]/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-accent-fg)] backdrop-blur-sm">
-            est. 2007
+            est. 2009
           </span>
         </figcaption>
       </div>

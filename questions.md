@@ -5,6 +5,8 @@ Otwarte pytania, niezgodności w materiałach i decyzje czekające na odpowiedź
 Last update: 2026-05-15
 
 > ✅ **Rozstrzygnięte (2026-05-15):** Adres firmy → `ul. Sienkiewicza 20, 32-065 Krzeszowice` (zaktualizowane w siteConfig, stopce, mapie, schema.org, polityce prywatności, hero, sekcji "Hala produkcyjna", metadanych SEO).
+>
+> ✅ **Rozstrzygnięte (2026-05-15):** Rok założenia → **2009** (nie 2007). Polska firma rodzinna z polskim kapitałem. Wszystkie referencje "2007" w hero/USP/footer/meta/aboutPage podmienione w PL i EN. Nowa linia technologiczna w Krzeszowicach od **2023**. Treść sekcji About + `/o-firmie` przebudowana o R&D, wewnętrzne laboratorium kontroli jakości i partnerskie relacje (dane od klienta).
 
 ---
 

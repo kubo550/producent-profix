@@ -34,6 +34,10 @@ export default async function AboutPage({
                 {t('missionTitle')}
               </h2>
               <p className="text-pretty">{t('mission')}</p>
+              <h2 className="pt-4 font-display text-2xl font-semibold text-[var(--color-fg)] sm:text-3xl">
+                {t('productionTitle')}
+              </h2>
+              <p className="text-pretty">{t('production')}</p>
             </Reveal>
 
             <Reveal delay={0.15} className="space-y-3">
