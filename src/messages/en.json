@@ -46,6 +46,29 @@
       }
     ]
   },
+  "productLines": {
+    "eyebrow": "Product range",
+    "title": "Four product lines",
+    "subtitle": "Plasters, adhesives, concrete and mortars - the four core PROFIX product groups, made on our modern production line in Krzeszowice.",
+    "items": {
+      "tynki": {
+        "title": "Plasters",
+        "description": "Cement-lime, thin-coat, mineral and supplementary products."
+      },
+      "kleje": {
+        "title": "Adhesives",
+        "description": "For ceramic and large-format tiles. Classes C1 and C2, flexible and semi-flexible."
+      },
+      "beton": {
+        "title": "Concrete",
+        "description": "Dry concrete mixes C16/20, C20/25, C25/30 - frost-resistant, structural."
+      },
+      "zaprawy": {
+        "title": "Mortars",
+        "description": "Adhesive mortars for ETICS: polystyrene, mineral wool, mesh embedment."
+      }
+    }
+  },
   "about": {
     "eyebrow": "About us",
     "title": "A Lesser Poland manufacturer built for professionals",

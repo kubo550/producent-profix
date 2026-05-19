@@ -12,13 +12,14 @@ import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { siteConfig } from '@/content/site';
 import { getCategory } from '@/content/categories';
+import { categoryHasProducts } from '@/content/products';
 import { cn } from '@/lib/cn';
 
 /** Mega-menu organization: top-level entries + optional cascading children.
  * Keeps categories.ts flat (data) while presenting a hierarchical menu (view). */
 type MenuEntry = { slug: string; children?: string[] };
 
-const productMenu: MenuEntry[] = [
+const productMenuFull: MenuEntry[] = [
   { slug: 'farby-fasadowe-elewacyjne' },
   {
     slug: 'tynki-cementowo-wapienne',
@@ -36,6 +37,16 @@ const productMenu: MenuEntry[] = [
   { slug: 'kleje' },
   { slug: 'inne-produkty' },
 ];
+
+/** Filter out empty categories and prune empty children.
+ * A parent entry stays visible if it has its own published products OR any
+ * surviving child still has products. */
+const productMenu: MenuEntry[] = productMenuFull.flatMap((entry) => {
+  const survivingChildren = entry.children?.filter(categoryHasProducts) ?? [];
+  const selfHas = categoryHasProducts(entry.slug);
+  if (!selfHas && survivingChildren.length === 0) return [];
+  return [{ slug: entry.slug, children: survivingChildren.length ? survivingChildren : undefined }];
+});
 
 type NavLink = {
   href: '/o-firmie' | '/produkty' | '/dla-fachowca' | '/dla-inwestora' | '/fundusze-europejskie' | '/kontakt';

@@ -7,6 +7,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { PlaceholderBadge } from '@/components/ui/PlaceholderBadge';
 import { Link } from '@/i18n/navigation';
 import { categories } from '@/content/categories';
+import { categoryHasProducts } from '@/content/products';
 
 /**
  * Themed Loremflickr placeholder URLs per category slug. Each card gets a
@@ -37,8 +38,9 @@ function categoryImage(slug: string, coverImage?: string): string {
 export async function Categories() {
   const t = await getTranslations('categoriesSection');
 
-  const featured = categories.filter((c) => c.featuredOnHome);
-  const remaining = categories.length - featured.length;
+  const visibleCategories = categories.filter((c) => categoryHasProducts(c.slug));
+  const featured = visibleCategories.filter((c) => c.featuredOnHome);
+  const remaining = visibleCategories.length - featured.length;
 
   return (
     <section

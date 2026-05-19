@@ -20,13 +20,13 @@ import { Reveal } from '@/components/ui/Reveal';
 import { LinkButton } from '@/components/ui/Button';
 import { Link } from '@/i18n/navigation';
 import { getCategory } from '@/content/categories';
-import { products, getProduct } from '@/content/products';
+import { publishedProducts, getProduct } from '@/content/products';
 import { routing } from '@/i18n/routing';
 import { siteConfig } from '@/content/site';
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
-    products.map((p) => ({ locale, slug: p.categorySlug, product: p.slug }))
+    publishedProducts.map((p) => ({ locale, slug: p.categorySlug, product: p.slug }))
   );
 }
 

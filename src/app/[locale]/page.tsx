@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 
 import { Hero } from '@/components/sections/Hero';
 import { USPStrip } from '@/components/sections/USPStrip';
+import { ProductLines } from '@/components/sections/ProductLines';
 import { About } from '@/components/sections/About';
 import { Categories } from '@/components/sections/Categories';
 import { Audiences } from '@/components/sections/Audiences';
@@ -23,6 +24,7 @@ export default async function HomePage({
     <>
       <Hero />
       <USPStrip />
+      <ProductLines />
       <About />
       <Categories />
       <Audiences />

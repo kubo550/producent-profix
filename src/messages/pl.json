@@ -46,6 +46,29 @@
       }
     ]
   },
+  "productLines": {
+    "eyebrow": "Asortyment",
+    "title": "Cztery linie produktowe",
+    "subtitle": "Tynki, kleje, beton i zaprawy - cztery główne grupy produktów PROFIX produkowane na nowoczesnej linii w Krzeszowicach.",
+    "items": {
+      "tynki": {
+        "title": "Tynki",
+        "description": "Cementowo-wapienne, cienkowarstwowe, mineralne i produkty uzupełniające."
+      },
+      "kleje": {
+        "title": "Kleje",
+        "description": "Do płytek ceramicznych i wielkoformatowych. Klasy C1 i C2, elastyczne i półelastyczne."
+      },
+      "beton": {
+        "title": "Beton",
+        "description": "Suche mieszanki betonowe C16/20, C20/25, C25/30 - mrozoodporne, konstrukcyjne."
+      },
+      "zaprawy": {
+        "title": "Zaprawy",
+        "description": "Zaprawy klejące do systemów ociepleń: styropian, wełna mineralna, zatapianie siatki."
+      }
+    }
+  },
   "about": {
     "eyebrow": "O firmie",
     "title": "Producent z Małopolski, z myślą o profesjonalistach",

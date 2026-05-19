@@ -53,6 +53,7 @@ export const categories: Category[] = [
     description:
       'Kleje do mocowania płyt styropianowych i wełny mineralnej oraz zaprawy do zatapiania siatki zbrojącej. Stosowane w systemach ETICS.',
     audience: ['fachowiec'],
+    coverImage: '/photos/workers-team.jpg',
   },
   {
     slug: 'grunty',
@@ -62,6 +63,7 @@ export const categories: Category[] = [
       'Grunty głęboko penetrujące, kontaktowe, pod farby i tynki. Poprawiają przyczepność i ujednolicają chłonność podłoża.',
     audience: ['fachowiec', 'inwestor'],
     featuredOnHome: true,
+    coverImage: '/photos/products/beton-kontakt-15kg.jpg',
   },
   {
     slug: 'farby-wewnetrzne',

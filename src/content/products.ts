@@ -22,6 +22,9 @@ export type Product = {
   norms?: string[];
   /** Extra spec fields shown in the technical sidebar */
   extraSpecs?: Array<{ label: string; value: string }>;
+  /** When true, product is hidden everywhere (catalog list, detail page, navbar).
+   * Use for placeholders awaiting full content from client - flip to undefined/false to publish. */
+  draft?: boolean;
 };
 
 export const products: Product[] = [
@@ -46,9 +49,15 @@ export const products: Product[] = [
     application:
       'Podłoże musi być czyste, suche i wolne od substancji obniżających przyczepność (kurz, brud, wapno, olej, tłuszcz, wosk, stare farby). Nanosić pędzlem, wałkiem lub pistoletem. Unikać opadów i silnego nasłonecznienia. Czas schnięcia ok. 2 godzin.',
     consumption: 'ok. 0,25 kg/m² (zależnie od chłonności podłoża)',
-    packaging: '15 kg / 25 kg',
+    packaging: '15 kg / 23 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym opakowaniu',
+    image: '/photos/products/beton-kontakt-15kg.jpg',
+    gallery: [
+      '/photos/products/beton-kontakt-15kg.jpg',
+      '/photos/products/beton-kontakt-23kg.jpg',
+      '/photos/products/beton-kontakt-banner.jpg',
+    ],
     notes: [
       'Chronić przed dziećmi. Stosować rękawice i okulary ochronne.',
       'Produkt który uległ przemrożeniu nie nadaje się do użytku.',
@@ -147,9 +156,15 @@ export const products: Product[] = [
       'Podłoże musi być czyste, suche, wolne od kurzu, oleju, wapna, wosku i starych farb. Nanosić pędzlem, wałkiem lub pistoletem. Unikać opadów i silnego nasłonecznienia. Czas schnięcia ok. 2 godziny.',
     mixing: 'Rozcieńczyć z czystą wodą w stosunku 1:5 (lub dobrać do chłonności podłoża)',
     consumption: 'ok. 0,2 kg/m² gotowej cieczy',
-    packaging: '12 kg / 18 kg',
+    packaging: '12 kg / 17 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym opakowaniu',
+    image: '/photos/products/hydro-primer-12kg.jpg',
+    gallery: [
+      '/photos/products/hydro-primer-12kg.jpg',
+      '/photos/products/hydro-primer-17kg.jpg',
+      '/photos/products/hydro-primer-banner.jpg',
+    ],
     notes: [
       'Chronić przed dziećmi. Stosować rękawice i okulary ochronne.',
       'Produkt, który uległ przemrożeniu nie nadaje się do użytku.',
@@ -246,6 +261,7 @@ export const products: Product[] = [
       'Akrylowa farba wodorozcieńczalna do dekoracyjnego malowania wnętrz. Praktyczna w dużych powierzchniach mieszkalnych i komercyjnych.',
     features: ['Wodorozcieńczalna', 'Łagodny zapach', 'Szybko schnąca', 'Dekoracyjna powłoka'],
     usage: 'Wnętrza mieszkalne, biurowe, użytkowe. Na podłoża mineralne i płyty gipsowo-kartonowe.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -257,6 +273,7 @@ export const products: Product[] = [
       'Farba silikonowa na bazie żywicy silikonowej. Wysoka paroprzepuszczalność i odporność na zabrudzenia - dobry wybór do wnętrz o intensywnej eksploatacji.',
     features: ['Paroprzepuszczalna', 'Odporna na zabrudzenia', 'Trwała', 'Wodorozcieńczalna'],
     usage: 'Wnętrza mieszkalne i użytkowe, kuchnie, korytarze, pomieszczenia narażone na wilgoć.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
 
@@ -270,6 +287,7 @@ export const products: Product[] = [
       'Farba do malowania elewacji budynków. Tworzy elastyczną powłokę odporną na zmienne warunki atmosferyczne i promieniowanie UV.',
     features: ['Odporna na UV', 'Wodoodporna', 'Elastyczna', 'Paroprzepuszczalna'],
     usage: 'Elewacje domów i budynków użyteczności publicznej. Na tynki cementowo-wapienne, beton i podłoża mineralne.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -281,6 +299,7 @@ export const products: Product[] = [
       'Łączy zalety farb krzemianowych i silikonowych. Bardzo dobra paroprzepuszczalność przy jednoczesnej hydrofobowości - dobra na renowacje i obiekty zabytkowe.',
     features: ['Wysoka paroprzepuszczalność', 'Hydrofobowa', 'Odporna na zabrudzenia', 'Odporna na UV'],
     usage: 'Renowacje, fasady mineralne, obiekty zabytkowe. Na tynki cementowo-wapienne, silikatowe i mineralne.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -292,6 +311,7 @@ export const products: Product[] = [
       'Farba na bazie żywicy silikonowej do elewacji wymagających najwyższej trwałości. Efekt samoczyszczenia powierzchni przy opadach.',
     features: ['Hydrofobowa - efekt samoczyszczenia', 'Wysoka paroprzepuszczalność', 'Odporna na grzyby i algi', 'Długa trwałość'],
     usage: 'Elewacje narażone na intensywne czynniki atmosferyczne. Budynki nowe i renowacje, podłoża mineralne i ETICS.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
 
@@ -340,6 +360,7 @@ export const products: Product[] = [
       'Wysoko elastyczna zaprawa klejowa o podwyższonej przyczepności. Dedykowany pod gres porcelanowy, płytki wielkoformatowe oraz podłoża krytyczne (taras zewnętrzny, basen, ogrzewanie podłogowe).',
     features: ['W pełni elastyczny', 'Wysoka przyczepność', 'Do gresu wielkoformatowego', 'Mrozoodporny i wodoodporny'],
     usage: 'Gres porcelanowy, płytki wielkoformatowe, baseny, tarasy, podłoża narażone na pracę termiczną.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
 
@@ -369,6 +390,7 @@ export const products: Product[] = [
       'Klej-zaprawa szpachlowa do zatapiania siatki z włókna szklanego w systemach ociepleń. Tworzy elastyczną warstwę zbrojącą będącą podkładem pod tynk cienkowarstwowy.',
     features: ['Do zatapiania siatki ETICS', 'Elastyczna', 'Mrozoodporna', 'Dobre właściwości robocze'],
     usage: 'Wykonanie warstwy zbrojonej w systemach ociepleń budynków (na styropianie i wełnie).',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -412,6 +434,7 @@ export const products: Product[] = [
       'Gotowa do użycia masa tynkarska na bazie żywic akrylowych. Dostępna w fakturach kornik (drapana) i baranek (kasza) o uziarnieniu 1-3 mm. Tworzy trwałą, elastyczną powłokę dekoracyjną.',
     features: ['Gotowa do użycia', 'Wodoodporna', 'Trwała powłoka dekoracyjna', 'Faktury: kornik, baranek'],
     usage: 'Elewacje budynków, systemy ETICS, dekoracyjne wykończenie wnętrz. Na podłoża mineralne i gruntowane.',
+    draft: true,
     notes: ['Wymaga gruntowania - patrz Grunt tynkarski akrylowy', 'Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -423,6 +446,7 @@ export const products: Product[] = [
       'Masa tynkarska na bazie żywicy silikonowej, gotowa do użycia. Hydrofobowość zapewnia efekt samoczyszczenia powierzchni przy opadach. Faktura kornik lub baranek, ziarno 1-3 mm.',
     features: ['Hydrofobowa - efekt samoczyszczenia', 'Wysoka paroprzepuszczalność', 'Odporna na grzyby i algi', 'Faktury: kornik, baranek'],
     usage: 'Elewacje budynków, w tym renowacje. Najbardziej polecana w systemach ETICS narażonych na warunki atmosferyczne.',
+    draft: true,
     notes: ['Wymaga gruntowania - patrz Grunt tynkarski silikonowy', 'Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -434,6 +458,7 @@ export const products: Product[] = [
       'Masa tynkarska oparta na hybrydowym spoiwie silikatowo-silikonowym. Łączy wysoką paroprzepuszczalność tynków krzemianowych z hydrofobowością tynków silikonowych - dobry wybór na renowacje i obiekty zabytkowe. Ziarno 1-3 mm.',
     features: ['Bardzo wysoka paroprzepuszczalność', 'Hydrofobowa', 'Dla renowacji i zabytków', 'Faktury: kornik, baranek'],
     usage: 'Elewacje budynków zabytkowych i renowacyjnych, oraz systemy ETICS.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -446,6 +471,7 @@ export const products: Product[] = [
     features: ['Cementowa baza', 'Najwyższa paroprzepuszczalność', 'Trwała', 'Faktury: kornik, baranek'],
     usage: 'Elewacje budynków i systemy ETICS. Do malowania farbą fasadową po nałożeniu.',
     application: 'Mieszać z czystą wodą do uzyskania jednorodnej masy. Nakładać pacą stalową, fakturować pacą plastikową.',
+    draft: true,
     notes: ['Wymaga gruntowania i malowania farbą fasadową', 'Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -457,6 +483,7 @@ export const products: Product[] = [
       'Dekoracyjna masa tynkarska tworząca powierzchnię imitującą naturalny trawertyn. Do wykończenia wnętrz i wybranych powierzchni elewacyjnych - charakterystyczny efekt głębi i nieregularnej tekstury.',
     features: ['Efekt naturalnego kamienia', 'Dekoracyjny', 'Do wnętrz i fragmentów elewacji', 'Indywidualne barwienie'],
     usage: 'Salony, hole, wybrane fragmenty elewacji, lokale gastronomiczne i komercyjne.',
+    draft: true,
     notes: ['Wymaga doświadczonej ekipy wykonawczej', 'Pełna karta techniczna dostępna na życzenie'],
   },
 
@@ -470,6 +497,7 @@ export const products: Product[] = [
       'Drobnoziarnista, śnieżnobiała masa szpachlowa do wykończeniowego szpachlowania ścian i sufitów we wnętrzach. Daje gładką powłokę bezpośrednio pod malowanie.',
     features: ['Śnieżnobiały kolor', 'Drobnoziarnista', 'Dobra urabialność', 'Łatwa do szlifowania'],
     usage: 'Wykończeniowe szpachlowanie tynków cementowo-wapiennych, gipsowych i płyt gipsowo-kartonowych przed malowaniem.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -481,6 +509,7 @@ export const products: Product[] = [
       'Szara masa szpachlowa na bazie cementu lub gipsu (zależnie od wersji) - do wyrównywania większych nierówności i wypełnień. Może pełnić rolę warstwy podkładowej pod gładź wykończeniową.',
     features: ['Wypełniacz', 'Większa grubość warstwy', 'Dobra przyczepność do tynków i betonu'],
     usage: 'Wyrównywanie tynków, wypełnianie ubytków, naprawy fragmentów ścian i sufitów.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -493,6 +522,7 @@ export const products: Product[] = [
       'Masa szpachlowa wzmocniona włóknami zbrojącymi. Tworzy elastyczną, odporną na pękanie powłokę - dobra na podłoża pracujące (np. nad rysami konstrukcyjnymi) oraz pod ogrzewanie podłogowe.',
     features: ['Zbrojona włóknem', 'Elastyczna', 'Odporna na pęknięcia', 'Do podłoży pracujących'],
     usage: 'Szpachlowanie podłoży zarysowanych, łączeń materiałów, podłóg pod ogrzewanie podłogowe.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
 
@@ -506,6 +536,7 @@ export const products: Product[] = [
       'Elastyczna powłoka hydroizolacyjna do zabezpieczania podłoży przed wilgocią. Stosowana pod okładziny ceramiczne w łazienkach, kuchniach, na tarasach i balkonach.',
     features: ['Elastyczna', 'Wodoszczelna', 'Pod okładziny ceramiczne', 'Do wnętrz mokrych'],
     usage: 'Łazienki, kuchnie, tarasy, balkony, pomieszczenia narażone na okresową wilgoć.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -517,6 +548,7 @@ export const products: Product[] = [
       'Klasyczna wylewka cementowa do wyrównywania podłoży i tworzenia podkładów podłogowych w przedziale grubości 10-60 mm. Pod okładziny ceramiczne, drewno, panele.',
     features: ['Grubość 10-60 mm', 'Cementowa baza', 'Pod różne wykończenia podłogowe'],
     usage: 'Wyrównywanie i przygotowanie podłóg w domach, lokalach, obiektach komercyjnych.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -528,6 +560,7 @@ export const products: Product[] = [
       'Samopoziomująca masa wyrównująca o cienkiej warstwie roboczej (1-10 mm). Tworzy gładkie podłoże bezpośrednio pod okładziny - bez konieczności dodatkowej obróbki.',
     features: ['Samopoziomująca', 'Cienka warstwa 1-10 mm', 'Szybkie schnięcie', 'Gładka powierzchnia'],
     usage: 'Wyrównywanie istniejących wylewek i podłoży przed układaniem płytek, paneli, wykładzin.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   // (Beton B-20 przeniesiony do nowej kategorii 'betony' jako beton-c-16-20)
@@ -540,6 +573,7 @@ export const products: Product[] = [
       'Sucha zaprawa murarska na bazie cementu z dodatkami modyfikującymi urabialność. Do murowania ścian wewnętrznych i zewnętrznych z typowych materiałów murarskich.',
     features: ['Cementowa baza', 'Dobra urabialność', 'Sucha mieszanka', 'Mrozoodporna'],
     usage: 'Murowanie ścian zewnętrznych i wewnętrznych, ogrodzeń, kominów - z cegły, pustaków, bloczków.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
 
@@ -554,6 +588,7 @@ export const products: Product[] = [
       'Sucha zaprawa cementowa do wykonania obrzutki wstępnej - cienkiej warstwy sczepnej zwiększającej przyczepność tynku do podłoża. Aplikowana ręcznie lub maszynowo, pokrycie typowo 50-70% powierzchni.',
     features: ['Warstwa sczepna pod tynk', 'Aplikacja ręczna lub maszynowa', 'Cementowa baza', 'Mrozoodporna'],
     usage: 'Pod tynki cementowo-wapienne na podłożach o niskiej lub nierównej chłonności (beton, bloczki, ceramika).',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -566,6 +601,7 @@ export const products: Product[] = [
       'Sucha mieszanka tynkarska wapienno-cementowa o obniżonej gęstości (z perlitem lub lekkimi kruszywami). Dzięki niższej masie szybciej i wygodniej się aplikuje, a powłoka ma dobre właściwości termoizolacyjne.',
     features: ['Super lekki', 'Maszynowa lub ręczna aplikacja', 'Paroprzepuszczalny', 'Wapienno-cementowa baza'],
     usage: 'Tynkowanie wnętrz i elewacji budynków mieszkalnych, użytkowych i przemysłowych.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
 
@@ -580,6 +616,7 @@ export const products: Product[] = [
     features: ['Stosowany w ETICS', 'Dostępne różne długości', 'Trzpień metalowy lub plastikowy', 'Duża głowica - lepszy rozkład sił'],
     usage: 'Mechaniczne mocowanie płyt styropianowych i wełny w systemach ociepleń.',
     notes: ['Długość dobiera się do grubości izolacji + minimum zakotwienia w warstwie nośnej'],
+    draft: true,
   },
   {
     slug: 'siatka-elewacyjna',
@@ -591,6 +628,7 @@ export const products: Product[] = [
     features: ['Włókno szklane', 'Oczko ok. 4 mm', 'Alkalo-odporna', 'Do systemów ETICS'],
     usage: 'Warstwa zbrojona w systemach ociepleń elewacji (na styropianie i wełnie).',
     notes: ['Rolki standardowo 1 x 50 m'],
+    draft: true,
   },
   {
     slug: 'naroznik-z-siatka',
@@ -618,6 +656,7 @@ export const products: Product[] = [
     features: ['PCV + uszczelka + siatka', 'Pył- i wodoszczelne połączenie z oknem', 'Estetyczne wykończenie ościeży'],
     usage: 'Ościeża okienne w elewacjach z systemem ociepleń.',
     notes: ['Najczęściej stosowana długość 2,4 m'],
+    draft: true,
   },
   {
     slug: 'folia-ochronna-2',
@@ -629,6 +668,7 @@ export const products: Product[] = [
     features: ['Przezroczysta', 'Wytrzymała', 'Standardowy wymiar 5 x 4 m (20 m²)'],
     usage: 'Zabezpieczanie podłóg, mebli i okien podczas remontów.',
     packaging: '5 x 4 m (20 m²)',
+    draft: true,
   },
   {
     slug: 'tasma-malarska-2',
@@ -640,6 +680,7 @@ export const products: Product[] = [
     features: ['Odporna na wilgoć', 'Wytrzymała mechanicznie', 'Łatwo się odrywa po pracy', 'Pomarańczowy kolor'],
     usage: 'Maskowanie krawędzi podczas tynkowania i malowania.',
     packaging: '48 mm x 50 m',
+    draft: true,
   },
   {
     slug: 'inne-2',
@@ -650,6 +691,7 @@ export const products: Product[] = [
       'Dodatkowe akcesoria do systemów ociepleń - listwy startowe, profile dylatacyjne, łączniki specjalne. Asortyment dopasowujemy do projektu.',
     features: ['Asortyment na zamówienie', 'Listwy startowe, dylatacyjne, narożniki specjalne'],
     usage: 'Uzupełnienie pełnego systemu ETICS.',
+    draft: true,
     notes: ['Skontaktuj się z nami, by ustalić zakres dostawy'],
   },
 
@@ -664,6 +706,7 @@ export const products: Product[] = [
     features: ['Przezroczysta', 'Wytrzymała', 'Standardowy wymiar 5 x 4 m (20 m²)'],
     usage: 'Zabezpieczanie podłóg, mebli i okien podczas remontów.',
     packaging: '5 x 4 m (20 m²)',
+    draft: true,
   },
   {
     slug: 'tasma-malarska',
@@ -675,6 +718,7 @@ export const products: Product[] = [
     features: ['Łatwa do odrywania', 'Bez pozostałości kleju', 'Standardowa szerokość', 'Do wnętrz'],
     usage: 'Maskowanie listew, ościeży, krawędzi sufitów podczas malowania.',
     packaging: '48 mm x 50 m',
+    draft: true,
   },
   {
     slug: 'listwa-przyokienna-pcv',
@@ -686,6 +730,7 @@ export const products: Product[] = [
     features: ['PCV + uszczelka', 'Zapobiega pęknięciom', 'Estetyczne wykończenie'],
     usage: 'Ościeża okienne we wnętrzach i na elewacjach.',
     notes: ['Standardowa długość 2,4 m'],
+    draft: true,
   },
   {
     slug: 'naroznik-murarski-tynkarski',
@@ -697,6 +742,7 @@ export const products: Product[] = [
     features: ['Aluminiowy profil', 'Wzmocnienie naroża', 'Prosta krawędź pod tynk', 'Odporny na korozję'],
     usage: 'Naroża zewnętrzne ścian, połączenia ścian, ościeża drzwiowe.',
     notes: ['Długości standardowe 2,5 m i 3 m'],
+    draft: true,
   },
   {
     slug: 'naroznik-widra-apbk-do-lukow',
@@ -707,6 +753,7 @@ export const products: Product[] = [
       'Elastyczny profil narożnikowy do tworzenia łukowych przejść i krzywizn. Wykonany z materiału umożliwiającego dopasowanie do wybranego promienia.',
     features: ['Elastyczny', 'Do łuków i krzywizn', 'Z siatką zbrojącą', 'Łatwy w docinaniu'],
     usage: 'Łuki ścienne, łukowe ościeża, dekoracyjne wnęki.',
+    draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
   {
@@ -718,6 +765,7 @@ export const products: Product[] = [
       'Dodatkowe akcesoria do prac tynkarskich - profile dylatacyjne, listwy okapowe, specjalistyczne narożniki. Asortyment dostosowujemy do projektu.',
     features: ['Asortyment na zamówienie'],
     usage: 'Uzupełnienie typowego cyklu tynkowania.',
+    draft: true,
     notes: ['Skontaktuj się z nami, by ustalić zakres dostawy'],
   },
 
@@ -747,7 +795,7 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
     image: '/photos/products/beton-c-16-20.jpg',
-    norms: ['EN 13813:2002'],
+    norms: ['PN-EN 206:2013'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C16/20 (≥ 20 MPa @ 28 dni)' },
       { label: 'Uziarnienie', value: '0-4 mm' },
@@ -842,8 +890,15 @@ export const products: Product[] = [
   },
 ];
 
+/** Published (non-draft) products only. Drafts are placeholders awaiting client content. */
+export const publishedProducts: Product[] = products.filter((p) => !p.draft);
+
 export const getProductsByCategory = (categorySlug: string): Product[] =>
-  products.filter((p) => p.categorySlug === categorySlug);
+  publishedProducts.filter((p) => p.categorySlug === categorySlug);
 
 export const getProduct = (categorySlug: string, slug: string): Product | undefined =>
-  products.find((p) => p.categorySlug === categorySlug && p.slug === slug);
+  publishedProducts.find((p) => p.categorySlug === categorySlug && p.slug === slug);
+
+/** True when category has at least one published product (used to hide empty categories). */
+export const categoryHasProducts = (categorySlug: string): boolean =>
+  publishedProducts.some((p) => p.categorySlug === categorySlug);

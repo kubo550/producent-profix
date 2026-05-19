@@ -10,6 +10,54 @@ Last update: 2026-05-15
 
 ---
 
+## 🟠 Audit przed launchem - do potwierdzenia z klientem
+
+Wykryte przy końcowym cross-checku materiałów `tmp/www/*` vs site content. Każdy punkt to potencjalne zastrzeżenie klienta.
+
+### F. Norma betonów - niespójność między DOCX a PDF "do druku"
+- Karta produktu DOCX (wewnętrzna, 2025-06-14): `EN 13813:2002` dla C16/20 i C20/25, `EN 13813:2002 + EN 1504-3:2005` dla C25/30 (norma jastrychów)
+- Karta techniczna PDF (do druku, materiały dystrybucyjne): `PN-EN 206:2013` (norma betonu) dla wszystkich
+
+Na stronie wszystkie 3 betony mają teraz **`PN-EN 206:2013`** (zgodnie z PDF, ujednolicone). C16/20 wcześniej miał EN 13813:2002, zmieniłem na PN-EN 206:2013 dla spójności linii.
+
+→ **Pytanie:** Która norma jest faktycznie deklarowana na **etykiecie produktu** wydrukowanej na worku 25 kg? Klient może chcieć rollback do EN 13813 lub potwierdzić PN-EN 206:2013.
+
+### G. Stare brand-namy w gruntach (z archive.org)
+Po update'cie `MaxGrunt → Hydro Primer` (zrobione), w produktach Grunty wciąż figurują **stare brand-namy** wyciągnięte z archiwum strony:
+- `MaxiGrunt` — grunt głęboko penetrujący koncentrat
+- `AkrylGrunt` — grunt tynkarski akrylowy
+- `SilGrunt` — grunt tynkarski silikonowy
+- `Beton-Kontakt` — grunt z piaskiem kwarcowym
+
+→ **Pytanie:** Czy klient nadal używa tych nazw na etykietach? Czy któryś z nich, podobnie jak MaxGrunt, został rebrandowany? Najlepiej dosłać mi etykiety/foto wiader analogicznie do Beton Kontakt i Hydro Primer.
+
+### H. Zdjęcie hali produkcyjnej - stock
+Sekcja About na home używa `/stock/factory.jpg` (stock fota fabryki) z podpisem "Hala produkcyjna PROFIX w Krzeszowicach, ul. Sienkiewicza 20". Adres się zgadza, ale zdjęcie **nie jest** faktyczną halą PROFIX.
+
+→ **Pytanie:** Klient może podesłać real foto swojej hali w Krzeszowicach? Jeden szeroki kadr (16:9 lub 4:5) wystarczy. Bez tego stock działa, ale brand-conscious klient może zauważyć.
+
+### I. Realizacje - pochodzenie zdjęć
+Sekcja Realizacje pokazuje: pracownika tynkującego (`worker-pro.jpg`, `worker-hall.jpg`), ekipę renowującą (`workers-team.jpg`), halę po wykończeniu (`realization-hall-after.jpg`), dom inwestorski (`investor-house.jpg` - render).
+
+→ **Pytanie:** Czy to faktyczne realizacje PROFIX? Klient może zapytać. Najlepiej potwierdzić każdą lokalizację/projekt lub wymienić na zweryfikowane materiały klienta. Render domu inwestorskiego pochodzi z archive 2019 i jest typowo "marketing stock" - do podmiany jeśli klient chce real foto inwestycji.
+
+### J. Email RODO - prywatny czy firmowy?
+`siteConfig.emailRodo: 'sokolp1@interia.pl'` - wygląda na prywatny email właścicielki (Katarzyna Sokół, interia.pl).
+
+→ **Pytanie:** Czy to faktycznie aktualny adres do zgłoszeń RODO? Zwykle B2B preferuje firmowy adres typu `rodo@producent-profix.pl` albo `iod@`. Klient może chcieć zmienić.
+
+### K. Aktualność legal name + NIP/REGON po przeprowadzce
+`legalName: F.P.H.U PROFIX Katarzyna Sokół`, `NIP: 944-182-25-17`, `REGON: 120926888` - te dane pochodzą ze stopki DOCX z 2025-06. Adres CEIDG mógł być zaktualizowany razem z przeprowadzką do Krzeszowic (2023).
+
+→ **Pytanie:** Czy te dane (forma prawna, NIP, REGON) są nadal aktualne po przeniesieniu siedziby? Klient powinien sprawdzić w CEIDG/wpisie.
+
+### L. Mega-menu - parent "Tynki cementowo-wapienne" widoczny mimo 0 produktów własnych
+Parent kategoria `tynki-cementowo-wapienne` ma 0 opublikowanych produktów własnych (oba są draft), ale ma 1 widoczne dziecko (`zaprawy-klejace-do-systemow-docieplen`). Filter w navbarze pokazuje parent → klik prowadzi do strony kategorii bez listy produktów (sama opis i breadcrumby).
+
+→ **Decyzja:** (a) zostawić jak jest (klient widzi opis, brak produktów to oczywiste), (b) ukryć parent gdy ma 0 own products (children stają się top-level), (c) klik na parent z 0 products → redirect do pierwszego dziecka.
+
+Polecam (a) na MVP - parent działa jako "kategorialny grouping" w menu, opis kategorii ma wartość SEO. Po dostaniu danych dla pow-100 + ptc-15 (`questions.md` #4) problem znika sam.
+
 ## 🚀 Launch-readiness — szybkie decyzje
 
 Przy każdym punkcie jest **moja propozycja domyślna** — wystarczy potwierdzić lub odrzucić.
@@ -69,16 +117,11 @@ Dodałem już `LocalBusiness` schema (firma w Skawinie, godziny pracy, NIP, REGO
 
 ### 1. ~~Adres firmy~~ ✅ Rozstrzygnięte → Krzeszowice, ul. Sienkiewicza 20.
 
-### 2. Opakowanie Beton Kontakt - rozbieżność
-- **Karta produktu DOCX** (PROFIX BK BETON KONTAKT.docx): `OPAKOWANIA: 25 Kg`
-- **Etykieta PDF** (FRONT beton kontakt owal 15kg.pdf): `MASA NETTO 15 KG`
+### 2. ~~Opakowanie Beton Kontakt~~ ✅ Rozstrzygnięte
+Nowa karta techniczna PDF (2026-05) potwierdza: **15 kg i 23 kg** (wiadra, nie 25 kg jak w starej DOCX). Strona ma `packaging: '15 kg / 23 kg'` + oficjalne zdjęcia obu wiader (`beton-kontakt-15kg.jpg`, `beton-kontakt-23kg.jpg`) + banner brandowy.
 
-→ **Pytanie:** Czy Beton Kontakt jest sprzedawany w **obu** opakowaniach (15 kg i 25 kg), czy tylko w jednym? Obecnie pokazane jako "15 kg / 25 kg" - do potwierdzenia.
-
-### 3. Hydro Primer vs MaxGrunt
-W archive.org strona pokazywała grunt tynkarski koncentrat **"MaxGrunt"** (18 kg, 1:5). W nowych materiałach jest etykieta **"Hydro Primer"** (18 kg + 12 kg, 1:5) o tej samej charakterystyce.
-
-→ **Pytanie:** Czy to ten sam produkt z nowym brandingiem (zmiana nazwy)? Czy może to dwa różne produkty? Jeśli to nowa nazwa - czy "MaxGrunt" mamy całkowicie usunąć ze strony?
+### 3. ~~Hydro Primer vs MaxGrunt~~ ✅ Rozstrzygnięte
+Nowa karta techniczna PDF (2026-05) potwierdza: aktualnym brandem jest **Hydro Primer** (nie MaxGrunt). Opakowania: **12 kg i 17 kg** (wiadra, nie 18 kg). Strona ma `packaging: '12 kg / 17 kg'` + oficjalne zdjęcia (`hydro-primer-12kg.jpg`, `hydro-primer-17kg.jpg`) + banner brandowy.
 
 ---
 
