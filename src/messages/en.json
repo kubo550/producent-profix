@@ -137,6 +137,12 @@
         "title": "Renovations and surface finishes",
         "description": "From renovating old walls to fitting out new halls - our crews handle objects where scale, deadline and a level finish matter. Material from our production, the job done end to end.",
         "tags": ["Machine plaster", "Renovation", "Larger surface"]
+      },
+      "strop": {
+        "label": "Realization - concrete work",
+        "title": "Pouring slabs and concrete floors",
+        "description": "Concrete from our production delivered to the site and pumped directly onto the slab. Full mix quality control and on-time delivery - from the first silo to a finished floor.",
+        "tags": ["Structural concrete", "Slab", "Concrete pumping"]
       }
     }
   },

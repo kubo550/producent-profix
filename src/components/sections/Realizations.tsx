@@ -39,6 +39,14 @@ export async function Realizations() {
         { src: '/photos/realization-hall-after.jpg', alt: 'Hala przemysłowa po zakończeniu prac wykończeniowych PROFIX', variant: 'after', labelKey: 'result' },
       ],
     },
+    {
+      id: 'strop',
+      layout: 'duo',
+      tiles: [
+        { src: '/photos/realizations/strop-pumping.jpg', alt: 'Wylewanie betonu na stropie - pompa, zbrojenie i ekipa', variant: 'before', labelKey: 'process' },
+        { src: '/photos/realizations/strop-sunset.jpg', alt: 'Wylewanie betonu na stropie o zachodzie słońca', variant: 'before', labelKey: 'process' },
+      ],
+    },
   ];
 
   return (

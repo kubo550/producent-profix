@@ -58,6 +58,23 @@ export default async function AboutPage({
         </Container>
       </section>
 
+      <section className="relative pb-24">
+        <Container size="xl">
+          <Reveal>
+            <figure className="overflow-hidden rounded-md border border-[var(--color-border)] bg-[var(--color-bg-deep)] shadow-[var(--shadow-soft)]">
+              <video
+                src="/photos/about-profix.mp4"
+                controls
+                playsInline
+                preload="metadata"
+                className="aspect-video w-full"
+                aria-label="Film prezentujący produkcję PROFIX w Krzeszowicach"
+              />
+            </figure>
+          </Reveal>
+        </Container>
+      </section>
+
       <USPStrip />
       <Logistics />
     </>

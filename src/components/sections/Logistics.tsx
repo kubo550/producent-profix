@@ -30,7 +30,7 @@ export async function Logistics() {
             <div className="space-y-3">
               <figure className="relative aspect-[16/9] overflow-hidden rounded-md border border-[var(--color-border-strong)] shadow-[var(--shadow-soft-lg)]">
                 <Image
-                  src="/photos/truck-delivery.jpg"
+                  src="/photos/truck-cysterna.jpg"
                   alt="Ciężarówka PROFIX z materiałami dostarczająca na osiedle domów jednorodzinnych"
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
@@ -47,8 +47,8 @@ export async function Logistics() {
               <div className="grid grid-cols-2 gap-3">
                 <figure className="relative aspect-[4/3] overflow-hidden rounded-md border border-[var(--color-border)] shadow-[var(--shadow-soft)]">
                   <Image
-                    src="/photos/truck-detail.jpg"
-                    alt="Ciężarówka Scania PROFIX z oznaczeniem producent-profix.pl"
+                    src="/photos/truck-hds.jpg"
+                    alt="Ciężarówka PROFIX z dźwigiem HDS"
                     fill
                     sizes="(min-width: 1024px) 22vw, 50vw"
                     className="h-photo-warm object-cover"
@@ -56,8 +56,8 @@ export async function Logistics() {
                 </figure>
                 <figure className="relative aspect-[4/3] overflow-hidden rounded-md border border-[var(--color-border)] shadow-[var(--shadow-soft)]">
                   <Image
-                    src="/photos/materials-pallets.jpg"
-                    alt="Palety farb PROFIX i worki materiałów gotowe do wysyłki"
+                    src="/photos/truck-silo-loading.jpg"
+                    alt="Cysterna PROFIX przy silosach - załadunek materiałów sypkich"
                     fill
                     sizes="(min-width: 1024px) 22vw, 50vw"
                     className="h-photo-warm object-cover"

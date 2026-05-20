@@ -151,6 +151,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        {/* Tell Dark Reader extension to skip this site - we have our own light/dark theme.
+         * Prevents hydration mismatch from extension-injected attributes. */}
+        <meta name="darkreader-lock" />
+      </head>
       <body
         suppressHydrationWarning
         className={`${inter.variable} ${fraunces.variable} ${jetbrains.variable} relative min-h-dvh font-sans`}

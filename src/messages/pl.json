@@ -137,6 +137,12 @@
         "title": "Renowacje i wykończenia powierzchniowe",
         "description": "Od renowacji starych murów po nowe hale - nasze ekipy obsługują obiekty, w których liczy się skala, krótki termin i równe wykończenie. Materiał z naszej produkcji, robota od A do Z.",
         "tags": ["Tynk maszynowy", "Renowacja", "Większa powierzchnia"]
+      },
+      "strop": {
+        "label": "Realizacja - prace betoniarskie",
+        "title": "Wylewanie stropów i posadzek betonowych",
+        "description": "Beton z naszej produkcji dostarczany na plac budowy i pompowany bezpośrednio na strop. Pełna kontrola jakości mieszanki i terminowa dostawa - od pierwszego silosa do gotowej posadzki.",
+        "tags": ["Beton konstrukcyjny", "Strop", "Pompowanie betonu"]
       }
     }
   },
