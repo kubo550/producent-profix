@@ -72,7 +72,7 @@ export const categories: Category[] = [
     description:
       'Farby do pomieszczeń mieszkalnych i użytkowych. Odporność na szorowanie, paroprzepuszczalność, gotowe bazy kolorystyczne i barwienie na zamówienie.',
     audience: ['fachowiec', 'inwestor'],
-    featuredOnHome: true,
+    coverImage: '/photos/products/cat-farby-wewnetrzne.jpg',
   },
   {
     slug: 'docieplenia-produkty-uzupelniajace',
@@ -81,6 +81,7 @@ export const categories: Category[] = [
     description:
       'Listwy startowe, narożniki, siatki, łączniki, dyble. Wszystko co potrzeba do prawidłowo wykonanej elewacji ETICS.',
     audience: ['fachowiec'],
+    coverImage: '/photos/products/cat-docieplenia.jpg',
   },
   {
     slug: 'szpachle-i-gladzie',
@@ -97,7 +98,7 @@ export const categories: Category[] = [
     description:
       'Kleje do gresu, terakoty, glazury oraz płytek wielkoformatowych. Wewnątrz i na zewnątrz, na typowe i trudne podłoża.',
     audience: ['fachowiec', 'inwestor'],
-    featuredOnHome: true,
+    coverImage: '/photos/products/cat-kleje.jpg',
   },
   {
     slug: 'betony',

@@ -24,7 +24,7 @@ export const fundsProjects: FundsProject[] = [
       {
         heading: 'Zakup i instalacja linii technologicznej do produkcji chemii budowlanej:',
         items: [
-          'Zakup i instalacja silosów piasku dla frakcji 0 - 0,5 mm.',
+          'Zakup i instalacja silosów piasku dla frakcji 0–0,5 mm.',
           'Zakup i instalacja linii mieszania o wydajności 10 t/h.',
           'Zakup i instalacja układu paletyzowania worków 25-30 kg o wydajności 10 t/h.',
           'Zakup i instalacja linii suszenia piasku o wydajności 10 t/h.',

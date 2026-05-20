@@ -275,7 +275,7 @@ export function Navbar() {
                       return (
                         <li
                           key={entry.slug}
-                          onMouseEnter={() => setExpandedSlug(hasChildren ? entry.slug : null)}
+                          onMouseEnter={() => setExpandedSlug(entry.slug)}
                         >
                           <Link
                             href={`/produkty/${cat.slug}`}
@@ -329,44 +329,82 @@ export function Navbar() {
                     }}
                   >
                     <AnimatePresence mode="wait">
-                      {expandedSlug ? (
-                        <motion.div
-                          key={expandedSlug}
-                          initial={{ opacity: 0, x: -6 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          exit={{ opacity: 0, x: -6 }}
-                          transition={{ duration: 0.15 }}
-                          className="space-y-0.5"
-                        >
-                          <p className="px-3 pb-1 pt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-fg-subtle">
-                            {getCategory(expandedSlug)?.name}
-                          </p>
-                          {productMenu
-                            .find((m) => m.slug === expandedSlug)
-                            ?.children?.map((childSlug) => {
-                              const child = getCategory(childSlug);
-                              if (!child) return null;
-                              return (
+                      {expandedSlug ? (() => {
+                        const expandedCat = getCategory(expandedSlug);
+                        const expandedEntry = productMenu.find((m) => m.slug === expandedSlug);
+                        const hasChildren = (expandedEntry?.children?.length ?? 0) > 0;
+                        if (!expandedCat) return null;
+                        return (
+                          <motion.div
+                            key={expandedSlug}
+                            initial={{ opacity: 0, x: -6 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -6 }}
+                            transition={{ duration: 0.15 }}
+                            className="flex h-full flex-col gap-3 p-2"
+                          >
+                            {expandedCat.coverImage && (
+                              <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-deep)]">
+                                <Image
+                                  src={expandedCat.coverImage}
+                                  alt=""
+                                  fill
+                                  sizes="(min-width: 1024px) 22vw, 100vw"
+                                  className="object-cover transition-transform duration-500"
+                                />
+                              </div>
+                            )}
+                            {hasChildren ? (
+                              <div className="flex-1 space-y-0.5">
+                                <p className="px-3 pb-1 pt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-fg-subtle">
+                                  {expandedCat.name}
+                                </p>
+                                {expandedEntry?.children?.map((childSlug) => {
+                                  const child = getCategory(childSlug);
+                                  if (!child) return null;
+                                  return (
+                                    <Link
+                                      key={childSlug}
+                                      href={`/produkty/${child.slug}`}
+                                      onClick={() => setMegaOpen(false)}
+                                      className="group flex items-start gap-2.5 rounded-xl px-3 py-2 transition-colors hover:bg-[var(--color-surface)]"
+                                    >
+                                      <span className="mt-1 inline-flex h-1.5 w-1.5 flex-none rounded-full bg-[var(--color-accent)]/40 transition-colors group-hover:bg-[var(--color-accent)]" />
+                                      <span className="flex-1">
+                                        <span className="block text-sm font-medium text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-accent)]">
+                                          {child.name}
+                                        </span>
+                                        <span className="mt-0.5 block text-xs leading-relaxed text-fg-muted">
+                                          {child.short}
+                                        </span>
+                                      </span>
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            ) : (
+                              <div className="flex flex-1 flex-col justify-between gap-3 px-2">
+                                <div>
+                                  <p className="font-display text-base font-semibold leading-tight">
+                                    {expandedCat.name}
+                                  </p>
+                                  <p className="mt-1.5 text-xs leading-relaxed text-fg-muted">
+                                    {expandedCat.short}
+                                  </p>
+                                </div>
                                 <Link
-                                  key={childSlug}
-                                  href={`/produkty/${child.slug}`}
+                                  href={`/produkty/${expandedCat.slug}`}
                                   onClick={() => setMegaOpen(false)}
-                                  className="group flex items-start gap-2.5 rounded-xl px-3 py-2.5 transition-colors hover:bg-[var(--color-surface)]"
+                                  className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-[var(--color-accent)] transition-all hover:gap-2.5"
                                 >
-                                  <span className="mt-1 inline-flex h-1.5 w-1.5 flex-none rounded-full bg-[var(--color-accent)]/40 transition-colors group-hover:bg-[var(--color-accent)]" />
-                                  <span className="flex-1">
-                                    <span className="block text-sm font-medium text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-accent)]">
-                                      {child.name}
-                                    </span>
-                                    <span className="mt-0.5 block text-xs leading-relaxed text-fg-muted">
-                                      {child.short}
-                                    </span>
-                                  </span>
+                                  Zobacz produkty
+                                  <ArrowRight size={14} strokeWidth={2} />
                                 </Link>
-                              );
-                            })}
-                        </motion.div>
-                      ) : (
+                              </div>
+                            )}
+                          </motion.div>
+                        );
+                      })() : (
                         <motion.div
                           key="default"
                           initial={{ opacity: 0 }}

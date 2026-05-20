@@ -32,7 +32,7 @@ export const products: Product[] = [
   {
     slug: 'grunt-betonkontakt',
     categorySlug: 'grunty',
-    name: 'Beton Kontakt - grunt polimerowo-kwarcowy',
+    name: 'Beton Kontakt, grunt polimerowo-kwarcowy',
     brand: 'PROFIX BK',
     tagline: 'Grunt sczepny pod tynki, gładzie i posadzki na trudnych podłożach',
     description:
@@ -41,7 +41,7 @@ export const products: Product[] = [
       'Zwiększa przyczepność tynków do betonu',
       'Z kruszywem kwarcowym (efekt szorstkości)',
       'Szybki czas schnięcia (~2 h)',
-      'Wodorozcieńczalny - łagodny zapach',
+      'Wodorozcieńczalny, łagodny zapach',
       'Do stosowania wewnątrz i na zewnątrz',
     ],
     usage:
@@ -86,7 +86,7 @@ export const products: Product[] = [
   {
     slug: 'grunt-gleboko-penetrujacy-koncentrat',
     categorySlug: 'grunty',
-    name: 'Grunt głęboko penetrujący - koncentrat',
+    name: 'Grunt głęboko penetrujący, koncentrat',
     brand: 'MaxiGrunt',
     tagline: 'Skondensowana formuła do rozcieńczenia 1:4',
     description:
@@ -116,7 +116,7 @@ export const products: Product[] = [
     brand: 'AkrylGrunt',
     tagline: 'Pod akrylowe masy tynkarskie i farby fasadowe',
     description:
-      'Szybkoschnąca wodna dyspersja kopolimerów akrylowych z dodatkami modyfikującymi. Dedykowany podkład pod akrylowe systemy tynkarskie - zwiększa przyczepność i ujednolica kolorystyczne krycie.',
+      'Szybkoschnąca wodna dyspersja kopolimerów akrylowych z dodatkami modyfikującymi. Dedykowany podkład pod akrylowe systemy tynkarskie, zwiększa przyczepność i ujednolica kolorystyczne krycie.',
     features: [
       'Paroprzepuszczalny',
       'Zwiększa przyczepność',
@@ -137,11 +137,11 @@ export const products: Product[] = [
   {
     slug: 'grunt-tynkarski-koncentrat',
     categorySlug: 'grunty',
-    name: 'Hydro Primer - polimerowy grunt tynkarski koncentrat',
+    name: 'Hydro Primer, polimerowy grunt tynkarski koncentrat',
     brand: 'Hydro Primer',
     tagline: 'Wydajny koncentrat 1:5 pod tynki, gładzie, kleje i farby',
     description:
-      'Polimerowy grunt tynkarski w formie koncentratu. Szybkoschnąca wodna dyspersja kopolimerów akrylowych z dodatkami modyfikującymi - jednorodna ciecz o łagodnym zapachu. Po rozcieńczeniu wzmacnia podłoże, ujednolica chłonność i znacząco zwiększa przyczepność kolejnych warstw.',
+      'Polimerowy grunt tynkarski w formie koncentratu. Szybkoschnąca wodna dyspersja kopolimerów akrylowych z dodatkami modyfikującymi, jednorodna ciecz o łagodnym zapachu. Po rozcieńczeniu wzmacnia podłoże, ujednolica chłonność i znacząco zwiększa przyczepność kolejnych warstw.',
     features: [
       'Wzmacnia podłoże',
       'Zwiększa przyczepność',
@@ -202,7 +202,7 @@ export const products: Product[] = [
     name: 'Farba wewnętrzna lateksowa',
     tagline: 'Trwała powłoka odporna na zmywanie i szorowanie',
     description:
-      'Ekologiczna farba lateksowa do dekoracyjnego malowania ścian i sufitów we wnętrzach. Daje matową, jednolitą powłokę o dobrym kryciu - po wyschnięciu odporną na czyszczenie wodą z detergentem.',
+      'Ekologiczna farba lateksowa do dekoracyjnego malowania ścian i sufitów we wnętrzach. Daje matową, jednolitą powłokę o dobrym kryciu, po wyschnięciu odporną na czyszczenie wodą z detergentem.',
     features: [
       'Idealne krycie',
       'Szybko schnąca',
@@ -270,7 +270,7 @@ export const products: Product[] = [
     name: 'Farba wewnętrzna silikonowa',
     tagline: 'Wytrzymała farba silikonowa do wymagających wnętrz',
     description:
-      'Farba silikonowa na bazie żywicy silikonowej. Wysoka paroprzepuszczalność i odporność na zabrudzenia - dobry wybór do wnętrz o intensywnej eksploatacji.',
+      'Farba silikonowa na bazie żywicy silikonowej. Wysoka paroprzepuszczalność i odporność na zabrudzenia, dobry wybór do wnętrz o intensywnej eksploatacji.',
     features: ['Paroprzepuszczalna', 'Odporna na zabrudzenia', 'Trwała', 'Wodorozcieńczalna'],
     usage: 'Wnętrza mieszkalne i użytkowe, kuchnie, korytarze, pomieszczenia narażone na wilgoć.',
     draft: true,
@@ -296,7 +296,7 @@ export const products: Product[] = [
     name: 'Farba fasadowa silikatowo-silikonowa',
     tagline: 'Hybrydowa formuła na trudne fasady',
     description:
-      'Łączy zalety farb krzemianowych i silikonowych. Bardzo dobra paroprzepuszczalność przy jednoczesnej hydrofobowości - dobra na renowacje i obiekty zabytkowe.',
+      'Łączy zalety farb krzemianowych i silikonowych. Bardzo dobra paroprzepuszczalność przy jednoczesnej hydrofobowości, dobra na renowacje i obiekty zabytkowe.',
     features: ['Wysoka paroprzepuszczalność', 'Hydrofobowa', 'Odporna na zabrudzenia', 'Odporna na UV'],
     usage: 'Renowacje, fasady mineralne, obiekty zabytkowe. Na tynki cementowo-wapienne, silikatowe i mineralne.',
     draft: true,
@@ -309,7 +309,7 @@ export const products: Product[] = [
     tagline: 'Najwyższa odporność na czynniki atmosferyczne',
     description:
       'Farba na bazie żywicy silikonowej do elewacji wymagających najwyższej trwałości. Efekt samoczyszczenia powierzchni przy opadach.',
-    features: ['Hydrofobowa - efekt samoczyszczenia', 'Wysoka paroprzepuszczalność', 'Odporna na grzyby i algi', 'Długa trwałość'],
+    features: ['Hydrofobowa, efekt samoczyszczenia', 'Wysoka paroprzepuszczalność', 'Odporna na grzyby i algi', 'Długa trwałość'],
     usage: 'Elewacje narażone na intensywne czynniki atmosferyczne. Budynki nowe i renowacje, podłoża mineralne i ETICS.',
     draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
@@ -328,7 +328,7 @@ export const products: Product[] = [
     usage:
       'Płytki ceramiczne, kamionkowe, fajansowe, mozaika ze szkła i porcelany. Na ścianach i podłogach, wewnątrz i na zewnątrz budynków.',
     application:
-      'Podłoże nośne, suche, czyste - bez kurzu, tłuszczu i innych zanieczyszczeń. Luźne fragmenty skuć. Mieszać z czystą wodą. Nakładać pacą zębatą.',
+      'Podłoże nośne, suche, czyste, bez kurzu, tłuszczu i innych zanieczyszczeń. Luźne fragmenty skuć. Mieszać z czystą wodą. Nakładać pacą zębatą.',
     consumption: '1,2 kg/m² (zależnie od rodzaju podłoża)',
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu (chronić przed wilgocią)',
@@ -340,7 +340,7 @@ export const products: Product[] = [
     brand: 'PKT-2',
     tagline: 'Półelastyczny klej pod obciążenia mechaniczne i termiczne',
     description:
-      'Sucha mieszanka cementowa z dodatkami modyfikującymi elastyczność. Półelastyczny, mrozoodporny i wodoodporny - zalecany pod podłoża obciążone mechanicznie i termicznie, w tym ogrzewanie podłogowe.',
+      'Sucha mieszanka cementowa z dodatkami modyfikującymi elastyczność. Półelastyczny, mrozoodporny i wodoodporny, zalecany pod podłoża obciążone mechanicznie i termicznie, w tym ogrzewanie podłogowe.',
     features: ['Półelastyczny', 'Mrozoodporny', 'Wodoodporny', 'Pod ogrzewanie podłogowe'],
     usage:
       'Płytki ceramiczne, kamionkowe, fajansowe, gres, mozaika. Tarasy, balkony, podłogi z ogrzewaniem, łazienki. Wewnątrz i na zewnątrz.',
@@ -417,7 +417,7 @@ export const products: Product[] = [
     description:
       'Biała zaprawa klejowo-szpachlowa do przyklejania płyt styropianowych, wełny mineralnej oraz zatapiania siatki w bezspoinowych systemach ociepleń. Jasny kolor ułatwia kontrolę grubości warstwy i podkład pod jasne tynki.',
     features: ['Biały kolor', 'Mocowanie i zatapianie w jednym produkcie', 'Mrozoodporna', 'Pod jasne tynki cienkowarstwowe'],
-    usage: 'Pełny cykl ETICS - mocowanie izolacji (EPS, wełna) i warstwa zbrojona z siatką.',
+    usage: 'Pełny cykl ETICS, mocowanie izolacji (EPS, wełna) i warstwa zbrojona z siatką.',
     application:
       'Mocowanie: pacą zębatą równomiernie na całą powierzchnię płyty, docisnąć do podłoża. Warstwa zbrojona: nanieść klej, zatopić siatkę i wygładzić.',
     tempRange: '+5°C / +25°C',
@@ -428,34 +428,34 @@ export const products: Product[] = [
   {
     slug: 'akrylowa-masa-tynkarska-kornik-baranek-1mm-3mm',
     categorySlug: 'tynki-cienkowarstwowe',
-    name: 'Akrylowa masa tynkarska - Kornik / Baranek 1-3 mm',
+    name: 'Akrylowa masa tynkarska, Kornik / Baranek 1-3 mm',
     tagline: 'Dekoracyjny tynk akrylowy na elewacje i wnętrza',
     description:
       'Gotowa do użycia masa tynkarska na bazie żywic akrylowych. Dostępna w fakturach kornik (drapana) i baranek (kasza) o uziarnieniu 1-3 mm. Tworzy trwałą, elastyczną powłokę dekoracyjną.',
     features: ['Gotowa do użycia', 'Wodoodporna', 'Trwała powłoka dekoracyjna', 'Faktury: kornik, baranek'],
     usage: 'Elewacje budynków, systemy ETICS, dekoracyjne wykończenie wnętrz. Na podłoża mineralne i gruntowane.',
     draft: true,
-    notes: ['Wymaga gruntowania - patrz Grunt tynkarski akrylowy', 'Pełna karta techniczna dostępna na życzenie'],
+    notes: ['Wymaga gruntowania, patrz Grunt tynkarski akrylowy', 'Pełna karta techniczna dostępna na życzenie'],
   },
   {
     slug: 'siliconowa-masa-tynkarska-kornik-baranek-1mm-3mm',
     categorySlug: 'tynki-cienkowarstwowe',
-    name: 'Silikonowa masa tynkarska - Kornik / Baranek 1-3 mm',
+    name: 'Silikonowa masa tynkarska, Kornik / Baranek 1-3 mm',
     tagline: 'Hydrofobowa elewacja silikonowa o długiej trwałości',
     description:
       'Masa tynkarska na bazie żywicy silikonowej, gotowa do użycia. Hydrofobowość zapewnia efekt samoczyszczenia powierzchni przy opadach. Faktura kornik lub baranek, ziarno 1-3 mm.',
-    features: ['Hydrofobowa - efekt samoczyszczenia', 'Wysoka paroprzepuszczalność', 'Odporna na grzyby i algi', 'Faktury: kornik, baranek'],
+    features: ['Hydrofobowa, efekt samoczyszczenia', 'Wysoka paroprzepuszczalność', 'Odporna na grzyby i algi', 'Faktury: kornik, baranek'],
     usage: 'Elewacje budynków, w tym renowacje. Najbardziej polecana w systemach ETICS narażonych na warunki atmosferyczne.',
     draft: true,
-    notes: ['Wymaga gruntowania - patrz Grunt tynkarski silikonowy', 'Pełna karta techniczna dostępna na życzenie'],
+    notes: ['Wymaga gruntowania, patrz Grunt tynkarski silikonowy', 'Pełna karta techniczna dostępna na życzenie'],
   },
   {
     slug: 'sylikatowo-sylikonowa-masa-tynkarska-kornik-baranek-1mm-3mm',
     categorySlug: 'tynki-cienkowarstwowe',
-    name: 'Silikatowo-silikonowa masa tynkarska - Kornik / Baranek 1-3 mm',
+    name: 'Silikatowo-silikonowa masa tynkarska, Kornik / Baranek 1-3 mm',
     tagline: 'Hybrydowa formuła łącząca cechy silikatów i silikonów',
     description:
-      'Masa tynkarska oparta na hybrydowym spoiwie silikatowo-silikonowym. Łączy wysoką paroprzepuszczalność tynków krzemianowych z hydrofobowością tynków silikonowych - dobry wybór na renowacje i obiekty zabytkowe. Ziarno 1-3 mm.',
+      'Masa tynkarska oparta na hybrydowym spoiwie silikatowo-silikonowym. Łączy wysoką paroprzepuszczalność tynków krzemianowych z hydrofobowością tynków silikonowych, dobry wybór na renowacje i obiekty zabytkowe. Ziarno 1-3 mm.',
     features: ['Bardzo wysoka paroprzepuszczalność', 'Hydrofobowa', 'Dla renowacji i zabytków', 'Faktury: kornik, baranek'],
     usage: 'Elewacje budynków zabytkowych i renowacyjnych, oraz systemy ETICS.',
     draft: true,
@@ -464,7 +464,7 @@ export const products: Product[] = [
   {
     slug: 'tynk-mineralny-kornik-baranek-1mm-3mm',
     categorySlug: 'tynki-cienkowarstwowe',
-    name: 'Tynk mineralny - Kornik / Baranek 1-3 mm',
+    name: 'Tynk mineralny, Kornik / Baranek 1-3 mm',
     tagline: 'Cementowy tynk dekoracyjny do malowania',
     description:
       'Sucha mieszanka tynkarska na bazie cementu z wypełniaczami mineralnymi. Po nałożeniu i wyschnięciu wymaga malowania farbą fasadową (silikonową lub silikatowo-silikonową). Faktura kornik lub baranek 1-3 mm.',
@@ -480,7 +480,7 @@ export const products: Product[] = [
     name: 'Trawertyn',
     tagline: 'Dekoracyjny tynk imitujący kamień',
     description:
-      'Dekoracyjna masa tynkarska tworząca powierzchnię imitującą naturalny trawertyn. Do wykończenia wnętrz i wybranych powierzchni elewacyjnych - charakterystyczny efekt głębi i nieregularnej tekstury.',
+      'Dekoracyjna masa tynkarska tworząca powierzchnię imitującą naturalny trawertyn. Do wykończenia wnętrz i wybranych powierzchni elewacyjnych, charakterystyczny efekt głębi i nieregularnej tekstury.',
     features: ['Efekt naturalnego kamienia', 'Dekoracyjny', 'Do wnętrz i fragmentów elewacji', 'Indywidualne barwienie'],
     usage: 'Salony, hole, wybrane fragmenty elewacji, lokale gastronomiczne i komercyjne.',
     draft: true,
@@ -506,7 +506,7 @@ export const products: Product[] = [
     name: 'Masa szpachlowa szara',
     tagline: 'Szpachla wypełniająca do wyrównywania podłoży',
     description:
-      'Szara masa szpachlowa na bazie cementu lub gipsu (zależnie od wersji) - do wyrównywania większych nierówności i wypełnień. Może pełnić rolę warstwy podkładowej pod gładź wykończeniową.',
+      'Szara masa szpachlowa na bazie cementu lub gipsu (zależnie od wersji), do wyrównywania większych nierówności i wypełnień. Może pełnić rolę warstwy podkładowej pod gładź wykończeniową.',
     features: ['Wypełniacz', 'Większa grubość warstwy', 'Dobra przyczepność do tynków i betonu'],
     usage: 'Wyrównywanie tynków, wypełnianie ubytków, naprawy fragmentów ścian i sufitów.',
     draft: true,
@@ -515,11 +515,11 @@ export const products: Product[] = [
   {
     slug: 'elastic-masa-szpachlowa-z-wloknem-stalym',
     categorySlug: 'szpachle-i-gladzie',
-    name: 'Elastic - masa szpachlowa z włóknem',
+    name: 'Elastic, masa szpachlowa z włóknem',
     brand: 'Elastic',
     tagline: 'Zbrojona włóknem masa do trudnych podłoży',
     description:
-      'Masa szpachlowa wzmocniona włóknami zbrojącymi. Tworzy elastyczną, odporną na pękanie powłokę - dobra na podłoża pracujące (np. nad rysami konstrukcyjnymi) oraz pod ogrzewanie podłogowe.',
+      'Masa szpachlowa wzmocniona włóknami zbrojącymi. Tworzy elastyczną, odporną na pękanie powłokę, dobra na podłoża pracujące (np. nad rysami konstrukcyjnymi) oraz pod ogrzewanie podłogowe.',
     features: ['Zbrojona włóknem', 'Elastyczna', 'Odporna na pęknięcia', 'Do podłoży pracujących'],
     usage: 'Szpachlowanie podłoży zarysowanych, łączeń materiałów, podłóg pod ogrzewanie podłogowe.',
     draft: true,
@@ -557,7 +557,7 @@ export const products: Product[] = [
     name: 'Wylewka samopoziomująca cienkowarstwowa 1-10 mm',
     tagline: 'Szybka, samopoziomująca masa wyrównująca',
     description:
-      'Samopoziomująca masa wyrównująca o cienkiej warstwie roboczej (1-10 mm). Tworzy gładkie podłoże bezpośrednio pod okładziny - bez konieczności dodatkowej obróbki.',
+      'Samopoziomująca masa wyrównująca o cienkiej warstwie roboczej (1-10 mm). Tworzy gładkie podłoże bezpośrednio pod okładziny, bez konieczności dodatkowej obróbki.',
     features: ['Samopoziomująca', 'Cienka warstwa 1-10 mm', 'Szybkie schnięcie', 'Gładka powierzchnia'],
     usage: 'Wyrównywanie istniejących wylewek i podłoży przed układaniem płytek, paneli, wykładzin.',
     draft: true,
@@ -572,7 +572,7 @@ export const products: Product[] = [
     description:
       'Sucha zaprawa murarska na bazie cementu z dodatkami modyfikującymi urabialność. Do murowania ścian wewnętrznych i zewnętrznych z typowych materiałów murarskich.',
     features: ['Cementowa baza', 'Dobra urabialność', 'Sucha mieszanka', 'Mrozoodporna'],
-    usage: 'Murowanie ścian zewnętrznych i wewnętrznych, ogrodzeń, kominów - z cegły, pustaków, bloczków.',
+    usage: 'Murowanie ścian zewnętrznych i wewnętrznych, ogrodzeń, kominów, z cegły, pustaków, bloczków.',
     draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
   },
@@ -585,7 +585,7 @@ export const products: Product[] = [
     brand: 'POW-100',
     tagline: 'Cementowa warstwa sczepna pod tynki',
     description:
-      'Sucha zaprawa cementowa do wykonania obrzutki wstępnej - cienkiej warstwy sczepnej zwiększającej przyczepność tynku do podłoża. Aplikowana ręcznie lub maszynowo, pokrycie typowo 50-70% powierzchni.',
+      'Sucha zaprawa cementowa do wykonania obrzutki wstępnej, cienkiej warstwy sczepnej zwiększającej przyczepność tynku do podłoża. Aplikowana ręcznie lub maszynowo, pokrycie typowo 50-70% powierzchni.',
     features: ['Warstwa sczepna pod tynk', 'Aplikacja ręczna lub maszynowa', 'Cementowa baza', 'Mrozoodporna'],
     usage: 'Pod tynki cementowo-wapienne na podłożach o niskiej lub nierównej chłonności (beton, bloczki, ceramika).',
     draft: true,
@@ -613,7 +613,7 @@ export const products: Product[] = [
     tagline: 'Łącznik mechaniczny do mocowania izolacji',
     description:
       'Plastikowy łącznik z trzpieniem (metalowym lub plastikowym) do mechanicznego mocowania płyt styropianowych do podłoża. Stosowany jako uzupełnienie kleju w systemach ETICS.',
-    features: ['Stosowany w ETICS', 'Dostępne różne długości', 'Trzpień metalowy lub plastikowy', 'Duża głowica - lepszy rozkład sił'],
+    features: ['Stosowany w ETICS', 'Dostępne różne długości', 'Trzpień metalowy lub plastikowy', 'Duża głowica, lepszy rozkład sił'],
     usage: 'Mechaniczne mocowanie płyt styropianowych i wełny w systemach ociepleń.',
     notes: ['Długość dobiera się do grubości izolacji + minimum zakotwienia w warstwie nośnej'],
     draft: true,
@@ -624,7 +624,7 @@ export const products: Product[] = [
     name: 'Siatka elewacyjna',
     tagline: 'Siatka z włókna szklanego do warstwy zbrojonej',
     description:
-      'Siatka z włókna szklanego o oczku ~4 mm, alkalo-odporna - zatapiana w warstwie kleju szpachlowego w systemach ETICS. Zwiększa wytrzymałość warstwy zbrojonej na pękanie.',
+      'Siatka z włókna szklanego o oczku ~4 mm, alkalo-odporna, zatapiana w warstwie kleju szpachlowego w systemach ETICS. Zwiększa wytrzymałość warstwy zbrojonej na pękanie.',
     features: ['Włókno szklane', 'Oczko ok. 4 mm', 'Alkalo-odporna', 'Do systemów ETICS'],
     usage: 'Warstwa zbrojona w systemach ociepleń elewacji (na styropianie i wełnie).',
     notes: ['Rolki standardowo 1 x 50 m'],
@@ -676,7 +676,7 @@ export const products: Product[] = [
     name: 'Taśma tynkarska',
     tagline: 'Pomarańczowa taśma tynkarska Blue Dolphin',
     description:
-      'Profesjonalna taśma tynkarska Blue Dolphin Tapes - odporna na wilgoć i uszkodzenia mechaniczne, łatwa w przerywaniu, sprawdza się na ostrych krawędziach.',
+      'Profesjonalna taśma tynkarska Blue Dolphin Tapes, odporna na wilgoć i uszkodzenia mechaniczne, łatwa w przerywaniu, sprawdza się na ostrych krawędziach.',
     features: ['Odporna na wilgoć', 'Wytrzymała mechanicznie', 'Łatwo się odrywa po pracy', 'Pomarańczowy kolor'],
     usage: 'Maskowanie krawędzi podczas tynkowania i malowania.',
     packaging: '48 mm x 50 m',
@@ -686,9 +686,9 @@ export const products: Product[] = [
     slug: 'inne-2',
     categorySlug: 'docieplenia-produkty-uzupelniajace',
     name: 'Inne akcesoria do dociepleń',
-    tagline: 'Profile, łączniki, drobny osprzęt - na zapytanie',
+    tagline: 'Profile, łączniki, drobny osprzęt, na zapytanie',
     description:
-      'Dodatkowe akcesoria do systemów ociepleń - listwy startowe, profile dylatacyjne, łączniki specjalne. Asortyment dopasowujemy do projektu.',
+      'Dodatkowe akcesoria do systemów ociepleń, listwy startowe, profile dylatacyjne, łączniki specjalne. Asortyment dopasowujemy do projektu.',
     features: ['Asortyment na zamówienie', 'Listwy startowe, dylatacyjne, narożniki specjalne'],
     usage: 'Uzupełnienie pełnego systemu ETICS.',
     draft: true,
@@ -760,9 +760,9 @@ export const products: Product[] = [
     slug: 'inne',
     categorySlug: 'tynki-produkty-uzupelniajace',
     name: 'Inne akcesoria do tynków',
-    tagline: 'Drobny osprzęt tynkarski - na zapytanie',
+    tagline: 'Drobny osprzęt tynkarski, na zapytanie',
     description:
-      'Dodatkowe akcesoria do prac tynkarskich - profile dylatacyjne, listwy okapowe, specjalistyczne narożniki. Asortyment dostosowujemy do projektu.',
+      'Dodatkowe akcesoria do prac tynkarskich, profile dylatacyjne, listwy okapowe, specjalistyczne narożniki. Asortyment dostosowujemy do projektu.',
     features: ['Asortyment na zamówienie'],
     usage: 'Uzupełnienie typowego cyklu tynkowania.',
     draft: true,
@@ -777,12 +777,12 @@ export const products: Product[] = [
     brand: 'PROFIX',
     tagline: 'Mrozoodporna mieszanka konstrukcyjna do typowych prac betoniarskich',
     description:
-      'Sucha mieszanka betonowa klasy wytrzymałości C16/20 (dawniej B-20). Skomponowana z cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Wystarczy dodać czystą wodę - po 28 dniach uzyskuje wytrzymałość ≥ 20 MPa.',
+      'Sucha mieszanka betonowa klasy wytrzymałości C16/20 (dawniej B-20). Skomponowana z cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Wystarczy dodać czystą wodę, po 28 dniach uzyskuje wytrzymałość ≥ 20 MPa.',
     features: [
       'Klasa wytrzymałości C16/20 (≥ 20 MPa po 28 dniach)',
       'Mrozoodporna',
       'Duża wytrzymałość',
-      'Gotowa mieszanka - wystarczy dodać wodę',
+      'Gotowa mieszanka, wystarczy dodać wodę',
       'Drobne uziarnienie 0-4 mm',
     ],
     usage:
@@ -815,7 +815,7 @@ export const products: Product[] = [
     brand: 'PROFIX',
     tagline: 'Mrozoodporna mieszanka do prac konstrukcyjnych, naprawczych i remontowych',
     description:
-      'Sucha mieszanka betonowa klasy wytrzymałości C20/25 na bazie cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Wszechstronna - sprawdza się w pracach konstrukcyjnych, remontowych i naprawczych. Po 28 dniach uzyskuje wytrzymałość ≥ 25 MPa i staje się odporna na warunki atmosferyczne.',
+      'Sucha mieszanka betonowa klasy wytrzymałości C20/25 na bazie cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Wszechstronna, sprawdza się w pracach konstrukcyjnych, remontowych i naprawczych. Po 28 dniach uzyskuje wytrzymałość ≥ 25 MPa i staje się odporna na warunki atmosferyczne.',
     features: [
       'Klasa wytrzymałości C20/25 (≥ 25 MPa po 28 dniach)',
       'Mrozoodporna',
@@ -825,7 +825,7 @@ export const products: Product[] = [
       'Drobne uziarnienie 0-4 mm',
     ],
     usage:
-      'Prace konstrukcyjne, naprawcze i remontowe - podkłady podłogowe, posadzki, mury, nadproża, belki, kotwienie słupków. Stosowana wewnątrz i na zewnątrz budynków.',
+      'Prace konstrukcyjne, naprawcze i remontowe, podkłady podłogowe, posadzki, mury, nadproża, belki, kotwienie słupków. Stosowana wewnątrz i na zewnątrz budynków.',
     application:
       'Do 3,4 l zimnej wody wsypać zawartość worka 25 kg i mieszać 2-3 minuty mieszadłem mechanicznym lub w betoniarce do uzyskania jednorodnej konsystencji. Efektywne mieszanie powinno trwać nie krócej niż 5 min od dodania całej wody zarobowej. Zaprawę wyrobić w ciągu około 1 godziny. Po nałożeniu starannie zagęścić, ściągnąć, zatrzeć i wygładzić powierzchnię.',
     mixing: '3,4 l wody na worek 25 kg (≈ 0,13-0,14 l/kg)',
@@ -844,7 +844,7 @@ export const products: Product[] = [
       { label: 'Zastosowanie', value: 'wewnątrz i na zewnątrz' },
     ],
     notes: [
-      'Pielęgnacja wilgotnościowa przez 3-7 dni - zwilżanie i przykrycie powierzchni.',
+      'Pielęgnacja wilgotnościowa przez 3-7 dni, zwilżanie i przykrycie powierzchni.',
       'Nie wykonywać prac na przemrożonym podłożu ani przy ryzyku przymrozków.',
     ],
   },
@@ -853,9 +853,9 @@ export const products: Product[] = [
     categorySlug: 'betony',
     name: 'Beton C25/30',
     brand: 'PROFIX',
-    tagline: 'Najwyższa klasa - mrozoodporny beton konstrukcyjny i naprawczy',
+    tagline: 'Najwyższa klasa, mrozoodporny beton konstrukcyjny i naprawczy',
     description:
-      'Najwyższa klasa wytrzymałości w serii betonów PROFIX - C25/30 (≥ 30 MPa po 28 dniach). Skomponowany z cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Mrozoodporny i odporny na warunki atmosferyczne - sprawdza się w pracach konstrukcyjnych, naprawczych i remontowych, zarówno wewnątrz jak i na zewnątrz.',
+      'Najwyższa klasa wytrzymałości w serii betonów PROFIX, C25/30 (≥ 30 MPa po 28 dniach). Skomponowany z cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Mrozoodporny i odporny na warunki atmosferyczne, sprawdza się w pracach konstrukcyjnych, naprawczych i remontowych, zarówno wewnątrz jak i na zewnątrz.',
     features: [
       'Klasa wytrzymałości C25/30 (≥ 30 MPa po 28 dniach)',
       'Mrozoodporna',
@@ -865,7 +865,7 @@ export const products: Product[] = [
       'Do napraw elementów konstrukcyjnych',
     ],
     usage:
-      'Prace konstrukcyjne, naprawcze i remontowe - podkłady podłogowe, posadzki, mury, nadproża, belki, kotwienie słupków, naprawy elementów konstrukcyjnych. Stosowana wewnątrz i na zewnątrz budynków.',
+      'Prace konstrukcyjne, naprawcze i remontowe, podkłady podłogowe, posadzki, mury, nadproża, belki, kotwienie słupków, naprawy elementów konstrukcyjnych. Stosowana wewnątrz i na zewnątrz budynków.',
     application:
       'Do 3,4 l zimnej wody wsypać worek 25 kg, mieszać 2-3 minuty mieszadłem mechanicznym lub w betoniarce do uzyskania jednorodnej konsystencji. Efektywne mieszanie powinno trwać nie krócej niż 5 min od dodania całej wody zarobowej. Zaprawę zużyć w ciągu około 1 godziny. Po nałożeniu starannie zagęścić, ściągnąć, zatrzeć i wygładzić powierzchnię.',
     mixing: '3,4 l wody na worek 25 kg (≈ 0,13-0,14 l/kg)',

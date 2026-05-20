@@ -5,19 +5,18 @@ import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { LinkButton } from '@/components/ui/Button';
-import { PlaceholderBadge } from '@/components/ui/PlaceholderBadge';
 import { Logistics } from '@/components/sections/Logistics';
 
 const sectionIcons = [HardHat, Wrench, ShieldCheck, Truck, ClipboardList, Layers] as const;
 
-// Themed Loremflickr tags per card slot (cycled if more sections than entries).
-const cardThemes = [
-  { tag: 'construction', lock: 41 },
-  { tag: 'tools', lock: 42 },
-  { tag: 'plaster', lock: 43 },
-  { tag: 'truck', lock: 44 },
-  { tag: 'blueprint', lock: 45 },
-  { tag: 'scaffolding', lock: 46 },
+// Real photos for each section card (matches pl.json professionalPage.sections order).
+const cardImages = [
+  '/photos/fachowca-05-blueprint.jpg', // Karty techniczne i atesty — planowanie z dokumentami
+  '/photos/fachowca-03-plaster.jpg',   // Wsparcie technologa — pracownik tynkujący
+  '/photos/truck-hds.jpg',             // Hurtowy transport — ciężarówka PROFIX z HDS
+  '/photos/fachowca-01-construction.jpg',
+  '/photos/fachowca-02-tools.jpg',
+  '/photos/products/cat-docieplenia.jpg',
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -75,8 +74,7 @@ export default async function ProfessionalPage({
           <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {sections.map((s, i) => {
               const Icon = sectionIcons[i % sectionIcons.length];
-              const theme = cardThemes[i % cardThemes.length];
-              const src = `https://loremflickr.com/720/450/${theme.tag}?lock=${theme.lock}`;
+              const src = cardImages[i % cardImages.length];
               return (
                 <Reveal key={s.title} delay={(i % 3) * 0.08}>
                   <article className="group flex h-full flex-col overflow-hidden rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] shadow-[var(--shadow-soft)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[rgb(31_24_21/0.22)] hover:shadow-[var(--shadow-soft-lg)]">
@@ -86,14 +84,12 @@ export default async function ProfessionalPage({
                         alt=""
                         fill
                         sizes="(min-width: 1024px) 30vw, 100vw"
-                        unoptimized
                         className="h-photo-warm object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-deep)]/45 via-transparent to-transparent" />
                       <span className="absolute left-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-paper)] text-[var(--color-accent)] shadow-[var(--shadow-soft)]">
                         <Icon size={20} strokeWidth={1.5} />
                       </span>
-                      <PlaceholderBadge className="bottom-3 right-3" />
                     </div>
                     <div className="flex flex-1 flex-col p-7">
                       <h2

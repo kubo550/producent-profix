@@ -177,7 +177,7 @@ export default async function ProductPage({
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[2.5rem] border border-[var(--color-border-strong)] bg-white shadow-[0_40px_80px_-30px_rgba(0,0,0,0.25)]">
                   <Image
                     src={p.image}
-                    alt={`${p.name} - opakowanie produktu`}
+                    alt={`${p.name}, opakowanie produktu`}
                     fill
                     priority
                     sizes="(min-width: 1024px) 45vw, 100vw"

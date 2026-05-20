@@ -5,18 +5,18 @@ import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { LinkButton } from '@/components/ui/Button';
-import { PlaceholderBadge } from '@/components/ui/PlaceholderBadge';
 import { Distributors } from '@/components/sections/Distributors';
 
 const sectionIcons = [Home, Sparkles, Wallet, Sun, Building2, KeySquare] as const;
 
-const cardThemes = [
-  { tag: 'house', lock: 51 },
-  { tag: 'interior', lock: 52 },
-  { tag: 'facade', lock: 53 },
-  { tag: 'paint', lock: 54 },
-  { tag: 'architecture', lock: 55 },
-  { tag: 'renovation', lock: 56 },
+// Real photos for each section card (matches pl.json investorPage.sections order).
+const cardImages = [
+  '/photos/inwestor-04-paint.jpg',        // Dobór produktów — paleta kolorów farb
+  '/photos/inwestor-05-architecture.jpg', // Mapa punktów sprzedaży — nowoczesna architektura
+  '/photos/inwestor-06-renovation.jpg',   // Konsultacja przed zakupem — para w trakcie remontu
+  '/photos/inwestor-01-house.jpg',
+  '/photos/inwestor-02-interior.jpg',
+  '/photos/inwestor-03-facade.jpg',
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -49,7 +49,7 @@ export default async function InvestorPage({
           <Reveal>
             <figure className="relative aspect-[22/9] overflow-hidden rounded-md border border-[var(--color-border-strong)] shadow-[var(--shadow-soft-lg)]">
               <Image
-                src="/photos/investor-house.jpg"
+                src="/photos/inwestor-hero.jpg"
                 alt="Nowoczesny dom jednorodzinny - przykład realizacji z wykorzystaniem materiałów PROFIX"
                 fill
                 priority
@@ -74,8 +74,7 @@ export default async function InvestorPage({
           <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {sections.map((s, i) => {
               const Icon = sectionIcons[i % sectionIcons.length];
-              const theme = cardThemes[i % cardThemes.length];
-              const src = `https://loremflickr.com/720/450/${theme.tag}?lock=${theme.lock}`;
+              const src = cardImages[i % cardImages.length];
               return (
                 <Reveal key={s.title} delay={(i % 3) * 0.08}>
                   <article className="group flex h-full flex-col overflow-hidden rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] shadow-[var(--shadow-soft)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[rgb(31_24_21/0.22)] hover:shadow-[var(--shadow-soft-lg)]">
@@ -85,14 +84,12 @@ export default async function InvestorPage({
                         alt=""
                         fill
                         sizes="(min-width: 1024px) 30vw, 100vw"
-                        unoptimized
                         className="h-photo-warm object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-deep)]/45 via-transparent to-transparent" />
                       <span className="absolute left-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-paper)] text-[var(--color-accent)] shadow-[var(--shadow-soft)]">
                         <Icon size={20} strokeWidth={1.5} />
                       </span>
-                      <PlaceholderBadge className="bottom-3 right-3" />
                     </div>
                     <div className="flex flex-1 flex-col p-7">
                       <h2
@@ -121,7 +118,7 @@ export default async function InvestorPage({
           <Reveal>
             <div className="relative overflow-hidden rounded-md border border-[var(--color-border-strong)] bg-[var(--color-paper)] shadow-[var(--shadow-soft-lg)]">
               <Image
-                src="/stock/facade.jpg"
+                src="/photos/inwestor-closing.jpg"
                 alt=""
                 aria-hidden
                 fill

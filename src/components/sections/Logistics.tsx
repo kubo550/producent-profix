@@ -57,7 +57,7 @@ export async function Logistics() {
                 <figure className="relative aspect-[4/3] overflow-hidden rounded-md border border-[var(--color-border)] shadow-[var(--shadow-soft)]">
                   <Image
                     src="/photos/truck-silo-loading.jpg"
-                    alt="Cysterna PROFIX przy silosach - załadunek materiałów sypkich"
+                    alt="Cysterna PROFIX przy silosach, załadunek materiałów sypkich"
                     fill
                     sizes="(min-width: 1024px) 22vw, 50vw"
                     className="h-photo-warm object-cover"

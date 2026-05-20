@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
@@ -104,6 +104,30 @@ export async function Categories() {
               </Link>
             </Reveal>
           ))}
+
+          <Reveal delay={featured.length * 0.08}>
+            <Link
+              href="/kontakt"
+              className="group relative flex h-full flex-col overflow-hidden rounded-md border-2 border-dashed border-[var(--color-border-strong)] bg-[var(--color-bg)] p-7 transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)] sm:p-8"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                <Sparkles size={20} strokeWidth={1.75} />
+              </div>
+              <h3
+                className="mt-6 font-display text-2xl font-medium leading-[1.1] tracking-tight transition-colors group-hover:text-[var(--color-accent)]"
+                style={{ fontVariationSettings: '"SOFT" 50, "opsz" 36' }}
+              >
+                {t('moreSoon.title')}
+              </h3>
+              <p className="mt-3 flex-1 text-[15px] leading-relaxed text-fg-muted">
+                {t('moreSoon.description')}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-accent)] transition-all group-hover:gap-3">
+                {t('moreSoon.cta')}
+                <ArrowRight size={16} strokeWidth={1.75} />
+              </span>
+            </Link>
+          </Reveal>
         </div>
 
         {remaining > 0 && (

@@ -25,10 +25,10 @@ export async function Realizations() {
       id: 'room',
       layout: 'quad',
       tiles: [
-        { src: '/photos/realization-room-before-1.jpg', alt: 'Pomieszczenie przed tynkowaniem - ujęcie 1', variant: 'before', labelKey: 'before' },
-        { src: '/photos/realization-room-after-1.jpg', alt: 'Pomieszczenie po tynkowaniu - ujęcie 1', variant: 'after', labelKey: 'after' },
-        { src: '/photos/realization-room-before-2.jpg', alt: 'Pomieszczenie przed tynkowaniem - ujęcie 2', variant: 'before', labelKey: 'before' },
-        { src: '/photos/realization-room-after-2.jpg', alt: 'Pomieszczenie po tynkowaniu - ujęcie 2', variant: 'after', labelKey: 'after' },
+        { src: '/photos/realization-room-before-1.jpg', alt: 'Pomieszczenie przed tynkowaniem, ujęcie 1', variant: 'before', labelKey: 'before' },
+        { src: '/photos/realization-room-after-1.jpg', alt: 'Pomieszczenie po tynkowaniu, ujęcie 1', variant: 'after', labelKey: 'after' },
+        { src: '/photos/realization-room-before-2.jpg', alt: 'Pomieszczenie przed tynkowaniem, ujęcie 2', variant: 'before', labelKey: 'before' },
+        { src: '/photos/realization-room-after-2.jpg', alt: 'Pomieszczenie po tynkowaniu, ujęcie 2', variant: 'after', labelKey: 'after' },
       ],
     },
     {

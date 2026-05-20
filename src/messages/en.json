@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "PROFIX - manufacturer of paints, plasters and construction materials in Krzeszowice",
+    "title": "PROFIX | manufacturer of paints, plasters and construction materials in Krzeszowice",
     "titleTemplate": "%s | PROFIX",
-    "description": "PROFIX is a Polish family-owned manufacturer of construction chemistry since 2009 - facade paints, cement-lime plasters, insulation adhesives and finishing materials. Modern production line in Krzeszowice near Krakow.",
+    "description": "PROFIX is a Polish family-owned manufacturer of construction chemistry since 2009: facade paints, cement-lime plasters, insulation adhesives and finishing materials. Modern production line in Krzeszowice near Krakow.",
     "keywords": "cement-lime plasters, facade paints, insulation adhesives, ETICS, gypsum smoothing compounds, construction chemistry manufacturer, Krzeszowice, Lesser Poland",
-    "ogTitle": "PROFIX - manufacturer of finishing and construction materials",
+    "ogTitle": "PROFIX | manufacturer of finishing and construction materials",
     "ogDescription": "Paints, plasters, adhesives, insulation systems. Production in Krzeszowice near Krakow, own fleet delivery across Poland."
   },
   "nav": {
@@ -49,7 +49,7 @@
   "productLines": {
     "eyebrow": "Product range",
     "title": "Four product lines",
-    "subtitle": "Plasters, adhesives, concrete and mortars - the four core PROFIX product groups, made on our modern production line in Krzeszowice.",
+    "subtitle": "Plasters, adhesives, concrete and mortars. The four core PROFIX product groups, made on our modern production line in Krzeszowice.",
     "items": {
       "tynki": {
         "title": "Plasters",
@@ -61,7 +61,7 @@
       },
       "beton": {
         "title": "Concrete",
-        "description": "Dry concrete mixes C16/20, C20/25, C25/30 - frost-resistant, structural."
+        "description": "Dry concrete mixes C16/20, C20/25, C25/30. Frost-resistant, structural."
       },
       "zaprawy": {
         "title": "Mortars",
@@ -88,7 +88,12 @@
     "eyebrow": "Products",
     "title": "A broad range of construction products",
     "subtitle": "Everything you need, from shell to finish. Pick a category to see the details.",
-    "cta": "See all products"
+    "cta": "See all products",
+    "moreSoon": {
+      "title": "More products coming soon",
+      "description": "We are building out the full catalog: paints, plasters, adhesives, smoothing compounds and accessories. Need a specific product now? Write or call us.",
+      "cta": "Ask about a product"
+    }
   },
   "audiences": {
     "eyebrow": "Two paths",
@@ -127,21 +132,21 @@
     },
     "cases": {
       "room": {
-        "label": "Realization - single-family home",
+        "label": "Realization: single-family home",
         "title": "Turn-key plastering of interior rooms",
-        "description": "Developer shell - ceramic brick walls and concrete ceiling. After applying PROFIX plaster, walls and ceiling are ready for finishing and painting.",
+        "description": "Developer shell: ceramic brick walls and concrete ceiling. After applying PROFIX plaster, walls and ceiling are ready for finishing and painting.",
         "tags": ["Cement-lime plaster", "PROFIX primer", "Ready for painting"]
       },
       "hall": {
-        "label": "Realization - larger objects",
+        "label": "Realization: larger objects",
         "title": "Renovations and surface finishes",
-        "description": "From renovating old walls to fitting out new halls - our crews handle objects where scale, deadline and a level finish matter. Material from our production, the job done end to end.",
+        "description": "From renovating old walls to fitting out new halls. Our crews handle objects where scale, deadline and a level finish matter. Material from our production, the job done end to end.",
         "tags": ["Machine plaster", "Renovation", "Larger surface"]
       },
       "strop": {
-        "label": "Realization - concrete work",
+        "label": "Realization: concrete work",
         "title": "Pouring slabs and concrete floors",
-        "description": "Concrete from our production delivered to the site and pumped directly onto the slab. Full mix quality control and on-time delivery - from the first silo to a finished floor.",
+        "description": "Concrete from our production delivered to the site and pumped directly onto the slab. Full mix quality control and on-time delivery, from the first silo to a finished floor.",
         "tags": ["Structural concrete", "Slab", "Concrete pumping"]
       }
     }
@@ -169,7 +174,7 @@
     "title": "Find your nearest point of sale",
     "subtitle": "We work with construction stores and wholesalers across Poland. The full distributor list is on a dedicated subpage.",
     "cta": "See points of sale",
-    "empty": "The distributor list is being updated. Get in touch - we'll advise the nearest point."
+    "empty": "The distributor list is being updated. Get in touch, we'll advise the nearest point."
   },
   "contact": {
     "eyebrow": "Contact",
@@ -245,13 +250,13 @@
     "subtitle": "Construction chemistry manufacturer from Krzeszowice",
     "intro": "PROFIX is a Polish family-owned company in construction chemistry since 2009. Full Polish capital gives us independence and flexibility in decision-making, so we can respond quickly to market needs and consistently develop our offer.",
     "missionTitle": "Specialization and development",
-    "mission": "We produce construction chemistry for contractor companies and individual customers - cement mortars, ETICS and tile adhesives, primers, facade plasters. Every formulation is developed in our R&D department and undergoes regular testing in certified laboratories.",
+    "mission": "We produce construction chemistry for contractor companies and individual customers: cement mortars, ETICS and tile adhesives, primers, facade plasters. Every formulation is developed in our R&D department and undergoes regular testing in certified laboratories.",
     "productionTitle": "Production in Krzeszowice since 2023",
     "production": "Since 2023 all our products are made on a modern technology line in Krzeszowice. The investment let us increase capacity and control the process more precisely. Our internal quality control department and lab monitor each batch in accordance with applicable standards.",
     "valuesTitle": "What sets us apart",
     "values": [
       { "title": "Repeatable quality", "description": "In-house lab control at every production stage, raw materials from established suppliers, the same formula in every batch." },
-      { "title": "On-time delivery", "description": "Own fleet and efficient logistics - we respond fast, even to large orders. Reliability is as important to us as quality." },
+      { "title": "On-time delivery", "description": "Own fleet and efficient logistics. We respond fast, even to large orders. Reliability is as important to us as quality." },
       { "title": "Partner relations", "description": "Technical advisor support, individual approach to every customer, openness to contractor and partner feedback." }
     ]
   },
@@ -261,7 +266,7 @@
     "intro": "Pick a category to see its description and available products. Technical datasheets, certificates and declarations of conformity are available on request.",
     "categoriesTitle": "All categories",
     "ctaTitle": "Can't find the product you're looking for?",
-    "ctaDescription": "We also quote made-to-order products. Get in touch - we'll advise.",
+    "ctaDescription": "We also quote made-to-order products. Get in touch, we'll advise.",
     "ctaButton": "Ask about a product"
   },
   "categoryPage": {

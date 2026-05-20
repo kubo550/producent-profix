@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "PROFIX - Producent farb, tynków i materiałów budowlanych w Krzeszowicach",
+    "title": "PROFIX | Producent farb, tynków i materiałów budowlanych w Krzeszowicach",
     "titleTemplate": "%s | PROFIX",
-    "description": "PROFIX to polska rodzinna firma produkująca chemię budowlaną od 2009 roku - farby fasadowe, tynki cementowo wapienne, kleje do dociepleń i materiały wykończeniowe. Nowoczesna linia produkcyjna w Krzeszowicach pod Krakowem.",
+    "description": "PROFIX to polska rodzinna firma produkująca chemię budowlaną od 2009 roku: farby fasadowe, tynki cementowo wapienne, kleje do dociepleń i materiały wykończeniowe. Nowoczesna linia produkcyjna w Krzeszowicach pod Krakowem.",
     "keywords": "tynki cementowo wapienne, farby elewacyjne, kleje do dociepleń, ETICS, gładzie gipsowe, producent chemii budowlanej, Krzeszowice, Małopolska",
-    "ogTitle": "PROFIX - producent materiałów wykończeniowo budowlanych",
+    "ogTitle": "PROFIX | producent materiałów wykończeniowo budowlanych",
     "ogDescription": "Farby, tynki, kleje, systemy dociepleń. Produkcja w Krzeszowicach pod Krakowem, dostawa własnym transportem na terenie całej Polski."
   },
   "nav": {
@@ -49,7 +49,7 @@
   "productLines": {
     "eyebrow": "Asortyment",
     "title": "Cztery linie produktowe",
-    "subtitle": "Tynki, kleje, beton i zaprawy - cztery główne grupy produktów PROFIX produkowane na nowoczesnej linii w Krzeszowicach.",
+    "subtitle": "Tynki, kleje, beton i zaprawy. Cztery główne grupy produktów PROFIX produkowane na nowoczesnej linii w Krzeszowicach.",
     "items": {
       "tynki": {
         "title": "Tynki",
@@ -61,7 +61,7 @@
       },
       "beton": {
         "title": "Beton",
-        "description": "Suche mieszanki betonowe C16/20, C20/25, C25/30 - mrozoodporne, konstrukcyjne."
+        "description": "Suche mieszanki betonowe C16/20, C20/25, C25/30. Mrozoodporne, konstrukcyjne."
       },
       "zaprawy": {
         "title": "Zaprawy",
@@ -88,7 +88,12 @@
     "eyebrow": "Produkty",
     "title": "Bogata oferta produktów budowlanych",
     "subtitle": "Wszystko czego potrzebujesz, od stanu surowego po wykończenie. Wybierz kategorię, żeby zobaczyć szczegóły.",
-    "cta": "Zobacz wszystkie produkty"
+    "cta": "Zobacz wszystkie produkty",
+    "moreSoon": {
+      "title": "Więcej produktów już wkrótce",
+      "description": "Pracujemy nad pełnym katalogiem: farby, tynki, kleje, szpachle i akcesoria. Potrzebujesz konkretnego produktu już teraz? Napisz lub zadzwoń.",
+      "cta": "Zapytaj o produkt"
+    }
   },
   "audiences": {
     "eyebrow": "Dwie ścieżki",
@@ -127,21 +132,21 @@
     },
     "cases": {
       "room": {
-        "label": "Realizacja - dom jednorodzinny",
+        "label": "Realizacja: dom jednorodzinny",
         "title": "Tynkowanie pomieszczeń pod klucz",
-        "description": "Surowy stan deweloperski - mur z ceramiki i strop. Po nałożeniu tynku PROFIX ściany i sufit są gotowe pod gładź i malowanie.",
+        "description": "Surowy stan deweloperski: mur z ceramiki i strop. Po nałożeniu tynku PROFIX ściany i sufit są gotowe pod gładź i malowanie.",
         "tags": ["Tynk cementowo-wapienny", "Grunt PROFIX", "Wykończenie pod malowanie"]
       },
       "hall": {
-        "label": "Realizacja - większe obiekty",
+        "label": "Realizacja: większe obiekty",
         "title": "Renowacje i wykończenia powierzchniowe",
-        "description": "Od renowacji starych murów po nowe hale - nasze ekipy obsługują obiekty, w których liczy się skala, krótki termin i równe wykończenie. Materiał z naszej produkcji, robota od A do Z.",
+        "description": "Od renowacji starych murów po nowe hale. Nasze ekipy obsługują obiekty, w których liczy się skala, krótki termin i równe wykończenie. Materiał z naszej produkcji, robota od A do Z.",
         "tags": ["Tynk maszynowy", "Renowacja", "Większa powierzchnia"]
       },
       "strop": {
-        "label": "Realizacja - prace betoniarskie",
+        "label": "Realizacja: prace betoniarskie",
         "title": "Wylewanie stropów i posadzek betonowych",
-        "description": "Beton z naszej produkcji dostarczany na plac budowy i pompowany bezpośrednio na strop. Pełna kontrola jakości mieszanki i terminowa dostawa - od pierwszego silosa do gotowej posadzki.",
+        "description": "Beton z naszej produkcji dostarczany na plac budowy i pompowany bezpośrednio na strop. Pełna kontrola jakości mieszanki i terminowa dostawa, od pierwszego silosa do gotowej posadzki.",
         "tags": ["Beton konstrukcyjny", "Strop", "Pompowanie betonu"]
       }
     }
@@ -245,13 +250,13 @@
     "subtitle": "Producent chemii budowlanej z Krzeszowic",
     "intro": "PROFIX to polska firma rodzinna obecna w branży chemii budowlanej od 2009 roku. Pełen polski kapitał daje nam niezależność i elastyczność w decyzjach, dzięki czemu szybko reagujemy na potrzeby rynku i konsekwentnie rozwijamy ofertę produktową.",
     "missionTitle": "Specjalizacja i rozwój",
-    "mission": "Produkujemy chemię budowlaną dla firm wykonawczych i klientów indywidualnych - zaprawy cementowe, kleje do systemów ociepleń i płytek, grunty, tynki elewacyjne. Każda receptura powstaje w naszym dziale badawczo-rozwojowym i przechodzi regularne testy w certyfikowanych laboratoriach.",
+    "mission": "Produkujemy chemię budowlaną dla firm wykonawczych i klientów indywidualnych: zaprawy cementowe, kleje do systemów ociepleń i płytek, grunty, tynki elewacyjne. Każda receptura powstaje w naszym dziale badawczo-rozwojowym i przechodzi regularne testy w certyfikowanych laboratoriach.",
     "productionTitle": "Produkcja w Krzeszowicach od 2023 roku",
     "production": "Od 2023 roku wszystkie produkty powstają na nowoczesnej linii technologicznej w Krzeszowicach. Inwestycja pozwoliła zwiększyć wydajność i dokładniej kontrolować proces produkcji. Wewnętrzny dział kontroli jakości i laboratorium monitorują parametry każdej partii zgodnie z obowiązującymi normami.",
     "valuesTitle": "Co nas wyróżnia",
     "values": [
       { "title": "Powtarzalna jakość", "description": "Kontrola w wewnętrznym laboratorium na każdym etapie produkcji, surowce od renomowanych dostawców, ta sama receptura w każdej partii." },
-      { "title": "Terminowe dostawy", "description": "Własna flota i sprawna logistyka - reagujemy szybko, nawet na duże zamówienia. Niezawodność tak samo ważna jak jakość." },
+      { "title": "Terminowe dostawy", "description": "Własna flota i sprawna logistyka. Reagujemy szybko, nawet na duże zamówienia. Niezawodność tak samo ważna jak jakość." },
       { "title": "Partnerskie relacje", "description": "Doradztwo technologa, indywidualne podejście do każdego kontrahenta, otwartość na sugestie wykonawców i partnerów handlowych." }
     ]
   },

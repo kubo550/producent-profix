@@ -54,7 +54,7 @@ export async function Audiences() {
               cta={inv.cta}
               href="/dla-inwestora"
               accent="neutral"
-              image="/stock/facade.jpg"
+              image="/photos/inwestor-03-facade.jpg"
             />
           </Reveal>
         </div>

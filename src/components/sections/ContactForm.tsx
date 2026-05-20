@@ -22,7 +22,7 @@ export function ContactForm() {
     setStatus('sending');
     const data = new FormData(form);
     data.set('access_key', accessKey);
-    data.set('subject', `PROFIX - nowe zapytanie z formularza (${data.get('topic') ?? 'inne'})`);
+    data.set('subject', `PROFIX | nowe zapytanie z formularza (${data.get('topic') ?? 'inne'})`);
     data.set('from_name', 'profix.pl');
 
     try {
