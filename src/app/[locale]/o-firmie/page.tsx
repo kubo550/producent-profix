@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
@@ -22,13 +23,39 @@ export default async function AboutPage({
   const values = t.raw('values') as Array<{ title: string; description: string }>;
 
   return (
-    <>
-      <PageHero eyebrow="O firmie" title={t('title')} subtitle={t('subtitle')} />
+    <div className="isolate">
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <Image
+          src="/photos/about-profix-poster.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <video
+          src="/photos/about-profix.mp4"
+          poster="/photos/about-profix-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          tabIndex={-1}
+          className="relative h-full w-full object-cover motion-reduce:hidden"
+        />
+        <div className="absolute inset-0 bg-[var(--color-bg)]/45 motion-reduce:bg-[var(--color-bg)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)]/25 via-transparent to-[var(--color-bg)]/65" />
+      </div>
 
-      <section className="relative pb-24">
+      <div className="[&_h1]:text-halo [&_p]:text-halo [&_.h-eyebrow]:text-halo [&_p]:!text-[var(--color-fg)] [&_.h-eyebrow]:!text-[var(--color-fg)]">
+        <PageHero eyebrow="O firmie" title={t('title')} subtitle={t('subtitle')} />
+      </div>
+
+      <section className="relative pb-24 pt-12">
         <Container size="xl">
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr]">
-            <Reveal className="space-y-6 text-lg leading-relaxed text-fg-muted">
+            <Reveal className="space-y-6 text-lg leading-relaxed text-[var(--color-fg)] [&_h2]:text-halo [&_p]:text-halo">
               <p className="text-pretty">{t('intro')}</p>
               <h2 className="pt-4 font-display text-2xl font-semibold text-[var(--color-fg)] sm:text-3xl">
                 {t('missionTitle')}
@@ -47,7 +74,7 @@ export default async function AboutPage({
               {values.map((v) => (
                 <div
                   key={v.title}
-                  className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 backdrop-blur-xl"
+                  className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/85 p-5 backdrop-blur-2xl"
                 >
                   <h3 className="font-display text-lg font-semibold">{v.title}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-fg-muted">{v.description}</p>
@@ -58,25 +85,8 @@ export default async function AboutPage({
         </Container>
       </section>
 
-      <section className="relative pb-24">
-        <Container size="xl">
-          <Reveal>
-            <figure className="overflow-hidden rounded-md border border-[var(--color-border)] bg-[var(--color-bg-deep)] shadow-[var(--shadow-soft)]">
-              <video
-                src="/photos/about-profix.mp4"
-                controls
-                playsInline
-                preload="metadata"
-                className="aspect-video w-full"
-                aria-label="Film prezentujący produkcję PROFIX w Krzeszowicach"
-              />
-            </figure>
-          </Reveal>
-        </Container>
-      </section>
-
       <USPStrip />
       <Logistics />
-    </>
+    </div>
   );
 }
