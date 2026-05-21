@@ -20,8 +20,8 @@ export function SectionHeading({
   /** Inverse colors for dark-spread sections. */
   inverse?: boolean;
 }) {
-  const eyebrowColor = inverse ? 'text-[var(--color-fg-inverse-muted)]' : 'text-[var(--color-fg-muted)]';
-  const subtitleColor = inverse ? 'text-[var(--color-fg-inverse-muted)]' : 'text-fg-muted';
+  const eyebrowColor = inverse ? 'text-[var(--color-fg-inverse-muted)]' : 'text-[var(--color-fg)]';
+  const subtitleColor = inverse ? 'text-[var(--color-fg-inverse-muted)]' : 'text-[var(--color-fg)]';
 
   return (
     <div
@@ -34,11 +34,11 @@ export function SectionHeading({
       {eyebrow && (
         <div className={cn('flex items-center gap-3', align === 'center' && 'justify-center')}>
           <span className="h-rule" />
-          <span className={cn('h-eyebrow', eyebrowColor)}>{eyebrow}</span>
+          <span className={cn('h-eyebrow text-halo', eyebrowColor)}>{eyebrow}</span>
         </div>
       )}
       <h2
-        className="font-display text-balance text-4xl font-medium leading-[1.05] sm:text-5xl lg:text-[3.75rem]"
+        className="font-display text-balance text-4xl font-medium leading-[1.05] text-halo sm:text-5xl lg:text-[3.75rem]"
         style={{ fontVariationSettings: '"SOFT" 50, "opsz" 72' }}
       >
         {title}
@@ -46,7 +46,7 @@ export function SectionHeading({
       {subtitle && (
         <p
           className={cn(
-            'max-w-2xl text-pretty text-lg leading-[1.65] sm:text-xl',
+            'max-w-2xl text-pretty text-lg leading-[1.65] text-halo sm:text-xl',
             align === 'center' && 'mx-auto',
             subtitleColor,
           )}

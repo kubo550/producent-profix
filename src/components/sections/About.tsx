@@ -6,6 +6,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { Counter } from '@/components/ui/Counter';
 import { Link } from '@/i18n/navigation';
+import { cn } from '@/lib/cn';
 
 export async function About() {
   const t = await getTranslations('about');
@@ -22,9 +23,9 @@ export async function About() {
               title={t('title')}
               subtitle={t('lead')}
             />
-            <div className="space-y-6 text-[17px] leading-[1.75] text-fg-muted sm:text-lg">
+            <div className="space-y-6 text-[17px] leading-[1.75] text-[var(--color-fg)] sm:text-lg">
               {paragraphs.map((p, i) => (
-                <p key={i} className={i === 0 ? 'h-drop-cap text-pretty' : 'text-pretty'}>
+                <p key={i} className={cn('text-halo', i === 0 ? 'h-drop-cap text-pretty' : 'text-pretty')}>
                   {p}
                 </p>
               ))}
