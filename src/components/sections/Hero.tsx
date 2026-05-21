@@ -51,7 +51,7 @@ export function Hero() {
               >
                 Producent
               </span>
-              <span className="h-eyebrow">— od 2009 — Krzeszowice, PL</span>
+              <span className="h-eyebrow text-[var(--color-fg)]">— od 2009 — Krzeszowice, PL</span>
             </div>
 
             <h1
@@ -65,7 +65,7 @@ export function Hero() {
             </h1>
 
             <p
-              className="reveal-fade-up max-w-xl text-pretty text-lg leading-[1.65] text-fg-muted sm:text-xl"
+              className="reveal-fade-up max-w-xl text-pretty text-lg leading-[1.65] text-[var(--color-fg)] sm:text-xl"
               style={{ '--reveal-delay': '0.22s' } as React.CSSProperties}
             >
               {t('subtitle')}

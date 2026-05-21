@@ -89,8 +89,9 @@
   --color-fg: #f0e6d2;
   --color-fg-muted: #b8a48c;
   --color-fg-subtle: #7a6b5a;
-  --color-fg-inverse: #1f1815;
-  --color-fg-inverse-muted: #5b4a3e;
+  /* --color-fg-inverse / --color-fg-inverse-muted intentionally NOT overridden:
+     they live on permanently-dark surfaces (bg-deep, photo overlays) and must
+     stay light in both themes. */
 
   --color-paper: #211a16;
   --color-paper-2: #2a201a;
