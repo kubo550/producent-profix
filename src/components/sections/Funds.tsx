@@ -21,7 +21,7 @@ export async function Funds({ hideCta = false }: { hideCta?: boolean } = {}) {
                 hideCta ? 'lg:grid-cols-[auto_1fr]' : 'lg:grid-cols-[auto_1fr_auto]'
               }`}
             >
-              <div className="rounded-md bg-[var(--color-paper)] p-3 shadow-[var(--shadow-soft)]">
+              <div className="rounded-md bg-white p-3 shadow-[var(--shadow-soft)]">
                 <Image
                   src="/legacy/logo-eu.png"
                   alt="Fundusze Europejskie i Unia Europejska"

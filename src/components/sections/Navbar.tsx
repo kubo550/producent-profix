@@ -9,7 +9,6 @@ import { Link, usePathname } from '@/i18n/navigation';
 import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { siteConfig } from '@/content/site';
 import { getCategory } from '@/content/categories';
 import { categoryHasProducts } from '@/content/products';
@@ -229,7 +228,6 @@ export function Navbar() {
             <div className="hidden sm:block">
               <LocaleSwitcher />
             </div>
-            <ThemeToggle />
             <LinkButton href="#kontakt" variant="primary" size="sm" className="hidden sm:inline-flex">
               {t('cta')}
             </LinkButton>

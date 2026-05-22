@@ -19,7 +19,7 @@ export function USPStrip() {
             const Icon = icons[i];
             return (
               <Reveal key={item.title} delay={i * 0.08}>
-                <article className="group relative flex h-full flex-col rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-7 shadow-[var(--shadow-soft)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[rgb(31_24_21/0.22)] hover:shadow-[var(--shadow-soft-lg)] sm:p-8">
+                <article className="group relative flex h-full flex-col rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-7 shadow-[var(--shadow-soft)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[var(--color-border-hover)] hover:shadow-[var(--shadow-soft-lg)] sm:p-8">
                   <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)] transition-transform group-hover:scale-105">
                     <Icon size={22} strokeWidth={1.5} />
                   </div>

@@ -9,49 +9,57 @@
   --font-mono: var(--font-mono-display, ui-monospace), ui-monospace, "SF Mono", Menlo, monospace;
 
   /* ─────────────────────────────────────────────
-     Heritage palette — warm cream paper + terracotta ink
+     Coastal palette — light sections + deep navy ink, blue accent, cyan hover
+     All hardcoded color usage in components should resolve to one of these tokens.
+     To swap palette later: change values here only.
      ───────────────────────────────────────────── */
-  --color-bg: #f4ecde;          /* aged cream paper */
-  --color-bg-2: #ead9bd;        /* kraft, alt sections */
-  --color-bg-deep: #2a201a;     /* espresso, for dark spreads */
-  --color-fg: #1f1815;          /* dark espresso ink */
-  --color-fg-muted: #5b4a3e;    /* warm brown body */
-  --color-fg-subtle: #8c7a68;
-  --color-fg-inverse: #f4ecde;
-  --color-fg-inverse-muted: #c8b8a2;
+  --color-bg: #F6F9FB;          /* section background */
+  --color-bg-2: #ecf2f7;        /* alt section, slightly darker */
+  --color-bg-deep: #0E4A7B;     /* hero / dark spreads (granat) */
+  --color-fg: #102235;          /* text */
+  --color-fg-muted: #3a4f6c;    /* body muted */
+  --color-fg-subtle: #6a7c97;
+  --color-fg-inverse: #F6F9FB;
+  --color-fg-inverse-muted: #b8c6da;
 
-  --color-paper: #faf3e6;       /* off-white card paper */
-  --color-paper-2: #f0e6d2;     /* secondary paper */
-  --color-surface: #faf3e6;
-  --color-surface-strong: #ffffff;
-  --color-surface-2: rgb(31 24 21 / 0.04);
+  --color-paper: #FFFFFF;       /* card paper */
+  --color-paper-2: #F6F9FB;     /* secondary card */
+  --color-surface: #FFFFFF;
+  --color-surface-strong: #FFFFFF;
+  --color-surface-2: rgb(16 34 53 / 0.04);
 
-  --color-border: rgb(31 24 21 / 0.12);
-  --color-border-strong: rgb(31 24 21 / 0.32);
-  --color-rule: #1f1815;
+  --color-border: rgb(16 34 53 / 0.10);
+  --color-border-strong: rgb(16 34 53 / 0.28);
+  --color-border-hover: rgb(16 34 53 / 0.22); /* card hover lift */
+  --color-rule: #102235;
 
-  --color-accent: #b85c2a;      /* refined terracotta */
-  --color-accent-hover: #9c4a1f;
-  --color-accent-fg: #faf3e6;
-  --color-accent-soft: rgb(184 92 42 / 0.10);
-  --color-accent-deep: #6f3414;
+  --color-accent: #1676B8;      /* button primary */
+  --color-accent-hover: #38C6D9;/* hover (cyan) */
+  --color-accent-fg: #FFFFFF;
+  --color-accent-soft: rgb(22 118 184 / 0.10);
+  --color-accent-deep: #0E4A7B;
 
-  --color-clay: #c08560;        /* tonal warm */
-  --color-stone: #a3927e;       /* tonal cool grey-brown */
-  --color-sage: #8a8f6d;        /* tonal restful green */
-  --color-ochre: #c89d5a;       /* tonal gold */
+  --color-clay: #38C6D9;        /* tonal cyan */
+  --color-stone: #6a7c97;       /* tonal cool slate */
+  --color-sage: #38C6D9;        /* secondary accent — cyan */
+  --color-ochre: #0E4A7B;       /* tonal deep navy */
 
-  /* Atmosphere — dimmed, warm wash */
-  --atmo-1: #d28b58;
-  --atmo-2: #c89d5a;
-  --atmo-3: #a3795a;
-  --atmo-4: #b85c2a;
-  --atmo-opacity: 0.22;
+  /* Atmosphere — cool wash */
+  --atmo-1: #1676B8;
+  --atmo-2: #38C6D9;
+  --atmo-3: #0E4A7B;
+  --atmo-4: #38C6D9;
+  --atmo-opacity: 0.18;
 
-  /* Soft warm-tinted shadows — refined, not brutal */
-  --shadow-soft: 0 1px 1px rgb(31 24 21 / 0.04), 0 10px 28px -14px rgb(60 30 10 / 0.18);
-  --shadow-soft-lg: 0 1px 2px rgb(31 24 21 / 0.05), 0 24px 50px -22px rgb(60 30 10 / 0.28);
-  --shadow-ink: 0 1px 2px rgb(31 24 21 / 0.08), 0 18px 48px -18px rgb(31 24 21 / 0.42);
+  /* Section shadows — derived from --color-fg ink */
+  --shadow-soft: 0 1px 1px rgb(16 34 53 / 0.04), 0 10px 28px -14px rgb(16 34 53 / 0.18);
+  --shadow-soft-lg: 0 1px 2px rgb(16 34 53 / 0.05), 0 24px 50px -22px rgb(16 34 53 / 0.28);
+  --shadow-ink: 0 1px 2px rgb(16 34 53 / 0.08), 0 18px 48px -18px rgb(16 34 53 / 0.42);
+
+  /* Button shadows — centralized so Button.tsx doesn't hold palette data */
+  --shadow-btn-primary: 0 1px 2px rgb(16 34 53 / 0.10), 0 10px 24px -12px rgb(22 118 184 / 0.55);
+  --shadow-btn-primary-hover: 0 2px 3px rgb(16 34 53 / 0.12), 0 18px 36px -14px rgb(22 118 184 / 0.65);
+  --shadow-btn-secondary: 0 1px 2px rgb(16 34 53 / 0.04), 0 6px 18px -10px rgb(16 34 53 / 0.18);
 
   /* Geometry — refined, not balloon */
   --radius-sm: 4px;
@@ -83,36 +91,46 @@
 }
 
 .dark {
-  --color-bg: #16100d;
-  --color-bg-2: #1d1612;
-  --color-bg-deep: #0a0706;
-  --color-fg: #f0e6d2;
-  --color-fg-muted: #b8a48c;
-  --color-fg-subtle: #7a6b5a;
+  --color-bg: #0B1118;         /* background */
+  --color-bg-2: #131C27;       /* surface */
+  --color-bg-deep: #050A11;
+  --color-fg: #F5F9FC;         /* headings (brightest) */
+  --color-fg-muted: #D3DCE5;   /* body text */
+  --color-fg-subtle: #91A1B3;  /* muted */
   /* --color-fg-inverse / --color-fg-inverse-muted intentionally NOT overridden:
      they live on permanently-dark surfaces (bg-deep, photo overlays) and must
      stay light in both themes. */
 
-  --color-paper: #211a16;
-  --color-paper-2: #2a201a;
-  --color-surface: #211a16;
-  --color-surface-strong: #2a201a;
+  --color-paper: #1A2633;      /* card */
+  --color-paper-2: #131C27;
+  --color-surface: #1A2633;
+  --color-surface-strong: #233246;
   --color-surface-2: rgb(255 255 255 / 0.04);
 
-  --color-border: rgb(255 255 255 / 0.08);
-  --color-border-strong: rgb(255 255 255 / 0.22);
-  --color-rule: #f0e6d2;
+  --color-border: #243446;     /* border */
+  --color-border-strong: #3a4d65;
+  --color-border-hover: rgb(255 255 255 / 0.22);
+  --color-rule: #F5F9FC;
 
-  --color-accent: #d97a44;
-  --color-accent-hover: #b85c2a;
-  --color-accent-fg: #16100d;
-  --color-accent-soft: rgb(217 122 68 / 0.14);
+  --color-accent: #2D7CC4;     /* primary */
+  --color-accent-hover: #4A95D8;
+  --color-accent-fg: #FFFFFF;  /* white on blue for strong contrast */
+  --color-accent-soft: rgb(45 124 196 / 0.14);
 
-  --atmo-1: #7a3a1a;
-  --atmo-2: #5d3a20;
-  --atmo-3: #3a261a;
-  --atmo-4: #b85c2a;
-  --atmo-opacity: 0.18;
+  --color-clay: #59D7E8;       /* tonal cyan — secondary accent */
+  --color-stone: #91A1B3;
+  --color-sage: #59D7E8;
+  --color-ochre: #2D7CC4;
+
+  --atmo-1: #2D7CC4;
+  --atmo-2: #59D7E8;
+  --atmo-3: #131C27;
+  --atmo-4: #59D7E8;
+  --atmo-opacity: 0.20;
+
+  --shadow-btn-primary: 0 1px 2px rgb(0 0 0 / 0.40), 0 10px 24px -12px rgb(89 215 232 / 0.50);
+  --shadow-btn-primary-hover: 0 2px 3px rgb(0 0 0 / 0.50), 0 18px 36px -14px rgb(89 215 232 / 0.65);
+  --shadow-btn-secondary: 0 1px 2px rgb(0 0 0 / 0.30), 0 6px 18px -10px rgb(0 0 0 / 0.50);
 }
 
 @layer base {
@@ -166,7 +184,8 @@
     z-index: 1;
     opacity: 0.06;
     mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.10 0 0 0 0 0.07 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+    /* Cool-grey noise — neutral enough to read well across light/dark palettes via multiply blend. */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.13 0 0 0 0 0.21 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   body > * {
@@ -233,7 +252,7 @@
   }
   .heritage-card:hover {
     transform: translateY(-2px);
-    border-color: rgb(31 24 21 / 0.2);
+    border-color: var(--color-border-hover);
     box-shadow: var(--shadow-soft-lg);
   }
 
@@ -314,7 +333,7 @@
   }
   .h-input:focus {
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgb(184 92 42 / 0.12);
+    box-shadow: 0 0 0 3px var(--color-accent-soft);
   }
 
   /* "Stamp" — small refined certification badge */
@@ -373,16 +392,12 @@
 
   .atmo-quiet { /* marker */ }
 
-  /* Halo behind text sitting over imagery / video — improves contrast without panels */
+  /* Halo behind text sitting over imagery / video — auto-derives from --color-bg
+     so it matches whatever palette is active. */
   .text-halo {
     text-shadow:
-      0 1px 2px rgb(244 236 222 / 0.9),
-      0 0 18px rgb(244 236 222 / 0.6);
-  }
-  .dark .text-halo {
-    text-shadow:
-      0 1px 2px rgb(22 16 13 / 0.9),
-      0 0 18px rgb(22 16 13 / 0.6);
+      0 1px 2px color-mix(in srgb, var(--color-bg) 90%, transparent),
+      0 0 18px color-mix(in srgb, var(--color-bg) 60%, transparent);
   }
 }
 

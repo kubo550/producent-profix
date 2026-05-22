@@ -73,7 +73,7 @@ export async function Logistics() {
               return (
                 <div
                   key={item.name}
-                  className="group flex items-start gap-5 rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-6 shadow-[var(--shadow-soft)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 hover:border-[rgb(31_24_21/0.22)] hover:shadow-[var(--shadow-soft-lg)] sm:p-7"
+                  className="group flex items-start gap-5 rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-6 shadow-[var(--shadow-soft)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 hover:border-[var(--color-border-hover)] hover:shadow-[var(--shadow-soft-lg)] sm:p-7"
                 >
                   <div className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)] transition-transform group-hover:scale-105">
                     <Icon size={22} strokeWidth={1.5} />

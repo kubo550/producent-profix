@@ -113,7 +113,7 @@ function ContactCard({
   value: React.ReactNode;
 }) {
   return (
-    <div className="group flex items-start gap-4 rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-5 shadow-[var(--shadow-soft)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 hover:border-[rgb(31_24_21/0.22)] hover:shadow-[var(--shadow-soft-lg)]">
+    <div className="group flex items-start gap-4 rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-5 shadow-[var(--shadow-soft)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 hover:border-[var(--color-border-hover)] hover:shadow-[var(--shadow-soft-lg)]">
       <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
         {icon}
       </div>
