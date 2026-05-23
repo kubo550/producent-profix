@@ -9,56 +9,67 @@
   --font-mono: var(--font-mono-display, ui-monospace), ui-monospace, "SF Mono", Menlo, monospace;
 
   /* ─────────────────────────────────────────────
-     Light palette — soft blue-tinted whites + deep navy ink, blue accent, cyan secondary
+     Light palette — warm cream bg + deep navy accent + terracotta clay
      All hardcoded color usage in components should resolve to one of these tokens.
      To swap palette later: change values here only.
      ───────────────────────────────────────────── */
-  --color-bg: #F7F9FB;
-  --color-bg-2: #FFFFFF;
-  --color-bg-deep: #E8EEF4;
-  --color-fg: #0F1723;
-  --color-fg-muted: #314154;
-  --color-fg-subtle: #697A8F;
+
+  /* Backgrounds */
+  --color-bg: #F3F0EA;
+  --color-bg-2: #FBFAF7;
+  --color-bg-deep: #E5DFD4;
+
+  /* Typography */
+  --color-fg: #1D2630;
+  --color-fg-muted: #4E5B68;
+  --color-fg-subtle: #7F8A95;
   --color-fg-inverse: #F7F9FB;
-  --color-fg-inverse-muted: #C2CFDB;
+  --color-fg-inverse-muted: #D4DCE4;
 
+  /* Surfaces */
   --color-paper: #FFFFFF;
-  --color-paper-2: #F7F9FB;
+  --color-paper-2: #FAF8F4;
   --color-surface: #FFFFFF;
-  --color-surface-strong: #F0F5F9;
-  --color-surface-2: rgb(15 23 35 / 0.03);
+  --color-surface-strong: #ECE7DF;
+  --color-surface-2: rgb(29 38 48 / 0.03);
 
-  --color-border: #D8E2EC;
-  --color-border-strong: #C2CFDB;
-  --color-border-hover: #AEBED0;
-  --color-rule: #0F1723;
+  /* Borders */
+  --color-border: #D6D0C7;
+  --color-border-strong: #BEB6AA;
+  --color-border-hover: #9E9488;
+  --color-rule: #1D2630;
 
-  --color-accent: #2D7CC4;
-  --color-accent-hover: #1E6AB0;
+  /* Brand */
+  --color-accent: #224A67;
+  --color-accent-hover: #18364B;
   --color-accent-fg: #FFFFFF;
-  --color-accent-soft: rgb(45 124 196 / 0.10);
-  --color-accent-deep: #1E6AB0;
+  --color-accent-soft: rgb(34 74 103 / 0.10);
+  --color-accent-deep: #18364B;
 
-  --color-clay: #59D7E8;
-  --color-stone: #8A9AAF;
-  --color-sage: #59D7E8;
-  --color-ochre: #2D7CC4;
+  /* Secondary accent — terracotta */
+  --color-clay: #D06A2B;
+  --color-clay-soft: rgb(208 106 43 / 0.12);
 
-  --atmo-1: #2D7CC4;
-  --atmo-2: #59D7E8;
-  --atmo-3: #F7F9FB;
-  --atmo-4: #DDF6FA;
+  /* Supporting tonals */
+  --color-stone: #9B8F80;
+  --color-sage: #8E9E8C;
+  --color-ochre: #D06A2B;
+
+  --atmo-1: #224A67;
+  --atmo-2: #D06A2B;
+  --atmo-3: #F3F0EA;
+  --atmo-4: #18364B;
   --atmo-opacity: 0.18;
 
   /* Section shadows — derived from --color-fg ink */
-  --shadow-soft: 0 1px 1px rgb(15 23 35 / 0.04), 0 10px 28px -14px rgb(15 23 35 / 0.18);
-  --shadow-soft-lg: 0 1px 2px rgb(15 23 35 / 0.05), 0 24px 50px -22px rgb(15 23 35 / 0.28);
-  --shadow-ink: 0 1px 2px rgb(15 23 35 / 0.08), 0 18px 48px -18px rgb(15 23 35 / 0.42);
+  --shadow-soft: 0 1px 1px rgb(29 38 48 / 0.04), 0 10px 28px -14px rgb(29 38 48 / 0.18);
+  --shadow-soft-lg: 0 1px 2px rgb(29 38 48 / 0.05), 0 24px 50px -22px rgb(29 38 48 / 0.28);
+  --shadow-ink: 0 1px 2px rgb(29 38 48 / 0.08), 0 18px 48px -18px rgb(29 38 48 / 0.42);
 
   /* Button shadows — centralized so Button.tsx doesn't hold palette data */
-  --shadow-btn-primary: 0 1px 2px rgb(15 23 35 / 0.10), 0 10px 24px -12px rgb(45 124 196 / 0.50);
-  --shadow-btn-primary-hover: 0 2px 3px rgb(15 23 35 / 0.12), 0 18px 36px -14px rgb(45 124 196 / 0.60);
-  --shadow-btn-secondary: 0 1px 2px rgb(15 23 35 / 0.04), 0 6px 18px -10px rgb(15 23 35 / 0.18);
+  --shadow-btn-primary: 0 1px 2px rgb(29 38 48 / 0.10), 0 10px 24px -12px rgb(34 74 103 / 0.55);
+  --shadow-btn-primary-hover: 0 2px 3px rgb(29 38 48 / 0.12), 0 18px 36px -14px rgb(34 74 103 / 0.65);
+  --shadow-btn-secondary: 0 1px 2px rgb(29 38 48 / 0.04), 0 6px 18px -10px rgb(29 38 48 / 0.18);
 
   /* Geometry — refined, not balloon */
   --radius-sm: 4px;
