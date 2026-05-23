@@ -9,57 +9,56 @@
   --font-mono: var(--font-mono-display, ui-monospace), ui-monospace, "SF Mono", Menlo, monospace;
 
   /* ─────────────────────────────────────────────
-     Coastal palette — light sections + deep navy ink, blue accent, cyan hover
+     Light palette — soft blue-tinted whites + deep navy ink, blue accent, cyan secondary
      All hardcoded color usage in components should resolve to one of these tokens.
      To swap palette later: change values here only.
      ───────────────────────────────────────────── */
-  --color-bg: #F6F9FB;          /* section background */
-  --color-bg-2: #ecf2f7;        /* alt section, slightly darker */
-  --color-bg-deep: #0E4A7B;     /* hero / dark spreads (granat) */
-  --color-fg: #102235;          /* text */
-  --color-fg-muted: #3a4f6c;    /* body muted */
-  --color-fg-subtle: #6a7c97;
-  --color-fg-inverse: #F6F9FB;
-  --color-fg-inverse-muted: #b8c6da;
+  --color-bg: #F7F9FB;
+  --color-bg-2: #FFFFFF;
+  --color-bg-deep: #E8EEF4;
+  --color-fg: #0F1723;
+  --color-fg-muted: #314154;
+  --color-fg-subtle: #697A8F;
+  --color-fg-inverse: #F7F9FB;
+  --color-fg-inverse-muted: #C2CFDB;
 
-  --color-paper: #FFFFFF;       /* card paper */
-  --color-paper-2: #F6F9FB;     /* secondary card */
+  --color-paper: #FFFFFF;
+  --color-paper-2: #F7F9FB;
   --color-surface: #FFFFFF;
-  --color-surface-strong: #FFFFFF;
-  --color-surface-2: rgb(16 34 53 / 0.04);
+  --color-surface-strong: #F0F5F9;
+  --color-surface-2: rgb(15 23 35 / 0.03);
 
-  --color-border: rgb(16 34 53 / 0.10);
-  --color-border-strong: rgb(16 34 53 / 0.28);
-  --color-border-hover: rgb(16 34 53 / 0.22); /* card hover lift */
-  --color-rule: #102235;
+  --color-border: #D8E2EC;
+  --color-border-strong: #C2CFDB;
+  --color-border-hover: #AEBED0;
+  --color-rule: #0F1723;
 
-  --color-accent: #1676B8;      /* button primary */
-  --color-accent-hover: #38C6D9;/* hover (cyan) */
+  --color-accent: #2D7CC4;
+  --color-accent-hover: #1E6AB0;
   --color-accent-fg: #FFFFFF;
-  --color-accent-soft: rgb(22 118 184 / 0.10);
-  --color-accent-deep: #0E4A7B;
+  --color-accent-soft: rgb(45 124 196 / 0.10);
+  --color-accent-deep: #1E6AB0;
 
-  --color-clay: #38C6D9;        /* tonal cyan */
-  --color-stone: #6a7c97;       /* tonal cool slate */
-  --color-sage: #38C6D9;        /* secondary accent — cyan */
-  --color-ochre: #0E4A7B;       /* tonal deep navy */
+  --color-clay: #59D7E8;
+  --color-stone: #8A9AAF;
+  --color-sage: #59D7E8;
+  --color-ochre: #2D7CC4;
 
-  /* Atmosphere — cool wash */
-  --atmo-1: #1676B8;
-  --atmo-2: #38C6D9;
-  --atmo-3: #0E4A7B;
-  --atmo-4: #38C6D9;
+  --atmo-1: #2D7CC4;
+  --atmo-2: #59D7E8;
+  --atmo-3: #F7F9FB;
+  --atmo-4: #DDF6FA;
   --atmo-opacity: 0.18;
 
   /* Section shadows — derived from --color-fg ink */
-  --shadow-soft: 0 1px 1px rgb(16 34 53 / 0.04), 0 10px 28px -14px rgb(16 34 53 / 0.18);
-  --shadow-soft-lg: 0 1px 2px rgb(16 34 53 / 0.05), 0 24px 50px -22px rgb(16 34 53 / 0.28);
-  --shadow-ink: 0 1px 2px rgb(16 34 53 / 0.08), 0 18px 48px -18px rgb(16 34 53 / 0.42);
+  --shadow-soft: 0 1px 1px rgb(15 23 35 / 0.04), 0 10px 28px -14px rgb(15 23 35 / 0.18);
+  --shadow-soft-lg: 0 1px 2px rgb(15 23 35 / 0.05), 0 24px 50px -22px rgb(15 23 35 / 0.28);
+  --shadow-ink: 0 1px 2px rgb(15 23 35 / 0.08), 0 18px 48px -18px rgb(15 23 35 / 0.42);
 
   /* Button shadows — centralized so Button.tsx doesn't hold palette data */
-  --shadow-btn-primary: 0 1px 2px rgb(16 34 53 / 0.10), 0 10px 24px -12px rgb(22 118 184 / 0.55);
-  --shadow-btn-primary-hover: 0 2px 3px rgb(16 34 53 / 0.12), 0 18px 36px -14px rgb(22 118 184 / 0.65);
-  --shadow-btn-secondary: 0 1px 2px rgb(16 34 53 / 0.04), 0 6px 18px -10px rgb(16 34 53 / 0.18);
+  --shadow-btn-primary: 0 1px 2px rgb(15 23 35 / 0.10), 0 10px 24px -12px rgb(45 124 196 / 0.50);
+  --shadow-btn-primary-hover: 0 2px 3px rgb(15 23 35 / 0.12), 0 18px 36px -14px rgb(45 124 196 / 0.60);
+  --shadow-btn-secondary: 0 1px 2px rgb(15 23 35 / 0.04), 0 6px 18px -10px rgb(15 23 35 / 0.18);
 
   /* Geometry — refined, not balloon */
   --radius-sm: 4px;

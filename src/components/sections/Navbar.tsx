@@ -9,6 +9,7 @@ import { Link, usePathname } from '@/i18n/navigation';
 import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { siteConfig } from '@/content/site';
 import { getCategory } from '@/content/categories';
 import { categoryHasProducts } from '@/content/products';
@@ -48,17 +49,19 @@ const productMenu: MenuEntry[] = productMenuFull.flatMap((entry) => {
 });
 
 type NavLink = {
-  href: '/o-firmie' | '/produkty' | '/dla-fachowca' | '/dla-inwestora' | '/fundusze-europejskie' | '/kontakt';
+  href: '/o-firmie' | '/produkty' | '/dla-fachowca' | '/dla-inwestora' | '/transport' | '/fundusze-europejskie' | '/kontakt';
   key: string;
   /** If true, this nav item shows a mega-menu of product categories on hover. */
   hasMegaMenu?: boolean;
+  /** If true, the link is rendered but not clickable (placeholder while page is in progress). */
+  disabled?: boolean;
 };
 
 const navLinks: readonly NavLink[] = [
   { href: '/o-firmie', key: 'about' },
-  { href: '/produkty', key: 'products', hasMegaMenu: true },
-  { href: '/dla-fachowca', key: 'professional' },
-  { href: '/dla-inwestora', key: 'investor' },
+  { href: '/produkty', key: 'products', hasMegaMenu: true, disabled: true },
+  { href: '/dla-fachowca', key: 'professional', disabled: true },
+  { href: '/dla-inwestora', key: 'investor', disabled: true },
   { href: '/fundusze-europejskie', key: 'funds' },
   { href: '/kontakt', key: 'contact' },
 ] as const;
@@ -163,6 +166,18 @@ export function Navbar() {
           <nav className="hidden items-center gap-1 lg:flex">
             {navLinks.map((link) => {
               const active = isActive(link.href);
+              if (link.disabled) {
+                return (
+                  <span
+                    key={link.key}
+                    aria-disabled="true"
+                    title="Wkrótce"
+                    className="rounded-full px-3 py-2 text-sm text-[var(--color-fg-subtle)] opacity-60 cursor-not-allowed select-none"
+                  >
+                    {t(link.key)}
+                  </span>
+                );
+              }
               if (link.hasMegaMenu) {
                 return (
                   <div
@@ -228,6 +243,7 @@ export function Navbar() {
             <div className="hidden sm:block">
               <LocaleSwitcher />
             </div>
+            <ThemeToggle />
             <LinkButton href="#kontakt" variant="primary" size="sm" className="hidden sm:inline-flex">
               {t('cta')}
             </LinkButton>
@@ -446,6 +462,17 @@ export function Navbar() {
           <nav className="flex flex-col gap-1">
             {navLinks.map((link) => {
               const active = isActive(link.href);
+              if (link.disabled) {
+                return (
+                  <span
+                    key={link.key}
+                    aria-disabled="true"
+                    className="rounded-xl px-4 py-3 text-base text-[var(--color-fg-subtle)] opacity-60 cursor-not-allowed select-none"
+                  >
+                    {t(link.key)} <span className="text-xs">(wkrótce)</span>
+                  </span>
+                );
+              }
               return (
                 <Link
                   key={link.key}

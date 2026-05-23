@@ -18,9 +18,9 @@ export async function Footer() {
   ];
 
   const products = [
-    { href: '/produkty' as const, key: 'products' },
-    { href: '/dla-fachowca' as const, key: 'professional' },
-    { href: '/dla-inwestora' as const, key: 'investor' },
+    { href: '/produkty' as const, key: 'products', disabled: true },
+    { href: '/dla-fachowca' as const, key: 'professional', disabled: true },
+    { href: '/dla-inwestora' as const, key: 'investor', disabled: true },
   ];
 
   return (
@@ -97,7 +97,7 @@ export async function Footer() {
 
           <FooterCol title={t('sections.products')}>
             {products.map((l) => (
-              <FooterLink key={l.key} href={l.href}>
+              <FooterLink key={l.key} href={l.href} disabled={l.disabled}>
                 {t(`links.${l.key}`)}
               </FooterLink>
             ))}
@@ -157,6 +157,7 @@ function FooterCol({ title, children }: { title: string; children: React.ReactNo
 function FooterLink({
   href,
   children,
+  disabled,
 }: {
   href:
     | '/o-firmie'
@@ -168,7 +169,19 @@ function FooterLink({
     | '/kontakt'
     | '/polityka-prywatnosci';
   children: React.ReactNode;
+  disabled?: boolean;
 }) {
+  if (disabled) {
+    return (
+      <span
+        aria-disabled="true"
+        title="Wkrótce"
+        className="text-sm text-[var(--color-fg-subtle)] opacity-60 cursor-not-allowed select-none"
+      >
+        {children}
+      </span>
+    );
+  }
   return (
     <Link
       href={href}
