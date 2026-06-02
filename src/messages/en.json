@@ -283,12 +283,17 @@
     "productsCountMany": "products"
   },
   "productPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "products": "Products"
+    },
     "sections": {
       "description": "Description",
       "features": "Features",
       "usage": "Use cases",
       "application": "How to apply",
-      "specs": "Technical data"
+      "specs": "Technical data",
+      "related": "More from this category"
     },
     "specs": {
       "packaging": "Packaging",

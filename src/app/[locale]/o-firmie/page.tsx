@@ -85,6 +85,27 @@ export default async function AboutPage({
         </Container>
       </section>
 
+      <section className="relative pb-24">
+        <Container size="xl">
+          <Reveal>
+            <figure className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-deep)] shadow-[var(--shadow-soft-lg)]">
+              <video
+                src="/photos/about-production.mp4"
+                poster="/photos/about-production-poster.jpg"
+                controls
+                playsInline
+                preload="none"
+                className="aspect-video w-full"
+                aria-label={t('productionTitle')}
+              />
+            </figure>
+            <figcaption className="mt-3 text-sm text-fg-muted">
+              {t('productionTitle')} – Krzeszowice
+            </figcaption>
+          </Reveal>
+        </Container>
+      </section>
+
       <USPStrip />
       <Logistics />
     </div>

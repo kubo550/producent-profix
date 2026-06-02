@@ -9,7 +9,7 @@
   --font-mono: var(--font-mono-display, ui-monospace), ui-monospace, "SF Mono", Menlo, monospace;
 
   /* ─────────────────────────────────────────────
-     Light palette — warm cream bg + deep navy accent + terracotta clay
+     Light palette - warm cream bg + deep navy accent + terracotta clay
      All hardcoded color usage in components should resolve to one of these tokens.
      To swap palette later: change values here only.
      ───────────────────────────────────────────── */
@@ -46,7 +46,7 @@
   --color-accent-soft: rgb(34 74 103 / 0.10);
   --color-accent-deep: #18364B;
 
-  /* Secondary accent — terracotta */
+  /* Secondary accent - terracotta */
   --color-clay: #D06A2B;
   --color-clay-soft: rgb(208 106 43 / 0.12);
 
@@ -61,17 +61,17 @@
   --atmo-4: #18364B;
   --atmo-opacity: 0.18;
 
-  /* Section shadows — derived from --color-fg ink */
+  /* Section shadows - derived from --color-fg ink */
   --shadow-soft: 0 1px 1px rgb(29 38 48 / 0.04), 0 10px 28px -14px rgb(29 38 48 / 0.18);
   --shadow-soft-lg: 0 1px 2px rgb(29 38 48 / 0.05), 0 24px 50px -22px rgb(29 38 48 / 0.28);
   --shadow-ink: 0 1px 2px rgb(29 38 48 / 0.08), 0 18px 48px -18px rgb(29 38 48 / 0.42);
 
-  /* Button shadows — centralized so Button.tsx doesn't hold palette data */
+  /* Button shadows - centralized so Button.tsx doesn't hold palette data */
   --shadow-btn-primary: 0 1px 2px rgb(29 38 48 / 0.10), 0 10px 24px -12px rgb(34 74 103 / 0.55);
   --shadow-btn-primary-hover: 0 2px 3px rgb(29 38 48 / 0.12), 0 18px 36px -14px rgb(34 74 103 / 0.65);
   --shadow-btn-secondary: 0 1px 2px rgb(29 38 48 / 0.04), 0 6px 18px -10px rgb(29 38 48 / 0.18);
 
-  /* Geometry — refined, not balloon */
+  /* Geometry - refined, not balloon */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 10px;
@@ -127,7 +127,7 @@
   --color-accent-fg: #FFFFFF;  /* white on blue for strong contrast */
   --color-accent-soft: rgb(45 124 196 / 0.14);
 
-  --color-clay: #59D7E8;       /* tonal cyan — secondary accent */
+  --color-clay: #59D7E8;       /* tonal cyan - secondary accent */
   --color-stone: #91A1B3;
   --color-sage: #59D7E8;
   --color-ochre: #2D7CC4;
@@ -185,7 +185,7 @@
     animation: var(--animate-drift);
   }
 
-  /* Subtle paper grain — finer than concrete, warmer */
+  /* Subtle paper grain - finer than concrete, warmer */
   body::after {
     content: "";
     position: fixed;
@@ -194,7 +194,7 @@
     z-index: 1;
     opacity: 0.06;
     mix-blend-mode: multiply;
-    /* Cool-grey noise — neutral enough to read well across light/dark palettes via multiply blend. */
+    /* Cool-grey noise - neutral enough to read well across light/dark palettes via multiply blend. */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.13 0 0 0 0 0.21 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
@@ -250,7 +250,7 @@
      Editorial heritage primitives
      ───────────────────────────────────────────── */
 
-  /* Refined paper card — soft warm shadow, light radius */
+  /* Refined paper card - soft warm shadow, light radius */
   .heritage-card {
     background-color: var(--color-paper);
     border: 1px solid var(--color-border);
@@ -266,7 +266,7 @@
     box-shadow: var(--shadow-soft-lg);
   }
 
-  /* Editorial eyebrow — small caps + thin rule */
+  /* Editorial eyebrow - small caps + thin rule */
   .h-eyebrow {
     font-family: var(--font-sans), sans-serif;
     font-size: 0.72rem;
@@ -277,7 +277,7 @@
     color: var(--color-fg-muted);
   }
 
-  /* Roman chapter numeral — for section markers */
+  /* Roman chapter numeral - for section markers */
   .h-chapter {
     font-family: var(--font-display), serif;
     font-style: italic;
@@ -287,7 +287,7 @@
     color: var(--color-accent);
   }
 
-  /* Drop cap — for opening editorial paragraphs */
+  /* Drop cap - for opening editorial paragraphs */
   .h-drop-cap::first-letter {
     font-family: var(--font-display), serif;
     font-weight: 500;
@@ -299,7 +299,7 @@
     font-style: normal;
   }
 
-  /* Ornament rule — short orange rule above headlines */
+  /* Ornament rule - short orange rule above headlines */
   .h-rule {
     display: inline-block;
     width: 2.5rem;
@@ -309,7 +309,7 @@
     vertical-align: middle;
   }
 
-  /* Architectural photo tinting — duotone warm */
+  /* Architectural photo tinting - duotone warm */
   .h-photo-warm {
     filter: contrast(1.05) saturate(0.92);
   }
@@ -346,7 +346,7 @@
     box-shadow: 0 0 0 3px var(--color-accent-soft);
   }
 
-  /* "Stamp" — small refined certification badge */
+  /* "Stamp" - small refined certification badge */
   .h-stamp {
     display: inline-flex;
     align-items: center;
@@ -402,7 +402,7 @@
 
   .atmo-quiet { /* marker */ }
 
-  /* Halo behind text sitting over imagery / video — auto-derives from --color-bg
+  /* Halo behind text sitting over imagery / video - auto-derives from --color-bg
      so it matches whatever palette is active. */
   .text-halo {
     text-shadow:

@@ -4,6 +4,9 @@ export type Product = {
   name: string;
   brand?: string;
   tagline: string;
+  /** Short, scannable differentiator shown as a chip on the catalog card
+   * (e.g. "Wewnątrz · 0,1–0,4 mm"). Helps distinguish near-identical products. */
+  highlight?: string;
   description: string;
   features: string[];
   usage: string;
@@ -583,26 +586,156 @@ export const products: Product[] = [
     categorySlug: 'tynki-cementowo-wapienne',
     name: 'POW-100 Obrzutka wstępna',
     brand: 'POW-100',
-    tagline: 'Cementowa warstwa sczepna pod tynki',
+    tagline: 'Cementowa warstwa sczepna pod tynki systemu PROFIX',
+    highlight: 'Warstwa pod tynk · ziarno do 1 mm',
     description:
-      'Sucha zaprawa cementowa do wykonania obrzutki wstępnej, cienkiej warstwy sczepnej zwiększającej przyczepność tynku do podłoża. Aplikowana ręcznie lub maszynowo, pokrycie typowo 50-70% powierzchni.',
-    features: ['Warstwa sczepna pod tynk', 'Aplikacja ręczna lub maszynowa', 'Cementowa baza', 'Mrozoodporna'],
-    usage: 'Pod tynki cementowo-wapienne na podłożach o niskiej lub nierównej chłonności (beton, bloczki, ceramika).',
-    draft: true,
-    notes: ['Pełna karta techniczna dostępna na życzenie'],
+      'Sucho mieszana zaprawa cementowa do obrzutki wstępnej. Wchodzi w skład systemu zapraw tynkarskich PROFIX, stosowana pod tynki cementowe nakładane maszynowo lub ręcznie na wszystkie podłoża mineralne. Wyrównuje chłonność podłoża i poprawia przyczepność tynków do ścian i sufitów. Nadaje się do obróbki ręcznej i maszynowej.',
+    features: [
+      'Warstwa sczepna pod tynk',
+      'Wyrównuje chłonność podłoża',
+      'Aplikacja ręczna lub maszynowa (agregat tynkarski)',
+      'Ziarno do 1 mm',
+      'Kolor naturalnie szary',
+    ],
+    usage:
+      'Zalecana pod tynki cementowe na wszystkie podłoża mineralne (beton, bloczki, ceramika, beton komórkowy). Powierzchnię należy pokryć w 100% cienką warstwą POW-100; po pełnym utwardzeniu (ok. 24 h) można przystąpić do tynkowania zasadniczego.',
+    application:
+      'Podłoże nośne, wolne od kurzu, tłuszczu i innych zanieczyszczeń. Luźne części skuć do warstwy stabilnej. Przed nałożeniem zagruntować gruntem tynkarskim PROFIX. Grzyby i pleśń usunąć środkiem grzybobójczym. Nakładać stalową kielnią trapezową lub trójkątną, albo natryskowo agregatem.',
+    mixing: 'ok. 6–7,2 l wody na 30 kg suchej zaprawy; czas przydatności do przerobu max ok. 3 h',
+    consumption: '4–8 kg/m² (w zależności od rodzaju podłoża)',
+    packaging: '30 kg',
+    tempRange: '+5°C / +25°C',
+    shelfLife: '12 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
+    image: '/photos/products/pow-100.png',
+    norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
+    extraSpecs: [
+      { label: 'Absorpcja wody', value: 'W2' },
+      { label: 'Tynkowanie / obciążenie', value: 'po ok. 24 h / pełne po ok. 7 dniach' },
+    ],
+    notes: ['Nie dopuścić do zbyt szybkiego wysychania (przeciągi, mocne nasłonecznienie, ogrzewanie pomieszczeń).'],
+  },
+  {
+    slug: 'ptc-10-tynk-wapienno-cementowy',
+    categorySlug: 'tynki-cementowo-wapienne',
+    name: 'PTC-10 Tynk wapienno-cementowy',
+    brand: 'PTC-10',
+    tagline: 'Uniwersalny tynk maszynowy i ręczny do wnętrz',
+    highlight: 'Wnętrza · 0,1–0,5 mm · standard',
+    description:
+      'Sucho mieszana zaprawa tynkarska na bazie cementu portlandzkiego, piasku naturalnego i kwarcowego (uziarnienie 0,1–0,5 mm) z dodatkami uplastyczniającymi poprawiającymi właściwości obróbki. Standardowy tynk podkładowy o sprawdzonej wytrzymałości.',
+    features: [
+      'Uziarnienie 0,1–0,5 mm',
+      'Aplikacja ręczna i mechaniczna',
+      'Pod tynki ozdobne i farby',
+      'Również jako tynk naprawczy',
+      'Paroprzepuszczalny',
+    ],
+    usage:
+      'Ściany wewnętrzne i stropy. Na silnie porowatych podłożach (cegła i pustak porowaty, beton komórkowy, beton szalowany, piaskowiec) oraz jako tynk podkładowy pod tynki ozdobne i farby. Nie stosować w strefie cokołowej.',
+    application:
+      'Podłoże nośne, oczyszczone i stabilne. Zastosować obrzutkę wstępną POW-100, a powierzchnie ekstremalnie chłonne dodatkowo zagruntować gruntem tynkarskim PROFIX. Drugą warstwę nakładać na pierwszą zatartą na ostro.',
+    mixing: '0,23–0,24 l wody na 1 kg zaprawy (ok. 7 l / 30 kg)',
+    consumption: '14 kg/m² przy warstwie 10 mm (min. grubość 7 mm)',
+    packaging: '30 kg',
+    tempRange: '+5°C / +25°C',
+    shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
+    image: '/photos/products/ptc-10.jpg',
+    norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
+    extraSpecs: [
+      { label: 'Wytrzymałość na ściskanie', value: 'CSII (>2,3 N/mm²)' },
+      { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
+      { label: 'Wytrzymałość na zginanie', value: '>1,0 N/mm²' },
+      { label: 'Przyczepność do podłoża', value: '>0,28 N/mm²' },
+    ],
+  },
+  {
+    slug: 'ptc-11-tynk-cementowo-wapienny-drobnoziarnisty-lekki',
+    categorySlug: 'tynki-cementowo-wapienne',
+    name: 'PTC-11 Tynk cementowo-wapienny drobnoziarnisty lekki',
+    brand: 'PTC-11',
+    tagline: 'Drobny lekki tynk do zacierania na gładko',
+    highlight: 'Wnętrza · 0,1–0,4 mm · na gładko',
+    description:
+      'Sucho mieszana zaprawa tynkarska z lekkim kruszywem perlitowym i drobnym uziarnieniem 0,1–0,4 mm. Dzięki drobnemu ziarnu można ją zacierać na gładko – doskonale nadaje się jako warstwa końcowa (szlichta). Produkt uniwersalny, nakładany w systemie dwuwarstwowym.',
+    features: [
+      'Lekkie kruszywo perlitowe',
+      'Drobne uziarnienie 0,1–0,4 mm',
+      'Można zacierać na gładko (szlichta)',
+      'Aplikacja ręczna i mechaniczna',
+      'Niższa masa – wygodniejsza obróbka',
+    ],
+    usage:
+      'Tylko wewnątrz budynków, na ściany i stropy. Na silnie porowatych podłożach (cegła i pustak porowaty, beton komórkowy, beton szalowany, piaskowiec), jako tynk podkładowy pod tynki ozdobne i farby lub jako tynk naprawczy. Nie stosować w strefie cokołowej.',
+    application:
+      'Zastosować obrzutkę wstępną POW-100, a podłoża ekstremalnie chłonne zagruntować gruntem tynkarskim PROFIX. Drugą warstwę nakładać na pierwszą zatartą na ostro.',
+    mixing: '0,23–0,24 l wody na 1 kg zaprawy (ok. 7 l / 30 kg)',
+    consumption: '12 kg/m² przy warstwie 10 mm (min. grubość 7 mm)',
+    packaging: '30 kg',
+    tempRange: '+5°C / +25°C',
+    shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
+    image: '/photos/products/ptc-11.png',
+    norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
+    extraSpecs: [
+      { label: 'Wytrzymałość na ściskanie', value: 'CSII (>2,7 N/mm²)' },
+      { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
+      { label: 'Wytrzymałość na zginanie', value: '>1,1 N/mm²' },
+      { label: 'Przyczepność do podłoża', value: '>0,7 N/mm²' },
+    ],
+  },
+  {
+    slug: 'ptc-12-tynk-cementowo-wapienny-lekki',
+    categorySlug: 'tynki-cementowo-wapienne',
+    name: 'PTC-12 Tynk cementowo-wapienny lekki',
+    brand: 'PTC-12',
+    tagline: 'Lekki tynk na ściany zewnętrzne i wewnętrzne',
+    highlight: 'Zewnątrz i wnętrza · 0,1–0,8 mm',
+    description:
+      'Sucho mieszana zaprawa tynkarska z lekkim kruszywem perlitowym, na bazie cementu portlandzkiego i piasku kwarcowego o uziarnieniu 0,1–0,8 mm. Wyższa wytrzymałość przy niższej masie – uniwersalny tynk podkładowy o szerokim zastosowaniu.',
+    features: [
+      'Lekkie kruszywo perlitowe',
+      'Uziarnienie 0,1–0,8 mm',
+      'Ściany zewnętrzne, wewnętrzne i stropy',
+      'Aplikacja ręczna i mechaniczna',
+      'Pod tynki ozdobne i farby',
+    ],
+    usage:
+      'Ściany zewnętrzne, wewnętrzne i stropy. Na silnie porowatych podłożach (cegła i pustak porowaty, beton komórkowy, beton szalowany, piaskowiec), jako tynk podkładowy pod tynki ozdobne i farby lub jako tynk naprawczy. Nie stosować w strefie cokołowej.',
+    application:
+      'Zastosować obrzutkę wstępną POW-100, a podłoża ekstremalnie chłonne zagruntować gruntem tynkarskim PROFIX. Drugą warstwę nakładać na pierwszą zatartą na ostro.',
+    mixing: '0,23–0,24 l wody na 1 kg zaprawy (ok. 7 l / 30 kg)',
+    consumption: '14 kg/m² przy warstwie 10 mm (min. grubość 7 mm)',
+    packaging: '30 kg',
+    tempRange: '+5°C / +25°C',
+    shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
+    image: '/photos/products/ptc-12.png',
+    norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
+    extraSpecs: [
+      { label: 'Wytrzymałość na ściskanie', value: 'CSII (>7,0 N/mm²)' },
+      { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
+      { label: 'Wytrzymałość na zginanie', value: '>2,3 N/mm²' },
+      { label: 'Przyczepność do podłoża', value: '>0,99 N/mm²' },
+    ],
   },
   {
     slug: 'ptc-15-tynk-wapienno-cementowy-super-lekki',
     categorySlug: 'tynki-cementowo-wapienne',
     name: 'PTC-15 Tynk wapienno-cementowy super lekki',
     brand: 'PTC-15',
-    tagline: 'Lekki tynk maszynowy do wnętrz i elewacji',
+    tagline: 'Szlachetna mineralna wyprawa tynkarska do wnętrz',
+    highlight: 'Wnętrza · super lekki · mineralny',
     description:
-      'Sucha mieszanka tynkarska wapienno-cementowa o obniżonej gęstości (z perlitem lub lekkimi kruszywami). Dzięki niższej masie szybciej i wygodniej się aplikuje, a powłoka ma dobre właściwości termoizolacyjne.',
-    features: ['Super lekki', 'Maszynowa lub ręczna aplikacja', 'Paroprzepuszczalny', 'Wapienno-cementowa baza'],
-    usage: 'Tynkowanie wnętrz i elewacji budynków mieszkalnych, użytkowych i przemysłowych.',
-    draft: true,
-    notes: ['Pełna karta techniczna dostępna na życzenie'],
+      'Szlachetna mineralna wyprawa tynkarska o obniżonej gęstości, do nakładania maszynowego i ręcznego. Przeznaczona do dekoracyjnych i ochronnych, cienko- i grubowarstwowych wypraw tynkarskich wewnątrz budynków. Niska masa ułatwia aplikację, a powłoka ma dobre właściwości obróbcze.',
+    features: ['Super lekki', 'Szlachetna wyprawa mineralna', 'Maszynowa lub ręczna aplikacja', 'Paroprzepuszczalny'],
+    usage:
+      'Dekoracyjne i ochronne wyprawy tynkarskie wewnątrz budynków mieszkalnych, użytkowych i przemysłowych. Szczegółowe zastosowanie w karcie technicznej produktu.',
+    application:
+      'Zastosować obrzutkę wstępną POW-100, a podłoża ekstremalnie chłonne zagruntować gruntem tynkarskim PROFIX.',
+    packaging: '30 kg',
+    tempRange: '+5°C / +25°C',
+    shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
+    image: '/photos/products/ptc-15.png',
+    norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
+    notes: ['Pełna karta techniczna dostępna na życzenie.'],
   },
 
   // === DOCIEPLENIA - PRODUKTY UZUPEŁNIAJĄCE ===

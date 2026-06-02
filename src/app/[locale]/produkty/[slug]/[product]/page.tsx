@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import {
   ArrowLeft,
+  ArrowRight,
   Check,
   MessageSquare,
   Package,
@@ -18,9 +19,10 @@ import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { LinkButton } from '@/components/ui/Button';
+import { ProductCard } from '@/components/ui/ProductCard';
 import { Link } from '@/i18n/navigation';
 import { getCategory } from '@/content/categories';
-import { publishedProducts, getProduct } from '@/content/products';
+import { publishedProducts, getProduct, getProductsByCategory } from '@/content/products';
 import { routing } from '@/i18n/routing';
 import { siteConfig } from '@/content/site';
 
@@ -105,6 +107,11 @@ export default async function ProductPage({
     }
   }
 
+  // Related products - same category, current excluded, capped at 3.
+  const related = getProductsByCategory(cat.slug)
+    .filter((x) => x.slug !== p.slug)
+    .slice(0, 3);
+
   return (
     <>
       <script
@@ -126,13 +133,24 @@ export default async function ProductPage({
             <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]">
               <div className="space-y-6">
                 <nav aria-label="breadcrumb" className="flex flex-wrap items-center gap-2 text-xs text-fg-subtle">
-                  <Link href="/produkty" className="hover:text-[var(--color-fg)]">
-                    Produkty
+                  <Link href="/" className="transition-colors hover:text-[var(--color-accent)]">
+                    {t('breadcrumb.home')}
                   </Link>
-                  <span aria-hidden>/</span>
-                  <Link href={`/produkty/${cat.slug}`} className="hover:text-[var(--color-fg)]">
+                  <span aria-hidden className="text-fg-subtle/60">/</span>
+                  <Link href="/produkty" className="transition-colors hover:text-[var(--color-accent)]">
+                    {t('breadcrumb.products')}
+                  </Link>
+                  <span aria-hidden className="text-fg-subtle/60">/</span>
+                  <Link
+                    href={`/produkty/${cat.slug}`}
+                    className="transition-colors hover:text-[var(--color-accent)]"
+                  >
                     {cat.name}
                   </Link>
+                  <span aria-hidden className="text-fg-subtle/60">/</span>
+                  <span aria-current="page" className="text-fg-muted">
+                    {p.brand ?? p.name}
+                  </span>
                 </nav>
                 <div className="flex flex-wrap items-center gap-2">
                   {p.brand && (
@@ -319,6 +337,32 @@ export default async function ProductPage({
           </div>
         </Container>
       </section>
+
+      {related.length > 0 && (
+        <section className="section-alt relative py-20">
+          <Container size="xl">
+            <div className="mb-10 flex items-end justify-between gap-4">
+              <h2 className="font-display text-2xl font-semibold sm:text-3xl">
+                {t('sections.related')}
+              </h2>
+              <Link
+                href={`/produkty/${cat.slug}`}
+                className="inline-flex items-center gap-2 text-sm text-fg-muted transition-colors hover:text-[var(--color-accent)]"
+              >
+                {cat.name}
+                <ArrowRight size={14} strokeWidth={1.75} />
+              </Link>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {related.map((rp, i) => (
+                <Reveal key={rp.slug} delay={(i % 3) * 0.06}>
+                  <ProductCard product={rp} />
+                </Reveal>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
     </>
   );
 }

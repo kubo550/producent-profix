@@ -1,11 +1,11 @@
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { ArrowLeft, ArrowUpRight, MessageSquare, Package } from 'lucide-react';
+import { ArrowLeft, MessageSquare } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { LinkButton } from '@/components/ui/Button';
+import { ProductCard } from '@/components/ui/ProductCard';
 import { Link } from '@/i18n/navigation';
 import { categories, getCategory } from '@/content/categories';
 import { getProductsByCategory } from '@/content/products';
@@ -158,49 +158,7 @@ export default async function CategoryPage({
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {productList.map((p, i) => (
                 <Reveal key={p.slug} delay={(i % 3) * 0.06}>
-                  <Link
-                    href={`/produkty/${cat.slug}/${p.slug}`}
-                    className="card-data group relative flex h-full flex-col overflow-hidden transition-transform duration-300 hover:-translate-y-0.5"
-                  >
-                    {p.image && (
-                      <div className="relative aspect-[4/3] overflow-hidden border-b border-[var(--color-border)] bg-white">
-                        <Image
-                          src={p.image}
-                          alt={p.name}
-                          fill
-                          sizes="(min-width: 1024px) 30vw, 100vw"
-                          className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    )}
-                    <div className="relative flex flex-1 flex-col p-6">
-                      <div className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-fg-muted transition-all group-hover:border-[var(--color-accent)] group-hover:bg-[var(--color-accent)] group-hover:text-[var(--color-accent-fg)]">
-                        <ArrowUpRight size={16} strokeWidth={1.75} />
-                      </div>
-                      <div className="space-y-3 pr-12">
-                        {p.brand && (
-                          <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent-soft)] px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--color-accent)]">
-                            {p.brand}
-                          </span>
-                        )}
-                        <h3 className="font-display text-lg font-semibold leading-tight transition-colors group-hover:text-[var(--color-accent)]">
-                          {p.name}
-                        </h3>
-                        <p className="text-sm leading-relaxed text-fg-muted">{p.tagline}</p>
-                      </div>
-                      <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-[var(--color-border)] pt-4 text-xs text-fg-subtle">
-                        {p.packaging && (
-                          <span className="inline-flex items-center gap-1.5">
-                            <Package size={12} strokeWidth={1.75} />
-                            {p.packaging}
-                          </span>
-                        )}
-                        {p.consumption && (
-                          <span className="ml-auto truncate">{p.consumption}</span>
-                        )}
-                      </div>
-                    </div>
-                  </Link>
+                  <ProductCard product={p} />
                 </Reveal>
               ))}
             </div>

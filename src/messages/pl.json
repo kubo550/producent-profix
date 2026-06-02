@@ -283,12 +283,17 @@
     "productsCountMany": "produktów"
   },
   "productPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "products": "Produkty"
+    },
     "sections": {
       "description": "Opis",
       "features": "Cechy",
       "usage": "Zastosowanie",
       "application": "Sposób użycia",
-      "specs": "Dane techniczne"
+      "specs": "Dane techniczne",
+      "related": "Inne produkty z tej kategorii"
     },
     "specs": {
       "packaging": "Opakowanie",

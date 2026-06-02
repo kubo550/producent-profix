@@ -28,6 +28,7 @@ export const categories: Category[] = [
     description:
       'Klasyczne tynki maszynowe i ręczne. Wysoka paroprzepuszczalność, dobra przyczepność do typowych podłoży budowlanych, długoletnia trwałość.',
     audience: ['fachowiec'],
+    coverImage: '/photos/products/ptc-10.jpg',
     featuredOnHome: true,
   },
   {
