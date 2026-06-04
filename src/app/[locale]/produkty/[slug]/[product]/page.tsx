@@ -20,6 +20,7 @@ import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { LinkButton } from '@/components/ui/Button';
 import { ProductCard } from '@/components/ui/ProductCard';
+import { CategoryHighlights } from '@/components/ui/CategoryHighlights';
 import { Link } from '@/i18n/navigation';
 import { getCategory } from '@/content/categories';
 import { publishedProducts, getProduct, getProductsByCategory } from '@/content/products';
@@ -337,6 +338,10 @@ export default async function ProductPage({
           </div>
         </Container>
       </section>
+
+      {cat.highlights && (
+        <CategoryHighlights items={cat.highlights} title={t('sections.lineBenefits')} />
+      )}
 
       {related.length > 0 && (
         <section className="section-alt relative py-20">

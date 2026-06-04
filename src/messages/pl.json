@@ -293,7 +293,8 @@
       "usage": "Zastosowanie",
       "application": "Sposób użycia",
       "specs": "Dane techniczne",
-      "related": "Inne produkty z tej kategorii"
+      "related": "Inne produkty z tej kategorii",
+      "lineBenefits": "Zalety tej linii"
     },
     "specs": {
       "packaging": "Opakowanie",

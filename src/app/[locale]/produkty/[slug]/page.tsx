@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { ArrowLeft, BadgeCheck, Check, MessageSquare } from 'lucide-react';
+import { ArrowLeft, MessageSquare } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { LinkButton } from '@/components/ui/Button';
 import { ProductCard } from '@/components/ui/ProductCard';
+import { CategoryHighlights } from '@/components/ui/CategoryHighlights';
 import { Link } from '@/i18n/navigation';
 import { categories, getCategory } from '@/content/categories';
 import { getProductsByCategory } from '@/content/products';
@@ -176,52 +177,14 @@ export default async function CategoryPage({
         </Container>
       </section>
 
-      {cat.highlights && cat.highlights.length > 0 && (
-        <section className="relative pb-20">
-          <Container size="xl">
-            <Reveal className="max-w-2xl space-y-3">
-              {cat.highlightsTitle && (
-                <h2
-                  className={`font-display text-2xl font-semibold sm:text-3xl ${hasBgVideo ? 'text-halo' : ''}`}
-                >
-                  {cat.highlightsTitle}
-                </h2>
-              )}
-              {cat.highlightsLead && (
-                <p
-                  className={`text-pretty text-base leading-relaxed text-fg-muted ${hasBgVideo ? 'text-halo' : ''}`}
-                >
-                  {cat.highlightsLead}
-                </p>
-              )}
-            </Reveal>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {cat.highlights.map((h, i) => (
-                <Reveal key={h.title} delay={(i % 4) * 0.06}>
-                  <div className="h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/85 p-5 backdrop-blur-2xl">
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
-                      <Check size={16} strokeWidth={2} />
-                    </span>
-                    <h3 className="mt-4 font-display text-base font-semibold leading-tight">
-                      {h.title}
-                    </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-fg-muted">{h.description}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-            {cat.trustNote && (
-              <Reveal delay={0.1}>
-                <p
-                  className={`mt-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]/85 px-4 py-2 text-sm text-fg-muted backdrop-blur-2xl ${hasBgVideo ? 'text-halo' : ''}`}
-                >
-                  <BadgeCheck size={16} strokeWidth={1.75} className="text-[var(--color-accent)]" />
-                  {cat.trustNote}
-                </p>
-              </Reveal>
-            )}
-          </Container>
-        </section>
+      {cat.highlights && (
+        <CategoryHighlights
+          items={cat.highlights}
+          title={cat.highlightsTitle}
+          lead={cat.highlightsLead}
+          trustNote={cat.trustNote}
+          halo={hasBgVideo}
+        />
       )}
 
       {productList.length > 0 && (

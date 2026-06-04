@@ -36,7 +36,7 @@ export const categories: Category[] = [
     name: 'Tynki cementowo wapienne',
     short: 'Zaprawy tynkarskie wewnątrz i na zewnątrz',
     description:
-      'Klasyczne tynki maszynowe i ręczne. Wysoka paroprzepuszczalność, dobra przyczepność do typowych podłoży budowlanych, długoletnia trwałość.',
+      'Tynki cementowe PROFIX to linia stworzona z myślą o profesjonalistach. Niezawodne, wydajne i uniwersalne: sprawdzają się wewnątrz i na zewnątrz, na stropach, dużych powierzchniach oraz w obiektach remontowanych i budownictwie przemysłowym.',
     audience: ['fachowiec'],
     coverImage: '/photos/products/ptc-10.jpg',
     featuredOnHome: true,
@@ -44,7 +44,7 @@ export const categories: Category[] = [
     bgVideoPoster: '/photos/about-production-poster.jpg',
     highlightsTitle: 'Szybkość, wydajność i najwyższa jakość',
     highlightsLead:
-      'Linia tynków cementowych PROFIX stworzona z myślą o profesjonalistach. Niska gęstość nasypowa przekłada się na większą wydajność i szybszą pracę.',
+      'Poszczególne rodzaje różnią się uziarnieniem i wytrzymałością, ale wszystkie łączy niska gęstość nasypowa, która przekłada się na większą wydajność i szybszą pracę.',
     highlights: [
       {
         title: 'Uniwersalne zastosowanie',
