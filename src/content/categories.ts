@@ -9,6 +9,16 @@ export type Category = {
   /** When true, this category is highlighted on the homepage grid.
    * Non-featured categories still appear in /produkty (full catalog) and the mega-menu. */
   featuredOnHome?: boolean;
+  /** Optional muted/looping video used as a fixed page background on the category page.
+   * Path under /public. When set, bgVideoPoster should accompany it. */
+  bgVideo?: string;
+  bgVideoPoster?: string;
+  /** Optional selling-points block shown on the category page (curated, not the full product list). */
+  highlightsTitle?: string;
+  highlightsLead?: string;
+  highlights?: Array<{ title: string; description: string }>;
+  /** Short trust line shown under the highlights (e.g. "Polska produkcja · ..."). */
+  trustNote?: string;
 };
 
 export const categories: Category[] = [
@@ -30,6 +40,34 @@ export const categories: Category[] = [
     audience: ['fachowiec'],
     coverImage: '/photos/products/ptc-10.jpg',
     featuredOnHome: true,
+    bgVideo: '/photos/about-production.mp4',
+    bgVideoPoster: '/photos/about-production-poster.jpg',
+    highlightsTitle: 'Szybkość, wydajność i najwyższa jakość',
+    highlightsLead:
+      'Linia tynków cementowych PROFIX stworzona z myślą o profesjonalistach. Niska gęstość nasypowa przekłada się na większą wydajność i szybszą pracę.',
+    highlights: [
+      {
+        title: 'Uniwersalne zastosowanie',
+        description:
+          'Wnętrza i elewacje, stropy i duże powierzchnie, obiekty remontowane oraz budownictwo przemysłowe.',
+      },
+      {
+        title: 'Hydrofobowość i tiksotropowość',
+        description:
+          'Wysoka odporność na wilgoć i stabilna praca na pionie oraz suficie, bez osuwania się zaprawy.',
+      },
+      {
+        title: 'Ręcznie lub maszynowo',
+        description:
+          'Aplikacja agregatem i w technice silosowej. Materiał plastyczny i łatwy w obróbce.',
+      },
+      {
+        title: 'Elastyczne wykończenie',
+        description:
+          'Zacieranie na gładką, jednolitą warstwę albo pozostawienie „na ostro” pod kolejne warstwy wykończeniowe.',
+      },
+    ],
+    trustNote: 'Sprawdzona polska jakość · zaufały nam tysiące firm budowlanych',
   },
   {
     slug: 'tynki-cienkowarstwowe',
