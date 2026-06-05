@@ -124,15 +124,27 @@ export default async function ProductPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {p.image ? (
-        <section className="relative pb-12 pt-36 sm:pb-20 sm:pt-44">
+        <section className="relative overflow-hidden pb-12 pt-36 sm:pb-20 sm:pt-44">
           <span className="atmo-quiet sr-only" aria-hidden />
           <div
             aria-hidden
             className="pointer-events-none absolute -right-32 top-32 -z-10 h-96 w-96 rounded-full bg-[var(--color-accent)] opacity-[0.07] blur-[120px]"
           />
           <Container size="xl">
-            <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]">
-              <div className="space-y-6">
+            <div className="relative">
+              {/* Large product render - bleeds right, transparent so it floats on the
+                  page; the copy is allowed to overlap it (per brand direction). */}
+              <div className="pointer-events-none absolute -right-[4%] top-1/2 hidden aspect-square w-[58%] max-w-3xl -translate-y-1/2 lg:block">
+                <Image
+                  src={p.image}
+                  alt={`${p.name}, opakowanie produktu`}
+                  fill
+                  priority
+                  sizes="60vw"
+                  className="object-contain drop-shadow-[0_45px_90px_rgba(0,0,0,0.55)]"
+                />
+              </div>
+              <div className="relative z-10 max-w-xl space-y-6 lg:max-w-2xl lg:[&_h1]:text-halo lg:[&_p]:text-halo">
                 <nav aria-label="breadcrumb" className="flex flex-wrap items-center gap-2 text-xs text-fg-subtle">
                   <Link href="/" className="transition-colors hover:text-[var(--color-accent)]">
                     {t('breadcrumb.home')}
@@ -169,7 +181,7 @@ export default async function ProductPage({
                     </span>
                   ))}
                 </div>
-                <h1 className="text-balance font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
+                <h1 className="text-balance font-display text-4xl font-semibold leading-[1.04] sm:text-5xl lg:text-6xl xl:text-7xl">
                   {p.name}
                 </h1>
                 <p className="text-pretty text-lg leading-relaxed text-fg-muted sm:text-xl">
@@ -188,21 +200,16 @@ export default async function ProductPage({
                   )}
                 </div>
               </div>
-              <div className="relative">
-                <div
-                  aria-hidden
-                  className="absolute inset-0 -z-10 translate-x-6 translate-y-6 rounded-[2.5rem] bg-[var(--color-accent)] opacity-[0.08] blur-2xl"
+
+              {/* Mobile / tablet: render stacked below the copy */}
+              <div className="relative mx-auto mt-10 aspect-square w-full max-w-md lg:hidden">
+                <Image
+                  src={p.image}
+                  alt=""
+                  fill
+                  sizes="100vw"
+                  className="object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.45)]"
                 />
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[2.5rem] border border-[var(--color-border-strong)] bg-white shadow-[0_40px_80px_-30px_rgba(0,0,0,0.25)]">
-                  <Image
-                    src={p.image}
-                    alt={`${p.name}, opakowanie produktu`}
-                    fill
-                    priority
-                    sizes="(min-width: 1024px) 45vw, 100vw"
-                    className="object-contain p-8"
-                  />
-                </div>
               </div>
             </div>
           </Container>

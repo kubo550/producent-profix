@@ -71,7 +71,7 @@ export const categories: Category[] = [
       {
         title: 'Szerokie spektrum użycia',
         description:
-          'Doskonałe na stropy, duże powierzchnie oraz do obiektów remontowanych i budownictwa przemysłowego.',
+          'Optymalne dopasowanie zarówno do mniejszych prac ręcznych, jak i dużych inwestycji realizowanych maszynowo.',
       },
     ],
     trustNote: [
@@ -82,7 +82,7 @@ export const categories: Category[] = [
     ],
     highlightsSecondaryTitle: 'Elastyczność aplikacji i wykończenia',
     highlightsSecondaryLead:
-      'Tynki cementowe PROFIX dopasowują się do Twoich potrzeb i parku maszynowego:',
+      'Tynki cementowe PROFIX dopasowują się do Twoich potrzeb w pracach ręcznych oraz maszynowych:',
     highlightsSecondary: [
       {
         title: 'Metoda nakładania',

@@ -16,7 +16,7 @@ export function ProductCard({ product }: { product: Product }) {
       className="card-data group relative flex h-full flex-col overflow-hidden transition-transform duration-300 hover:-translate-y-0.5"
     >
       {p.image && (
-        <div className="relative aspect-[4/3] overflow-hidden border-b border-[var(--color-border)] bg-white">
+        <div className="relative aspect-[4/3] overflow-hidden border-b border-[var(--color-border)]">
           <Image
             src={p.image}
             alt={p.name}
