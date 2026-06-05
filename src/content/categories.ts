@@ -4,7 +4,7 @@ export type Category = {
   short: string;
   description: string;
   audience: Array<'fachowiec' | 'inwestor'>;
-  /** Path under /public, e.g. /photos/products/beton-c-20-25.jpg */
+  /** Path under /public, e.g. /photos/products/beton-c-20-25.png */
   coverImage?: string;
   /** When true, this category is highlighted on the homepage grid.
    * Non-featured categories still appear in /produkty (full catalog) and the mega-menu. */
@@ -180,7 +180,7 @@ export const categories: Category[] = [
     description:
       'Gotowe suche mieszanki betonowe w trzech klasach wytrzymałości. Do podkładów podłogowych, słupków, kotwień, napraw konstrukcyjnych i posadzek. Zgodne z normami EN 13813:2002 i EN 1504-3:2005.',
     audience: ['fachowiec', 'inwestor'],
-    coverImage: '/photos/products/beton-c-20-25.jpg',
+    coverImage: '/photos/products/beton-c-20-25.png',
     featuredOnHome: true,
     live: true,
   },

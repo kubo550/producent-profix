@@ -14,6 +14,8 @@ import {
   AlertTriangle,
   ShieldCheck,
   Ruler,
+  Download,
+  FileText,
 } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
@@ -342,6 +344,38 @@ export default async function ProductPage({
                       </div>
                     ))}
                   </dl>
+                </div>
+              )}
+
+              {p.documents && p.documents.length > 0 && (
+                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 backdrop-blur-xl">
+                  <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-fg-subtle">
+                    {t('sections.downloads')}
+                  </p>
+                  <ul className="space-y-2">
+                    {p.documents.map((doc) => (
+                      <li key={doc.href}>
+                        <a
+                          href={doc.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center gap-3 rounded-xl border border-[var(--color-border)] px-3 py-2.5 text-sm text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                        >
+                          <FileText
+                            size={16}
+                            strokeWidth={1.75}
+                            className="flex-none text-[var(--color-accent)]"
+                          />
+                          <span className="flex-1">{doc.label}</span>
+                          <Download
+                            size={15}
+                            strokeWidth={1.75}
+                            className="flex-none text-fg-subtle transition-colors group-hover:text-[var(--color-accent)]"
+                          />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
 

@@ -30,12 +30,20 @@ export async function Footer() {
           {/* Brand column */}
           <div className="space-y-6">
             <Link href="/" aria-label={siteConfig.name} className="inline-block">
+              {/* Dark-ink logo on the light footer; white + red on dark theme */}
               <Image
                 src="/brand/logo-transparent.png"
                 alt={siteConfig.name}
                 width={2400}
                 height={1500}
-                className="h-20 w-auto dark:brightness-0 dark:invert sm:h-24"
+                className="block h-20 w-auto dark:hidden sm:h-24"
+              />
+              <Image
+                src="/brand/logo-white.png"
+                alt={siteConfig.name}
+                width={2400}
+                height={1500}
+                className="hidden h-20 w-auto dark:block sm:h-24"
               />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-fg-muted">{t('tagline')}</p>

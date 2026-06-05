@@ -132,6 +132,15 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', onKey);
   }, [megaOpen]);
 
+  // At the top of a page whose hero is dark (home, about, category with bg video),
+  // the transparent navbar sits over a dark surface - use the white/red logo there.
+  const heroDark = (() => {
+    if (scrolled) return false;
+    if (pathname === '/' || pathname === '/o-firmie') return true;
+    const m = pathname.match(/^\/produkty\/([^/]+)\/?$/);
+    return m ? Boolean(getCategory(m[1])?.bgVideo) : false;
+  })();
+
   return (
     <header
       className={cn(
@@ -154,13 +163,29 @@ export function Navbar() {
           }}
         >
           <Link href="/" aria-label={siteConfig.name} className="group flex items-center">
+            {/* Dark-ink logo for light surfaces */}
             <Image
               src="/brand/logo-transparent.png"
               alt={siteConfig.name}
               width={2400}
               height={1500}
               priority
-              className="-mt-1.5 h-10 w-auto transition-transform group-hover:scale-105 dark:brightness-0 dark:invert sm:-mt-2 sm:h-12"
+              className={cn(
+                '-mt-1.5 h-10 w-auto transition-transform group-hover:scale-105 sm:-mt-2 sm:h-12',
+                heroDark ? 'hidden' : 'block dark:hidden'
+              )}
+            />
+            {/* White + red logo for dark surfaces (keeps the red tagline lit) */}
+            <Image
+              src="/brand/logo-white.png"
+              alt={siteConfig.name}
+              width={2400}
+              height={1500}
+              priority
+              className={cn(
+                '-mt-1.5 h-10 w-auto transition-transform group-hover:scale-105 sm:-mt-2 sm:h-12',
+                heroDark ? 'block' : 'hidden dark:block'
+              )}
             />
           </Link>
 
@@ -359,13 +384,17 @@ export function Navbar() {
                             className="flex h-full flex-col gap-3 p-2"
                           >
                             {expandedCat.coverImage && (
-                              <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-deep)]">
+                              <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-[var(--color-border)]">
+                                <div
+                                  aria-hidden
+                                  className="absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-accent)] opacity-[0.22] blur-[40px]"
+                                />
                                 <Image
                                   src={expandedCat.coverImage}
                                   alt=""
                                   fill
                                   sizes="(min-width: 1024px) 22vw, 100vw"
-                                  className="object-cover transition-transform duration-500"
+                                  className="object-contain p-2 transition-transform duration-500"
                                 />
                               </div>
                             )}

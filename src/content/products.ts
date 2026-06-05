@@ -17,7 +17,7 @@ export type Product = {
   tempRange?: string;
   shelfLife?: string;
   notes?: string[];
-  /** Path under /public, e.g. /photos/products/beton-c-16-20.jpg */
+  /** Path under /public, e.g. /photos/products/beton-c-16-20.png */
   image?: string;
   /** Additional images for gallery */
   gallery?: string[];
@@ -25,6 +25,9 @@ export type Product = {
   norms?: string[];
   /** Extra spec fields shown in the technical sidebar */
   extraSpecs?: Array<{ label: string; value: string }>;
+  /** Downloadable documents (technical data sheet, declaration of performance, etc.).
+   * `href` is a path under /public, e.g. /dokumenty/profix-ptc-15-karta-techniczna.pdf */
+  documents?: Array<{ label: string; href: string }>;
   /** When true, product is hidden everywhere (catalog list, detail page, navbar).
    * Use for placeholders awaiting full content from client - flip to undefined/false to publish. */
   draft?: boolean;
@@ -719,23 +722,52 @@ export const products: Product[] = [
   {
     slug: 'ptc-15-tynk-wapienno-cementowy-super-lekki',
     categorySlug: 'tynki-cementowo-wapienne',
-    name: 'PTC-15 Tynk wapienno-cementowy super lekki',
+    name: 'PTC-15 Tynk wapienno-cementowy gładki super lekki',
     brand: 'PTC-15',
-    tagline: 'Szlachetna mineralna wyprawa tynkarska do wnętrz',
-    highlight: 'Wnętrza · super lekki · mineralny',
+    tagline: 'Gładki tynk wewnętrzny na ściany i sufity, o zwiększonej wydajności',
+    highlight: 'Wnętrza · 0,1–0,4 mm · gładki',
     description:
-      'Szlachetna mineralna wyprawa tynkarska o obniżonej gęstości, do nakładania maszynowego i ręcznego. Przeznaczona do dekoracyjnych i ochronnych, cienko- i grubowarstwowych wypraw tynkarskich wewnątrz budynków. Niska masa ułatwia aplikację, a powłoka ma dobre właściwości obróbcze.',
-    features: ['Super lekki', 'Szlachetna wyprawa mineralna', 'Maszynowa lub ręczna aplikacja', 'Paroprzepuszczalny'],
+      'Sucho mieszana zaprawa tynkarska na bazie cementu portlandzkiego, piasku naturalnego oraz dodatków uplastyczniających. Służy do tynkowania ścian i sufitów wewnątrz budynków w systemie dwuwarstwowym: obrzutka wstępna i właściwa warstwa tynku. Drobne uziarnienie 0,1–0,4 mm pozwala uzyskać gładką powierzchnię, a perlit i dodatki napowietrzające zwiększają wydajność zaprawy o ok. 40%. Właściwości tiksotropowe sprawiają, że przy grubszym narzucie zaprawa nie spływa ze ścian i sufitów, co ogranicza pracochłonność i straty materiału. Krótki czas wiązania i czas pracy nieprzekraczający dwóch godzin pozwalają na szybką i efektywną pracę. Nadaje się również do dekoracyjnego modelowania i sztukowania brakujących elementów gzymsów wewnątrz budynków.',
+    features: [
+      'Gładka powierzchnia – uziarnienie 0,1–0,4 mm',
+      'Wydajność większa o ok. 40% (perlit + dodatki napowietrzające)',
+      'Tiksotropowy – nie spływa ze ścian i sufitów',
+      'Krótki czas wiązania, czas pracy do 2 godzin',
+      'Eliminuje efekt „bombelkowania”',
+      'Aplikacja ręczna i maszynowa',
+    ],
     usage:
-      'Dekoracyjne i ochronne wyprawy tynkarskie wewnątrz budynków mieszkalnych, użytkowych i przemysłowych. Szczegółowe zastosowanie w karcie technicznej produktu.',
+      'Tynkowanie ścian wewnętrznych i stropów, także na silnie porowatych podłożach: cegła i pustak porowaty, beton komórkowy, beton szalowany, piaskowiec. Sprawdza się jako tynk podkładowy pod tynki ozdobne i farby oraz jako tynk naprawczy. Do nakładania ręcznego i mechanicznego.',
     application:
-      'Zastosować obrzutkę wstępną POW-100, a podłoża ekstremalnie chłonne zagruntować gruntem tynkarskim PROFIX.',
+      'Podłoże powinno być nośne, czyste, wolne od kurzu i tłuszczu; luźne części skuć do warstwy stabilnej. Zastosować obrzutkę wstępną POW-100, a podłoża ekstremalnie chłonne dodatkowo zagruntować gruntem tynkarskim PROFIX. Suchą mieszankę 30 kg zarobić ok. 8,5 l wody do uzyskania jednorodnej masy. Przy nakładaniu drugiej warstwy pierwszą pozostawić zatartą „na ostro”. Nie dopuszczać do zbyt szybkiego wysychania (przeciągi, nasłonecznienie, ogrzewanie pomieszczeń).',
+    mixing: 'ok. 8,5 l wody na 30 kg (0,27–0,29 l/kg)',
+    consumption: 'ok. 14 kg/m² przy warstwie 10 mm',
     packaging: '30 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
     image: '/photos/products/ptc-15-v2.png',
-    norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
-    notes: ['Pełna karta techniczna dostępna na życzenie.'],
+    norms: ['PN-EN 998-1:2016'],
+    extraSpecs: [
+      { label: 'Uziarnienie', value: '0,1–0,4 mm' },
+      { label: 'Minimalna grubość tynku', value: '10 mm' },
+      { label: 'Wytrzymałość na ściskanie', value: 'CS I / CS II · >1,8 N/mm²' },
+      { label: 'Wytrzymałość na zginanie', value: '>1,0 N/mm²' },
+      { label: 'Przyczepność do podłoża', value: '>0,3 N/mm²' },
+      { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
+    ],
+    documents: [
+      { label: 'Karta techniczna', href: '/dokumenty/profix-ptc-15-karta-techniczna.pdf' },
+      {
+        label: 'Deklaracja właściwości użytkowych',
+        href: '/dokumenty/profix-ptc-15-deklaracja-wlasciwosci-uzytkowych.pdf',
+      },
+      {
+        label: 'Karta charakterystyki',
+        href: '/dokumenty/profix-ptc-15-karta-charakterystyki.pdf',
+      },
+      { label: 'Karta produktu', href: '/dokumenty/profix-ptc-15-karta-produktu.pdf' },
+    ],
+    notes: ['Producent nie ponosi odpowiedzialności za nieprawidłowe użycie materiału.'],
   },
 
   // === DOCIEPLENIA - PRODUKTY UZUPEŁNIAJĄCE ===
@@ -927,7 +959,7 @@ export const products: Product[] = [
     packaging: '25 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
-    image: '/photos/products/beton-c-16-20.jpg',
+    image: '/photos/products/beton-c-16-20.png',
     norms: ['PN-EN 206:2013'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C16/20 (≥ 20 MPa @ 28 dni)' },
@@ -966,7 +998,7 @@ export const products: Product[] = [
     packaging: '25 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
-    image: '/photos/products/beton-c-20-25.jpg',
+    image: '/photos/products/beton-c-20-25.png',
     norms: ['PN-EN 206:2013'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C20/25 (≥ 25 MPa @ 28 dni)' },
@@ -1006,7 +1038,7 @@ export const products: Product[] = [
     packaging: '25 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
-    image: '/photos/products/beton-c-25-30.jpg',
+    image: '/photos/products/beton-c-25-30.png',
     norms: ['PN-EN 206:2013'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C25/30 (≥ 30 MPa @ 28 dni)' },
