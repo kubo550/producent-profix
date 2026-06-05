@@ -8,7 +8,7 @@ export default function NotFound() {
         <p className="font-mono text-sm uppercase tracking-[0.2em] text-[var(--color-accent)]">
           404
         </p>
-        <h1 className="mt-4 font-display text-4xl font-semibold sm:text-5xl">
+        <h1 className="mt-4 font-display text-4xl font-medium tracking-[-0.015em] sm:text-5xl">
           Nie znaleziono strony
         </h1>
         <p className="mt-4 text-pretty text-lg text-fg-muted">

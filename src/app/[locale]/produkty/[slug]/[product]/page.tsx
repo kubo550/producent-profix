@@ -185,7 +185,7 @@ export default async function ProductPage({
                     </span>
                   ))}
                 </div>
-                <h1 className="text-balance font-display text-4xl font-semibold leading-[1.04] sm:text-5xl lg:text-6xl xl:text-7xl">
+                <h1 className="text-balance font-display text-4xl font-medium leading-[1.04] tracking-[-0.015em] sm:text-5xl lg:text-6xl">
                   {p.name}
                 </h1>
                 <p className="text-pretty text-lg leading-relaxed text-fg-muted sm:text-xl">
