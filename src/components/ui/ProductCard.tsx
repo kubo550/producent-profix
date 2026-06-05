@@ -17,6 +17,10 @@ export function ProductCard({ product }: { product: Product }) {
     >
       {p.image && (
         <div className="relative aspect-[4/3] overflow-hidden border-b border-[var(--color-border)]">
+          <div
+            aria-hidden
+            className="absolute left-1/2 top-1/2 h-[62%] w-[62%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-accent)] opacity-[0.32] blur-[55px] dark:opacity-[0.16]"
+          />
           <Image
             src={p.image}
             alt={p.name}

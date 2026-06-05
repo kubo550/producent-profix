@@ -124,7 +124,7 @@ export default async function ProductPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {p.image ? (
-        <section className="relative overflow-hidden pb-12 pt-36 sm:pb-20 sm:pt-44">
+        <section className="relative pb-12 pt-36 sm:pb-20 sm:pt-44">
           <span className="atmo-quiet sr-only" aria-hidden />
           <div
             aria-hidden
@@ -134,7 +134,11 @@ export default async function ProductPage({
             <div className="relative">
               {/* Large product render - bleeds right, transparent so it floats on the
                   page; the copy is allowed to overlap it (per brand direction). */}
-              <div className="pointer-events-none absolute -right-[4%] top-1/2 hidden aspect-square w-[58%] max-w-3xl -translate-y-1/2 lg:block">
+              <div className="pointer-events-none absolute -right-[4%] top-1/2 z-[5] hidden aspect-square w-[58%] max-w-3xl -translate-y-1/2 lg:block">
+                <div
+                  aria-hidden
+                  className="absolute left-1/2 top-1/2 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-accent)] opacity-[0.34] blur-[90px] dark:opacity-[0.18]"
+                />
                 <Image
                   src={p.image}
                   alt={`${p.name}, opakowanie produktu`}
@@ -203,6 +207,10 @@ export default async function ProductPage({
 
               {/* Mobile / tablet: render stacked below the copy */}
               <div className="relative mx-auto mt-10 aspect-square w-full max-w-md lg:hidden">
+                <div
+                  aria-hidden
+                  className="absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-accent)] opacity-[0.30] blur-[70px] dark:opacity-[0.16]"
+                />
                 <Image
                   src={p.image}
                   alt=""
