@@ -1,6 +1,7 @@
-import { BadgeCheck, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Reveal } from '@/components/ui/Reveal';
+import { RotatingBadge } from '@/components/ui/RotatingBadge';
 import { cn } from '@/lib/cn';
 
 type Highlight = { title: string; description: string };
@@ -21,12 +22,20 @@ export function CategoryHighlights({
   items: Highlight[];
   title?: string;
   lead?: string;
-  trustNote?: string;
+  /** A single trust line, or several that rotate through a ticker badge. */
+  trustNote?: string | string[];
   /** Add text-halo for legibility when sitting over a video/photo background. */
   halo?: boolean;
   className?: string;
 }) {
   if (!items || items.length === 0) return null;
+
+  const colsClass =
+    items.length === 3
+      ? 'sm:grid-cols-2 lg:grid-cols-3'
+      : items.length === 2
+        ? 'sm:grid-cols-2'
+        : 'sm:grid-cols-2 lg:grid-cols-4';
 
   return (
     <section className={cn('relative pb-20', className)}>
@@ -52,7 +61,7 @@ export function CategoryHighlights({
             )}
           </Reveal>
         )}
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className={cn('mt-8 grid gap-4', colsClass)}>
           {items.map((h, i) => (
             <Reveal key={h.title} delay={(i % 4) * 0.06}>
               <div className="h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/85 p-5 backdrop-blur-2xl">
@@ -67,15 +76,11 @@ export function CategoryHighlights({
         </div>
         {trustNote && (
           <Reveal delay={0.1}>
-            <p
-              className={cn(
-                'mt-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]/85 px-4 py-2 text-sm text-fg-muted backdrop-blur-2xl',
-                halo && 'text-halo'
-              )}
-            >
-              <BadgeCheck size={16} strokeWidth={1.75} className="text-[var(--color-accent)]" />
-              {trustNote}
-            </p>
+            <RotatingBadge
+              items={Array.isArray(trustNote) ? trustNote : [trustNote]}
+              halo={halo}
+              className="mt-6"
+            />
           </Reveal>
         )}
       </Container>

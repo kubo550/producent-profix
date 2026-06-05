@@ -4,7 +4,6 @@ import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { USPStrip } from '@/components/sections/USPStrip';
-import { Logistics } from '@/components/sections/Logistics';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -86,7 +85,6 @@ export default async function AboutPage({
       </section>
 
       <USPStrip />
-      <Logistics />
     </div>
   );
 }

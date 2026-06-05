@@ -17,8 +17,15 @@ export type Category = {
   highlightsTitle?: string;
   highlightsLead?: string;
   highlights?: Array<{ title: string; description: string }>;
-  /** Short trust line shown under the highlights (e.g. "Polska produkcja · ..."). */
-  trustNote?: string;
+  /** Trust line(s) shown under the highlights. Multiple values rotate through a ticker badge. */
+  trustNote?: string | string[];
+  /** Optional second selling-points block (same card layout), e.g. application & finishing. */
+  highlightsSecondaryTitle?: string;
+  highlightsSecondaryLead?: string;
+  highlightsSecondary?: Array<{ title: string; description: string }>;
+  /** Optional closing block (heading + paragraph), e.g. a brand/trust message. */
+  closingTitle?: string;
+  closingBody?: string;
 };
 
 export const categories: Category[] = [
@@ -36,38 +43,60 @@ export const categories: Category[] = [
     name: 'Tynki cementowo wapienne',
     short: 'Zaprawy tynkarskie wewnątrz i na zewnątrz',
     description:
-      'Tynki cementowe PROFIX to linia stworzona z myślą o profesjonalistach. Niezawodne, wydajne i uniwersalne: sprawdzają się wewnątrz i na zewnątrz, na stropach, dużych powierzchniach oraz w obiektach remontowanych i budownictwie przemysłowym.',
+      'Szukasz niezawodnych rozwiązań dla swojego projektu budowlanego? Tynki cementowe PROFIX to linia produktów stworzona z myślą o profesjonalistach. W zależności od wybranego rodzaju, nasze tynki gwarantują szybką i efektywną pracę, doskonałą wydajność oraz optymalną, niską gęstość nasypową.',
     audience: ['fachowiec'],
     coverImage: '/photos/products/ptc-10.jpg',
     featuredOnHome: true,
     bgVideo: '/photos/about-production.mp4',
     bgVideoPoster: '/photos/about-production-poster.jpg',
-    highlightsTitle: 'Szybkość, wydajność i najwyższa jakość',
-    highlightsLead:
-      'Poszczególne rodzaje różnią się uziarnieniem i wytrzymałością, ale wszystkie łączy niska gęstość nasypowa, która przekłada się na większą wydajność i szybszą pracę.',
+    highlightsTitle: 'Dlaczego warto wybrać tynki PROFIX?',
     highlights: [
       {
         title: 'Uniwersalne zastosowanie',
-        description:
-          'Wnętrza i elewacje, stropy i duże powierzchnie, obiekty remontowane oraz budownictwo przemysłowe.',
+        description: 'Idealne do wnętrz oraz na zewnątrz obiektów budowlanych.',
       },
       {
-        title: 'Hydrofobowość i tiksotropowość',
-        description:
-          'Wysoka odporność na wilgoć i stabilna praca na pionie oraz suficie, bez osuwania się zaprawy.',
+        title: 'Doskonałe parametry',
+        description: 'Wysoka hydrofobowość (odporność na wilgoć) oraz tiksotropowość.',
       },
       {
-        title: 'Ręcznie lub maszynowo',
-        description:
-          'Aplikacja agregatem i w technice silosowej. Materiał plastyczny i łatwy w obróbce.',
+        title: 'Wygoda pracy',
+        description: 'Tynki są wyjątkowo plastyczne i łatwe w obróbce.',
       },
       {
-        title: 'Elastyczne wykończenie',
+        title: 'Szerokie spektrum użycia',
         description:
-          'Zacieranie na gładką, jednolitą warstwę albo pozostawienie „na ostro” pod kolejne warstwy wykończeniowe.',
+          'Doskonałe na stropy, duże powierzchnie oraz do obiektów remontowanych i budownictwa przemysłowego.',
       },
     ],
-    trustNote: 'Sprawdzona polska jakość · zaufały nam tysiące firm budowlanych',
+    trustNote: [
+      'Sprawdzona polska jakość',
+      'Zaufały nam tysiące firm budowlanych',
+      'Produkcja w 100% w Polsce',
+      'Wsparcie techniczne na każdym etapie',
+    ],
+    highlightsSecondaryTitle: 'Elastyczność aplikacji i wykończenia',
+    highlightsSecondaryLead:
+      'Tynki cementowe PROFIX dopasowują się do Twoich potrzeb i parku maszynowego:',
+    highlightsSecondary: [
+      {
+        title: 'Metoda nakładania',
+        description: 'Ręcznie lub maszynowo (za pomocą agregatu oraz w technice silosowej).',
+      },
+      {
+        title: 'Efekt końcowy',
+        description:
+          'Łatwe zacieranie ręczne lub mechaniczne pozwala uzyskać jednolitą, gładką warstwę.',
+      },
+      {
+        title: 'Alternatywa',
+        description:
+          'Możliwość pozostawienia powierzchni zatartej „na ostro” pod kolejne warstwy wykończeniowe.',
+      },
+    ],
+    closingTitle: 'Wybierz sprawdzoną polską jakość',
+    closingBody:
+      'Produktom PROFIX zaufały już tysiące polskich firm budowlanych. Wybierając nasze materiały, stawiasz na najwyższy standard wykończenia i jednocześnie wspierasz rodzimą gospodarkę.',
   },
   {
     slug: 'tynki-cienkowarstwowe',

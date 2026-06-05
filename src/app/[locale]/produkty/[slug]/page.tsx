@@ -187,6 +187,38 @@ export default async function CategoryPage({
         />
       )}
 
+      {cat.highlightsSecondary && (
+        <CategoryHighlights
+          items={cat.highlightsSecondary}
+          title={cat.highlightsSecondaryTitle}
+          lead={cat.highlightsSecondaryLead}
+          halo={hasBgVideo}
+        />
+      )}
+
+      {cat.closingTitle && cat.closingBody && (
+        <section className="relative pb-20">
+          <Container size="xl">
+            <Reveal className="max-w-2xl space-y-3">
+              <h2
+                className={`font-display text-2xl font-semibold sm:text-3xl${
+                  hasBgVideo ? ' text-halo' : ''
+                }`}
+              >
+                {cat.closingTitle}
+              </h2>
+              <p
+                className={`text-pretty text-base leading-relaxed text-fg-muted${
+                  hasBgVideo ? ' text-halo' : ''
+                }`}
+              >
+                {cat.closingBody}
+              </p>
+            </Reveal>
+          </Container>
+        </section>
+      )}
+
       {productList.length > 0 && (
         <section className="relative pb-24">
           <Container size="xl">
