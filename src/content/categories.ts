@@ -9,6 +9,10 @@ export type Category = {
   /** When true, this category is highlighted on the homepage grid.
    * Non-featured categories still appear in /produkty (full catalog) and the mega-menu. */
   featuredOnHome?: boolean;
+  /** When true, the category is part of the current public launch: it is surfaced in the
+   * navbar mega-menu, the /produkty catalog and the homepage grid. Categories without this
+   * flag stay in the data (their pages still render) but are not linked anywhere yet. */
+  live?: boolean;
   /** Optional muted/looping video used as a fixed page background on the category page.
    * Path under /public. When set, bgVideoPoster should accompany it. */
   bgVideo?: string;
@@ -45,8 +49,9 @@ export const categories: Category[] = [
     description:
       'Szukasz niezawodnych rozwiązań dla swojego projektu budowlanego? Tynki cementowe PROFIX to linia produktów stworzona z myślą o profesjonalistach. W zależności od wybranego rodzaju, nasze tynki gwarantują szybką i efektywną pracę, doskonałą wydajność oraz optymalną, niską gęstość nasypową.',
     audience: ['fachowiec'],
-    coverImage: '/photos/products/ptc-10.jpg',
+    coverImage: '/photos/products/ptc-10-v2.png',
     featuredOnHome: true,
+    live: true,
     bgVideo: '/photos/about-production.mp4',
     bgVideoPoster: '/photos/about-production-poster.jpg',
     highlightsTitle: 'Dlaczego warto wybrać tynki PROFIX?',
@@ -177,6 +182,7 @@ export const categories: Category[] = [
     audience: ['fachowiec', 'inwestor'],
     coverImage: '/photos/products/beton-c-20-25.jpg',
     featuredOnHome: true,
+    live: true,
   },
   {
     slug: 'inne-produkty',
@@ -190,3 +196,7 @@ export const categories: Category[] = [
 
 export const getCategory = (slug: string): Category | undefined =>
   categories.find((c) => c.slug === slug);
+
+/** Whether a category is part of the current public launch (see `Category.live`). */
+export const isCategoryLive = (slug: string): boolean =>
+  categories.some((c) => c.slug === slug && c.live === true);

@@ -19,6 +19,8 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('aboutPage');
+  const body = t.raw('body') as string[];
+  const facts = t.raw('facts') as Array<{ value: string; label: string }>;
   const values = t.raw('values') as Array<{ title: string; description: string }>;
 
   return (
@@ -53,17 +55,42 @@ export default async function AboutPage({
 
       <section className="relative pb-24 pt-12">
         <Container size="xl">
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr]">
-            <Reveal className="space-y-6 text-lg leading-relaxed text-[var(--color-fg)] [&_h2]:text-halo [&_p]:text-halo">
-              <p className="text-pretty">{t('intro')}</p>
-              <h2 className="pt-4 font-display text-2xl font-semibold text-[var(--color-fg)] sm:text-3xl">
-                {t('missionTitle')}
-              </h2>
-              <p className="text-pretty">{t('mission')}</p>
-              <h2 className="pt-4 font-display text-2xl font-semibold text-[var(--color-fg)] sm:text-3xl">
-                {t('productionTitle')}
-              </h2>
-              <p className="text-pretty">{t('production')}</p>
+          {/* Lead - first paragraph, editorial scale */}
+          <Reveal className="max-w-3xl [&_p]:text-halo">
+            <p className="text-balance font-display text-xl font-medium leading-snug text-[var(--color-fg)] sm:text-2xl">
+              {body[0]}
+            </p>
+          </Reveal>
+
+          {/* Pulled facts - full-width strip, evenly distributed across the page */}
+          {facts.length > 0 && (
+            <Reveal delay={0.05}>
+              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-y border-[var(--color-fg)]/15 py-8 sm:grid-cols-4">
+                {facts.map((f) => (
+                  <div key={f.label}>
+                    <dt className="font-display text-4xl font-semibold leading-none text-[var(--color-accent)] text-halo lg:text-5xl">
+                      {f.value}
+                    </dt>
+                    <dd className="mt-2.5 font-mono text-[11px] uppercase leading-tight tracking-[0.16em] text-[var(--color-fg)]/75 text-halo">
+                      {f.label}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </Reveal>
+          )}
+
+          {/* Body + values */}
+          <div className="mt-12 grid gap-12 lg:grid-cols-[1.2fr_1fr]">
+            <Reveal
+              delay={0.1}
+              className="space-y-5 leading-relaxed text-[var(--color-fg)] [&_p]:text-halo"
+            >
+              {body.slice(1).map((para, i) => (
+                <p key={i} className="text-pretty">
+                  {para}
+                </p>
+              ))}
             </Reveal>
 
             <Reveal delay={0.15} className="space-y-3">

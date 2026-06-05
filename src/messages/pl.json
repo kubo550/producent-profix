@@ -250,10 +250,19 @@
     "title": "O firmie PROFIX",
     "subtitle": "Producent chemii budowlanej z Krzeszowic",
     "intro": "PROFIX to polska firma rodzinna obecna w branży chemii budowlanej od 2009 roku. Pełen polski kapitał daje nam niezależność i elastyczność w decyzjach, dzięki czemu szybko reagujemy na potrzeby rynku i konsekwentnie rozwijamy ofertę produktową.",
-    "missionTitle": "Specjalizacja i rozwój",
-    "mission": "Produkujemy chemię budowlaną dla firm wykonawczych i klientów indywidualnych: zaprawy cementowe, kleje do systemów ociepleń i płytek, grunty, tynki elewacyjne. Każda receptura powstaje w naszym dziale badawczo-rozwojowym i przechodzi regularne testy w certyfikowanych laboratoriach.",
-    "productionTitle": "Produkcja w Krzeszowicach od 2023 roku",
-    "production": "Od 2023 roku wszystkie produkty powstają na nowoczesnej linii technologicznej w Krzeszowicach. Inwestycja pozwoliła zwiększyć wydajność i dokładniej kontrolować proces produkcji. Wewnętrzny dział kontroli jakości i laboratorium monitorują parametry każdej partii zgodnie z obowiązującymi normami.",
+    "body": [
+      "Profix to polska firma rodzinna z wieloletnim doświadczeniem w branży chemii budowlanej, obecna na rynku od 2009 roku. Od początku działalności konsekwentnie rozwijamy produkcję materiałów budowlanych, stawiając na jakość, nowoczesne technologie oraz partnerskie relacje z klientami i wykonawcami. Dzięki w pełni polskiemu kapitałowi zachowujemy niezależność oraz elastyczność w podejmowaniu decyzji, co pozwala nam szybko reagować na potrzeby rynku i stale udoskonalać ofertę produktową.",
+      "Specjalizujemy się w produkcji chemii budowlanej przeznaczonej zarówno dla firm wykonawczych jak i klientów indywidualnych. W naszej ofercie znajdują się m.in. zaprawy cementowe, kleje do systemów ociepleń i płytek, grunty, tynki elewacyjne oraz inne produkty wykorzystywane w nowoczesnym budownictwie. Każdy produkt powstaje w oparciu o starannie dobrane receptury, opracowywane i rozwijane przez doświadczonych technologów oraz dział badawczo-rozwojowy.",
+      "Kluczowym elementem działalności Profix jest dbałość o jakość i powtarzalność produkcji. Nasze wyroby przechodzą regularne badania w certyfikowanych laboratoriach, co potwierdza ich wysokie parametry techniczne, trwałość oraz bezpieczeństwo użytkowania. W produkcji wykorzystujemy surowce dostarczane przez renomowanych producentów, dzięki czemu możemy zapewnić niezawodność i stabilność naszych produktów.",
+      "Od 2023 roku produkcja realizowana jest na nowoczesnej linii technologicznej w Krzeszowicach. Inwestycja ta pozwoliła nam zwiększyć wydajność, jeszcze dokładniej kontrolować proces produkcji oraz utrzymać najwyższe standardy jakości. Nasz dział kontroli jakości i laboratorium wewnętrzne każdego dnia monitorują parametry produktów, dbając o ich zgodność z obowiązującymi normami i oczekiwaniami klientów.",
+      "Wyróżnia nas nie tylko jakość produktów, ale również terminowość i niezawodność dostaw. Budujemy długofalowe relacje oparte na zaufaniu, profesjonalnym doradztwie oraz indywidualnym podejściu do każdego kontrahenta. Jesteśmy otwarci na współpracę, rozwój nowych rozwiązań technologicznych oraz sugestie naszych partnerów biznesowych, ponieważ wierzymy, że najlepsze efekty osiąga się dzięki wspólnemu doświadczeniu i zaangażowaniu."
+    ],
+    "facts": [
+      { "value": "2009", "label": "Na rynku" },
+      { "value": "100%", "label": "Polski kapitał" },
+      { "value": "2023", "label": "Linia w Krzeszowicach" },
+      { "value": "R&D", "label": "Własne laboratorium" }
+    ],
     "valuesTitle": "Co nas wyróżnia",
     "values": [
       { "title": "Powtarzalna jakość", "description": "Kontrola w wewnętrznym laboratorium na każdym etapie produkcji, surowce od renomowanych dostawców, ta sama receptura w każdej partii." },

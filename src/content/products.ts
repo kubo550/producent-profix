@@ -606,7 +606,7 @@ export const products: Product[] = [
     packaging: '30 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
-    image: '/photos/products/pow-100.png',
+    image: '/photos/products/pow-100-v2.png',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
       { label: 'Absorpcja wody', value: 'W2' },
@@ -639,7 +639,7 @@ export const products: Product[] = [
     packaging: '30 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
-    image: '/photos/products/ptc-10.jpg',
+    image: '/photos/products/ptc-10-v2.png',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
       { label: 'Wytrzymałość na ściskanie', value: 'CSII (>2,3 N/mm²)' },
@@ -673,7 +673,7 @@ export const products: Product[] = [
     packaging: '30 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
-    image: '/photos/products/ptc-11.png',
+    image: '/photos/products/ptc-11-v2.png',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
       { label: 'Wytrzymałość na ściskanie', value: 'CSII (>2,7 N/mm²)' },
@@ -707,7 +707,7 @@ export const products: Product[] = [
     packaging: '30 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
-    image: '/photos/products/ptc-12.png',
+    image: '/photos/products/ptc-12-v2.png',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
       { label: 'Wytrzymałość na ściskanie', value: 'CSII (>7,0 N/mm²)' },
@@ -733,7 +733,7 @@ export const products: Product[] = [
     packaging: '30 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
-    image: '/photos/products/ptc-15.png',
+    image: '/photos/products/ptc-15-v2.png',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     notes: ['Pełna karta techniczna dostępna na życzenie.'],
   },

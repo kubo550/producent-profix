@@ -6,7 +6,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { PlaceholderBadge } from '@/components/ui/PlaceholderBadge';
 import { Link } from '@/i18n/navigation';
-import { categories } from '@/content/categories';
+import { categories, isCategoryLive } from '@/content/categories';
 import { categoryHasProducts } from '@/content/products';
 
 /**
@@ -38,7 +38,9 @@ function categoryImage(slug: string, coverImage?: string): string {
 export async function Categories() {
   const t = await getTranslations('categoriesSection');
 
-  const visibleCategories = categories.filter((c) => categoryHasProducts(c.slug));
+  const visibleCategories = categories.filter(
+    (c) => isCategoryLive(c.slug) && categoryHasProducts(c.slug)
+  );
   const featured = visibleCategories.filter((c) => c.featuredOnHome);
   const remaining = visibleCategories.length - featured.length;
 
@@ -139,7 +141,7 @@ export async function Categories() {
               <span>
                 {t('cta')}
                 <span className="ml-2 font-display italic text-sm text-fg-subtle">
-                  ({categories.length})
+                  ({visibleCategories.length})
                 </span>
               </span>
               <ArrowRight size={16} strokeWidth={1.75} className="transition-transform group-hover:translate-x-1" />

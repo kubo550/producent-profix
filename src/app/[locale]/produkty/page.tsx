@@ -5,7 +5,7 @@ import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { LinkButton } from '@/components/ui/Button';
 import { Link } from '@/i18n/navigation';
-import { categories } from '@/content/categories';
+import { categories, isCategoryLive } from '@/content/categories';
 import { categoryHasProducts } from '@/content/products';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -35,7 +35,7 @@ export default async function ProductsPage({
             {t('categoriesTitle')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.filter((c) => categoryHasProducts(c.slug)).map((cat, i) => (
+            {categories.filter((c) => isCategoryLive(c.slug) && categoryHasProducts(c.slug)).map((cat, i) => (
               <Reveal key={cat.slug} delay={(i % 3) * 0.06}>
                 <Link
                   href={`/produkty/${cat.slug}`}

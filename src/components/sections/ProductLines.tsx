@@ -5,18 +5,22 @@ import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { Link } from '@/i18n/navigation';
+import { isCategoryLive } from '@/content/categories';
 
 /** Four flagship production lines visualized to match the brand banner photo
  * (TYNKI / KLEJE / BETON / ZAPRAWY in their brand colors). */
 const lines = [
-  { key: 'tynki', href: '/produkty/tynki-cementowo-wapienne', color: '#4caf50' },
-  { key: 'kleje', href: '/produkty/kleje', color: '#1f8fd1' },
-  { key: 'beton', href: '/produkty/betony', color: '#3f4248' },
-  { key: 'zaprawy', href: '/produkty/zaprawy-klejace-do-systemow-docieplen', color: '#d3203a' },
+  { key: 'tynki', slug: 'tynki-cementowo-wapienne', href: '/produkty/tynki-cementowo-wapienne', color: '#4caf50' },
+  { key: 'kleje', slug: 'kleje', href: '/produkty/kleje', color: '#1f8fd1' },
+  { key: 'beton', slug: 'betony', href: '/produkty/betony', color: '#3f4248' },
+  { key: 'zaprawy', slug: 'zaprawy-klejace-do-systemow-docieplen', href: '/produkty/zaprawy-klejace-do-systemow-docieplen', color: '#d3203a' },
 ] as const;
 
 export async function ProductLines() {
   const t = await getTranslations('productLines');
+
+  // Only surface lines whose category is part of the current launch.
+  const liveLines = lines.filter((line) => isCategoryLive(line.slug));
 
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
@@ -47,7 +51,7 @@ export async function ProductLines() {
           </Reveal>
 
           <Reveal delay={0.12} className="space-y-3">
-            {lines.map((line) => (
+            {liveLines.map((line) => (
               <Link
                 key={line.key}
                 href={line.href}

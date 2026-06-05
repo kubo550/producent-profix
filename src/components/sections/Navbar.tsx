@@ -11,7 +11,7 @@ import { LinkButton } from '@/components/ui/Button';
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { siteConfig } from '@/content/site';
-import { getCategory } from '@/content/categories';
+import { getCategory, isCategoryLive } from '@/content/categories';
 import { categoryHasProducts } from '@/content/products';
 import { cn } from '@/lib/cn';
 
@@ -41,9 +41,10 @@ const productMenuFull: MenuEntry[] = [
 /** Filter out empty categories and prune empty children.
  * A parent entry stays visible if it has its own published products OR any
  * surviving child still has products. */
+const isVisible = (slug: string) => isCategoryLive(slug) && categoryHasProducts(slug);
 const productMenu: MenuEntry[] = productMenuFull.flatMap((entry) => {
-  const survivingChildren = entry.children?.filter(categoryHasProducts) ?? [];
-  const selfHas = categoryHasProducts(entry.slug);
+  const survivingChildren = entry.children?.filter(isVisible) ?? [];
+  const selfHas = isVisible(entry.slug);
   if (!selfHas && survivingChildren.length === 0) return [];
   return [{ slug: entry.slug, children: survivingChildren.length ? survivingChildren : undefined }];
 });
@@ -59,7 +60,7 @@ type NavLink = {
 
 const navLinks: readonly NavLink[] = [
   { href: '/o-firmie', key: 'about' },
-  { href: '/produkty', key: 'products', hasMegaMenu: true, disabled: true },
+  { href: '/produkty', key: 'products', hasMegaMenu: true },
   { href: '/dla-fachowca', key: 'professional', disabled: true },
   { href: '/dla-inwestora', key: 'investor', disabled: true },
   { href: '/fundusze-europejskie', key: 'funds' },

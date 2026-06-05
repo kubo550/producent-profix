@@ -18,7 +18,7 @@ export async function Footer() {
   ];
 
   const products = [
-    { href: '/produkty' as const, key: 'products', disabled: true },
+    { href: '/produkty' as const, key: 'products' },
     { href: '/dla-fachowca' as const, key: 'professional', disabled: true },
     { href: '/dla-inwestora' as const, key: 'investor', disabled: true },
   ];

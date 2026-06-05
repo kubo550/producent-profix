@@ -250,10 +250,19 @@
     "title": "About PROFIX",
     "subtitle": "Construction chemistry manufacturer from Krzeszowice",
     "intro": "PROFIX is a Polish family-owned company in construction chemistry since 2009. Full Polish capital gives us independence and flexibility in decision-making, so we can respond quickly to market needs and consistently develop our offer.",
-    "missionTitle": "Specialization and development",
-    "mission": "We produce construction chemistry for contractor companies and individual customers: cement mortars, ETICS and tile adhesives, primers, facade plasters. Every formulation is developed in our R&D department and undergoes regular testing in certified laboratories.",
-    "productionTitle": "Production in Krzeszowice since 2023",
-    "production": "Since 2023 all our products are made on a modern technology line in Krzeszowice. The investment let us increase capacity and control the process more precisely. Our internal quality control department and lab monitor each batch in accordance with applicable standards.",
+    "body": [
+      "PROFIX is a Polish family business with many years of experience in the construction chemistry industry, present on the market since 2009. From the very beginning we have consistently developed the production of building materials, focusing on quality, modern technologies and partnership relations with customers and contractors. Thanks to fully Polish capital we retain independence and flexibility in decision-making, which lets us respond quickly to market needs and continuously improve our product range.",
+      "We specialise in the production of construction chemistry intended for both contractor companies and individual customers. Our offer includes, among others, cement mortars, adhesives for thermal insulation systems and tiles, primers, facade plasters and other products used in modern construction. Every product is based on carefully selected formulations, developed and refined by experienced technologists and our research and development department.",
+      "A key element of PROFIX's activity is care for the quality and repeatability of production. Our products undergo regular testing in certified laboratories, which confirms their high technical parameters, durability and safety of use. In production we use raw materials supplied by renowned manufacturers, which lets us ensure the reliability and stability of our products.",
+      "Since 2023 production has been carried out on a modern technology line in Krzeszowice. This investment allowed us to increase capacity, control the production process even more precisely and maintain the highest quality standards. Our quality control department and internal laboratory monitor product parameters every day, ensuring their compliance with applicable standards and customer expectations.",
+      "We are distinguished not only by the quality of our products, but also by the timeliness and reliability of deliveries. We build long-term relationships based on trust, professional advice and an individual approach to every business partner. We are open to cooperation, the development of new technological solutions and the suggestions of our partners, because we believe that the best results are achieved through shared experience and commitment."
+    ],
+    "facts": [
+      { "value": "2009", "label": "On the market" },
+      { "value": "100%", "label": "Polish capital" },
+      { "value": "2023", "label": "Krzeszowice line" },
+      { "value": "R&D", "label": "In-house lab" }
+    ],
     "valuesTitle": "What sets us apart",
     "values": [
       { "title": "Repeatable quality", "description": "In-house lab control at every production stage, raw materials from established suppliers, the same formula in every batch." },
