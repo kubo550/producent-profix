@@ -146,7 +146,7 @@ export default async function LocaleLayout({
       },
     ],
     areaServed: { '@type': 'Country', name: 'Poland' },
-    sameAs: [siteConfig.social.facebook],
+    sameAs: [siteConfig.social.facebook, siteConfig.social.tiktok],
   };
 
   return (
