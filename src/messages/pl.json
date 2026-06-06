@@ -79,9 +79,18 @@
       "Od 2023 roku produkcja idzie z nowoczesnej linii technologicznej w Krzeszowicach. Wewnętrzne laboratorium kontroluje parametry każdej partii, a certyfikowane laboratoria zewnętrzne potwierdzają zgodność z normami."
     ],
     "stats": [
-      { "value": "17+", "label": "lat na rynku" },
-      { "value": "11", "label": "kategorii produktów" },
-      { "value": "100%", "label": "polska produkcja" }
+      {
+        "value": "17+",
+        "label": "lat na rynku"
+      },
+      {
+        "value": "11",
+        "label": "kategorii produktów"
+      },
+      {
+        "value": "100%",
+        "label": "polska produkcja"
+      }
     ],
     "cta": "Przeczytaj więcej o nas"
   },
@@ -136,19 +145,31 @@
         "label": "Realizacja: dom jednorodzinny",
         "title": "Tynkowanie pomieszczeń pod klucz",
         "description": "Surowy stan deweloperski: mur z ceramiki i strop. Po nałożeniu tynku PROFIX ściany i sufit są gotowe pod gładź i malowanie.",
-        "tags": ["Tynk cementowo-wapienny", "Grunt PROFIX", "Wykończenie pod malowanie"]
+        "tags": [
+          "Tynk cementowo-wapienny",
+          "Grunt PROFIX",
+          "Wykończenie pod malowanie"
+        ]
       },
       "hall": {
         "label": "Realizacja: większe obiekty",
         "title": "Renowacje i wykończenia powierzchniowe",
         "description": "Od renowacji starych murów po nowe hale. Nasze ekipy obsługują obiekty, w których liczy się skala, krótki termin i równe wykończenie. Materiał z naszej produkcji, robota od A do Z.",
-        "tags": ["Tynk maszynowy", "Renowacja", "Większa powierzchnia"]
+        "tags": [
+          "Tynk maszynowy",
+          "Renowacja",
+          "Większa powierzchnia"
+        ]
       },
       "strop": {
         "label": "Realizacja: prace betoniarskie",
         "title": "Wylewanie stropów i posadzek betonowych",
         "description": "Beton z naszej produkcji dostarczany na plac budowy i pompowany bezpośrednio na strop. Pełna kontrola jakości mieszanki i terminowa dostawa, od pierwszego silosa do gotowej posadzki.",
-        "tags": ["Beton konstrukcyjny", "Strop", "Pompowanie betonu"]
+        "tags": [
+          "Beton konstrukcyjny",
+          "Strop",
+          "Pompowanie betonu"
+        ]
       }
     }
   },
@@ -157,11 +178,26 @@
     "title": "Dostarczamy materiały na miejsce budowy",
     "lead": "Rozwinięty dział logistyczny pozwala nam realizować dostawy szybko i w rozsądnych cenach. Mamy w taborze różne pojazdy, dobieramy je do skali zamówienia.",
     "fleet": [
-      { "name": "Auta małotonażowe", "description": "Punktowe dostawy do mniejszych budów i sklepów." },
-      { "name": "Auta wysokotonażowe", "description": "Pełne palety i większe zamówienia hurtowe." },
-      { "name": "Wózki widłowe", "description": "Sprawny rozładunek bezpośrednio na placu budowy." },
-      { "name": "Auto z HDS", "description": "Dźwig hydrauliczny do trudniej dostępnych miejsc." },
-      { "name": "Cysterny", "description": "Transport materiałów sypkich w dużych objętościach." }
+      {
+        "name": "Auta małotonażowe",
+        "description": "Punktowe dostawy do mniejszych budów i sklepów."
+      },
+      {
+        "name": "Auta wysokotonażowe",
+        "description": "Pełne palety i większe zamówienia hurtowe."
+      },
+      {
+        "name": "Wózki widłowe",
+        "description": "Sprawny rozładunek bezpośrednio na placu budowy."
+      },
+      {
+        "name": "Auto z HDS",
+        "description": "Dźwig hydrauliczny do trudniej dostępnych miejsc."
+      },
+      {
+        "name": "Cysterny",
+        "description": "Transport materiałów sypkich w dużych objętościach."
+      }
     ]
   },
   "funds": {
@@ -214,6 +250,16 @@
     },
     "hours": "Poniedziałek - piątek, 7:00 - 16:00"
   },
+  "social": {
+    "eyebrow": "Bądźmy w kontakcie",
+    "title": "Obserwuj PROFIX w sieci",
+    "subtitle": "Realizacje, porady i nowości prosto z naszej produkcji. Dołącz do społeczności fachowców i inwestorów.",
+    "handleAria": "otwórz w nowej karcie",
+    "handle": {
+      "facebook": "@producentprofix",
+      "tiktok": "@pogromcatynkow"
+    }
+  },
   "footer": {
     "tagline": "PROFIX. Kolory dla Twojego domu. Polska rodzinna firma produkująca chemię budowlaną od 2009 roku.",
     "sections": {
@@ -258,16 +304,37 @@
       "Wyróżnia nas nie tylko jakość produktów, ale również terminowość i niezawodność dostaw. Budujemy długofalowe relacje oparte na zaufaniu, profesjonalnym doradztwie oraz indywidualnym podejściu do każdego kontrahenta. Jesteśmy otwarci na współpracę, rozwój nowych rozwiązań technologicznych oraz sugestie naszych partnerów biznesowych, ponieważ wierzymy, że najlepsze efekty osiąga się dzięki wspólnemu doświadczeniu i zaangażowaniu."
     ],
     "facts": [
-      { "value": "2009", "label": "Na rynku" },
-      { "value": "100%", "label": "Polski kapitał" },
-      { "value": "2023", "label": "Linia w Krzeszowicach" },
-      { "value": "R&D", "label": "Własne laboratorium" }
+      {
+        "value": "2009",
+        "label": "Na rynku"
+      },
+      {
+        "value": "100%",
+        "label": "Polski kapitał"
+      },
+      {
+        "value": "2023",
+        "label": "Linia w Krzeszowicach"
+      },
+      {
+        "value": "R&D",
+        "label": "Własne laboratorium"
+      }
     ],
     "valuesTitle": "Co nas wyróżnia",
     "values": [
-      { "title": "Powtarzalna jakość", "description": "Kontrola w wewnętrznym laboratorium na każdym etapie produkcji, surowce od renomowanych dostawców, ta sama receptura w każdej partii." },
-      { "title": "Terminowe dostawy", "description": "Własna flota i sprawna logistyka. Reagujemy szybko, nawet na duże zamówienia. Niezawodność tak samo ważna jak jakość." },
-      { "title": "Partnerskie relacje", "description": "Doradztwo technologa, indywidualne podejście do każdego kontrahenta, otwartość na sugestie wykonawców i partnerów handlowych." }
+      {
+        "title": "Powtarzalna jakość",
+        "description": "Kontrola w wewnętrznym laboratorium na każdym etapie produkcji, surowce od renomowanych dostawców, ta sama receptura w każdej partii."
+      },
+      {
+        "title": "Terminowe dostawy",
+        "description": "Własna flota i sprawna logistyka. Reagujemy szybko, nawet na duże zamówienia. Niezawodność tak samo ważna jak jakość."
+      },
+      {
+        "title": "Partnerskie relacje",
+        "description": "Doradztwo technologa, indywidualne podejście do każdego kontrahenta, otwartość na sugestie wykonawców i partnerów handlowych."
+      }
     ]
   },
   "productsPage": {
@@ -320,9 +387,18 @@
     "subtitle": "Chemia budowlana pod ekipę wykonawczą",
     "intro": "Produkujemy tynki, kleje, systemy dociepleń i farby z myślą o ludziach, którzy z nich żyją. Krótkie terminy, stabilna jakość, pełna dokumentacja techniczna.",
     "sections": [
-      { "title": "Karty techniczne i atesty", "description": "Pełna dokumentacja produktu, deklaracje zgodności i oznaczenia CE. Wysyłamy mailem albo dorzucamy do dostawy." },
-      { "title": "Wsparcie technologa", "description": "Dobór produktu do podłoża, warunków atmosferycznych i specyfiki obiektu. Wycena indywidualna na większe zlecenia." },
-      { "title": "Hurtowy transport", "description": "Auta wysokotonażowe, HDS, cysterny do materiałów sypkich. Dostawa wprost na plac budowy w skali kraju." }
+      {
+        "title": "Karty techniczne i atesty",
+        "description": "Pełna dokumentacja produktu, deklaracje zgodności i oznaczenia CE. Wysyłamy mailem albo dorzucamy do dostawy."
+      },
+      {
+        "title": "Wsparcie technologa",
+        "description": "Dobór produktu do podłoża, warunków atmosferycznych i specyfiki obiektu. Wycena indywidualna na większe zlecenia."
+      },
+      {
+        "title": "Hurtowy transport",
+        "description": "Auta wysokotonażowe, HDS, cysterny do materiałów sypkich. Dostawa wprost na plac budowy w skali kraju."
+      }
     ],
     "ctaTitle": "Chcesz nawiązać stałą współpracę?",
     "ctaButton": "Porozmawiajmy"
@@ -332,9 +408,18 @@
     "subtitle": "Materiały do twojego domu, mieszkania, lokalu",
     "intro": "Budujesz, remontujesz, planujesz docieplenie domu? Pomożemy dobrać produkt, znaleźć najbliższy punkt sprzedaży i policzyć ile materiału potrzebujesz.",
     "sections": [
-      { "title": "Dobór produktów", "description": "Inny tynk pod ogrzewanie podłogowe, inna farba do łazienki, inny klej do gresu wielkoformatowego. Doradzimy bez branżowego żargonu." },
-      { "title": "Mapa punktów sprzedaży", "description": "Współpracujemy ze sklepami i hurtowniami w całej Polsce. Pokażemy najbliższy punkt." },
-      { "title": "Konsultacja przed zakupem", "description": "Wstępna kalkulacja zużycia, dobór kolorystyki, pytania o gwarancję. Wszystko zanim podejmiesz decyzję." }
+      {
+        "title": "Dobór produktów",
+        "description": "Inny tynk pod ogrzewanie podłogowe, inna farba do łazienki, inny klej do gresu wielkoformatowego. Doradzimy bez branżowego żargonu."
+      },
+      {
+        "title": "Mapa punktów sprzedaży",
+        "description": "Współpracujemy ze sklepami i hurtowniami w całej Polsce. Pokażemy najbliższy punkt."
+      },
+      {
+        "title": "Konsultacja przed zakupem",
+        "description": "Wstępna kalkulacja zużycia, dobór kolorystyki, pytania o gwarancję. Wszystko zanim podejmiesz decyzję."
+      }
     ],
     "ctaTitle": "Masz pytanie do swojej budowy?",
     "ctaButton": "Napisz do nas"

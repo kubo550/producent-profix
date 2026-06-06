@@ -11,6 +11,7 @@ import { LinkButton } from '@/components/ui/Button';
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { siteConfig } from '@/content/site';
+import { socialLinks } from '@/components/ui/social';
 import { getCategory, isCategoryLive } from '@/content/categories';
 import { categoryHasProducts } from '@/content/products';
 import { cn } from '@/lib/cn';
@@ -527,6 +528,20 @@ export function Navbar() {
               <Phone size={16} strokeWidth={1.75} />
               {siteConfig.phoneDisplay}
             </a>
+            <div className="mt-1 flex items-center gap-2 px-1">
+              {socialLinks.map(({ key, href, label, Icon }) => (
+                <a
+                  key={key}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] text-fg-muted transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
           </nav>
         </div>
       )}

@@ -9,6 +9,7 @@ import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { Navbar } from '@/components/sections/Navbar';
 import { Footer } from '@/components/sections/Footer';
+import { SocialBand } from '@/components/sections/SocialBand';
 import { MobileCTA } from '@/components/ui/MobileCTA';
 import { CookieBanner } from '@/components/ui/CookieBanner';
 import { siteConfig } from '@/content/site';
@@ -146,7 +147,7 @@ export default async function LocaleLayout({
       },
     ],
     areaServed: { '@type': 'Country', name: 'Poland' },
-    sameAs: [siteConfig.social.facebook],
+    sameAs: [siteConfig.social.facebook, siteConfig.social.tiktok],
   };
 
   return (
@@ -155,6 +156,7 @@ export default async function LocaleLayout({
         {/* Tell Dark Reader extension to skip this site - we have our own light/dark theme.
          * Prevents hydration mismatch from extension-injected attributes. */}
         <meta name="darkreader-lock" />
+        <meta name="google-site-verification" content="EqPpqj-TgwCoKtIW-qWrhspyWWHL4rdAfviDTDWLg48" />
       </head>
       <body
         suppressHydrationWarning
@@ -170,6 +172,7 @@ export default async function LocaleLayout({
             </a>
             <Navbar />
             <main id="main">{children}</main>
+            <SocialBand />
             <Footer />
             <MobileCTA />
             <CookieBanner />

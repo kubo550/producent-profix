@@ -79,9 +79,18 @@
       "Since 2023 production runs on a modern technology line in Krzeszowice. Our in-house lab monitors each batch, and certified external labs verify compliance with applicable standards."
     ],
     "stats": [
-      { "value": "17+", "label": "years on the market" },
-      { "value": "11", "label": "product categories" },
-      { "value": "100%", "label": "Polish production" }
+      {
+        "value": "17+",
+        "label": "years on the market"
+      },
+      {
+        "value": "11",
+        "label": "product categories"
+      },
+      {
+        "value": "100%",
+        "label": "Polish production"
+      }
     ],
     "cta": "Read more about us"
   },
@@ -136,19 +145,31 @@
         "label": "Realization: single-family home",
         "title": "Turn-key plastering of interior rooms",
         "description": "Developer shell: ceramic brick walls and concrete ceiling. After applying PROFIX plaster, walls and ceiling are ready for finishing and painting.",
-        "tags": ["Cement-lime plaster", "PROFIX primer", "Ready for painting"]
+        "tags": [
+          "Cement-lime plaster",
+          "PROFIX primer",
+          "Ready for painting"
+        ]
       },
       "hall": {
         "label": "Realization: larger objects",
         "title": "Renovations and surface finishes",
         "description": "From renovating old walls to fitting out new halls. Our crews handle objects where scale, deadline and a level finish matter. Material from our production, the job done end to end.",
-        "tags": ["Machine plaster", "Renovation", "Larger surface"]
+        "tags": [
+          "Machine plaster",
+          "Renovation",
+          "Larger surface"
+        ]
       },
       "strop": {
         "label": "Realization: concrete work",
         "title": "Pouring slabs and concrete floors",
         "description": "Concrete from our production delivered to the site and pumped directly onto the slab. Full mix quality control and on-time delivery, from the first silo to a finished floor.",
-        "tags": ["Structural concrete", "Slab", "Concrete pumping"]
+        "tags": [
+          "Structural concrete",
+          "Slab",
+          "Concrete pumping"
+        ]
       }
     }
   },
@@ -157,11 +178,26 @@
     "title": "We deliver materials right to the site",
     "lead": "A well-developed logistics department lets us deliver fast and at reasonable cost. Our fleet covers everything from small drops to large pallet orders.",
     "fleet": [
-      { "name": "Light trucks", "description": "Spot deliveries to smaller sites and stores." },
-      { "name": "Heavy trucks", "description": "Full pallets and larger wholesale orders." },
-      { "name": "Forklifts", "description": "Efficient unloading right at the construction site." },
-      { "name": "Truck with HDS", "description": "Hydraulic crane for hard-to-reach locations." },
-      { "name": "Tankers", "description": "Bulk transport of dry materials in large volumes." }
+      {
+        "name": "Light trucks",
+        "description": "Spot deliveries to smaller sites and stores."
+      },
+      {
+        "name": "Heavy trucks",
+        "description": "Full pallets and larger wholesale orders."
+      },
+      {
+        "name": "Forklifts",
+        "description": "Efficient unloading right at the construction site."
+      },
+      {
+        "name": "Truck with HDS",
+        "description": "Hydraulic crane for hard-to-reach locations."
+      },
+      {
+        "name": "Tankers",
+        "description": "Bulk transport of dry materials in large volumes."
+      }
     ]
   },
   "funds": {
@@ -214,6 +250,16 @@
     },
     "hours": "Monday - Friday, 7:00 - 16:00"
   },
+  "social": {
+    "eyebrow": "Let's stay in touch",
+    "title": "Follow PROFIX online",
+    "subtitle": "Projects, tips and news straight from our production line. Join the community of professionals and investors.",
+    "handleAria": "opens in a new tab",
+    "handle": {
+      "facebook": "@producentprofix",
+      "tiktok": "@pogromcatynkow"
+    }
+  },
   "footer": {
     "tagline": "PROFIX. Colors for your home. Polish family-owned manufacturer of construction chemistry since 2009.",
     "sections": {
@@ -258,16 +304,37 @@
       "We are distinguished not only by the quality of our products, but also by the timeliness and reliability of deliveries. We build long-term relationships based on trust, professional advice and an individual approach to every business partner. We are open to cooperation, the development of new technological solutions and the suggestions of our partners, because we believe that the best results are achieved through shared experience and commitment."
     ],
     "facts": [
-      { "value": "2009", "label": "On the market" },
-      { "value": "100%", "label": "Polish capital" },
-      { "value": "2023", "label": "Krzeszowice line" },
-      { "value": "R&D", "label": "In-house lab" }
+      {
+        "value": "2009",
+        "label": "On the market"
+      },
+      {
+        "value": "100%",
+        "label": "Polish capital"
+      },
+      {
+        "value": "2023",
+        "label": "Krzeszowice line"
+      },
+      {
+        "value": "R&D",
+        "label": "In-house lab"
+      }
     ],
     "valuesTitle": "What sets us apart",
     "values": [
-      { "title": "Repeatable quality", "description": "In-house lab control at every production stage, raw materials from established suppliers, the same formula in every batch." },
-      { "title": "On-time delivery", "description": "Own fleet and efficient logistics. We respond fast, even to large orders. Reliability is as important to us as quality." },
-      { "title": "Partner relations", "description": "Technical advisor support, individual approach to every customer, openness to contractor and partner feedback." }
+      {
+        "title": "Repeatable quality",
+        "description": "In-house lab control at every production stage, raw materials from established suppliers, the same formula in every batch."
+      },
+      {
+        "title": "On-time delivery",
+        "description": "Own fleet and efficient logistics. We respond fast, even to large orders. Reliability is as important to us as quality."
+      },
+      {
+        "title": "Partner relations",
+        "description": "Technical advisor support, individual approach to every customer, openness to contractor and partner feedback."
+      }
     ]
   },
   "productsPage": {
@@ -320,9 +387,18 @@
     "subtitle": "Construction chemistry built for contractor crews",
     "intro": "We produce plasters, adhesives, insulation systems and paints with the people who work with them in mind. Short lead times, stable quality, full technical documentation.",
     "sections": [
-      { "title": "Datasheets and certificates", "description": "Full product documentation, declarations of conformity and CE marking. Sent by email or included with delivery." },
-      { "title": "Technical advisor support", "description": "Matching the product to substrate, weather conditions and project specifics. Individual quotes for larger jobs." },
-      { "title": "Wholesale transport", "description": "Heavy trucks, HDS cranes, tankers for bulk materials. Delivery straight to the site, nationwide." }
+      {
+        "title": "Datasheets and certificates",
+        "description": "Full product documentation, declarations of conformity and CE marking. Sent by email or included with delivery."
+      },
+      {
+        "title": "Technical advisor support",
+        "description": "Matching the product to substrate, weather conditions and project specifics. Individual quotes for larger jobs."
+      },
+      {
+        "title": "Wholesale transport",
+        "description": "Heavy trucks, HDS cranes, tankers for bulk materials. Delivery straight to the site, nationwide."
+      }
     ],
     "ctaTitle": "Want to set up an ongoing partnership?",
     "ctaButton": "Let's talk"
@@ -332,9 +408,18 @@
     "subtitle": "Materials for your home, apartment or commercial space",
     "intro": "Building, renovating, planning to insulate the house? We'll help you choose the product, find the nearest point of sale and calculate how much material you need.",
     "sections": [
-      { "title": "Product selection", "description": "A different plaster for underfloor heating, a different paint for the bathroom, a different adhesive for large-format porcelain tile. We'll advise without industry jargon." },
-      { "title": "Map of points of sale", "description": "We work with stores and wholesalers across Poland. We'll point you to the nearest location." },
-      { "title": "Pre-purchase consultation", "description": "Initial consumption estimate, color matching, warranty questions. Everything before you decide." }
+      {
+        "title": "Product selection",
+        "description": "A different plaster for underfloor heating, a different paint for the bathroom, a different adhesive for large-format porcelain tile. We'll advise without industry jargon."
+      },
+      {
+        "title": "Map of points of sale",
+        "description": "We work with stores and wholesalers across Poland. We'll point you to the nearest location."
+      },
+      {
+        "title": "Pre-purchase consultation",
+        "description": "Initial consumption estimate, color matching, warranty questions. Everything before you decide."
+      }
     ],
     "ctaTitle": "Got a question about your build?",
     "ctaButton": "Write to us"

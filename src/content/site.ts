@@ -19,6 +19,7 @@ export const siteConfig = {
   },
   social: {
     facebook: 'https://www.facebook.com/producentprofix/',
+    tiktok: 'https://www.tiktok.com/@pogromcatynkow',
   },
   // Web3Forms key is public by design (frontend submission, rate-limited per key).
   // ENV var NEXT_PUBLIC_WEB3FORMS_KEY overrides this if set.
