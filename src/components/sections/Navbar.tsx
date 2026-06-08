@@ -80,6 +80,8 @@ export function Navbar() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [expandedSlug, setExpandedSlug] = useState<string | null>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [lastPath, setLastPath] = useState(pathname);
 
   // Reset mega-menu on route change. Canonical "adjust state when a prop changes" pattern:
@@ -88,6 +90,7 @@ export function Navbar() {
     setLastPath(pathname);
     if (megaOpen) setMegaOpen(false);
     if (expandedSlug !== null) setExpandedSlug(null);
+    if (mobileProductsOpen) setMobileProductsOpen(false);
   }
 
   const isActive = (href: string) =>
@@ -123,14 +126,25 @@ export function Navbar() {
     };
   }, [open]);
 
-  // Esc closes mega-menu
+  // Esc closes the mega-menu; a pointer-down outside the header closes it too,
+  // so it can never get "stuck" open when the hover-leave is missed.
   useEffect(() => {
     if (!megaOpen) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setMegaOpen(false);
     };
+    const onPointerDown = (e: PointerEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setMegaOpen(false);
+        setExpandedSlug(null);
+      }
+    };
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    window.addEventListener('pointerdown', onPointerDown);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('pointerdown', onPointerDown);
+    };
   }, [megaOpen]);
 
   // At the top of a page whose hero is dark (home, about, category with bg video),
@@ -144,6 +158,7 @@ export function Navbar() {
 
   return (
     <header
+      ref={headerRef}
       className={cn(
         'fixed inset-x-0 top-0 z-40 transition-all duration-300',
         scrolled ? 'py-2' : 'py-4'
@@ -215,14 +230,14 @@ export function Navbar() {
                     onFocus={openMega}
                     onBlur={scheduleCloseMega}
                   >
-                    <Link
-                      href={link.href}
-                      aria-current={active ? 'page' : undefined}
+                    <button
+                      type="button"
+                      onClick={() => setMegaOpen((v) => !v)}
                       aria-haspopup="true"
                       aria-expanded={megaOpen}
                       className={cn(
                         'inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm transition-colors',
-                        active
+                        active || megaOpen
                           ? 'bg-[var(--color-accent-soft)] font-medium text-[var(--color-accent)]'
                           : 'text-fg-muted hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]'
                       )}
@@ -236,7 +251,7 @@ export function Navbar() {
                           megaOpen && '-rotate-180'
                         )}
                       />
-                    </Link>
+                    </button>
                   </div>
                 );
               }
@@ -294,13 +309,16 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            onMouseEnter={openMega}
-            onMouseLeave={scheduleCloseMega}
-            className="absolute inset-x-0 top-full hidden px-4 pt-3 lg:block"
+            className="pointer-events-none absolute inset-x-0 top-full hidden px-4 lg:block"
           >
             <Container size="xl">
               <div
-                className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-[var(--color-border-strong)] shadow-[0_28px_60px_-20px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
+                onMouseEnter={openMega}
+                onMouseLeave={scheduleCloseMega}
+                className="pointer-events-auto mx-auto max-w-3xl pt-3"
+              >
+              <div
+                className="overflow-hidden rounded-3xl border border-[var(--color-border-strong)] shadow-[0_28px_60px_-20px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
                 style={{
                   backgroundColor: 'color-mix(in srgb, var(--color-bg) 94%, transparent)',
                 }}
@@ -469,19 +487,12 @@ export function Navbar() {
                               {tCategories('subtitle')}
                             </p>
                           </div>
-                          <Link
-                            href="/produkty"
-                            onClick={() => setMegaOpen(false)}
-                            className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-[var(--color-accent)] transition-all hover:gap-2.5"
-                          >
-                            {tCategories('cta')}
-                            <ArrowRight size={14} strokeWidth={2} />
-                          </Link>
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
                 </div>
+              </div>
               </div>
             </Container>
           </motion.div>
@@ -502,6 +513,49 @@ export function Navbar() {
                   >
                     {t(link.key)} <span className="text-xs">(wkrótce)</span>
                   </span>
+                );
+              }
+              if (link.hasMegaMenu) {
+                return (
+                  <div key={link.key}>
+                    <button
+                      type="button"
+                      onClick={() => setMobileProductsOpen((v) => !v)}
+                      aria-expanded={mobileProductsOpen}
+                      className={cn(
+                        'flex w-full items-center justify-between rounded-xl px-4 py-3 text-base transition-colors',
+                        active
+                          ? 'bg-[var(--color-accent-soft)] font-medium text-[var(--color-accent)]'
+                          : 'text-fg-muted hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]'
+                      )}
+                    >
+                      {t(link.key)}
+                      <ChevronDown
+                        size={16}
+                        strokeWidth={2}
+                        className={cn('transition-transform', mobileProductsOpen && '-rotate-180')}
+                      />
+                    </button>
+                    {mobileProductsOpen && (
+                      <ul className="mb-1 ml-3 mt-1 space-y-0.5 border-l border-[var(--color-border)] pl-2">
+                        {productMenu.map((entry) => {
+                          const cat = getCategory(entry.slug);
+                          if (!cat) return null;
+                          return (
+                            <li key={entry.slug}>
+                              <Link
+                                href={`/produkty/${cat.slug}`}
+                                onClick={() => setOpen(false)}
+                                className="block rounded-lg px-4 py-2.5 text-sm text-fg-muted transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]"
+                              >
+                                {cat.name}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                  </div>
                 );
               }
               return (
