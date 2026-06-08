@@ -55,9 +55,8 @@ export function Hero() {
             </div>
 
             <h1
-              className="reveal-fade-up font-display text-balance text-[clamp(3rem,7.5vw,5.75rem)] font-medium leading-[1.02] tracking-[-0.02em]"
+              className="font-display text-balance text-[clamp(3rem,7.5vw,5.75rem)] font-medium leading-[1.02] tracking-[-0.02em]"
               style={{
-                '--reveal-delay': '0.1s',
                 fontVariationSettings: '"SOFT" 50, "opsz" 144',
               } as React.CSSProperties}
             >

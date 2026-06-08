@@ -10,8 +10,7 @@ import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { Navbar } from '@/components/sections/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { SocialBand } from '@/components/sections/SocialBand';
-import { MobileCTA } from '@/components/ui/MobileCTA';
-import { CookieBanner } from '@/components/ui/CookieBanner';
+import { LazyChrome } from '@/components/ui/LazyChrome';
 import { siteConfig } from '@/content/site';
 
 import '../globals.css';
@@ -33,6 +32,9 @@ const jetbrains = JetBrains_Mono({
   variable: '--font-mono-display',
   subsets: ['latin'],
   display: 'swap',
+  // Used only for small decorative labels - keep it out of the render-blocking
+  // preload set so it never delays first paint.
+  preload: false,
 });
 
 export function generateStaticParams() {
@@ -174,8 +176,7 @@ export default async function LocaleLayout({
             <main id="main">{children}</main>
             <SocialBand />
             <Footer />
-            <MobileCTA />
-            <CookieBanner />
+            <LazyChrome />
           </NextIntlClientProvider>
         </ThemeProvider>
         <script

@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Container } from '@/components/ui/Container';
+import { HeroBackground } from '@/components/sections/HeroBackground';
 import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { USPStrip } from '@/components/sections/USPStrip';
@@ -25,29 +25,7 @@ export default async function AboutPage({
 
   return (
     <div className="isolate">
-      <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <Image
-          src="/photos/about-profix-poster.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <video
-          src="/photos/about-profix.mp4"
-          poster="/photos/about-profix-poster.jpg"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          tabIndex={-1}
-          className="relative h-full w-full object-cover motion-reduce:hidden"
-        />
-        <div className="absolute inset-0 bg-[var(--color-bg)]/45 motion-reduce:bg-[var(--color-bg)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)]/25 via-transparent to-[var(--color-bg)]/65" />
-      </div>
+      <HeroBackground />
 
       <div className="[&_h1]:text-halo [&_p]:text-halo [&_.h-eyebrow]:text-halo [&_p]:!text-[var(--color-fg)] [&_.h-eyebrow]:!text-[var(--color-fg)]">
         <PageHero eyebrow="O firmie" title={t('title')} subtitle={t('subtitle')} />
