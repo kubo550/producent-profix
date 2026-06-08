@@ -8,6 +8,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { LinkButton } from '@/components/ui/Button';
 import { ProductCard } from '@/components/ui/ProductCard';
 import { CategoryHighlights } from '@/components/ui/CategoryHighlights';
+import { RotatingBadge } from '@/components/ui/RotatingBadge';
 import { Link } from '@/i18n/navigation';
 import { categories, getCategory } from '@/content/categories';
 import { getProductsByCategory } from '@/content/products';
@@ -133,56 +134,101 @@ export default async function CategoryPage({
         <PageHero eyebrow="Kategoria" title={cat.name} subtitle={cat.short} />
       )}
 
-      <section className="relative pb-20">
+      {/* Lead + social proof + CTA up top, then the products straight away. */}
+      <section className="relative pb-12">
         <Container size="xl">
           <Link
             href="/produkty"
-            className="mb-10 inline-flex items-center gap-2 text-sm text-fg-muted transition-colors hover:text-[var(--color-fg)]"
+            className="mb-8 inline-flex items-center gap-2 text-sm text-fg-muted transition-colors hover:text-[var(--color-fg)]"
           >
             <ArrowLeft size={14} strokeWidth={1.75} />
             {t('back')}
           </Link>
 
-          <div className="grid items-start gap-12 lg:grid-cols-[1.4fr_1fr]">
-            <Reveal className={`space-y-6 ${hasBgVideo ? '[&_p]:text-halo [&_p]:!text-[var(--color-fg)]' : ''}`}>
+          <div className="grid items-start gap-10 lg:grid-cols-[1.5fr_1fr]">
+            <Reveal
+              className={`space-y-5 ${
+                hasBgVideo ? '[&_p]:text-halo [&_p]:!text-[var(--color-fg)]' : ''
+              }`}
+            >
               <p className="text-pretty text-lg leading-relaxed text-fg-muted">
                 {cat.description}
               </p>
-              <p className="text-pretty text-base leading-relaxed text-fg-muted">{t('intro')}</p>
+              {cat.trustNote && (
+                <RotatingBadge
+                  items={Array.isArray(cat.trustNote) ? cat.trustNote : [cat.trustNote]}
+                  halo={hasBgVideo}
+                />
+              )}
             </Reveal>
 
-            <Reveal delay={0.15} className="space-y-5">
-              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 backdrop-blur-xl">
-                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-fg-subtle">
+            <Reveal delay={0.12} className="space-y-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-fg-subtle">
                   {t('applicableFor')}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {cat.audience.map((a) => (
-                    <span
-                      key={a}
-                      className="rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent-soft)] px-3 py-1 text-sm text-[var(--color-accent)]"
-                    >
-                      {audienceLabel[a]}
-                    </span>
-                  ))}
-                </div>
+                </span>
+                {cat.audience.map((a) => (
+                  <span
+                    key={a}
+                    className="rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent-soft)] px-3 py-1 text-sm text-[var(--color-accent)]"
+                  >
+                    {audienceLabel[a]}
+                  </span>
+                ))}
               </div>
-
               <LinkButton href="/kontakt" variant="primary" size="lg" className="w-full">
                 <MessageSquare size={18} strokeWidth={1.75} />
                 {t('cta')}
               </LinkButton>
+              <p
+                className={`text-sm leading-relaxed text-fg-muted${
+                  hasBgVideo ? ' text-halo' : ''
+                }`}
+              >
+                {t('intro')}
+              </p>
             </Reveal>
           </div>
         </Container>
       </section>
+
+      {productList.length > 0 && (
+        <section className="relative pb-24">
+          <Container size="xl">
+            <div className="mb-8 flex items-end justify-between gap-4">
+              <h2
+                className={`font-display text-2xl font-semibold sm:text-3xl${
+                  hasBgVideo ? ' text-halo' : ''
+                }`}
+              >
+                {t('productsTitle')}
+              </h2>
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-fg-subtle">
+                {productList.length}{' '}
+                {pluralPl(
+                  productList.length,
+                  t('productsCountOne'),
+                  t('productsCountFew'),
+                  t('productsCountMany')
+                )}
+              </span>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {productList.map((p, i) => (
+                <Reveal key={p.slug} delay={(i % 3) * 0.06}>
+                  <ProductCard product={p} />
+                </Reveal>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {cat.highlights && (
         <CategoryHighlights
           items={cat.highlights}
           title={cat.highlightsTitle}
           lead={cat.highlightsLead}
-          trustNote={cat.trustNote}
           halo={hasBgVideo}
         />
       )}
@@ -215,34 +261,6 @@ export default async function CategoryPage({
                 {cat.closingBody}
               </p>
             </Reveal>
-          </Container>
-        </section>
-      )}
-
-      {productList.length > 0 && (
-        <section className="relative pb-24">
-          <Container size="xl">
-            <div className="mb-10 flex items-end justify-between gap-4">
-              <h2 className="font-display text-2xl font-semibold sm:text-3xl">
-                {t('productsTitle')}
-              </h2>
-              <span className="font-mono text-xs uppercase tracking-[0.16em] text-fg-subtle">
-                {productList.length}{' '}
-                {pluralPl(
-                  productList.length,
-                  t('productsCountOne'),
-                  t('productsCountFew'),
-                  t('productsCountMany')
-                )}
-              </span>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {productList.map((p, i) => (
-                <Reveal key={p.slug} delay={(i % 3) * 0.06}>
-                  <ProductCard product={p} />
-                </Reveal>
-              ))}
-            </div>
           </Container>
         </section>
       )}
