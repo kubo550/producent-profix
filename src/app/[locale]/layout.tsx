@@ -4,6 +4,7 @@ import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
@@ -183,6 +184,7 @@ export default async function LocaleLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <SpeedInsights />
       </body>
     </html>
   );
