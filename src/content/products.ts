@@ -1018,9 +1018,9 @@ export const products: Product[] = [
     categorySlug: 'betony',
     name: 'Beton C25/30',
     brand: 'PROFIX',
-    tagline: 'Najwyższa klasa, mrozoodporny beton konstrukcyjny i naprawczy',
+    tagline: 'Wysoka klasa, mrozoodporny beton konstrukcyjny i naprawczy',
     description:
-      'Najwyższa klasa wytrzymałości w serii betonów PROFIX, C25/30 (≥ 30 MPa po 28 dniach). Skomponowany z cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Mrozoodporny i odporny na warunki atmosferyczne, sprawdza się w pracach konstrukcyjnych, naprawczych i remontowych, zarówno wewnątrz jak i na zewnątrz.',
+      'Wysoka klasa wytrzymałości C25/30 (≥ 30 MPa po 28 dniach). Skomponowany z cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi. Mrozoodporny i odporny na warunki atmosferyczne, sprawdza się w pracach konstrukcyjnych, naprawczych i remontowych, zarówno wewnątrz jak i na zewnątrz.',
     features: [
       'Klasa wytrzymałości C25/30 (≥ 30 MPa po 28 dniach)',
       'Mrozoodporna',
@@ -1050,6 +1050,47 @@ export const products: Product[] = [
     ],
     notes: [
       'Pielęgnacja wilgotnościowa przez 3-7 dni po wykonaniu.',
+      'Nie wykonywać prac na przemrożonym podłożu ani przy ryzyku przymrozków.',
+    ],
+  },
+  {
+    slug: 'beton-c-30-35',
+    categorySlug: 'betony',
+    name: 'Beton C30/35',
+    brand: 'PROFIX',
+    tagline: 'Najwyższa klasa wytrzymałości, uniwersalny beton naprawczy i konstrukcyjny',
+    description:
+      'Sucha mieszanka betonowa klasy C30/35 na bazie cementu portlandzkiego, piasku kwarcowego i żwiru 0,1-4 mm z dodatkami uplastyczniającymi i polepszającymi wyrób. Uniwersalna mieszanka do prac naprawczych oraz podkładów podłogowych, do stosowania wewnątrz i na zewnątrz. Po 28 dniach uzyskuje wytrzymałość ≥ 35 MPa oraz odporność na działanie warunków atmosferycznych.',
+    features: [
+      'Klasa wytrzymałości C30/35 (≥ 35 MPa po 28 dniach)',
+      'Najwyższa wytrzymałość w serii betonów PROFIX',
+      'Mrozoodporna',
+      'Odporna na warunki atmosferyczne',
+      'Do prac wewnętrznych i zewnętrznych',
+      'Drobne uziarnienie 0-4 mm',
+    ],
+    usage:
+      'Uniwersalna mieszanka do prac naprawczych. Podkłady podłogowe na bazie cementu wewnątrz obiektów budowlanych oraz prace inżynierskie. Do stosowania zarówno wewnątrz, jak i na zewnątrz budynków.',
+    application:
+      'Do odmierzonych 3,4 l chłodnej wody wsypać zawartość worka 25 kg i dokładnie mieszać 2-3 minuty, najlepiej mieszadłem mechanicznym lub w betoniarce, do uzyskania jednorodnej konsystencji. Tak przygotowaną zaprawę wyrobić w ciągu około 1 godziny. Nałożony beton starannie zagęścić, a następnie ściągnąć, zatrzeć i wygładzić powierzchnię.',
+    mixing: '3,4 l wody na worek 25 kg (≈ 0,13-0,14 l/kg)',
+    consumption: 'ok. 20 kg/m² przy grubości 1 cm (min. 10 mm)',
+    packaging: '25 kg',
+    tempRange: '+5°C / +25°C',
+    shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
+    image: '/photos/products/beton-c-30-35.png',
+    norms: ['EN 13813:2002', 'EN 1504-3:2005'],
+    extraSpecs: [
+      { label: 'Klasa wytrzymałości', value: 'C30/35 (≥ 35 MPa @ 28 dni)' },
+      { label: 'Uziarnienie', value: '0-4 mm' },
+      { label: 'Min. grubość warstwy', value: '10 mm' },
+      { label: 'Czas mieszania', value: '2-3 min' },
+      { label: 'Czas roboczy po zarobieniu', value: 'ok. 1 godzina' },
+      { label: 'Zastosowanie', value: 'wewnątrz i na zewnątrz' },
+    ],
+    notes: [
+      'Pielęgnacja wilgotnościowa przez 3-7 dni po związaniu (polewanie i okrywanie powierzchni).',
+      'Przez pierwsze 3 dni chronić przed zbyt szybkim wysychaniem, unikać przeciągów i zbyt mocnego nasłonecznienia.',
       'Nie wykonywać prac na przemrożonym podłożu ani przy ryzyku przymrozków.',
     ],
   },

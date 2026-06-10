@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { PageHero } from '@/components/sections/PageHero';
 import { Contact } from '@/components/sections/Contact';
+import { SalesReps } from '@/components/sections/SalesReps';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -22,6 +23,7 @@ export default async function ContactPage({
       <PageHero eyebrow="Kontakt" title={t('title')} subtitle={t('subtitle')}>
         <p className="text-base leading-relaxed text-fg-muted sm:text-lg">{t('intro')}</p>
       </PageHero>
+      <SalesReps />
       <Contact />
     </>
   );

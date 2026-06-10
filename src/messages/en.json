@@ -250,6 +250,38 @@
     },
     "hours": "Monday - Friday, 7:00 - 16:00"
   },
+  "salesReps": {
+    "eyebrow": "Sales representatives",
+    "title": "Your advisor in the field",
+    "subtitle": "Find the sales representative for your region. Call for a quote, product selection or an availability check.",
+    "role": "Sales representative",
+    "reps": {
+      "tomasz": {
+        "regions": [
+          "Silesia",
+          "Podbeskidzie"
+        ]
+      },
+      "piotr": {
+        "regions": [
+          "Opole",
+          "Lower Silesia"
+        ]
+      },
+      "marcin": {
+        "regions": [
+          "Subcarpathia",
+          "Lesser Poland"
+        ]
+      },
+      "lukasz": {
+        "regions": [
+          "Łódź region",
+          "Greater Poland"
+        ]
+      }
+    }
+  },
   "social": {
     "eyebrow": "Let's stay in touch",
     "title": "Follow PROFIX online",

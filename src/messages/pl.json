@@ -250,6 +250,38 @@
     },
     "hours": "Poniedziałek - piątek, 7:00 - 16:00"
   },
+  "salesReps": {
+    "eyebrow": "Przedstawiciele handlowi",
+    "title": "Twój doradca w terenie",
+    "subtitle": "Znajdź opiekuna handlowego dla swojego regionu. Zadzwoń po wycenę, dobór produktu lub sprawdzenie dostępności.",
+    "role": "Przedstawiciel handlowy",
+    "reps": {
+      "tomasz": {
+        "regions": [
+          "Śląskie",
+          "Podbeskidzie"
+        ]
+      },
+      "piotr": {
+        "regions": [
+          "Opolskie",
+          "Dolnośląskie"
+        ]
+      },
+      "marcin": {
+        "regions": [
+          "Podkarpackie",
+          "Małopolskie"
+        ]
+      },
+      "lukasz": {
+        "regions": [
+          "Łódzkie",
+          "Wielkopolskie"
+        ]
+      }
+    }
+  },
   "social": {
     "eyebrow": "Bądźmy w kontakcie",
     "title": "Obserwuj PROFIX w sieci",
