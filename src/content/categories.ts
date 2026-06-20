@@ -30,6 +30,9 @@ export type Category = {
   /** Optional closing block (heading + paragraph), e.g. a brand/trust message. */
   closingTitle?: string;
   closingBody?: string;
+  /** Extra search phrases (synonyms, popular query forms) emitted as <meta keywords>
+   * on the category page. Real-world buyer phrasing, not just the category name. */
+  seoKeywords?: string[];
 };
 
 export const categories: Category[] = [
@@ -102,6 +105,29 @@ export const categories: Category[] = [
     closingTitle: 'Wybierz sprawdzoną polską jakość',
     closingBody:
       'Produktom PROFIX zaufały już tysiące polskich firm budowlanych. Wybierając nasze materiały, stawiasz na najwyższy standard wykończenia i jednocześnie wspierasz rodzimą gospodarkę.',
+    seoKeywords: [
+      'tynki cementowo-wapienne',
+      'tynki wapienno-cementowe',
+      'tynki cementowe',
+      'tynki maszynowe',
+      'tynki ręczne',
+      'tynk ręczny',
+      'tynki tradycyjne',
+      'tynki lekkie',
+      'tynk super lekki',
+      'tynk z perlitem',
+      'tynki gładkie',
+      'tynki drobne',
+      'tynki elewacyjne',
+      'zaprawy tynkarskie',
+      'zaprawa tynkarska lekka',
+      'technika silosowa',
+      'agregat tynkarski',
+      'tynki Kraków',
+      'tynki Małopolska',
+      'tynki Krzeszowice',
+      'tynki Śląsk',
+    ],
   },
   {
     slug: 'tynki-cienkowarstwowe',
@@ -127,6 +153,14 @@ export const categories: Category[] = [
       'Kleje do mocowania płyt styropianowych i wełny mineralnej oraz zaprawy do zatapiania siatki zbrojącej. Stosowane w systemach ETICS.',
     audience: ['fachowiec'],
     coverImage: '/photos/workers-team.jpg',
+    seoKeywords: [
+      'kleje do dociepleń',
+      'system dociepleń',
+      'systemy ociepleń ETICS',
+      'klej do styropianu',
+      'klej do wełny',
+      'zaprawa klejąca do siatki',
+    ],
   },
   {
     slug: 'grunty',
@@ -137,6 +171,19 @@ export const categories: Category[] = [
     audience: ['fachowiec', 'inwestor'],
     featuredOnHome: true,
     coverImage: '/photos/products/beton-kontakt-15kg.jpg',
+    seoKeywords: [
+      'grunt tynkarski',
+      'grunt szczepny',
+      'grunt sczepny',
+      'grunt polimerowy',
+      'grunt pod tynki gipsowe',
+      'grunt z piaskiem kwarcowym',
+      'betonkontakt',
+      'beton kontakt',
+      'podkłady gruntujące',
+      'grunt głęboko penetrujący',
+      'grunt pod farby',
+    ],
   },
   {
     slug: 'farby-wewnetrzne',
@@ -183,6 +230,15 @@ export const categories: Category[] = [
     coverImage: '/photos/products/beton-c-20-25.png',
     featuredOnHome: true,
     live: true,
+    seoKeywords: [
+      'beton',
+      'sucha mieszanka betonowa',
+      'beton C16/20',
+      'beton C20/25',
+      'beton C25/30',
+      'beton workowany',
+      'cement',
+    ],
   },
   {
     slug: 'inne-produkty',

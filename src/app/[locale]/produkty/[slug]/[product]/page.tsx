@@ -46,6 +46,8 @@ export async function generateMetadata({
   return {
     title: p.name,
     description: p.tagline,
+    ...(p.seoKeywords?.length ? { keywords: p.seoKeywords } : {}),
+    alternates: { canonical: `/produkty/${slug}/${product}` },
   };
 }
 

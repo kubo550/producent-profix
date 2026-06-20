@@ -31,6 +31,9 @@ export type Product = {
   /** When true, product is hidden everywhere (catalog list, detail page, navbar).
    * Use for placeholders awaiting full content from client - flip to undefined/false to publish. */
   draft?: boolean;
+  /** Extra search phrases (synonyms, popular query forms) emitted as <meta keywords>
+   * on the product page. Use real-world phrasing buyers type, not exact product names. */
+  seoKeywords?: string[];
 };
 
 export const products: Product[] = [
@@ -68,6 +71,17 @@ export const products: Product[] = [
       'Chronić przed dziećmi. Stosować rękawice i okulary ochronne.',
       'Produkt który uległ przemrożeniu nie nadaje się do użytku.',
     ],
+    seoKeywords: [
+      'betonkontakt',
+      'beton kontakt',
+      'grunt szczepny',
+      'grunt sczepny',
+      'grunt polimerowy',
+      'grunt z piaskiem kwarcowym',
+      'grunt pod tynki gipsowe',
+      'grunt na beton',
+      'podkład kontaktowy',
+    ],
   },
   {
     slug: 'grunt-gleboko-penetrujacy',
@@ -88,6 +102,13 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym opakowaniu',
     notes: ['Chronić przed przemrożeniem'],
+    seoKeywords: [
+      'grunt głęboko penetrujący',
+      'podkład gruntujący',
+      'grunt pod tynki',
+      'grunt gruntujący ściany',
+      'grunt akrylowy',
+    ],
   },
   {
     slug: 'grunt-gleboko-penetrujacy-koncentrat',
@@ -114,6 +135,12 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym opakowaniu',
     notes: ['Chronić przed przemrożeniem'],
+    seoKeywords: [
+      'grunt głęboko penetrujący koncentrat',
+      'grunt koncentrat',
+      'podkład gruntujący koncentrat',
+      'wydajny grunt',
+    ],
   },
   {
     slug: 'grunt-tynkarski-akrylowy',
@@ -139,6 +166,13 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym opakowaniu',
     notes: ['Chronić przed przemrożeniem'],
+    seoKeywords: [
+      'grunt tynkarski',
+      'grunt tynkarski akrylowy',
+      'grunt pod tynk akrylowy',
+      'podkład tynkarski',
+      'grunt pod farby fasadowe',
+    ],
   },
   {
     slug: 'grunt-tynkarski-koncentrat',
@@ -175,6 +209,14 @@ export const products: Product[] = [
       'Chronić przed dziećmi. Stosować rękawice i okulary ochronne.',
       'Produkt, który uległ przemrożeniu nie nadaje się do użytku.',
     ],
+    seoKeywords: [
+      'grunt tynkarski koncentrat',
+      'grunt polimerowy',
+      'grunt pod tynki gipsowe',
+      'grunt pod tynki cementowe',
+      'podkład gruntujący pod tynk',
+      'wydajny grunt koncentrat',
+    ],
   },
   {
     slug: 'grunt-tynkarski-silikonowy',
@@ -199,6 +241,12 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym opakowaniu',
     notes: ['Chronić przed przemrożeniem'],
+    seoKeywords: [
+      'grunt tynkarski silikonowy',
+      'grunt pod tynk silikonowy',
+      'podkład pod tynki silikonowe',
+      'grunt silikonowy elewacja',
+    ],
   },
 
   // === FARBY WEWNĘTRZNE ===
@@ -581,6 +629,12 @@ export const products: Product[] = [
     usage: 'Murowanie ścian zewnętrznych i wewnętrznych, ogrodzeń, kominów, z cegły, pustaków, bloczków.',
     draft: true,
     notes: ['Pełna karta techniczna dostępna na życzenie'],
+    seoKeywords: [
+      'zaprawa murarska',
+      'zaprawy murarskie',
+      'zaprawa do murowania',
+      'zaprawa cementowa do murowania',
+    ],
   },
 
   // === TYNKI CEMENTOWO-WAPIENNE ===
@@ -616,6 +670,13 @@ export const products: Product[] = [
       { label: 'Tynkowanie / obciążenie', value: 'po ok. 24 h / pełne po ok. 7 dniach' },
     ],
     notes: ['Nie dopuścić do zbyt szybkiego wysychania (przeciągi, mocne nasłonecznienie, ogrzewanie pomieszczeń).'],
+    seoKeywords: [
+      'obrzutka wstępna',
+      'warstwa sczepna pod tynk',
+      'obrzutka cementowa',
+      'tynk maszynowy obrzutka',
+      'technika silosowa',
+    ],
   },
   {
     slug: 'ptc-10-tynk-wapienno-cementowy',
@@ -649,6 +710,16 @@ export const products: Product[] = [
       { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
       { label: 'Wytrzymałość na zginanie', value: '>1,0 N/mm²' },
       { label: 'Przyczepność do podłoża', value: '>0,28 N/mm²' },
+    ],
+    seoKeywords: [
+      'tynk cementowo-wapienny',
+      'tynk wapienno-cementowy',
+      'tynk maszynowy',
+      'tynk ręczny',
+      'tynki tradycyjne',
+      'tynk podkładowy',
+      'tynki cementowe',
+      'tynk wewnętrzny',
     ],
   },
   {
@@ -684,6 +755,16 @@ export const products: Product[] = [
       { label: 'Wytrzymałość na zginanie', value: '>1,1 N/mm²' },
       { label: 'Przyczepność do podłoża', value: '>0,7 N/mm²' },
     ],
+    seoKeywords: [
+      'tynk drobnoziarnisty',
+      'tynk lekki',
+      'tynk z perlitem',
+      'tynk gładki',
+      'tynki gładkie',
+      'tynk maszynowy',
+      'tynk ziarno 0,1-0,4',
+      'tynk cementowo-wapienny lekki',
+    ],
   },
   {
     slug: 'ptc-12-tynk-cementowo-wapienny-lekki',
@@ -717,6 +798,15 @@ export const products: Product[] = [
       { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
       { label: 'Wytrzymałość na zginanie', value: '>2,3 N/mm²' },
       { label: 'Przyczepność do podłoża', value: '>0,99 N/mm²' },
+    ],
+    seoKeywords: [
+      'tynk lekki',
+      'tynk z perlitem',
+      'tynk elewacyjny',
+      'tynk cementowo-wapienny',
+      'tynk maszynowy',
+      'tynk na zewnątrz',
+      'tynk wydajny',
     ],
   },
   {
@@ -768,6 +858,17 @@ export const products: Product[] = [
       { label: 'Karta produktu', href: '/dokumenty/profix-ptc-15-karta-produktu.pdf' },
     ],
     notes: ['Producent nie ponosi odpowiedzialności za nieprawidłowe użycie materiału.'],
+    seoKeywords: [
+      'tynk super lekki',
+      'tynk gładki',
+      'tynki gładkie',
+      'tynk z perlitem',
+      'tynk wydajny',
+      'tynk maszynowy',
+      'tynk ręczny',
+      'tynk ziarno 0,1-0,4',
+      'tynk cementowo-wapienny super lekki',
+    ],
   },
 
   // === DOCIEPLENIA - PRODUKTY UZUPEŁNIAJĄCE ===

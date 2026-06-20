@@ -148,7 +148,18 @@ export default async function LocaleLayout({
         closes: '16:00',
       },
     ],
-    areaServed: { '@type': 'Country', name: 'Poland' },
+    areaServed: [
+      { '@type': 'Country', name: 'Poland' },
+      { '@type': 'AdministrativeArea', name: 'Małopolska' },
+      { '@type': 'AdministrativeArea', name: 'Śląsk' },
+      { '@type': 'City', name: 'Krzeszowice' },
+      { '@type': 'City', name: 'Kraków' },
+      { '@type': 'City', name: 'Skawina' },
+      { '@type': 'City', name: 'Zakopane' },
+      { '@type': 'City', name: 'Bielsko-Biała' },
+      { '@type': 'City', name: 'Żywiec' },
+      { '@type': 'City', name: 'Katowice' },
+    ],
     sameAs: [siteConfig.social.facebook, siteConfig.social.tiktok],
   };
 

@@ -3,7 +3,7 @@
     "title": "PROFIX | manufacturer of paints, plasters and construction materials in Krzeszowice",
     "titleTemplate": "%s | PROFIX",
     "description": "PROFIX is a Polish family-owned manufacturer of construction chemistry since 2009: facade paints, cement-lime plasters, insulation adhesives and finishing materials. Modern production line in Krzeszowice near Krakow.",
-    "keywords": "cement-lime plasters, facade paints, insulation adhesives, ETICS, gypsum smoothing compounds, construction chemistry manufacturer, Krzeszowice, Lesser Poland",
+    "keywords": "PROFIX, construction chemistry manufacturer, cement-lime plasters, machine plasters, hand plasters, lightweight plaster, plastering mortars, masonry mortars, plaster primer, concrete contact primer, facade paints, insulation adhesives, ETICS, external thermal insulation, gypsum smoothing compounds, silo technology, plasters Krakow, plasters Lesser Poland, plasters Silesia, Krzeszowice, Lesser Poland, Profix Katarzyna Sokol, Katarzyna Sokol, Zbigniew Kostecki, Grzegorz Kostecki, Jacek Janczewski, Damian Tynkarz",
     "ogTitle": "PROFIX | manufacturer of finishing and construction materials",
     "ogDescription": "Paints, plasters, adhesives, insulation systems. Production in Krzeszowice near Krakow, own fleet delivery across Poland."
   },
@@ -176,7 +176,7 @@
   "logistics": {
     "eyebrow": "Transport",
     "title": "We deliver materials right to the site",
-    "lead": "A well-developed logistics department lets us deliver fast and at reasonable cost. Our fleet covers everything from small drops to large pallet orders.",
+    "lead": "A well-developed logistics department lets us deliver fast and at reasonable cost. Our fleet covers everything from small drops to large pallet orders, bulk deliveries and HDS crane transport. We serve all of Lesser Poland and Silesia, including Krakow, Skawina, Zakopane, Bielsko-Biala, Zywiec and Katowice, and ship nationwide when needed. For cement plasters we also offer silo technology.",
     "fleet": [
       {
         "name": "Light trucks",

@@ -5,7 +5,22 @@ import { Logistics } from '@/components/sections/Logistics';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'logistics' });
-  return { title: t('title'), description: t('lead') };
+  return {
+    title: t('title'),
+    description: t('lead'),
+    keywords: [
+      'transport HDS',
+      'dostawa HDS',
+      'dostawa luzem',
+      'transport luzem',
+      'technika silosowa',
+      'silos',
+      'agregat tynkarski',
+      'dostawa tynków',
+      'transport materiałów budowlanych',
+    ],
+    alternates: { canonical: '/transport' },
+  };
 }
 
 export default async function TransportPage({

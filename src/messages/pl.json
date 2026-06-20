@@ -3,7 +3,7 @@
     "title": "PROFIX | Producent farb, tynków i materiałów budowlanych w Krzeszowicach",
     "titleTemplate": "%s | PROFIX",
     "description": "PROFIX to polska rodzinna firma produkująca chemię budowlaną od 2009 roku: farby fasadowe, tynki cementowo wapienne, kleje do dociepleń i materiały wykończeniowe. Nowoczesna linia produkcyjna w Krzeszowicach pod Krakowem.",
-    "keywords": "tynki cementowo wapienne, farby elewacyjne, kleje do dociepleń, ETICS, gładzie gipsowe, producent chemii budowlanej, Krzeszowice, Małopolska",
+    "keywords": "PROFIX, producent chemii budowlanej, producent chemii budowlanej Małopolska, producent chemii budowlanej Śląsk, producent Krzeszowice, tynki cementowo wapienne, tynki maszynowe, tynki ręczne, tynk lekki, tynk z perlitem, zaprawy tynkarskie, zaprawy murarskie, grunt tynkarski, grunt szczepny, betonkontakt, farby elewacyjne, kleje do dociepleń, ETICS, system dociepleń, gładzie gipsowe, technika silosowa, tynki Kraków, tynki Małopolska, tynki Śląsk, tynki Krzeszowice, Krzeszowice, Małopolska, Profix Katarzyna Sokół, Katarzyna Sokół, Zbigniew Kostecki, Grzegorz Kostecki, Jacek Janczewski, Damian Tynkarz",
     "ogTitle": "PROFIX | producent materiałów wykończeniowo budowlanych",
     "ogDescription": "Farby, tynki, kleje, systemy dociepleń. Produkcja w Krzeszowicach pod Krakowem, dostawa własnym transportem na terenie całej Polski."
   },
@@ -176,7 +176,7 @@
   "logistics": {
     "eyebrow": "Transport",
     "title": "Dostarczamy materiały na miejsce budowy",
-    "lead": "Rozwinięty dział logistyczny pozwala nam realizować dostawy szybko i w rozsądnych cenach. Mamy w taborze różne pojazdy, dobieramy je do skali zamówienia.",
+    "lead": "Rozwinięty dział logistyczny pozwala nam realizować dostawy szybko i w rozsądnych cenach. Mamy w taborze różne pojazdy, dobieramy je do skali zamówienia: od palet po dostawy luzem i transport HDS. Obsługujemy całą Małopolskę i Śląsk, m.in. Kraków, Skawinę, Zakopane, Bielsko-Białą, Żywiec i Katowice, a w razie potrzeby realizujemy dostawy w skali całego kraju. Dla tynków cementowych udostępniamy też technikę silosową.",
     "fleet": [
       {
         "name": "Auta małotonażowe",
