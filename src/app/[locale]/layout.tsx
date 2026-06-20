@@ -57,7 +57,7 @@ export async function generateMetadata({
     authors: [{ name: siteConfig.name, url: siteConfig.url }],
     creator: siteConfig.name,
     publisher: siteConfig.name,
-    alternates: { canonical: '/' },
+    alternates: { canonical: `/${locale}` },
     openGraph: {
       type: 'website',
       locale: locale === 'en' ? 'en_US' : 'pl_PL',

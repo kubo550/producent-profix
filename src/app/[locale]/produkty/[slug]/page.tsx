@@ -27,14 +27,14 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const cat = getCategory(slug);
   if (!cat) return {};
   return {
     title: cat.name,
     description: cat.description,
     ...(cat.seoKeywords?.length ? { keywords: cat.seoKeywords } : {}),
-    alternates: { canonical: `/produkty/${slug}` },
+    alternates: { canonical: `/${locale}/produkty/${slug}` },
   };
 }
 

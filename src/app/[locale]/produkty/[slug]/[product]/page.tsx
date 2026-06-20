@@ -40,14 +40,14 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string; product: string }>;
 }) {
-  const { slug, product } = await params;
+  const { locale, slug, product } = await params;
   const p = getProduct(slug, product);
   if (!p) return {};
   return {
     title: p.name,
     description: p.metaDescription ?? p.tagline,
     ...(p.seoKeywords?.length ? { keywords: p.seoKeywords } : {}),
-    alternates: { canonical: `/produkty/${slug}/${product}` },
+    alternates: { canonical: `/${locale}/produkty/${slug}/${product}` },
   };
 }
 

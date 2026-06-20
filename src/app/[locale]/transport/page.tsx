@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       'dostawa tynków',
       'transport materiałów budowlanych',
     ],
-    alternates: { canonical: '/transport' },
+    alternates: { canonical: `/${locale}/transport` },
   };
 }
 
