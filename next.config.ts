@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import { products } from './src/content/products';
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
@@ -31,6 +32,17 @@ const legacyRedirects = [
   { source: '/zaprawa-beton-b-20', destination: '/pl/produkty/betony/beton-c-16-20' },
 ];
 
+// The old site served products at a flat root slug (e.g. /ptc-15-tynk-wapienno-
+// cementowy-super-lekki/). Those flat URLs are what currently rank in Google -
+// map each one to its new nested route so the ranking/equity transfers instead
+// of dying on a 404. Slugs are unchanged, so this is a 1:1 mapping.
+const flatProductRedirects = products
+  .filter((p) => !p.draft)
+  .map((p) => ({
+    source: `/${p.slug}`,
+    destination: `/pl/produkty/${p.categorySlug}/${p.slug}`,
+  }));
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -51,6 +63,9 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       ...legacyRedirects.map((r) => ({ ...r, permanent: true })),
+      ...flatProductRedirects.map((r) => ({ ...r, permanent: true })),
+      // Old category URLs lived under /produkty/... without the locale prefix.
+      { source: '/produkty/:path*', destination: '/pl/produkty/:path*', permanent: true },
       // Catch any remaining old WordPress category URLs and send them to the
       // product catalog rather than a 404.
       { source: '/category/:slug*', destination: '/pl/produkty', permanent: true },

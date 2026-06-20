@@ -34,6 +34,13 @@ export type Product = {
   /** Extra search phrases (synonyms, popular query forms) emitted as <meta keywords>
    * on the product page. Use real-world phrasing buyers type, not exact product names. */
   seoKeywords?: string[];
+  /** Custom SEO meta description for the product page (<160 chars ideal).
+   * Falls back to `tagline` when absent. */
+  metaDescription?: string;
+  /** Questions and answers rendered as a visible FAQ block and emitted as
+   * FAQPage structured data - targets long-tail / "People also ask" queries
+   * (drying time, consumption, hand vs machine, differences between products). */
+  faq?: Array<{ q: string; a: string }>;
 };
 
 export const products: Product[] = [
@@ -868,6 +875,42 @@ export const products: Product[] = [
       'tynk ręczny',
       'tynk ziarno 0,1-0,4',
       'tynk cementowo-wapienny super lekki',
+    ],
+    metaDescription:
+      'PTC-15 to gładki tynk wapienno-cementowy super lekki PROFIX (uziarnienie 0,1–0,4 mm) na ściany i sufity. Wydajność większa o ok. 40%, aplikacja ręczna i maszynowa. Kupujesz prosto od producenta z Krzeszowic.',
+    faq: [
+      {
+        q: 'Czy tynk PTC-15 nakłada się ręcznie czy maszynowo?',
+        a: 'Obiema metodami. PTC-15 nadaje się do nakładania ręcznego oraz mechanicznego agregatem tynkarskim, także w technice silosowej.',
+      },
+      {
+        q: 'Jakie jest zużycie tynku PTC-15?',
+        a: 'Ok. 14 kg/m² przy warstwie 10 mm. Worek 30 kg wystarcza wtedy na ok. 2 m² powierzchni. Minimalna grubość tynku to 10 mm.',
+      },
+      {
+        q: 'Ile wody dodać do worka 30 kg PTC-15?',
+        a: 'Ok. 8,5 l czystej wody na 30 kg (0,27–0,29 l na 1 kg), do uzyskania jednorodnej masy. Czas pracy z zaprawą nie przekracza 2 godzin.',
+      },
+      {
+        q: 'Czy podłoże trzeba zagruntować przed nałożeniem PTC-15?',
+        a: 'Tak. Zastosuj obrzutkę wstępną POW-100, a podłoża ekstremalnie chłonne dodatkowo zagruntuj gruntem tynkarskim PROFIX. Drugą warstwę nakładaj na pierwszą zatartą „na ostro”.',
+      },
+      {
+        q: 'Czym PTC-15 różni się od PTC-12?',
+        a: 'PTC-15 to gładki tynk super lekki o drobnym uziarnieniu 0,1–0,4 mm, przeznaczony na ściany i sufity wewnątrz budynków. PTC-12 ma grubsze uziarnienie 0,1–0,8 mm, jest cięższy i nadaje się też na ściany zewnętrzne.',
+      },
+      {
+        q: 'Na jakie podłoża można nakładać PTC-15?',
+        a: 'Na ściany wewnętrzne i stropy, także silnie porowate: cegłę i pustak porowaty, beton komórkowy, beton szalowany, piaskowiec. Sprawdza się jako tynk podkładowy pod tynki ozdobne i farby oraz jako tynk naprawczy.',
+      },
+      {
+        q: 'Czy PTC-15 nadaje się pod malowanie i tynki dekoracyjne?',
+        a: 'Tak. Dzięki drobnemu uziarnieniu daje gładką powierzchnię i jest przeznaczony jako warstwa podkładowa pod farby oraz tynki ozdobne.',
+      },
+      {
+        q: 'Dlaczego PTC-15 jest wydajniejszy od zwykłego tynku?',
+        a: 'Zawiera perlit i dodatki napowietrzające, które zwiększają wydajność zaprawy o ok. 40%. Właściwości tiksotropowe sprawiają, że przy grubszym narzucie nie spływa ze ścian i sufitów, co ogranicza straty materiału.',
+      },
     ],
   },
 

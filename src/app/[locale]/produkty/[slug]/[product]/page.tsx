@@ -45,7 +45,7 @@ export async function generateMetadata({
   if (!p) return {};
   return {
     title: p.name,
-    description: p.tagline,
+    description: p.metaDescription ?? p.tagline,
     ...(p.seoKeywords?.length ? { keywords: p.seoKeywords } : {}),
     alternates: { canonical: `/produkty/${slug}/${product}` },
   };
@@ -66,18 +66,42 @@ export default async function ProductPage({
   const t = await getTranslations('productPage');
 
   const productUrl = `${siteConfig.url}/${locale}/produkty/${cat.slug}/${p.slug}`;
+  // Rich product attributes (specs + norms) as additionalProperty - gives Google
+  // structured signals the reseller's page lacks entirely.
+  const productProperties = [
+    ...(p.extraSpecs ?? []).map((s) => ({ '@type': 'PropertyValue', name: s.label, value: s.value })),
+    ...(p.consumption ? [{ '@type': 'PropertyValue', name: 'Zużycie', value: p.consumption }] : []),
+    ...(p.packaging ? [{ '@type': 'PropertyValue', name: 'Opakowanie', value: p.packaging }] : []),
+    ...(p.norms ?? []).map((n) => ({ '@type': 'PropertyValue', name: 'Norma', value: n })),
+  ];
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: p.name,
     description: p.description,
-    brand: { '@type': 'Brand', name: p.brand ?? siteConfig.name },
+    brand: { '@type': 'Brand', name: 'PROFIX' },
     manufacturer: { '@id': `${siteConfig.url}#org` },
+    ...(p.brand ? { mpn: p.brand, sku: p.brand } : {}),
     category: cat.name,
     url: productUrl,
     ...(p.image ? { image: `${siteConfig.url}${p.image}` } : {}),
-    ...(p.norms && p.norms.length > 0 ? { hasEnergyConsumptionDetails: undefined, additionalProperty: p.norms.map((n) => ({ '@type': 'PropertyValue', name: 'Norm', value: n })) } : {}),
+    ...(productProperties.length > 0 ? { additionalProperty: productProperties } : {}),
   };
+
+  // FAQ structured data - eligible for the FAQ rich result and captures
+  // "People also ask" long-tail queries (drying time, consumption, etc.).
+  const faqJsonLd =
+    p.faq && p.faq.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: p.faq.map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a },
+          })),
+        }
+      : null;
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -127,6 +151,12 @@ export default async function ProductPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       {p.image ? (
         <section className="relative pb-12 pt-36 sm:pb-20 sm:pt-44">
           <span className="atmo-quiet sr-only" aria-hidden />
@@ -174,6 +204,10 @@ export default async function ProductPage({
                   </span>
                 </nav>
                 <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-accent-fg)]">
+                    <ShieldCheck size={12} strokeWidth={2.25} />
+                    {t('officialProducer')}
+                  </span>
                   {p.brand && (
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent-soft)] px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
                       {p.brand}
@@ -229,6 +263,10 @@ export default async function ProductPage({
       ) : (
         <PageHero eyebrow={cat.name} title={p.name} subtitle={p.tagline}>
           <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-accent-fg)]">
+              <ShieldCheck size={12} strokeWidth={2.25} />
+              {t('officialProducer')}
+            </span>
             {p.brand && (
               <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent-soft)] px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
                 {p.brand}
@@ -389,6 +427,34 @@ export default async function ProductPage({
           </div>
         </Container>
       </section>
+
+      {p.faq && p.faq.length > 0 && (
+        <section className="relative pb-20">
+          <Container size="md">
+            <h2 className="mb-8 font-display text-2xl font-semibold sm:text-3xl">
+              {t('sections.faq')}
+            </h2>
+            <div className="divide-y divide-[var(--color-border)] overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] backdrop-blur-xl">
+              {p.faq.map((item) => (
+                <details key={item.q} className="group">
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 p-5 text-left font-medium text-[var(--color-fg)] transition-colors hover:text-[var(--color-accent)] [&::-webkit-details-marker]:hidden">
+                    <span>{item.q}</span>
+                    <span
+                      aria-hidden
+                      className="flex h-6 w-6 flex-none items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-accent)] transition-transform duration-300 group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="px-5 pb-5 text-pretty text-sm leading-relaxed text-fg-muted">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {cat.highlights && (
         <CategoryHighlights items={cat.highlights} title={t('sections.lineBenefits')} />

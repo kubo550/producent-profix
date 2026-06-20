@@ -403,7 +403,8 @@
       "specs": "Technical data",
       "related": "More from this category",
       "lineBenefits": "Line benefits",
-      "downloads": "Downloads"
+      "downloads": "Downloads",
+      "faq": "Frequently asked questions"
     },
     "specs": {
       "packaging": "Packaging",
@@ -412,7 +413,8 @@
       "temperature": "Application temp.",
       "shelfLife": "Shelf life"
     },
-    "cta": "Ask about this product"
+    "cta": "Ask about this product",
+    "officialProducer": "Official manufacturer"
   },
   "professionalPage": {
     "title": "For professionals",
