@@ -21,13 +21,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/polityka-prywatnosci', priority: 0.3, changeFreq: 'yearly' as const },
   ];
 
-  const categoryPaths = categories.map((c) => ({
-    path: `/produkty/${c.slug}`,
-    priority: 0.7,
-    changeFreq: 'monthly' as const,
-  }));
+  // Only index real, published content. Draft products are placeholders and
+  // categories without any published product have nothing to show - keeping
+  // them out of the sitemap avoids feeding Google thin/empty pages.
+  const publishedProducts = products.filter((p) => !p.draft);
+  const categoriesWithContent = new Set(publishedProducts.map((p) => p.categorySlug));
 
-  const productPaths = products.map((p) => ({
+  const categoryPaths = categories
+    .filter((c) => categoriesWithContent.has(c.slug))
+    .map((c) => ({
+      path: `/produkty/${c.slug}`,
+      priority: 0.7,
+      changeFreq: 'monthly' as const,
+    }));
+
+  const productPaths = publishedProducts.map((p) => ({
     path: `/produkty/${p.categorySlug}/${p.slug}`,
     priority: 0.6,
     changeFreq: 'monthly' as const,

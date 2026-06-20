@@ -12,6 +12,25 @@ const securityHeaders = [
   { key: 'X-DNS-Prefetch-Control', value: 'on' },
 ];
 
+// Permanent redirects from the old (WordPress) URLs to the new locale-prefixed
+// routes. Reclaims the SEO equity of the old pages and stops Google/users from
+// hitting 404s. `permanent: true` issues a 308 (treated like a 301 by Google).
+// Extend `legacyRedirects` as more old URLs surface in the Search Console
+// "Strony" report. Note: hacked spam paths (e.g. /kasyno-*) are deliberately
+// NOT redirected - they should keep returning 404 so Google drops them.
+const legacyRedirects = [
+  { source: '/o-firmie', destination: '/pl/o-firmie' },
+  { source: '/dla-fachowca', destination: '/pl/dla-fachowca' },
+  { source: '/dla-fachowca/deklaracje-wlasciwosci-uzytkowych', destination: '/pl/dla-fachowca' },
+  { source: '/dla-inwestora', destination: '/pl/dla-inwestora' },
+  { source: '/przetargi', destination: '/pl/przetargi' },
+  { source: '/fundusze-europejskie', destination: '/pl/fundusze-europejskie' },
+  { source: '/kontakt', destination: '/pl/kontakt' },
+  { source: '/polityka-prywatnosci', destination: '/pl/polityka-prywatnosci' },
+  { source: '/category/kleje', destination: '/pl/produkty/kleje' },
+  { source: '/zaprawa-beton-b-20', destination: '/pl/produkty/betony/beton-c-16-20' },
+];
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -28,6 +47,14 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }];
+  },
+  async redirects() {
+    return [
+      ...legacyRedirects.map((r) => ({ ...r, permanent: true })),
+      // Catch any remaining old WordPress category URLs and send them to the
+      // product catalog rather than a 404.
+      { source: '/category/:slug*', destination: '/pl/produkty', permanent: true },
+    ];
   },
 };
 
