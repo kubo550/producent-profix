@@ -4,7 +4,7 @@ export const siteConfig = {
   tagline: 'Kolory dla Twojego domu',
   descriptor: 'Producent materiałów wykończeniowo budowlanych',
   foundedYear: 2009,
-  url: 'https://producent-profix.pl',
+  url: 'https://www.producent-profix.pl',
   email: 'biuro@producent-profix.pl',
   emailRodo: 'sokolp1@interia.pl',
   phone: '+48 12 270 00 32',
