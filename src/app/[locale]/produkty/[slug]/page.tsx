@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { ArrowLeft, MessageSquare } from 'lucide-react';
+import { ArrowLeft, ArrowRight, MessageSquare, GitCompareArrows } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/sections/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
@@ -57,32 +57,42 @@ export default async function CategoryPage({
     inwestor: t('investor'),
   };
 
-  const productJsonLd = {
+  const base = `${siteConfig.url}/${locale}`;
+  const categoryUrl = `${base}/produkty/${cat.slug}`;
+
+  // A category is a collection of products, not a single Product. Use
+  // CollectionPage + ItemList so the markup matches the page and Google does
+  // not flag invalid/incomplete Product fields.
+  const collectionJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'CollectionPage',
     name: cat.name,
     description: cat.description,
-    brand: { '@type': 'Brand', name: siteConfig.name },
-    manufacturer: {
-      '@type': 'Organization',
-      name: siteConfig.name,
-      url: siteConfig.url,
+    url: categoryUrl,
+    isPartOf: { '@id': `${siteConfig.url}#website` },
+    about: { '@id': `${siteConfig.url}#org` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: productList.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.name,
+        url: `${categoryUrl}/${p.slug}`,
+      })),
     },
-    category: 'Materiały budowlane',
-    url: `${siteConfig.url}/produkty/${cat.slug}`,
   };
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
-      { '@type': 'ListItem', position: 2, name: 'Produkty', item: `${siteConfig.url}/produkty` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Produkty', item: `${base}/produkty` },
       {
         '@type': 'ListItem',
         position: 3,
         name: cat.name,
-        item: `${siteConfig.url}/produkty/${cat.slug}`,
+        item: categoryUrl,
       },
     ],
   };
@@ -93,7 +103,7 @@ export default async function CategoryPage({
     <div className={hasBgVideo ? 'isolate' : undefined}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
       />
       <script
         type="application/ld+json"
@@ -193,6 +203,38 @@ export default async function CategoryPage({
           </div>
         </Container>
       </section>
+
+      {slug === 'tynki-cementowo-wapienne' && (
+        <section className="relative pb-8">
+          <Container size="xl">
+            <Reveal>
+              <Link
+                href="/produkty/porownanie-tynkow"
+                className="group flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent-soft)] p-6 transition-colors hover:border-[var(--color-accent)]"
+              >
+                <span className="flex items-center gap-3">
+                  <GitCompareArrows
+                    size={22}
+                    strokeWidth={1.75}
+                    className="flex-none text-[var(--color-accent)]"
+                  />
+                  <span className="font-medium text-[var(--color-fg)]">
+                    Nie wiesz, który tynk wybrać? Porównaj PTC-10, PTC-11, PTC-12 i PTC-15
+                  </span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-accent)]">
+                  Porównanie tynków
+                  <ArrowRight
+                    size={15}
+                    strokeWidth={1.75}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                </span>
+              </Link>
+            </Reveal>
+          </Container>
+        </section>
+      )}
 
       {productList.length > 0 && (
         <section className="relative pb-24">

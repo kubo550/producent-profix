@@ -49,6 +49,11 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
 
+  // Only the Polish locale is real content for now. The /en routes are not yet
+  // translated, so keep them out of the index (focus all ranking signals on PL)
+  // and avoid thin/duplicate-content pages competing with the PL versions.
+  const indexable = locale === routing.defaultLocale;
+
   return {
     metadataBase: new URL(siteConfig.url),
     title: { default: t('title'), template: t('titleTemplate') },
@@ -81,10 +86,10 @@ export async function generateMetadata({
       images: ['/photos/worker-pro.jpg'],
     },
     robots: {
-      index: true,
+      index: indexable,
       follow: true,
       googleBot: {
-        index: true,
+        index: indexable,
         follow: true,
         'max-image-preview': 'large',
         'max-snippet': -1,
@@ -163,6 +168,16 @@ export default async function LocaleLayout({
     sameAs: [siteConfig.social.facebook, siteConfig.social.tiktok],
   };
 
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${siteConfig.url}#website`,
+    url: siteConfig.url,
+    name: siteConfig.name,
+    inLanguage: locale,
+    publisher: { '@id': `${siteConfig.url}#org` },
+  };
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
@@ -193,6 +208,10 @@ export default async function LocaleLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </body>
     </html>

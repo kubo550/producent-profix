@@ -86,6 +86,17 @@ export default async function ProductPage({
     url: productUrl,
     ...(p.image ? { image: `${siteConfig.url}${p.image}` } : {}),
     ...(productProperties.length > 0 ? { additionalProperty: productProperties } : {}),
+    // Price-less offer: B2B product with no public price. Signals availability +
+    // manufacturer as seller, which Google/AI accept and which lifts the Product
+    // out of the "no offer/review/rating" no-rich-result state.
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      businessFunction: 'http://purl.org/goodrelations/v1#Sell',
+      seller: { '@id': `${siteConfig.url}#org` },
+      areaServed: { '@type': 'Country', name: 'Poland' },
+      url: productUrl,
+    },
   };
 
   // FAQ structured data - eligible for the FAQ rich result and captures

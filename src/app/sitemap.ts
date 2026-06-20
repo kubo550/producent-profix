@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '', priority: 1.0, changeFreq: 'weekly' as const },
     { path: '/o-firmie', priority: 0.8, changeFreq: 'monthly' as const },
     { path: '/produkty', priority: 0.9, changeFreq: 'weekly' as const },
+    { path: '/produkty/porownanie-tynkow', priority: 0.7, changeFreq: 'monthly' as const },
     { path: '/dla-fachowca', priority: 0.8, changeFreq: 'monthly' as const },
     { path: '/dla-inwestora', priority: 0.8, changeFreq: 'monthly' as const },
     { path: '/fundusze-europejskie', priority: 0.5, changeFreq: 'yearly' as const },
@@ -46,10 +47,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: changeFreq,
     priority,
+    // Only PL is indexable for now (EN is not translated yet and is noindexed),
+    // so advertise PL as both the pl alternate and the x-default. Re-add other
+    // locales here once they have real translated content.
     alternates: {
-      languages: Object.fromEntries(
-        routing.locales.map((locale) => [locale, `${base}/${locale}${path}`])
-      ),
+      languages: {
+        pl: `${base}/${defaultLocale}${path}`,
+        'x-default': `${base}/${defaultLocale}${path}`,
+      },
     },
   }));
 }
