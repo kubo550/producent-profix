@@ -32,8 +32,9 @@ const ROWS: Array<{ label: string; values: Array<string | boolean> }> = [
   { label: 'Na zewnątrz', values: [false, false, true, false] },
   { label: 'Gładkie wykończenie', values: [false, true, false, true] },
   { label: 'Wydajność', values: ['Standard', 'Standard', 'Standard', '+ ok. 40%, tiksotropowy'] },
-  { label: 'Zużycie (warstwa 10 mm)', values: ['14 kg/m²', '12 kg/m²', '14 kg/m²', '~14 kg/m²'] },
+  { label: 'Zużycie (warstwa 10 mm)', values: ['14 kg/m²', '12 kg/m²', '14 kg/m²', '~12 kg/m²'] },
   { label: 'Opakowanie', values: ['30 kg', '30 kg', '30 kg', '30 kg'] },
+  { label: 'Dostępny luzem (technika silosowa)', values: [true, true, true, true] },
   { label: 'Norma', values: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004', 'PN-EN 998-1:2004', 'PN-EN 998-1:2016'] },
 ];
 

@@ -385,7 +385,7 @@ export const products: Product[] = [
     tagline: 'Mrozoodporny klej cementowy do typowych zastosowań',
     description:
       'Sucha mieszanka klejowa na bazie cementu z wypełniaczami mineralnymi i dodatkami modyfikującymi przyczepność. Klej cementowy klasy C1 do mocowania okładzin ceramicznych w technice cienkowarstwowej.',
-    features: ['Mrozoodporny', 'Wodoodporny', 'Cienkowarstwowy', 'Dobre właściwości robocze'],
+    features: ['Mrozoodporny', 'Wodoodporny', 'Cienkowarstwowy', 'Dobre właściwości robocze', 'Dostępny także luzem w technice silosowej'],
     usage:
       'Płytki ceramiczne, kamionkowe, fajansowe, mozaika ze szkła i porcelany. Na ścianach i podłogach, wewnątrz i na zewnątrz budynków.',
     application:
@@ -402,7 +402,7 @@ export const products: Product[] = [
     tagline: 'Półelastyczny klej pod obciążenia mechaniczne i termiczne',
     description:
       'Sucha mieszanka cementowa z dodatkami modyfikującymi elastyczność. Półelastyczny, mrozoodporny i wodoodporny, zalecany pod podłoża obciążone mechanicznie i termicznie, w tym ogrzewanie podłogowe.',
-    features: ['Półelastyczny', 'Mrozoodporny', 'Wodoodporny', 'Pod ogrzewanie podłogowe'],
+    features: ['Półelastyczny', 'Mrozoodporny', 'Wodoodporny', 'Pod ogrzewanie podłogowe', 'Dostępny także luzem w technice silosowej'],
     usage:
       'Płytki ceramiczne, kamionkowe, fajansowe, gres, mozaika. Tarasy, balkony, podłogi z ogrzewaniem, łazienki. Wewnątrz i na zewnątrz.',
     application:
@@ -434,7 +434,7 @@ export const products: Product[] = [
     tagline: 'Klej do mocowania płyt EPS w systemach ETICS',
     description:
       'Zaprawa klejowa przeznaczona do przyklejania płyt styropianowych w bezspoinowych systemach ociepleń ścian zewnętrznych metodą lekką-mokrą. Sprawdza się zarówno na nowych obiektach jak i przy renowacjach.',
-    features: ['Do systemów ETICS', 'Mrozoodporna', 'Dobra przyczepność do EPS', 'Praca w temperaturze dodatniej'],
+    features: ['Do systemów ETICS', 'Mrozoodporna', 'Dobra przyczepność do EPS', 'Praca w temperaturze dodatniej', 'Dostępny także luzem w technice silosowej'],
     usage: 'Mocowanie płyt styropianowych (EPS) na elewacjach w technologii lekkiej-mokrej.',
     application:
       'Nanosić pacą zębatą 8-12 mm równomiernie na całą powierzchnię płyty termoizolacyjnej, by po przyklejeniu utworzyła jednolitą warstwę. Płytę docisnąć do podłoża.',
@@ -462,7 +462,7 @@ export const products: Product[] = [
     tagline: 'Uniwersalny klej do styropianu i wełny mineralnej',
     description:
       'Zaprawa klejowa do przyklejania płyt styropianowych oraz wełny mineralnej w bezspoinowych systemach ociepleń ścian zewnętrznych metodą lekką-mokrą. Pasuje do nowych obiektów i renowacji.',
-    features: ['Do styropianu i wełny mineralnej', 'Do systemów ETICS', 'Mrozoodporna'],
+    features: ['Do styropianu i wełny mineralnej', 'Do systemów ETICS', 'Mrozoodporna', 'Dostępny także luzem w technice silosowej'],
     usage: 'Mocowanie płyt styropianowych (EPS) i płyt z wełny mineralnej na elewacjach.',
     application:
       'Nanosić pacą zębatą 8-12 mm równomiernie na całą powierzchnię płyty, by po przyklejeniu utworzyła warstwę o określonej grubości. Płytę docisnąć do podłoża.',
@@ -477,7 +477,7 @@ export const products: Product[] = [
     tagline: 'Biała zaprawa klejowo-szpachlowa do całego cyklu ETICS',
     description:
       'Biała zaprawa klejowo-szpachlowa do przyklejania płyt styropianowych, wełny mineralnej oraz zatapiania siatki w bezspoinowych systemach ociepleń. Jasny kolor ułatwia kontrolę grubości warstwy i podkład pod jasne tynki.',
-    features: ['Biały kolor', 'Mocowanie i zatapianie w jednym produkcie', 'Mrozoodporna', 'Pod jasne tynki cienkowarstwowe'],
+    features: ['Biały kolor', 'Mocowanie i zatapianie w jednym produkcie', 'Mrozoodporna', 'Pod jasne tynki cienkowarstwowe', 'Dostępny także luzem w technice silosowej'],
     usage: 'Pełny cykl ETICS, mocowanie izolacji (EPS, wełna) i warstwa zbrojona z siatką.',
     application:
       'Mocowanie: pacą zębatą równomiernie na całą powierzchnię płyty, docisnąć do podłoża. Warstwa zbrojona: nanieść klej, zatopić siatkę i wygładzić.',
@@ -660,6 +660,7 @@ export const products: Product[] = [
       'Aplikacja ręczna lub maszynowa (agregat tynkarski)',
       'Ziarno do 1 mm',
       'Kolor naturalnie szary',
+      'Dostępny także luzem w technice silosowej',
     ],
     usage:
       'Zalecana pod tynki cementowe na wszystkie podłoża mineralne (beton, bloczki, ceramika, beton komórkowy). Powierzchnię należy pokryć w 100% cienką warstwą POW-100; po pełnym utwardzeniu (ok. 24 h) można przystąpić do tynkowania zasadniczego.',
@@ -700,6 +701,7 @@ export const products: Product[] = [
       'Pod tynki ozdobne i farby',
       'Również jako tynk naprawczy',
       'Paroprzepuszczalny',
+      'Dostępny także luzem w technice silosowej',
     ],
     usage:
       'Ściany wewnętrzne i stropy. Na silnie porowatych podłożach (cegła i pustak porowaty, beton komórkowy, beton szalowany, piaskowiec) oraz jako tynk podkładowy pod tynki ozdobne i farby. Nie stosować w strefie cokołowej.',
@@ -713,10 +715,7 @@ export const products: Product[] = [
     image: '/photos/products/ptc-10-v2.png',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
-      { label: 'Wytrzymałość na ściskanie', value: 'CSII (>2,3 N/mm²)' },
       { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
-      { label: 'Wytrzymałość na zginanie', value: '>1,0 N/mm²' },
-      { label: 'Przyczepność do podłoża', value: '>0,28 N/mm²' },
     ],
     seoKeywords: [
       'tynk cementowo-wapienny',
@@ -744,6 +743,7 @@ export const products: Product[] = [
       'Można zacierać na gładko (szlichta)',
       'Aplikacja ręczna i mechaniczna',
       'Niższa masa – wygodniejsza obróbka',
+      'Dostępny także luzem w technice silosowej',
     ],
     usage:
       'Tylko wewnątrz budynków, na ściany i stropy. Na silnie porowatych podłożach (cegła i pustak porowaty, beton komórkowy, beton szalowany, piaskowiec), jako tynk podkładowy pod tynki ozdobne i farby lub jako tynk naprawczy. Nie stosować w strefie cokołowej.',
@@ -757,10 +757,7 @@ export const products: Product[] = [
     image: '/photos/products/ptc-11-v2.png',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
-      { label: 'Wytrzymałość na ściskanie', value: 'CSII (>2,7 N/mm²)' },
       { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
-      { label: 'Wytrzymałość na zginanie', value: '>1,1 N/mm²' },
-      { label: 'Przyczepność do podłoża', value: '>0,7 N/mm²' },
     ],
     seoKeywords: [
       'tynk drobnoziarnisty',
@@ -788,6 +785,7 @@ export const products: Product[] = [
       'Ściany zewnętrzne, wewnętrzne i stropy',
       'Aplikacja ręczna i mechaniczna',
       'Pod tynki ozdobne i farby',
+      'Dostępny także luzem w technice silosowej',
     ],
     usage:
       'Ściany zewnętrzne, wewnętrzne i stropy. Na silnie porowatych podłożach (cegła i pustak porowaty, beton komórkowy, beton szalowany, piaskowiec), jako tynk podkładowy pod tynki ozdobne i farby lub jako tynk naprawczy. Nie stosować w strefie cokołowej.',
@@ -801,10 +799,7 @@ export const products: Product[] = [
     image: '/photos/products/ptc-12-v2.png',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
-      { label: 'Wytrzymałość na ściskanie', value: 'CSII (>7,0 N/mm²)' },
       { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
-      { label: 'Wytrzymałość na zginanie', value: '>2,3 N/mm²' },
-      { label: 'Przyczepność do podłoża', value: '>0,99 N/mm²' },
     ],
     seoKeywords: [
       'tynk lekki',
@@ -832,13 +827,14 @@ export const products: Product[] = [
       'Krótki czas wiązania, czas pracy do 2 godzin',
       'Eliminuje efekt „bombelkowania”',
       'Aplikacja ręczna i maszynowa',
+      'Dostępny także luzem w technice silosowej',
     ],
     usage:
       'Tynkowanie ścian wewnętrznych i stropów, także na silnie porowatych podłożach: cegła i pustak porowaty, beton komórkowy, beton szalowany, piaskowiec. Sprawdza się jako tynk podkładowy pod tynki ozdobne i farby oraz jako tynk naprawczy. Do nakładania ręcznego i mechanicznego.',
     application:
       'Podłoże powinno być nośne, czyste, wolne od kurzu i tłuszczu; luźne części skuć do warstwy stabilnej. Zastosować obrzutkę wstępną POW-100, a podłoża ekstremalnie chłonne dodatkowo zagruntować gruntem tynkarskim PROFIX. Suchą mieszankę 30 kg zarobić ok. 8,5 l wody do uzyskania jednorodnej masy. Przy nakładaniu drugiej warstwy pierwszą pozostawić zatartą „na ostro”. Nie dopuszczać do zbyt szybkiego wysychania (przeciągi, nasłonecznienie, ogrzewanie pomieszczeń).',
     mixing: 'ok. 8,5 l wody na 30 kg (0,27–0,29 l/kg)',
-    consumption: 'ok. 14 kg/m² przy warstwie 10 mm',
+    consumption: 'ok. 12 kg/m² przy warstwie 10 mm',
     packaging: '30 kg',
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
@@ -847,9 +843,6 @@ export const products: Product[] = [
     extraSpecs: [
       { label: 'Uziarnienie', value: '0,1–0,4 mm' },
       { label: 'Minimalna grubość tynku', value: '10 mm' },
-      { label: 'Wytrzymałość na ściskanie', value: 'CS I / CS II · >1,8 N/mm²' },
-      { label: 'Wytrzymałość na zginanie', value: '>1,0 N/mm²' },
-      { label: 'Przyczepność do podłoża', value: '>0,3 N/mm²' },
       { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
     ],
     documents: [
@@ -885,7 +878,7 @@ export const products: Product[] = [
       },
       {
         q: 'Jakie jest zużycie tynku PTC-15?',
-        a: 'Ok. 14 kg/m² przy warstwie 10 mm. Worek 30 kg wystarcza wtedy na ok. 2 m² powierzchni. Minimalna grubość tynku to 10 mm.',
+        a: 'Ok. 12 kg/m² przy warstwie 10 mm. Worek 30 kg wystarcza wtedy na ok. 2,5 m² powierzchni. Minimalna grubość tynku to 10 mm.',
       },
       {
         q: 'Ile wody dodać do worka 30 kg PTC-15?',
@@ -1093,6 +1086,7 @@ export const products: Product[] = [
       'Duża wytrzymałość',
       'Gotowa mieszanka, wystarczy dodać wodę',
       'Drobne uziarnienie 0-4 mm',
+      'Dostępny także luzem w technice silosowej',
     ],
     usage:
       'Podkłady podłogowe na bazie cementu wewnątrz obiektów budowlanych. Mocowanie słupków i kotwień. Wykonywanie posadzek użytkowych.',
@@ -1132,6 +1126,7 @@ export const products: Product[] = [
       'Odporna na warunki atmosferyczne',
       'Do prac wewnętrznych i zewnętrznych',
       'Drobne uziarnienie 0-4 mm',
+      'Dostępny także luzem w technice silosowej',
     ],
     usage:
       'Prace konstrukcyjne, naprawcze i remontowe, podkłady podłogowe, posadzki, mury, nadproża, belki, kotwienie słupków. Stosowana wewnątrz i na zewnątrz budynków.',
@@ -1172,6 +1167,7 @@ export const products: Product[] = [
       'Odporna na warunki atmosferyczne',
       'Do prac wewnętrznych i zewnętrznych',
       'Do napraw elementów konstrukcyjnych',
+      'Dostępny także luzem w technice silosowej',
     ],
     usage:
       'Prace konstrukcyjne, naprawcze i remontowe, podkłady podłogowe, posadzki, mury, nadproża, belki, kotwienie słupków, naprawy elementów konstrukcyjnych. Stosowana wewnątrz i na zewnątrz budynków.',
@@ -1212,6 +1208,7 @@ export const products: Product[] = [
       'Odporna na warunki atmosferyczne',
       'Do prac wewnętrznych i zewnętrznych',
       'Drobne uziarnienie 0-4 mm',
+      'Dostępny także luzem w technice silosowej',
     ],
     usage:
       'Uniwersalna mieszanka do prac naprawczych. Podkłady podłogowe na bazie cementu wewnątrz obiektów budowlanych oraz prace inżynierskie. Do stosowania zarówno wewnątrz, jak i na zewnątrz budynków.',
