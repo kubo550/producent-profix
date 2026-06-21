@@ -74,6 +74,9 @@ export const products: Product[] = [
       '/photos/products/beton-kontakt-23kg.jpg',
       '/photos/products/beton-kontakt-banner.jpg',
     ],
+    documents: [
+      { label: 'Karta techniczna', href: '/dokumenty/profix-beton-kontakt-karta-techniczna.pdf' },
+    ],
     notes: [
       'Chronić przed dziećmi. Stosować rękawice i okulary ochronne.',
       'Produkt który uległ przemrożeniu nie nadaje się do użytku.',
@@ -211,6 +214,9 @@ export const products: Product[] = [
       '/photos/products/hydro-primer-12kg.jpg',
       '/photos/products/hydro-primer-17kg.jpg',
       '/photos/products/hydro-primer-banner.jpg',
+    ],
+    documents: [
+      { label: 'Karta techniczna', href: '/dokumenty/profix-hydro-primer-karta-techniczna.pdf' },
     ],
     notes: [
       'Chronić przed dziećmi. Stosować rękawice i okulary ochronne.',
@@ -1098,13 +1104,21 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
     image: '/photos/products/beton-c-16-20.png',
-    norms: ['PN-EN 206:2013'],
+    norms: ['EN 13813:2002'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C16/20 (≥ 20 MPa @ 28 dni)' },
       { label: 'Uziarnienie', value: '0-4 mm' },
       { label: 'Min. grubość warstwy', value: '10 mm' },
       { label: 'Min. czas mieszania', value: '5 min od dodania wody' },
       { label: 'Czas roboczy po zarobieniu', value: 'ok. 1 godzina' },
+    ],
+    documents: [
+      { label: 'Karta techniczna', href: '/dokumenty/profix-beton-c-16-20-karta-techniczna.pdf' },
+      {
+        label: 'Deklaracja właściwości użytkowych',
+        href: '/dokumenty/profix-beton-c-16-20-deklaracja-wlasciwosci-uzytkowych.pdf',
+      },
+      { label: 'Karta charakterystyki', href: '/dokumenty/profix-beton-c-16-20-karta-charakterystyki.pdf' },
     ],
     notes: [
       'Pielęgnacja wilgotnościowa przez 3-7 dni po wykonaniu (zwilżanie i przykrycie).',
@@ -1138,7 +1152,7 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
     image: '/photos/products/beton-c-20-25.png',
-    norms: ['PN-EN 206:2013'],
+    norms: ['EN 13813:2002'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C20/25 (≥ 25 MPa @ 28 dni)' },
       { label: 'Uziarnienie', value: '0-4 mm' },
@@ -1146,6 +1160,14 @@ export const products: Product[] = [
       { label: 'Min. czas mieszania', value: '5 min od dodania wody' },
       { label: 'Czas roboczy po zarobieniu', value: 'ok. 1 godzina' },
       { label: 'Zastosowanie', value: 'wewnątrz i na zewnątrz' },
+    ],
+    documents: [
+      { label: 'Karta techniczna', href: '/dokumenty/profix-beton-c-20-25-karta-techniczna.pdf' },
+      {
+        label: 'Deklaracja właściwości użytkowych',
+        href: '/dokumenty/profix-beton-c-20-25-deklaracja-wlasciwosci-uzytkowych.pdf',
+      },
+      { label: 'Karta charakterystyki', href: '/dokumenty/profix-beton-c-20-25-karta-charakterystyki.pdf' },
     ],
     notes: [
       'Pielęgnacja wilgotnościowa przez 3-7 dni, zwilżanie i przykrycie powierzchni.',
@@ -1179,7 +1201,7 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
     image: '/photos/products/beton-c-25-30.png',
-    norms: ['PN-EN 206:2013'],
+    norms: ['EN 13813:2002', 'EN 1504-3:2005'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C25/30 (≥ 30 MPa @ 28 dni)' },
       { label: 'Uziarnienie', value: '0-4 mm' },
@@ -1187,6 +1209,14 @@ export const products: Product[] = [
       { label: 'Min. czas mieszania', value: '5 min od dodania wody' },
       { label: 'Czas roboczy po zarobieniu', value: 'ok. 1 godzina' },
       { label: 'Zastosowanie', value: 'wewnątrz i na zewnątrz' },
+    ],
+    documents: [
+      { label: 'Karta techniczna', href: '/dokumenty/profix-beton-c-25-30-karta-techniczna.pdf' },
+      {
+        label: 'Deklaracja właściwości użytkowych',
+        href: '/dokumenty/profix-beton-c-25-30-deklaracja-wlasciwosci-uzytkowych.pdf',
+      },
+      { label: 'Karta charakterystyki', href: '/dokumenty/profix-beton-c-25-30-karta-charakterystyki.pdf' },
     ],
     notes: [
       'Pielęgnacja wilgotnościowa przez 3-7 dni po wykonaniu.',

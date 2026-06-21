@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/o-firmie', priority: 0.8, changeFreq: 'monthly' as const },
     { path: '/produkty', priority: 0.9, changeFreq: 'weekly' as const },
     { path: '/produkty/porownanie-tynkow', priority: 0.7, changeFreq: 'monthly' as const },
+    { path: '/produkty/porownanie-betonow', priority: 0.7, changeFreq: 'monthly' as const },
     { path: '/dla-fachowca', priority: 0.8, changeFreq: 'monthly' as const },
     { path: '/dla-inwestora', priority: 0.8, changeFreq: 'monthly' as const },
     { path: '/fundusze-europejskie', priority: 0.5, changeFreq: 'yearly' as const },

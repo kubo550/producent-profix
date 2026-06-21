@@ -367,7 +367,11 @@
         "title": "Partnerskie relacje",
         "description": "Doradztwo technologa, indywidualne podejście do każdego kontrahenta, otwartość na sugestie wykonawców i partnerów handlowych."
       }
-    ]
+    ],
+    "brandImage": {
+      "alt": "Linia produktów PROFIX – tynki, kleje, betony i zaprawy",
+      "caption": "Tynki · Kleje · Betony · Zaprawy – produkcja PROFIX w Krzeszowicach"
+    }
   },
   "productsPage": {
     "title": "Produkty PROFIX",

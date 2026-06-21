@@ -236,6 +236,38 @@ export default async function CategoryPage({
         </section>
       )}
 
+      {slug === 'betony' && (
+        <section className="relative pb-8">
+          <Container size="xl">
+            <Reveal>
+              <Link
+                href="/produkty/porownanie-betonow"
+                className="group flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent-soft)] p-6 transition-colors hover:border-[var(--color-accent)]"
+              >
+                <span className="flex items-center gap-3">
+                  <GitCompareArrows
+                    size={22}
+                    strokeWidth={1.75}
+                    className="flex-none text-[var(--color-accent)]"
+                  />
+                  <span className="font-medium text-[var(--color-fg)]">
+                    Nie wiesz, który beton wybrać? Porównaj C16/20, C20/25, C25/30 i C30/35
+                  </span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-accent)]">
+                  Porównanie betonów
+                  <ArrowRight
+                    size={15}
+                    strokeWidth={1.75}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                </span>
+              </Link>
+            </Reveal>
+          </Container>
+        </section>
+      )}
+
       {productList.length > 0 && (
         <section className="relative pb-24">
           <Container size="xl">

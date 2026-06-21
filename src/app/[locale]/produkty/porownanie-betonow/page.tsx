@@ -10,54 +10,60 @@ import { getProduct } from '@/content/products';
 import { routing } from '@/i18n/routing';
 import { siteConfig } from '@/content/site';
 
-const CATEGORY = 'tynki-cementowo-wapienne';
+const CATEGORY = 'betony';
 
-// Display order: hero product (PTC-15) is highlighted but the table keeps the
-// natural numeric order for scannability.
+// Display order follows the strength grade (lowest to highest) for scannability.
+// No single "hero" - the right beton is dictated by required strength class,
+// not by a flagship product.
 const COLS: ReadonlyArray<{ code: string; slug: string; hero?: boolean }> = [
-  { code: 'PTC-10', slug: 'ptc-10-tynk-wapienno-cementowy' },
-  { code: 'PTC-11', slug: 'ptc-11-tynk-cementowo-wapienny-drobnoziarnisty-lekki' },
-  { code: 'PTC-12', slug: 'ptc-12-tynk-cementowo-wapienny-lekki' },
-  { code: 'PTC-15', slug: 'ptc-15-tynk-wapienno-cementowy-super-lekki', hero: true },
+  { code: 'C16/20', slug: 'beton-c-16-20' },
+  { code: 'C20/25', slug: 'beton-c-20-25' },
+  { code: 'C25/30', slug: 'beton-c-25-30' },
+  { code: 'C30/35', slug: 'beton-c-30-35' },
 ];
 
 // Curated comparison matrix (values per column, in COLS order).
 const ROWS: Array<{ label: string; values: Array<string | boolean> }> = [
-  { label: 'Uziarnienie', values: ['0,1–0,5 mm', '0,1–0,4 mm', '0,1–0,8 mm', '0,1–0,4 mm'] },
+  { label: 'Wytrzymałość po 28 dniach', values: ['≥ 20 MPa', '≥ 25 MPa', '≥ 30 MPa', '≥ 35 MPa'] },
+  { label: 'Uziarnienie', values: ['0–4 mm', '0–4 mm', '0–4 mm', '0–4 mm'] },
+  { label: 'Wnętrza', values: [true, true, true, true] },
+  { label: 'Na zewnątrz', values: [false, true, true, true] },
+  { label: 'Elementy konstrukcyjne (nadproża, belki)', values: [false, true, true, true] },
+  { label: 'Mrozoodporny', values: [true, true, true, true] },
+  { label: 'Zużycie (warstwa 1 cm)', values: ['~20 kg/m²', '~20 kg/m²', '~20 kg/m²', '~20 kg/m²'] },
+  { label: 'Opakowanie', values: ['25 kg', '25 kg', '25 kg', '25 kg'] },
   {
-    label: 'Masa / lekkość',
-    values: ['Standard', 'Lekki (perlit)', 'Lekki (perlit)', 'Super lekki (perlit + napowietrzenie)'],
+    label: 'Norma',
+    values: [
+      'EN 13813:2002',
+      'EN 13813:2002',
+      'EN 13813:2002 + EN 1504-3:2005',
+      'EN 13813:2002 + EN 1504-3:2005',
+    ],
   },
-  { label: 'Wnętrze', values: [true, true, true, true] },
-  { label: 'Na zewnątrz', values: [false, false, true, false] },
-  { label: 'Gładkie wykończenie', values: [false, true, false, true] },
-  { label: 'Wydajność', values: ['Standard', 'Standard', 'Standard', '+ ok. 40%, tiksotropowy'] },
-  { label: 'Zużycie (warstwa 10 mm)', values: ['14 kg/m²', '12 kg/m²', '14 kg/m²', '~12 kg/m²'] },
-  { label: 'Opakowanie', values: ['30 kg', '30 kg', '30 kg', '30 kg'] },
   { label: 'Dostępny luzem (technika silosowa)', values: [true, true, true, true] },
-  { label: 'Norma', values: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004', 'PN-EN 998-1:2004', 'PN-EN 998-1:2016'] },
 ];
 
 const SCENARIOS = [
   {
-    when: 'Gładka ściana i sufit wewnątrz, mniej materiału na m²',
-    pick: 'PTC-15',
-    why: 'Drobne ziarno 0,1–0,4 mm na gładko + perlit = ok. 40% większa wydajność.',
+    when: 'Podkład podłogowy lub posadzka wewnątrz budynku',
+    pick: 'C16/20',
+    why: 'Ekonomiczna mieszanka o wytrzymałości ≥20 MPa do typowych podkładów, posadzek i kotwień wewnątrz.',
   },
   {
-    when: 'Elewacja albo ściana zewnętrzna',
-    pick: 'PTC-12',
-    why: 'Lekki tynk o wyższej wytrzymałości, dopuszczony do stosowania na zewnątrz.',
+    when: 'Prace wewnątrz i na zewnątrz, z mrozoodpornością',
+    pick: 'C20/25',
+    why: 'Uniwersalny beton ≥25 MPa, mrozoodporny i odporny na warunki atmosferyczne.',
   },
   {
-    when: 'Cienka warstwa wykończeniowa na gładko (szlichta)',
-    pick: 'PTC-11',
-    why: 'Drobnoziarnisty i lekki, łatwo zacierany na gładko jako warstwa końcowa.',
+    when: 'Naprawy i elementy pod większym obciążeniem',
+    pick: 'C25/30',
+    why: 'Wyższa klasa ≥30 MPa z dodatkową deklaracją do napraw konstrukcyjnych (EN 1504-3).',
   },
   {
-    when: 'Klasyczny, sprawdzony tynk podkładowy w dobrej cenie',
-    pick: 'PTC-10',
-    why: 'Uniwersalny tynk standardowy o sprawdzonej wytrzymałości pod tynki ozdobne i farby.',
+    when: 'Najwyższe wymagania i prace inżynierskie',
+    pick: 'C30/35',
+    why: 'Najwyższa wytrzymałość ≥35 MPa w linii betonów PROFIX, do zastosowań inżynierskich.',
   },
 ];
 
@@ -68,21 +74,21 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   return {
-    title: 'Tynki cementowo-wapienne PROFIX – porównanie PTC-10, PTC-11, PTC-12 i PTC-15',
+    title: 'Betony PROFIX – porównanie C16/20, C20/25, C25/30 i C30/35',
     description:
-      'Porównaj tynki PROFIX: PTC-10, PTC-11, PTC-12 i gładki super lekki PTC-15. Uziarnienie, lekkość, wydajność i zastosowanie – dobierz tynk prosto od producenta z Krzeszowic.',
+      'Porównaj suche mieszanki betonowe PROFIX: klasy C16/20, C20/25, C25/30 i C30/35. Wytrzymałość, zastosowanie wewnątrz i na zewnątrz oraz normy – dobierz beton prosto od producenta z Krzeszowic.',
     keywords: [
-      'porównanie tynków profix',
-      'profix ptc-15 vs ptc-12',
-      'który tynk cementowo-wapienny wybrać',
-      'PTC-10 PTC-11 PTC-12 PTC-15',
-      'tynk gładki czy lekki',
+      'porównanie betonów profix',
+      'jaki beton wybrać',
+      'beton C16/20 C20/25 C25/30 C30/35',
+      'sucha mieszanka betonowa',
+      'beton workowany klasa wytrzymałości',
     ],
-    alternates: { canonical: `/${locale}/produkty/porownanie-tynkow` },
+    alternates: { canonical: `/${locale}/produkty/porownanie-betonow` },
   };
 }
 
-export default async function PlasterComparisonPage({
+export default async function ConcreteComparisonPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -96,7 +102,7 @@ export default async function PlasterComparisonPage({
 
   const base = `${siteConfig.url}/${locale}`;
   const categoryUrl = `${base}/produkty/${CATEGORY}`;
-  const pageUrl = `${base}/produkty/porownanie-tynkow`;
+  const pageUrl = `${base}/produkty/porownanie-betonow`;
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -104,21 +110,20 @@ export default async function PlasterComparisonPage({
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: base },
       { '@type': 'ListItem', position: 2, name: 'Produkty', item: `${base}/produkty` },
-      { '@type': 'ListItem', position: 3, name: 'Tynki cementowo wapienne', item: categoryUrl },
-      { '@type': 'ListItem', position: 4, name: 'Porównanie tynków', item: pageUrl },
+      { '@type': 'ListItem', position: 3, name: 'Betony', item: categoryUrl },
+      { '@type': 'ListItem', position: 4, name: 'Porównanie betonów', item: pageUrl },
     ],
   };
 
-  // Hero product (PTC-15) listed first - it is the recommended default.
   const itemListJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Porównanie tynków cementowo-wapiennych PROFIX',
-    itemListOrder: 'https://schema.org/ItemListUnordered',
+    name: 'Porównanie betonów PROFIX',
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
     itemListElement: COLS.map((c, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      name: `${c.code} – tynk cementowo-wapienny PROFIX`,
+      name: `Beton ${c.code} – sucha mieszanka betonowa PROFIX`,
       url: `${categoryUrl}/${c.slug}`,
     })),
   };
@@ -136,12 +141,12 @@ export default async function PlasterComparisonPage({
 
       <PageHero
         eyebrow="Porównanie"
-        title="Tynki cementowo-wapienne PROFIX – który wybrać?"
-        subtitle="PTC-10, PTC-11, PTC-12 i PTC-15 – różnice w uziarnieniu, wadze, wydajności i zastosowaniu."
+        title="Betony PROFIX – który wybrać?"
+        subtitle="C16/20, C20/25, C25/30 i C30/35 – różnice w klasie wytrzymałości, zastosowaniu i normach."
       >
         <p className="text-base leading-relaxed text-fg-muted sm:text-lg">
-          Wszystkie cztery tynki produkujemy w Krzeszowicach. Poniżej porównanie parametrów i krótki
-          przewodnik, który pomoże dobrać właściwy tynk do Twojej budowy.
+          Wszystkie cztery suche mieszanki betonowe produkujemy w Krzeszowicach. Poniżej porównanie
+          parametrów i krótki przewodnik, który pomoże dobrać właściwą klasę betonu do Twojej budowy.
         </p>
       </PageHero>
 
@@ -153,7 +158,7 @@ export default async function PlasterComparisonPage({
             className="mb-8 inline-flex items-center gap-2 text-sm text-fg-muted transition-colors hover:text-[var(--color-fg)]"
           >
             <ArrowLeft size={14} strokeWidth={1.75} />
-            Tynki cementowo wapienne
+            Betony
           </Link>
 
           <div className="overflow-x-auto rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] backdrop-blur-xl">
@@ -217,8 +222,8 @@ export default async function PlasterComparisonPage({
             </table>
           </div>
           <p className="mt-3 text-xs text-fg-subtle">
-            Pełne karty techniczne i deklaracje właściwości użytkowych udostępniamy na stronach
-            poszczególnych produktów.
+            Pełne karty techniczne, deklaracje właściwości użytkowych i karty charakterystyki
+            udostępniamy na stronach poszczególnych produktów.
           </p>
         </Container>
       </section>
@@ -227,7 +232,7 @@ export default async function PlasterComparisonPage({
       <section className="section-alt relative py-16 sm:py-20">
         <Container size="xl">
           <h2 className="mb-10 font-display text-2xl font-semibold sm:text-3xl">
-            Który tynk wybrać?
+            Który beton wybrać?
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {SCENARIOS.map((s, i) => (
@@ -276,10 +281,10 @@ export default async function PlasterComparisonPage({
           <div className="flex flex-col items-start gap-4 rounded-2xl border border-[var(--color-accent)]/30 bg-[var(--color-accent-soft)] p-8 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h2 className="font-display text-xl font-semibold sm:text-2xl">
-                Nie wiesz, który tynk zamówić?
+                Nie wiesz, który beton zamówić?
               </h2>
               <p className="mt-1 text-sm text-fg-muted">
-                Doradzimy dobór do podłoża i podpowiemy najbliższego dystrybutora.
+                Doradzimy dobór klasy do obciążeń i podpowiemy najbliższego dystrybutora.
               </p>
             </div>
             <LinkButton href="/kontakt" variant="primary" size="lg" className="flex-none">

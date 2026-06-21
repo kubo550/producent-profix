@@ -444,6 +444,20 @@ export default async function ProductPage({
                 </Link>
               )}
 
+              {cat.slug === 'betony' && (
+                <Link
+                  href="/produkty/porownanie-betonow"
+                  className="group flex items-center justify-between gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-4 text-sm font-medium text-[var(--color-fg)] backdrop-blur-xl transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                >
+                  <span>Porównaj betony C16/20, C20/25, C25/30 i C30/35</span>
+                  <ArrowRight
+                    size={16}
+                    strokeWidth={1.75}
+                    className="flex-none text-[var(--color-accent)] transition-transform group-hover:translate-x-1"
+                  />
+                </Link>
+              )}
+
               <LinkButton href="/kontakt" variant="primary" size="lg" className="w-full">
                 <MessageSquare size={18} strokeWidth={1.75} />
                 {t('cta')}

@@ -2,8 +2,10 @@
 
 Otwarte pytania, niezgodności w materiałach i decyzje czekające na odpowiedź klienta. Zapisuję na bieżąco — przed launchem trzeba przejść po liście.
 
-Last update: 2026-05-15
+Last update: 2026-06-21
 
+> ✅ **Rozstrzygnięte (2026-06-21):** Norma betonów → **EN 13813:2002** (C16/20, C20/25) oraz **EN 13813:2002 + EN 1504-3:2005** (C25/30), zgodnie z podpisanymi DWU z 2025-06-14 (paczka `tmp/21-06`). Pole `norms` na stronie ujednolicone z DWU. Punkty F i 7b poniżej zamknięte. Do kart produktów C16/20, C20/25, C25/30 podpięto komplet dokumentów (karta techniczna + DWU + karta charakterystyki), a do Beton Kontakt i Hydro Primer karty techniczne. Pliki w `public/dokumenty/`.
+>
 > ✅ **Rozstrzygnięte (2026-05-15):** Adres firmy → `ul. Sienkiewicza 20, 32-065 Krzeszowice` (zaktualizowane w siteConfig, stopce, mapie, schema.org, polityce prywatności, hero, sekcji "Hala produkcyjna", metadanych SEO).
 >
 > ✅ **Rozstrzygnięte (2026-05-15):** Rok założenia → **2009** (nie 2007). Polska firma rodzinna z polskim kapitałem. Wszystkie referencje "2007" w hero/USP/footer/meta/aboutPage podmienione w PL i EN. Nowa linia technologiczna w Krzeszowicach od **2023**. Treść sekcji About + `/o-firmie` przebudowana o R&D, wewnętrzne laboratorium kontroli jakości i partnerskie relacje (dane od klienta).
@@ -14,13 +16,13 @@ Last update: 2026-05-15
 
 Wykryte przy końcowym cross-checku materiałów `tmp/www/*` vs site content. Każdy punkt to potencjalne zastrzeżenie klienta.
 
-### F. Norma betonów - niespójność między DOCX a PDF "do druku"
-- Karta produktu DOCX (wewnętrzna, 2025-06-14): `EN 13813:2002` dla C16/20 i C20/25, `EN 13813:2002 + EN 1504-3:2005` dla C25/30 (norma jastrychów)
-- Karta techniczna PDF (do druku, materiały dystrybucyjne): `PN-EN 206:2013` (norma betonu) dla wszystkich
+### F. ~~Norma betonów - niespójność między DOCX a PDF "do druku"~~ ✅ Rozstrzygnięte (2026-06-21)
+Otrzymaliśmy podpisane **Deklaracje Właściwości Użytkowych** (DWU, 2025-06-14, paczka `tmp/21-06`), które są źródłem wiążącym:
+- C16/20 → DWU nr C16/20/001/2024, **EN 13813:2002** (klasa C20/F3, A1fl)
+- C20/25 → DWU nr C20/25/001/2024, **EN 13813:2002** (klasa C25/F4, A1fl)
+- C25/30 → DWU nr C25/30/001/2024, **EN 13813:2002 + EN 1504-3:2005** (klasa C30/F4/R1, przyczepność ≥0,8 MPa, chlorki ≤0,05%)
 
-Na stronie wszystkie 3 betony mają teraz **`PN-EN 206:2013`** (zgodnie z PDF, ujednolicone). C16/20 wcześniej miał EN 13813:2002, zmieniłem na PN-EN 206:2013 dla spójności linii.
-
-→ **Pytanie:** Która norma jest faktycznie deklarowana na **etykiecie produktu** wydrukowanej na worku 25 kg? Klient może chcieć rollback do EN 13813 lub potwierdzić PN-EN 206:2013.
+Strona ujednolicona z DWU. Uwaga: marketingowa karta techniczna PDF na froncie wciąż drukuje "PN-EN 206:2013" dla C20/25 i C25/30 - **rozbieżność w dokumentach samego producenta**, do poprawienia po stronie PROFIX przy następnym druku etykiet/kart. Na stronie pokazujemy normę z DWU (wiążącą prawnie).
 
 ### G. Stare brand-namy w gruntach (z archive.org)
 Po update'cie `MaxGrunt → Hydro Primer` (zrobione), w produktach Grunty wciąż figurują **stare brand-namy** wyciągnięte z archiwum strony:
@@ -172,24 +174,23 @@ Na stronie jest 48 produktów ze stronki archiwalnej. **Pełne karty techniczne*
 
 → **Pytanie:** Czy oznaczenia serii się nie zmieniły w nowszych etykietach?
 
-### 7b. Betony - rozbieżność norm między DOCX a kartą techniczną PDF
-W materiałach klienta są dwa źródła z różnymi normami dla tych samych produktów:
+### 7b. ~~Betony - rozbieżność norm między DOCX a kartą techniczną PDF~~ ✅ Rozstrzygnięte (2026-06-21)
+Patrz punkt F powyżej. Wiążące DWU (2025-06-14) deklarują EN 13813:2002 (+ EN 1504-3:2005 dla C25/30); strona ujednolicona z DWU, dokumenty podpięte. Pozostaje rozbieżność po stronie producenta (karta techniczna PDF drukuje "PN-EN 206:2013") - do skorygowania przy następnym druku.
 
-| Produkt | Karta produktu DOCX (2025-06-14) | Karta techniczna PDF (do druku) |
-|---|---|---|
-| Beton C16/20 | EN 13813:2002 | brak PDF |
-| Beton C20/25 | EN 13813:2002 | **PN-EN 206:2013** |
-| Beton C25/30 | EN 13813:2002 + EN 1504-3:2005 | **PN-EN 206:2013** |
+Opis zastosowania na stronie pozostaje w wersji rozszerzonej (prace konstrukcyjne, naprawcze, remontowe - wewnątrz i na zewnątrz), zgodnej z kartą techniczną - **do potwierdzenia**, że to aktualny zakres zastosowań.
 
-→ **Pytanie:** Która norma jest aktualnie deklarowana na opakowaniu? PN-EN 206:2013 (beton) i EN 13813:2002 (jastrychy podłogowe) to różne specyfikacje — produkt może być klasyfikowany według obu w zależności od zastosowania, ale na etykiecie powinna być **jedna** spójna.
+### 7c. Nowe produkty wykryte na zdjęciach (paczka 21-06)
+Na zdjęciach z paczki `tmp/21-06` (IMG_7628, IMG_7635) widać dwa produkty, których **nie ma jeszcze na stronie** i do których brakuje danych technicznych. Na razie ich **nie dodaję** (decyzja z 2026-06-21) - czekam na materiały.
 
-Obecnie na stronie używamy **PN-EN 206:2013** dla C20/25 i C25/30 (zgodnie z PDF do druku) oraz **EN 13813:2002** dla C16/20 (brak PDF). Wymaga potwierdzenia + ewentualne ujednolicenie.
+- **Impregnat Waterproofing** - impregnat silikonowy z dodatkiem czynnego środka biobójczego, wiadro **10 kg** (mamy packshot `IMG_7635`). Brak: karta techniczna, DWU/atest, skład, zużycie (kg/m² lub l/m²), sposób użycia, zastosowania (elewacje? dachy? kostka?), liczba rozcieńczeń, pozostałe opakowania.
+- **PKG-1 Klej gipsowy** - worek **25 kg**, na etykiecie **3,5 kg/m²** (widoczny tylko na zdjęciu zbiorczym `IMG_7628`, brak osobnego packshotu). Brak: karta techniczna, DWU, klasa wg normy, potwierdzenie zużycia, zastosowania, packshot.
 
-Dodatkowo karta techniczna PDF zawiera **bogatszy opis zastosowania** niż karta produktu DOCX:
-- DOCX: "podkłady podłogowe wewnątrz obiektów"
-- PDF: "prace konstrukcyjne, naprawcze, remontowe - podkłady, posadzki, mury, nadproża, belki, wewnątrz i na zewnątrz"
+→ **Pytanie:** Poproszę o karty techniczne, DWU/atesty i packshoty dla obu produktów - wtedy dorobię pełne podstrony w standardzie reszty katalogu.
 
-Strona pokazuje wersję rozszerzoną (z PDF) - do potwierdzenia.
+### 7d. Beton C30/35 - brak dokumentów
+Paczka 21-06 zawiera komplet dokumentów dla C16/20, C20/25 i C25/30, ale **nie ma nic dla C30/35**. Produkt jest na stronie, ale jako jedyny z linii betonów nie ma sekcji "Do pobrania".
+
+→ **Pytanie:** Poproszę o **kartę techniczną + DWU + kartę charakterystyki** dla Beton C30/35, by ujednolicić całą linię.
 
 ### 8. Atesty PZH i CE
 Strona główna pokazuje badge "CE + PZH". Trzeba potwierdzić:

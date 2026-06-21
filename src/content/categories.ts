@@ -223,9 +223,9 @@ export const categories: Category[] = [
   {
     slug: 'betony',
     name: 'Betony',
-    short: 'Suche mieszanki betonowe C16/20, C20/25, C25/30',
+    short: 'Suche mieszanki betonowe C16/20, C20/25, C25/30 i C30/35',
     description:
-      'Gotowe suche mieszanki betonowe w trzech klasach wytrzymałości. Do podkładów podłogowych, słupków, kotwień, napraw konstrukcyjnych i posadzek. Zgodne z normami EN 13813:2002 i EN 1504-3:2005.',
+      'Gotowe suche mieszanki betonowe w czterech klasach wytrzymałości. Do podkładów podłogowych, słupków, kotwień, napraw konstrukcyjnych i posadzek. Zgodne z normami EN 13813:2002 i EN 1504-3:2005.',
     audience: ['fachowiec', 'inwestor'],
     coverImage: '/photos/products/beton-c-20-25.png',
     featuredOnHome: true,

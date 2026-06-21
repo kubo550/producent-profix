@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Container } from '@/components/ui/Container';
 import { HeroBackground } from '@/components/sections/HeroBackground';
@@ -86,6 +87,28 @@ export default async function AboutPage({
               ))}
             </Reveal>
           </div>
+        </Container>
+      </section>
+
+      {/* Brand shot - real PROFIX product range (plasters, adhesives, concretes, mortars) */}
+      <section className="relative pb-24">
+        <Container size="md">
+          <Reveal>
+            <figure className="mx-auto max-w-sm">
+              <div className="relative aspect-[9/16] overflow-hidden rounded-md border border-[var(--color-border-strong)] shadow-[var(--shadow-soft-lg)]">
+                <Image
+                  src="/photos/profix-linia-produktow.jpg"
+                  alt={t('brandImage.alt')}
+                  fill
+                  sizes="(max-width: 640px) 90vw, 384px"
+                  className="h-photo-warm object-cover"
+                />
+              </div>
+              <figcaption className="mt-4 text-center font-mono text-[11px] uppercase tracking-[0.16em] text-fg-subtle">
+                {t('brandImage.caption')}
+              </figcaption>
+            </figure>
+          </Reveal>
         </Container>
       </section>
 

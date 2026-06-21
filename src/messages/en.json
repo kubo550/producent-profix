@@ -367,7 +367,11 @@
         "title": "Partner relations",
         "description": "Technical advisor support, individual approach to every customer, openness to contractor and partner feedback."
       }
-    ]
+    ],
+    "brandImage": {
+      "alt": "PROFIX product range – plasters, adhesives, concretes and mortars",
+      "caption": "Plasters · Adhesives · Concretes · Mortars – made by PROFIX in Krzeszowice"
+    }
   },
   "productsPage": {
     "title": "PROFIX products",
