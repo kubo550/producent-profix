@@ -430,6 +430,20 @@ export default async function ProductPage({
                 </div>
               )}
 
+              {cat.slug === 'tynki-cementowo-wapienne' && (
+                <Link
+                  href="/produkty/porownanie-tynkow"
+                  className="group flex items-center justify-between gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-4 text-sm font-medium text-[var(--color-fg)] backdrop-blur-xl transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                >
+                  <span>Porównaj PTC-10, PTC-11, PTC-12 i PTC-15</span>
+                  <ArrowRight
+                    size={16}
+                    strokeWidth={1.75}
+                    className="flex-none text-[var(--color-accent)] transition-transform group-hover:translate-x-1"
+                  />
+                </Link>
+              )}
+
               <LinkButton href="/kontakt" variant="primary" size="lg" className="w-full">
                 <MessageSquare size={18} strokeWidth={1.75} />
                 {t('cta')}
