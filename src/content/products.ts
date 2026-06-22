@@ -262,6 +262,55 @@ export const products: Product[] = [
     ],
   },
 
+  // === IMPREGNATY ===
+  {
+    slug: 'impregnat-waterproofing',
+    categorySlug: 'impregnaty',
+    name: 'Impregnat Waterproofing',
+    tagline: 'Silikonowy impregnat hydrofobizujący do elewacji, z dodatkiem biobójczym',
+    highlight: 'Elewacje · hydrofobizacja · efekt perlenia',
+    metaDescription:
+      'Silikonowy impregnat hydrofobizujący do elewacji PROFIX z dodatkiem biobójczym. Efekt perlenia i fasady samoczyszczącej, ochrona przed grzybami, mchem i glonami. Producent z Krzeszowic.',
+    description:
+      'Ekologiczny, bezrozpuszczalnikowy impregnat silikonowy z dodatkiem czynnego środka biobójczego, przeznaczony do odnowy i zabezpieczenia elewacji silikatowych, akrylowych, mineralnych i betonowych. Wnika w głąb powierzchni, chroni przed nasiąkaniem wodą (efekt perlenia), zwiększa odporność na mróz i warunki atmosferyczne, zachowując przy tym paroprzepuszczalność. Tworzy powłokę, na której nie osiadają zabrudzenia, daje efekt fasady samoczyszczącej się przy opadach i skutecznie zabezpiecza przed porostem mchów, glonów i grzybów. Wyciąga głębię koloru i pozwala dłużej utrzymać barwę elewacji bez blaknięcia.',
+    features: [
+      'Hydrofobowy, efekt perlenia',
+      'Z dodatkiem biobójczym (ochrona przed grzybami, mchem, glonami)',
+      'Efekt fasady samoczyszczącej się',
+      'Paroprzepuszczalny',
+      'Bezrozpuszczalnikowy, łagodny zapach',
+      'Gotowy do użycia',
+    ],
+    usage:
+      'Ochrona i renowacja elewacji silikatowych, akrylowych, mineralnych i betonowych: cegła okładzinowa, tynk cementowy, tuf, gładź cementowa, kamień naturalny. Do elewacji świeżo wykonanych (po ok. 48 h) oraz renowacji starszych fasad. Wewnątrz i na zewnątrz.',
+    application:
+      'Produkt gotowy do użycia. Podłoże powinno być suche, stabilne, odtłuszczone i oczyszczone z kurzu, brudu oraz pleśni. Nanosić pędzlem i wcierać, dokładnie rozprowadzając do uzyskania efektu mokrego podłoża; zacieki rozprowadzić. Pełne wyschnięcie po ok. 24 h. Stosować w temperaturze od +5°C do +25°C, unikać intensywnego słońca, wiatru, mgły, opadów i przymrozków. Zalecane stosowanie siatek ochronnych. Orientacyjne zużycie zależnie od podłoża: cegła okładzinowa 0,50–0,75, tynk cementowy 0,50–0,80, tuf 0,50–1,00, gładź cementowa 0,20–0,40, kamień naturalny 0,20–0,50 kg/m².',
+    consumption: 'ok. 0,20–1,00 kg/m² (zależnie od rodzaju i chłonności podłoża)',
+    packaging: '10 kg / 14 kg',
+    tempRange: '+5°C / +25°C',
+    shelfLife: '12 miesięcy w oryginalnym opakowaniu',
+    image: '/photos/products/impregnat-waterproofing.jpg',
+    documents: [
+      {
+        label: 'Karta techniczna',
+        href: '/dokumenty/profix-impregnat-waterproofing-karta-techniczna.pdf',
+      },
+    ],
+    notes: [
+      'Chronić przed dziećmi. Stosować rękawice i okulary ochronne.',
+      'Produkt, który uległ przemrożeniu nie nadaje się do użytku.',
+    ],
+    seoKeywords: [
+      'impregnat do elewacji',
+      'impregnat silikonowy',
+      'impregnat hydrofobowy',
+      'impregnat waterproofing',
+      'hydrofobizacja elewacji',
+      'impregnat do fasady',
+      'impregnat z biocydem',
+    ],
+  },
+
   // === FARBY WEWNĘTRZNE ===
   {
     slug: 'farba-wewnetrzna-lateksowa',
@@ -633,11 +682,13 @@ export const products: Product[] = [
   // (Beton B-20 przeniesiony do nowej kategorii 'betony' jako beton-c-16-20)
   {
     slug: 'zaprawa-murarska',
-    categorySlug: 'inne-produkty',
+    categorySlug: 'zaprawy-murarskie',
     name: 'M-10 Zaprawa murarska',
     brand: 'M-10',
     tagline: 'Cementowo-wapienna zaprawa klasy M10 do ścian nośnych',
     highlight: 'Mury nośne · klasa M10 · 0,1–0,8 mm',
+    metaDescription:
+      'Zaprawa murarska M-10 cementowo-wapienna, klasa M10 (≥10 MPa), do ścian nośnych, słupów i ścian działowych. Zgodna z PN-EN 998-2:2016. Prosto od producenta z Krzeszowic.',
     description:
       'Sucha mieszanka zaprawy murarskiej na bazie cementu portlandzkiego, wapna i piasku kwarcowego o uziarnieniu 0,1–0,8 mm, z dodatkami uplastyczniającymi. Zaprawa ogólnego przeznaczenia (GP) klasy M10 do murowania ścian nośnych, słupów i ścian działowych ze wszystkich powszechnie stosowanych cegieł i bloczków. Po 28 dniach uzyskuje wytrzymałość ≥ 10 MPa. Do stosowania wewnątrz i na zewnątrz budynków.',
     features: [

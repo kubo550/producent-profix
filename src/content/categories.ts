@@ -153,6 +153,7 @@ export const categories: Category[] = [
       'Kleje do mocowania płyt styropianowych i wełny mineralnej oraz zaprawy do zatapiania siatki zbrojącej. Stosowane w systemach ETICS.',
     audience: ['fachowiec'],
     coverImage: '/photos/workers-team.jpg',
+    live: true,
     seoKeywords: [
       'kleje do dociepleń',
       'system dociepleń',
@@ -171,6 +172,7 @@ export const categories: Category[] = [
     audience: ['fachowiec', 'inwestor'],
     featuredOnHome: true,
     coverImage: '/photos/products/beton-kontakt-15kg.jpg',
+    live: true,
     seoKeywords: [
       'grunt tynkarski',
       'grunt szczepny',
@@ -183,6 +185,24 @@ export const categories: Category[] = [
       'podkłady gruntujące',
       'grunt głęboko penetrujący',
       'grunt pod farby',
+    ],
+  },
+  {
+    slug: 'impregnaty',
+    name: 'Impregnaty',
+    short: 'Silikonowy impregnat hydrofobizujący do elewacji',
+    description:
+      'Impregnaty silikonowe do ochrony i renowacji elewacji. Hydrofobizują powierzchnię (efekt perlenia), chronią przed nasiąkaniem, zabrudzeniami i porostami oraz wydłużają trwałość fasady, zachowując jej paroprzepuszczalność.',
+    audience: ['fachowiec', 'inwestor'],
+    coverImage: '/photos/products/impregnat-waterproofing.jpg',
+    live: true,
+    seoKeywords: [
+      'impregnat do elewacji',
+      'impregnat silikonowy',
+      'impregnat hydrofobowy',
+      'hydrofobizacja elewacji',
+      'impregnat do fasady',
+      'impregnat z biocydem',
     ],
   },
   {
@@ -219,6 +239,7 @@ export const categories: Category[] = [
       'Kleje do gresu, terakoty, glazury oraz płytek wielkoformatowych. Wewnątrz i na zewnątrz, na typowe i trudne podłoża.',
     audience: ['fachowiec', 'inwestor'],
     coverImage: '/photos/products/cat-kleje.jpg',
+    live: true,
   },
   {
     slug: 'betony',
@@ -238,6 +259,24 @@ export const categories: Category[] = [
       'beton C25/30',
       'beton workowany',
       'cement',
+    ],
+  },
+  {
+    slug: 'zaprawy-murarskie',
+    name: 'Zaprawy murarskie',
+    short: 'Zaprawa murarska cementowo-wapienna klasy M10',
+    description:
+      'Sucha zaprawa murarska cementowo-wapienna klasy M10 do murowania ścian nośnych, działowych, słupów i filarów ze wszystkich powszechnie stosowanych cegieł i bloczków. Do stosowania wewnątrz i na zewnątrz. Zgodna z normą PN-EN 998-2:2016.',
+    audience: ['fachowiec', 'inwestor'],
+    coverImage: '/photos/materials-pallets.jpg',
+    live: true,
+    seoKeywords: [
+      'zaprawa murarska',
+      'zaprawy murarskie',
+      'zaprawa murarska M10',
+      'zaprawa cementowo-wapienna',
+      'zaprawa do murowania ścian nośnych',
+      'sucha zaprawa murarska',
     ],
   },
   {
