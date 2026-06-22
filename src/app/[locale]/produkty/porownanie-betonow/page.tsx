@@ -12,9 +12,7 @@ import { siteConfig } from '@/content/site';
 
 const CATEGORY = 'betony';
 
-// Display order follows the strength grade (lowest to highest) for scannability.
-// No single "hero" - the right beton is dictated by required strength class,
-// not by a flagship product.
+// Ordered by strength grade; no hero - choice depends on required class.
 const COLS: ReadonlyArray<{ code: string; slug: string; hero?: boolean }> = [
   { code: 'C16/20', slug: 'beton-c-16-20' },
   { code: 'C20/25', slug: 'beton-c-20-25' },
@@ -22,7 +20,6 @@ const COLS: ReadonlyArray<{ code: string; slug: string; hero?: boolean }> = [
   { code: 'C30/35', slug: 'beton-c-30-35' },
 ];
 
-// Curated comparison matrix (values per column, in COLS order).
 const ROWS: Array<{ label: string; values: Array<string | boolean> }> = [
   { label: 'Wytrzymałość po 28 dniach', values: ['≥ 20 MPa', '≥ 25 MPa', '≥ 30 MPa', '≥ 35 MPa'] },
   { label: 'Uziarnienie', values: ['0–4 mm', '0–4 mm', '0–4 mm', '0–4 mm'] },

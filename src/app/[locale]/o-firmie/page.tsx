@@ -90,7 +90,7 @@ export default async function AboutPage({
         </Container>
       </section>
 
-      {/* Brand shot - real PROFIX product range (plasters, adhesives, concretes, mortars) */}
+      {/* Brand shot */}
       <section className="relative pb-24">
         <Container size="md">
           <Reveal>

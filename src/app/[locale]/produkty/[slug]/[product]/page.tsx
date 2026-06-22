@@ -66,38 +66,7 @@ export default async function ProductPage({
   const t = await getTranslations('productPage');
 
   const productUrl = `${siteConfig.url}/${locale}/produkty/${cat.slug}/${p.slug}`;
-  // Rich product attributes (specs + norms) as additionalProperty - gives Google
-  // structured signals the reseller's page lacks entirely.
-  const productProperties = [
-    ...(p.extraSpecs ?? []).map((s) => ({ '@type': 'PropertyValue', name: s.label, value: s.value })),
-    ...(p.consumption ? [{ '@type': 'PropertyValue', name: 'Zużycie', value: p.consumption }] : []),
-    ...(p.packaging ? [{ '@type': 'PropertyValue', name: 'Opakowanie', value: p.packaging }] : []),
-    ...(p.norms ?? []).map((n) => ({ '@type': 'PropertyValue', name: 'Norma', value: n })),
-  ];
-  const productJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: p.name,
-    description: p.description,
-    brand: { '@type': 'Brand', name: 'PROFIX' },
-    manufacturer: { '@id': `${siteConfig.url}#org` },
-    ...(p.brand ? { mpn: p.brand, sku: p.brand } : {}),
-    category: cat.name,
-    url: productUrl,
-    ...(p.image ? { image: `${siteConfig.url}${p.image}` } : {}),
-    ...(productProperties.length > 0 ? { additionalProperty: productProperties } : {}),
-    // Price-less offer: B2B product with no public price. Signals availability +
-    // manufacturer as seller, which Google/AI accept and which lifts the Product
-    // out of the "no offer/review/rating" no-rich-result state.
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-      businessFunction: 'http://purl.org/goodrelations/v1#Sell',
-      seller: { '@id': `${siteConfig.url}#org` },
-      areaServed: { '@type': 'Country', name: 'Poland' },
-      url: productUrl,
-    },
-  };
+  // No Product/Offer JSON-LD: B2B without prices/ratings can't pass Google's Product validation. FAQ + breadcrumb only.
 
   // FAQ structured data - eligible for the FAQ rich result and captures
   // "People also ask" long-tail queries (drying time, consumption, etc.).
@@ -154,10 +123,6 @@ export default async function ProductPage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
