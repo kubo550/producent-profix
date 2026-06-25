@@ -412,6 +412,7 @@
     },
     "specs": {
       "packaging": "Opakowanie",
+      "pallet": "Paleta",
       "consumption": "Zużycie",
       "mixing": "Mieszanie",
       "temperature": "Temp. aplikacji",

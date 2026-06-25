@@ -7,6 +7,7 @@ import {
   Check,
   MessageSquare,
   Package,
+  Layers,
   Thermometer,
   Clock,
   Droplets,
@@ -106,6 +107,7 @@ export default async function ProductPage({
 
   const specRows: Array<{ icon: React.ReactNode; label: string; value: string }> = [];
   if (p.packaging) specRows.push({ icon: <Package size={16} strokeWidth={1.75} />, label: t('specs.packaging'), value: p.packaging });
+  if (p.pallet) specRows.push({ icon: <Layers size={16} strokeWidth={1.75} />, label: t('specs.pallet'), value: p.pallet });
   if (p.consumption) specRows.push({ icon: <Droplets size={16} strokeWidth={1.75} />, label: t('specs.consumption'), value: p.consumption });
   if (p.mixing) specRows.push({ icon: <Brush size={16} strokeWidth={1.75} />, label: t('specs.mixing'), value: p.mixing });
   if (p.tempRange) specRows.push({ icon: <Thermometer size={16} strokeWidth={1.75} />, label: t('specs.temperature'), value: p.tempRange });

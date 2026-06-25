@@ -268,7 +268,7 @@ export const categories: Category[] = [
     description:
       'Sucha zaprawa murarska cementowo-wapienna klasy M10 do murowania ścian nośnych, działowych, słupów i filarów ze wszystkich powszechnie stosowanych cegieł i bloczków. Do stosowania wewnątrz i na zewnątrz. Zgodna z normą PN-EN 998-2:2016.',
     audience: ['fachowiec', 'inwestor'],
-    coverImage: '/photos/materials-pallets.jpg',
+    coverImage: '/photos/products/m-10.png',
     live: true,
     seoKeywords: [
       'zaprawa murarska',

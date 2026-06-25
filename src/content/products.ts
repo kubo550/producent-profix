@@ -14,6 +14,8 @@ export type Product = {
   mixing?: string;
   consumption?: string;
   packaging?: string;
+  /** Quantity per pallet, e.g. "42 szt. (1260 kg)". Shown in the spec sidebar. */
+  pallet?: string;
   tempRange?: string;
   shelfLife?: string;
   notes?: string[];
@@ -66,6 +68,7 @@ export const products: Product[] = [
       'Podłoże musi być czyste, suche i wolne od substancji obniżających przyczepność (kurz, brud, wapno, olej, tłuszcz, wosk, stare farby). Nanosić pędzlem, wałkiem lub pistoletem. Unikać opadów i silnego nasłonecznienia. Czas schnięcia ok. 2 godzin.',
     consumption: 'ok. 0,25 kg/m² (zależnie od chłonności podłoża)',
     packaging: '15 kg / 23 kg',
+    pallet: '15 kg: 27 szt., 23 kg: 24 szt.',
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym opakowaniu',
     image: '/photos/products/beton-kontakt-15kg.jpg',
@@ -207,6 +210,7 @@ export const products: Product[] = [
     mixing: 'Rozcieńczyć z czystą wodą w stosunku 1:5 (lub dobrać do chłonności podłoża)',
     consumption: 'ok. 0,2 kg/m² gotowej cieczy',
     packaging: '12 kg / 17 kg',
+    pallet: '12 kg: 27 szt., 17 kg: 24 szt.',
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym opakowaniu',
     image: '/photos/products/hydro-primer-12kg.jpg',
@@ -437,6 +441,7 @@ export const products: Product[] = [
     categorySlug: 'kleje',
     name: 'PKT-1 Klej do glazury i terakoty Standard',
     brand: 'PKT-1',
+    image: '/photos/products/pkt-1.png',
     tagline: 'Mrozoodporny klej cementowy do typowych zastosowań',
     description:
       'Sucha mieszanka klejowa na bazie cementu z wypełniaczami mineralnymi i dodatkami modyfikującymi przyczepność. Klej cementowy klasy C1 do mocowania okładzin ceramicznych w technice cienkowarstwowej.',
@@ -454,6 +459,7 @@ export const products: Product[] = [
     categorySlug: 'kleje',
     name: 'PKT-2 Klej do glazury i terakoty Elastic',
     brand: 'PKT-2',
+    image: '/photos/products/pkt-2.png',
     tagline: 'Półelastyczny klej pod obciążenia mechaniczne i termiczne',
     description:
       'Sucha mieszanka cementowa z dodatkami modyfikującymi elastyczność. Półelastyczny, mrozoodporny i wodoodporny, zalecany pod podłoża obciążone mechanicznie i termicznie, w tym ogrzewanie podłogowe.',
@@ -514,6 +520,7 @@ export const products: Product[] = [
     categorySlug: 'zaprawy-klejace-do-systemow-docieplen',
     name: 'PK-200 Klej do wełny',
     brand: 'PK-200',
+    image: '/photos/products/pk-200.png',
     tagline: 'Uniwersalny klej do styropianu i wełny mineralnej',
     description:
       'Zaprawa klejowa do przyklejania płyt styropianowych oraz wełny mineralnej w bezspoinowych systemach ociepleń ścian zewnętrznych metodą lekką-mokrą. Pasuje do nowych obiektów i renowacji.',
@@ -529,6 +536,7 @@ export const products: Product[] = [
     categorySlug: 'zaprawy-klejace-do-systemow-docieplen',
     name: 'PK-201 Klej biały do siatki',
     brand: 'PK-201',
+    image: '/photos/products/pk-201.png',
     tagline: 'Biała zaprawa klejowo-szpachlowa do całego cyklu ETICS',
     description:
       'Biała zaprawa klejowo-szpachlowa do przyklejania płyt styropianowych, wełny mineralnej oraz zatapiania siatki w bezspoinowych systemach ociepleń. Jasny kolor ułatwia kontrolę grubości warstwy i podkład pod jasne tynki.',
@@ -685,6 +693,7 @@ export const products: Product[] = [
     categorySlug: 'zaprawy-murarskie',
     name: 'M-10 Zaprawa murarska',
     brand: 'M-10',
+    image: '/photos/products/m-10.png',
     tagline: 'Cementowo-wapienna zaprawa klasy M10 do ścian nośnych',
     highlight: 'Mury nośne · klasa M10 · 0,1–0,8 mm',
     metaDescription:
@@ -704,6 +713,7 @@ export const products: Product[] = [
     application:
       'Cegły i bloczki powinny być czyste i nośne. Suchą mieszankę 25 kg zarobić ok. 3,4 l czystej wody i mieszać 2–3 minuty mieszadłem mechanicznym lub w betoniarce do uzyskania jednorodnej konsystencji. Zaprawę wyrobić w ciągu ok. 1 godziny. Nie prowadzić prac na przemrożonym podłożu ani przy zagrożeniu przymrozkami.',
     mixing: 'ok. 3,4 l wody na worek 25 kg (0,13–0,14 l/kg)',
+    pallet: '48 szt. (1200 kg)',
     consumption: 'zależne od formatu cegieł/bloczków i grubości spoiny',
     packaging: '25 kg',
     tempRange: '+5°C / +25°C',
@@ -762,6 +772,14 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '12 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
     image: '/photos/products/pow-100-v2.png',
+    documents: [
+      { label: 'Karta techniczna', href: '/dokumenty/profix-pow-100-karta-techniczna.pdf' },
+      {
+        label: 'Deklaracja właściwości użytkowych',
+        href: '/dokumenty/profix-pow-100-deklaracja-wlasciwosci-uzytkowych.pdf',
+      },
+    ],
+    pallet: '42 szt. (1260 kg)',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
       { label: 'Absorpcja wody', value: 'W2' },
@@ -803,6 +821,16 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
     image: '/photos/products/ptc-10-v2.png',
+    documents: [
+      { label: 'Karta techniczna', href: '/dokumenty/profix-ptc-10-karta-techniczna.pdf' },
+      {
+        label: 'Deklaracja właściwości użytkowych',
+        href: '/dokumenty/profix-ptc-10-deklaracja-wlasciwosci-uzytkowych.pdf',
+      },
+      { label: 'Karta charakterystyki', href: '/dokumenty/profix-ptc-10-karta-charakterystyki.pdf' },
+      { label: 'Karta produktu', href: '/dokumenty/profix-ptc-10-karta-produktu.pdf' },
+    ],
+    pallet: '42 szt. (1260 kg)',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
       { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
@@ -845,6 +873,10 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
     image: '/photos/products/ptc-11-v2.png',
+    documents: [
+      { label: 'Karta techniczna', href: '/dokumenty/profix-ptc-11-karta-techniczna.pdf' },
+    ],
+    pallet: '42 szt. (1260 kg)',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
       { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
@@ -887,6 +919,10 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
     image: '/photos/products/ptc-12-v2.png',
+    documents: [
+      { label: 'Karta techniczna', href: '/dokumenty/profix-ptc-12-karta-techniczna.pdf' },
+    ],
+    pallet: '42 szt. (1260 kg)',
     norms: ['PN-EN 998-1:2004', 'PN-EN 998-1:2004/AC:2006'],
     extraSpecs: [
       { label: 'Absorpcja wody (kapilarna)', value: 'W2' },
@@ -929,6 +965,7 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w oryginalnym, szczelnie zamkniętym opakowaniu',
     image: '/photos/products/ptc-15-v2.png',
+    pallet: '42 szt. (1260 kg)',
     norms: ['PN-EN 998-1:2016'],
     extraSpecs: [
       { label: 'Uziarnienie', value: '0,1–0,4 mm' },
@@ -1188,6 +1225,7 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
     image: '/photos/products/beton-c-16-20.png',
+    pallet: '48 szt. (1200 kg)',
     norms: ['EN 13813:2002'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C16/20 (≥ 20 MPa @ 28 dni)' },
@@ -1236,6 +1274,7 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
     image: '/photos/products/beton-c-20-25.png',
+    pallet: '48 szt. (1200 kg)',
     norms: ['EN 13813:2002'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C20/25 (≥ 25 MPa @ 28 dni)' },
@@ -1285,6 +1324,7 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
     image: '/photos/products/beton-c-25-30.png',
+    pallet: '48 szt. (1200 kg)',
     norms: ['EN 13813:2002', 'EN 1504-3:2005'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C25/30 (≥ 30 MPa @ 28 dni)' },
@@ -1334,6 +1374,7 @@ export const products: Product[] = [
     tempRange: '+5°C / +25°C',
     shelfLife: '6 miesięcy w szczelnie zamkniętym, oryginalnym opakowaniu',
     image: '/photos/products/beton-c-30-35.png',
+    pallet: '48 szt. (1200 kg)',
     norms: ['EN 13813:2002', 'EN 1504-3:2005'],
     extraSpecs: [
       { label: 'Klasa wytrzymałości', value: 'C30/35 (≥ 35 MPa @ 28 dni)' },

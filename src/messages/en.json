@@ -412,6 +412,7 @@
     },
     "specs": {
       "packaging": "Packaging",
+      "pallet": "Pallet",
       "consumption": "Consumption",
       "mixing": "Mixing",
       "temperature": "Application temp.",
