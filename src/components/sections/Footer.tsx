@@ -19,8 +19,8 @@ export async function Footer() {
   ];
 
   const products = [
-    { href: '/dla-fachowca' as const, key: 'professional', disabled: true },
-    { href: '/dla-inwestora' as const, key: 'investor', disabled: true },
+    { href: '/produkty' as const, key: 'products' },
+    { href: '/transport' as const, key: 'transport' },
   ];
 
   return (
@@ -108,7 +108,7 @@ export async function Footer() {
 
           <FooterCol title={t('sections.products')}>
             {products.map((l) => (
-              <FooterLink key={l.key} href={l.href} disabled={l.disabled}>
+              <FooterLink key={l.key} href={l.href}>
                 {t(`links.${l.key}`)}
               </FooterLink>
             ))}
@@ -159,6 +159,7 @@ function FooterLink({
   href:
     | '/o-firmie'
     | '/produkty'
+    | '/transport'
     | '/dla-fachowca'
     | '/dla-inwestora'
     | '/fundusze-europejskie'

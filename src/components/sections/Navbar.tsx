@@ -64,8 +64,7 @@ type NavLink = {
 const navLinks: readonly NavLink[] = [
   { href: '/o-firmie', key: 'about' },
   { href: '/produkty', key: 'products', hasMegaMenu: true },
-  { href: '/dla-fachowca', key: 'professional', disabled: true },
-  { href: '/dla-inwestora', key: 'investor', disabled: true },
+  { href: '/transport', key: 'transport' },
   { href: '/fundusze-europejskie', key: 'funds' },
   { href: '/kontakt', key: 'contact' },
 ] as const;
@@ -153,7 +152,7 @@ export function Navbar() {
   // the transparent navbar sits over a dark surface - use the white/red logo there.
   const heroDark = (() => {
     if (scrolled) return false;
-    if (pathname === '/' || pathname === '/o-firmie') return true;
+    if (pathname === '/' || pathname === '/o-firmie' || pathname === '/transport') return true;
     const m = pathname.match(/^\/produkty\/([^/]+)\/?$/);
     return m ? Boolean(getCategory(m[1])?.bgVideo) : false;
   })();
@@ -172,12 +171,16 @@ export function Navbar() {
             'flex items-center justify-between gap-6 rounded-full border px-4 py-2 transition-all duration-300 sm:px-6',
             scrolled
               ? 'border-[var(--color-border-strong)] shadow-[0_18px_50px_-20px_rgba(0,0,0,0.45)] backdrop-blur-2xl'
-              : 'border-[var(--color-border)] backdrop-blur-md'
+              : heroDark
+                ? 'border-white/15 backdrop-blur-md'
+                : 'border-[var(--color-border)] backdrop-blur-md'
           )}
           style={{
             backgroundColor: scrolled
               ? 'color-mix(in srgb, var(--color-bg) 88%, transparent)'
-              : 'color-mix(in srgb, var(--color-bg) 35%, transparent)',
+              : heroDark
+                ? 'color-mix(in srgb, #0a0c0f 45%, transparent)'
+                : 'color-mix(in srgb, var(--color-bg) 35%, transparent)',
           }}
         >
           <Link href="/" aria-label={siteConfig.name} className="group flex items-center">
@@ -241,7 +244,9 @@ export function Navbar() {
                         'inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm transition-colors',
                         active || megaOpen
                           ? 'bg-[var(--color-accent-soft)] font-medium text-[var(--color-accent)]'
-                          : 'text-fg-muted hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]'
+                          : heroDark
+                            ? 'text-white/85 hover:bg-white/10 hover:text-white'
+                            : 'text-fg-muted hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]'
                       )}
                     >
                       {t(link.key)}
@@ -266,7 +271,9 @@ export function Navbar() {
                     'relative rounded-full px-3 py-2 text-sm transition-colors',
                     active
                       ? 'bg-[var(--color-accent-soft)] font-medium text-[var(--color-accent)]'
-                      : 'text-fg-muted hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]'
+                      : heroDark
+                        ? 'text-white/85 hover:bg-white/10 hover:text-white'
+                        : 'text-fg-muted hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]'
                   )}
                 >
                   {t(link.key)}
@@ -278,7 +285,10 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <a
               href={`tel:${siteConfig.phone}`}
-              className="hidden items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-fg-muted transition-colors hover:text-[var(--color-fg)] md:inline-flex"
+              className={cn(
+                'hidden items-center gap-2 rounded-full px-3 py-2 text-sm font-medium transition-colors md:inline-flex',
+                heroDark ? 'text-white/85 hover:text-white' : 'text-fg-muted hover:text-[var(--color-fg)]'
+              )}
               aria-label={tCommon('phone')}
             >
               <Phone size={14} strokeWidth={1.75} />

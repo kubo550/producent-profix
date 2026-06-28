@@ -200,6 +200,79 @@
       }
     ]
   },
+  "transportPage": {
+    "meta": {
+      "title": "Transport i logistyka – flota PROFIX Krzeszowice",
+      "description": "Flota transportowa PROFIX: HDS z samorozładunkiem i cysterny do przewozu materiałów luzem w technice silosowej. Transport krajowy i międzynarodowy, dostępność 24/7."
+    },
+    "hero": {
+      "eyebrow": "Transport",
+      "title": "Flota transportowa PROFIX",
+      "lead": "Kompleksowa logistyka i transport krajowy oraz międzynarodowy. Terminowość, bezpieczeństwo i pełna niezależność logistyczna."
+    },
+    "intro": {
+      "body": [
+        "Szukasz niezawodnego partnera w transporcie krajowym i międzynarodowym? Flota transportowa PROFIX Krzeszowice to gwarancja terminowości, bezpieczeństwa i pełnej niezależności logistycznej.",
+        "Obsługujemy zlecenia budowlane, przemysłowe oraz dostawcze na terenie regionu, całego kraju oraz Unii Europejskiej. Nasz zespół to wykwalifikowani kierowcy i operatorzy żurawi z pełnymi uprawnieniami."
+      ],
+      "certs": [
+        "Certyfikat Kompetencji Zawodowych",
+        "Licencje transportowe",
+        "Ubezpieczenie OC Przewoźnika",
+        "Uprawnieni operatorzy HDS"
+      ]
+    },
+    "hds": {
+      "eyebrow": "HDS",
+      "title": "Transport i samorozładunek",
+      "lead": "Nowoczesne samochody ciężarowe z hydraulicznymi dźwigami samochodowymi (HDS) i pojemnymi skrzyniami ładunkowymi. Przewozimy materiały budowlane, ładunki paletowe, kontenery, maszyny oraz ciężkie konstrukcje stalowe i betonowe.",
+      "items": [
+        { "title": "Pełna samowystarczalność", "description": "Ładujemy i rozładowujemy towar bez angażowania wózków widłowych czy dźwigów na placu budowy." },
+        { "title": "Precyzja w każdych warunkach", "description": "Sprawnie operujemy ładunkiem na wysokościach i w trudno dostępnych miejscach." },
+        { "title": "Transport wielotonowy", "description": "Wysoka ładowność zestawów (od 26 do 40 ton) optymalizuje koszty każdego przewozu." }
+      ]
+    },
+    "cystern": {
+      "eyebrow": "Cysterny",
+      "title": "Transport materiałów luzem",
+      "lead": "Specjalizujemy się w bezpiecznym przewozie komponentów produkcyjnych i wyrobów gotowych w technice silosowej. Nowoczesne cysterny gwarantują najwyższe standardy jakościowe przewożonych surowców.",
+      "items": [
+        { "title": "Rygorystyczne normy", "description": "Konstrukcja pojazdów spełnia surowe wymagania BHP oraz TDT." },
+        { "title": "Szybki rozładunek pneumatyczny", "description": "Wydajne kompresory pozwalają na błyskawiczne i czyste przetaczanie surowców do silosów docelowych." },
+        { "title": "Kontrola jakości", "description": "Czyste zbiorniki gwarantują optymalne warunki przewozu i pełną powtarzalność produktu." },
+        { "title": "Doświadczona kadra", "description": "Wszyscy kierowcy mają specjalistyczne uprawnienia do obsługi przewozów cysternowych." }
+      ]
+    },
+    "advantages": {
+      "title": "Dlaczego PROFIX?",
+      "items": [
+        { "title": "Dostępność 24/7/365", "description": "Pracujemy całą dobę, 7 dni w tygodniu. Eliminujemy ryzyko opóźnień i kosztownych przestojów." },
+        { "title": "Szybki czas reakcji", "description": "Działamy elastycznie i natychmiast odpowiadamy na potrzeby klientów." },
+        { "title": "Optymalizacja kosztów", "description": "Nowoczesny sprzęt i optymalne planowanie tras to realne oszczędności." },
+        { "title": "Bezpieczeństwo i pewność", "description": "Regularnie serwisowana flota i tysiące kilometrów miesięcznie – zamówienie dotrze bezpiecznie i na czas." }
+      ]
+    },
+    "gallery": {
+      "title": "Nasza flota w obiektywie",
+      "lead": "Cysterny silosowe, zestawy z HDS i dostawy prosto na budowę – ciężarówki PROFIX w trasie i w pracy.",
+      "prev": "Poprzednie zdjęcie",
+      "next": "Następne zdjęcie",
+      "captions": [
+        "Niebieska cysterna PROFIX w trasie wśród pól",
+        "Załadunek towaru na zestaw PROFIX wózkiem widłowym",
+        "Cysterna silosowa PROFIX w trasie krajowej",
+        "Dostawa materiałów prosto na osiedle",
+        "Cysterna na stacji załadunku materiałów sypkich",
+        "Zestaw z dźwigiem HDS i długim ładunkiem"
+      ]
+    },
+    "cta": {
+      "title": "Potrzebujesz wyceny transportu?",
+      "body": "Przygotujemy ofertę dopasowaną do specyfiki Twojego zlecenia. Firmie PROFIX zaufały już tysiące polskich firm budowlanych – wybierasz najwyższy standard usług i wspierasz rodzimą gospodarkę.",
+      "button": "Zapytaj o wycenę",
+      "contactLabel": "Kontakt bezpośredni"
+    }
+  },
   "funds": {
     "eyebrow": "Fundusze Europejskie",
     "title": "Rozwój wspierany dotacjami UE",
@@ -303,6 +376,7 @@
     "links": {
       "about": "O firmie",
       "products": "Wszystkie produkty",
+      "transport": "Transport",
       "professional": "Dla fachowca",
       "investor": "Dla inwestora",
       "funds": "Fundusze Europejskie",

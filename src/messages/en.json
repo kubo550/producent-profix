@@ -200,6 +200,79 @@
       }
     ]
   },
+  "transportPage": {
+    "meta": {
+      "title": "Transport and logistics – PROFIX fleet, Krzeszowice",
+      "description": "PROFIX transport fleet: HDS trucks with self-unloading and tankers for bulk material delivery via silo technology. Domestic and international transport, 24/7 availability."
+    },
+    "hero": {
+      "eyebrow": "Transport",
+      "title": "PROFIX transport fleet",
+      "lead": "Comprehensive domestic and international logistics and transport. Timeliness, safety and full logistical independence."
+    },
+    "intro": {
+      "body": [
+        "Looking for a reliable partner for domestic and international transport? The PROFIX Krzeszowice transport fleet guarantees timeliness, safety and full logistical independence.",
+        "We handle construction, industrial and supply orders across the region, the whole country and the European Union. Our team consists of qualified drivers and crane operators with full certifications."
+      ],
+      "certs": [
+        "Certificate of Professional Competence",
+        "Transport licences",
+        "Carrier liability insurance (OC)",
+        "Certified HDS operators"
+      ]
+    },
+    "hds": {
+      "eyebrow": "HDS",
+      "title": "Transport and self-unloading",
+      "lead": "Modern trucks equipped with hydraulic truck-mounted cranes (HDS) and spacious cargo boxes. We carry building materials, palletised loads, containers, machinery and heavy steel and concrete structures.",
+      "items": [
+        { "title": "Full self-sufficiency", "description": "We load and unload goods without forklifts or cranes on the construction site." },
+        { "title": "Precision in any conditions", "description": "We handle loads efficiently at height and in hard-to-reach places." },
+        { "title": "Multi-tonne transport", "description": "High payload of the sets (from 26 to 40 tonnes) optimises the cost of every haul." }
+      ]
+    },
+    "cystern": {
+      "eyebrow": "Tankers",
+      "title": "Bulk material transport",
+      "lead": "We specialise in the safe transport of production components and finished products using silo technology. Our modern tankers maintain the highest quality standards for the materials carried.",
+      "items": [
+        { "title": "Strict standards", "description": "Vehicle construction meets rigorous OHS and TDT requirements." },
+        { "title": "Fast pneumatic unloading", "description": "Efficient compressors enable rapid, clean transfer of materials into the destination silos." },
+        { "title": "Quality control", "description": "Clean tanks ensure optimal transport conditions and full product repeatability." },
+        { "title": "Experienced staff", "description": "All drivers hold specialist certifications for tanker transport." }
+      ]
+    },
+    "advantages": {
+      "title": "Why PROFIX?",
+      "items": [
+        { "title": "24/7/365 availability", "description": "We work around the clock, 7 days a week. We eliminate the risk of delays and costly downtime." },
+        { "title": "Fast response time", "description": "We act flexibly and respond to customer needs immediately." },
+        { "title": "Cost optimisation", "description": "Modern equipment and optimal route planning mean real savings." },
+        { "title": "Safety and certainty", "description": "A regularly serviced fleet and thousands of kilometres a month mean your order arrives safely and on time." }
+      ]
+    },
+    "gallery": {
+      "title": "Our fleet in pictures",
+      "lead": "Silo tankers, HDS rigs and deliveries straight to the site – PROFIX trucks on the road and at work.",
+      "prev": "Previous photo",
+      "next": "Next photo",
+      "captions": [
+        "PROFIX blue tanker on the road through the fields",
+        "Loading goods onto a PROFIX rig with a forklift",
+        "PROFIX silo tanker on a domestic route",
+        "Delivery straight to the housing estate",
+        "Tanker at the bulk-material loading station",
+        "HDS crane rig with a long load"
+      ]
+    },
+    "cta": {
+      "title": "Need a transport quote?",
+      "body": "We will prepare an offer tailored to your order. Thousands of Polish construction companies already trust PROFIX – you choose the highest standard of service and support the domestic economy.",
+      "button": "Ask for a quote",
+      "contactLabel": "Direct contact"
+    }
+  },
   "funds": {
     "eyebrow": "European Funds",
     "title": "Growth supported by EU grants",
@@ -303,6 +376,7 @@
     "links": {
       "about": "About",
       "products": "All products",
+      "transport": "Transport",
       "professional": "For professionals",
       "investor": "For investors",
       "funds": "European Funds",
