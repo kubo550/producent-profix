@@ -1389,6 +1389,9 @@ export const products: Product[] = [
       'Przez pierwsze 3 dni chronić przed zbyt szybkim wysychaniem, unikać przeciągów i zbyt mocnego nasłonecznienia.',
       'Nie wykonywać prac na przemrożonym podłożu ani przy ryzyku przymrozków.',
     ],
+    documents: [
+      { label: 'Karta produktu', href: '/dokumenty/profix-beton-c-30-35-karta-produktu.pdf' },
+    ],
   },
 ];
 
