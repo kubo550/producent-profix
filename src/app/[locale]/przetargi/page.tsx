@@ -6,7 +6,11 @@ import { Reveal } from '@/components/ui/Reveal';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'tendersPage' });
-  return { title: t('title'), description: t('intro') };
+  return {
+    title: t('title'),
+    description: t('intro'),
+    alternates: { canonical: `/${locale}/przetargi` },
+  };
 }
 
 export default async function TendersPage({

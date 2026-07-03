@@ -9,7 +9,11 @@ import { USPStrip } from '@/components/sections/USPStrip';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'aboutPage' });
-  return { title: t('title'), description: t('intro') };
+  return {
+    title: t('title'),
+    description: t('intro'),
+    alternates: { canonical: `/${locale}/o-firmie` },
+  };
 }
 
 export default async function AboutPage({

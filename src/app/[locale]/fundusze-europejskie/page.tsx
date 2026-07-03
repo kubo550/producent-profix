@@ -9,7 +9,11 @@ import { fundsProjects, statusLabel } from '@/content/funds';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'fundsPage' });
-  return { title: t('title'), description: t('intro') };
+  return {
+    title: t('title'),
+    description: t('intro'),
+    alternates: { canonical: `/${locale}/fundusze-europejskie` },
+  };
 }
 
 export default async function FundsPage({

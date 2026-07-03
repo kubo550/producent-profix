@@ -22,7 +22,11 @@ const cardImages = [
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'professionalPage' });
-  return { title: t('title'), description: t('intro') };
+  return {
+    title: t('title'),
+    description: t('intro'),
+    alternates: { canonical: `/${locale}/dla-fachowca` },
+  };
 }
 
 export default async function ProfessionalPage({

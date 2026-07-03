@@ -11,7 +11,11 @@ import { categoryHasProducts } from '@/content/products';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'productsPage' });
-  return { title: t('title'), description: t('intro') };
+  return {
+    title: t('title'),
+    description: t('intro'),
+    alternates: { canonical: `/${locale}/produkty` },
+  };
 }
 
 export default async function ProductsPage({

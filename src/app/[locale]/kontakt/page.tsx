@@ -6,7 +6,11 @@ import { SalesReps } from '@/components/sections/SalesReps';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'contactPage' });
-  return { title: t('title'), description: t('intro') };
+  return {
+    title: t('title'),
+    description: t('intro'),
+    alternates: { canonical: `/${locale}/kontakt` },
+  };
 }
 
 export default async function ContactPage({

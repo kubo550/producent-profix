@@ -7,7 +7,11 @@ import { privacyContent } from '@/content/privacy';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'privacyPage' });
-  return { title: t('title'), description: t('subtitle') };
+  return {
+    title: t('title'),
+    description: t('subtitle'),
+    alternates: { canonical: `/${locale}/polityka-prywatnosci` },
+  };
 }
 
 export default async function PrivacyPage({
