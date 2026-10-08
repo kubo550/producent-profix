@@ -286,6 +286,13 @@
     "cta": "See points of sale",
     "empty": "The distributor list is being updated. Get in touch, we'll advise the nearest point."
   },
+  "reviewsSection": {
+    "eyebrow": "Customer reviews",
+    "title": "What our customers say",
+    "subtitle": "Genuine reviews from our Google profile, left by investors and contractors who worked with PROFIX plasters. Quotes in the original Polish.",
+    "count": "{count, plural, one {# Google review} other {# Google reviews}}",
+    "source": "Google review"
+  },
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's talk about your project",

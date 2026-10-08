@@ -24,9 +24,10 @@ export const siteConfig = {
   // Web3Forms key is public by design (frontend submission, rate-limited per key).
   // ENV var NEXT_PUBLIC_WEB3FORMS_KEY overrides this if set.
   web3formsKey: 'f24c825f-36fe-4924-b1e8-ea8f6d826d6c',
+  // Matches the Google Business Profile pin.
   geo: {
-    lat: 50.1349,
-    lng: 19.6325,
+    lat: 50.1281,
+    lng: 19.6178,
   },
 } as const;
 

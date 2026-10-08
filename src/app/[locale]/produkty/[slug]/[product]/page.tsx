@@ -45,7 +45,7 @@ export async function generateMetadata({
   const p = getProduct(slug, product);
   if (!p) return {};
   return {
-    title: p.name,
+    title: p.metaTitle ?? p.name,
     description: p.metaDescription ?? p.tagline,
     ...(p.seoKeywords?.length ? { keywords: p.seoKeywords } : {}),
     alternates: { canonical: `/${locale}/produkty/${slug}/${product}` },

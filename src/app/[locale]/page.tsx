@@ -11,6 +11,7 @@ import { Realizations } from '@/components/sections/Realizations';
 import { Funds } from '@/components/sections/Funds';
 import { Distributors } from '@/components/sections/Distributors';
 import { Contact } from '@/components/sections/Contact';
+import { Reviews } from '@/components/sections/Reviews';
 
 export default async function HomePage({
   params,
@@ -34,6 +35,7 @@ export default async function HomePage({
       <Funds />
       <Distributors />
       <Contact />
+      <Reviews />
     </div>
   );
 }

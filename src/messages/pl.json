@@ -286,6 +286,13 @@
     "cta": "Zobacz listę punktów sprzedaży",
     "empty": "Lista dystrybutorów w trakcie aktualizacji. Skontaktuj się z nami, doradzimy najbliższy punkt."
   },
+  "reviewsSection": {
+    "eyebrow": "Opinie klientów",
+    "title": "Co mówią o nas klienci",
+    "subtitle": "Prawdziwe opinie z naszego profilu w Google, od inwestorów i wykonawców, którzy pracowali z tynkami PROFIX.",
+    "count": "{count, plural, one {# opinia w Google} few {# opinie w Google} many {# opinii w Google} other {# opinii w Google}}",
+    "source": "opinia w Google"
+  },
   "contact": {
     "eyebrow": "Kontakt",
     "title": "Porozmawiajmy o twoim projekcie",

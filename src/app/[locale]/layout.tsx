@@ -12,6 +12,7 @@ import { Footer } from '@/components/sections/Footer';
 import { SocialBand } from '@/components/sections/SocialBand';
 import { LazyChrome } from '@/components/ui/LazyChrome';
 import { siteConfig } from '@/content/site';
+import { googleProfileUrl } from '@/content/reviews';
 
 import '../globals.css';
 
@@ -165,7 +166,7 @@ export default async function LocaleLayout({
       { '@type': 'City', name: 'Żywiec' },
       { '@type': 'City', name: 'Katowice' },
     ],
-    sameAs: [siteConfig.social.facebook, siteConfig.social.tiktok],
+    sameAs: [siteConfig.social.facebook, siteConfig.social.tiktok, googleProfileUrl],
   };
 
   const websiteJsonLd = {

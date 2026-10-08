@@ -36,6 +36,9 @@ export type Product = {
   /** Extra search phrases (synonyms, popular query forms) emitted as <meta keywords>
    * on the product page. Use real-world phrasing buyers type, not exact product names. */
   seoKeywords?: string[];
+  /** Custom <title> for the product page (before the " | PROFIX" suffix, <60 chars ideal).
+   * Falls back to `name` when absent. */
+  metaTitle?: string;
   /** Custom SEO meta description for the product page (<160 chars ideal).
    * Falls back to `tagline` when absent. */
   metaDescription?: string;
@@ -995,10 +998,19 @@ export const products: Product[] = [
       'tynk ręczny',
       'tynk ziarno 0,1-0,4',
       'tynk cementowo-wapienny super lekki',
+      'PTC-15 cena',
+      'tynk PTC-15 cena',
+      'Profix PTC-15 cena',
+      'tynk cementowo-wapienny cena producent',
     ],
+    metaTitle: 'PTC-15 tynk super lekki – cena, zużycie, karta techniczna',
     metaDescription:
-      'PTC-15 to gładki tynk wapienno-cementowy super lekki PROFIX (uziarnienie 0,1–0,4 mm) na ściany i sufity. Wydajność większa o ok. 40%, aplikacja ręczna i maszynowa. Kupujesz prosto od producenta z Krzeszowic.',
+      'PTC-15 PROFIX: gładki tynk wapienno-cementowy super lekki (0,1–0,4 mm), wydajność większa o ok. 40%. Cena prosto od producenta z Krzeszowic – zapytaj o wycenę.',
     faq: [
+      {
+        q: 'Ile kosztuje tynk PTC-15? Jaka jest cena za worek i paletę?',
+        a: 'Cenę PTC-15 wyceniamy indywidualnie, bo zależy od ilości (worki 30 kg, pełne palety po 42 szt. albo dostawa luzem do silosu) i miejsca dostawy. Kupujesz bezpośrednio od producenta z Krzeszowic, bez pośredników. Zadzwoń pod 12 270 00 32 albo wyślij zapytanie przez formularz, a wycenę dostaniesz najpóźniej następnego dnia roboczego.',
+      },
       {
         q: 'Czy tynk PTC-15 nakłada się ręcznie czy maszynowo?',
         a: 'Obiema metodami. PTC-15 nadaje się do nakładania ręcznego oraz mechanicznego agregatem tynkarskim, także w technice silosowej.',
