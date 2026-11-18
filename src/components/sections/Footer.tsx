@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
@@ -119,6 +120,15 @@ export async function Footer() {
           <p>
             &copy; {year} {siteConfig.legalName}. {t('rights')}
           </p>
+          {/* next/link, not the i18n Link: the panel lives outside the localized routes. */}
+          <NextLink
+            href="/panel"
+            prefetch={false}
+            rel="nofollow"
+            className="transition-colors hover:text-[var(--color-fg)]"
+          >
+            {t('employeePanel')}
+          </NextLink>
           <p className="font-mono">
             Made by{' '}
             <a

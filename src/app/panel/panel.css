@@ -1,0 +1,143 @@
+/* Employee panel. Reuses the site's design tokens from globals.css. */
+
+body.panel-body {
+  --panel-header-h: calc(56px + env(safe-area-inset-top));
+  /* Stale pins must read as an alarm next to the clay "draft" pin, so not --color-clay. */
+  --panel-danger: #C0392B;
+  background-color: var(--color-bg);
+}
+
+/* The site's decorative blur/grain layers are costly on phones and pointless in a tool. */
+body.panel-body::before,
+body.panel-body::after {
+  display: none;
+}
+
+/* In the components layer so Tailwind utilities (p-0, px-3, min-h-10...) can override them. */
+@layer components {
+  .panel-input {
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    background: var(--color-paper);
+    color: var(--color-fg);
+    /* 16px prevents iOS Safari from zooming into the field on focus. */
+    font-size: 16px;
+  }
+
+  textarea.panel-input {
+    height: auto;
+    padding: 12px 14px;
+    line-height: 1.45;
+  }
+
+  .panel-input:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+  }
+
+  .panel-input[aria-invalid='true'] {
+    border-color: var(--color-clay);
+  }
+
+  .panel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 18px;
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    font-size: 15px;
+    transition: background-color 150ms, border-color 150ms, color 150ms;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .panel-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  .panel-btn--primary {
+    background: var(--color-accent);
+    color: var(--color-accent-fg);
+  }
+  .panel-btn--primary:not(:disabled):hover {
+    background: var(--color-accent-hover);
+  }
+
+  .panel-btn--secondary {
+    background: var(--color-paper);
+    border: 1px solid var(--color-border-strong);
+    color: var(--color-fg);
+  }
+  .panel-btn--secondary:not(:disabled):hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .panel-btn--ghost {
+    color: var(--color-fg-muted);
+  }
+  .panel-btn--ghost:not(:disabled):hover {
+    background: var(--color-surface-2);
+    color: var(--color-fg);
+  }
+
+  .panel-btn--danger {
+    background: var(--color-clay);
+    color: #fff;
+  }
+
+  .panel-btn svg {
+    flex-shrink: 0;
+  }
+}
+
+/* Map pins (Leaflet divIcon). Teardrop drawn in CSS so no image assets are needed. */
+.silo-pin {
+  position: absolute;
+  left: 2px;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.35);
+  background: var(--color-accent);
+}
+.silo-pin::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+.silo-pin--stale {
+  background: var(--panel-danger);
+}
+.silo-pin--selected {
+  background: var(--color-accent);
+  outline: 3px solid var(--color-clay);
+  outline-offset: 1px;
+}
+.silo-pin--draft {
+  background: var(--color-clay);
+}
+
+/* GPS accuracy radius around the draft pin. */
+.silo-accuracy {
+  stroke: var(--color-clay);
+  stroke-width: 1;
+  fill: var(--color-clay);
+  fill-opacity: 0.12;
+}
+
+/* Leaflet's own controls should not inherit site typography quirks. */
+.leaflet-container {
+  font-family: var(--font-sans), sans-serif;
+  z-index: 0;
+}
