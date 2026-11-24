@@ -10,6 +10,8 @@ npm run dev      # http://localhost:4321
 npm run build
 npm run lint
 npm run type-check
+npm test         # testy jednostkowe (Vitest)
+npm run db:migrate  # migracje bazy (panel pracownika)
 ```
 
 ## Struktura
@@ -23,6 +25,47 @@ npm run type-check
 - `public/brand/` - logo (transparent + na ciemne/jasne tło)
 - `tmp/www/` - materiały od klienta (poza gitem)
 - `questions.md` - otwarte pytania do klienta (rozbieżności, do uzupełnienia)
+- `src/app/panel/`, `src/features/` - panel pracownika (mapa silosów), opis niżej
+
+## Panel pracownika: silosy
+
+Wewnętrzne narzędzie pod `/panel` (link „Panel pracownika” w stopce, `noindex`, tylko PL, poza next-intl).
+Pracownik loguje się wspólnym hasłem i swoim imieniem, a potem dodaje pinezki z lokalizacją silosów
+(GPS z telefonu, adres przez OpenStreetMap Nominatim albo przytrzymanie palca na mapie).
+
+- Pinezka: nazwa (wymagana), komentarz, kto i kiedy dodał.
+- „Nadal stoi” potwierdza pozycję. Po 45 dniach bez potwierdzenia pinezka dostaje flagę „do weryfikacji”.
+- „Odebrany” przenosi pinezkę do archiwum (`/panel/silosy/archiwum`), skąd można ją przywrócić.
+- Niewysłana pinezka (brak zasięgu) zostaje w pamięci telefonu do czasu wysłania.
+- Mapa: Leaflet + OpenStreetMap, podkład satelitarny Esri. Wszystko za darmo, bez kluczy API.
+
+Architektura (`src/features/silos`): `domain.ts` (reguły, czyste funkcje) → `service.ts` (przypadki użycia)
+→ `repository.ts` (interfejs) ← `pgRepository.ts` (Postgres). `container.ts` składa zależności,
+`actions.ts` to server actions (sesja + walidacja Zod), `ui/` to komponenty klienckie.
+Autoryzacja w `src/features/auth`: sesja JWT w ciasteczku `httpOnly` (90 dni, przedłużana),
+klucz wyprowadzony z `SESSION_SECRET` i `PANEL_PASSWORD`, więc zmiana hasła wylogowuje wszystkich.
+Limit: 10 nieudanych logowań na 15 minut z jednego IP.
+
+### Wdrożenie (jednorazowo)
+
+1. Vercel → projekt → Storage → Create → **Neon** (darmowy plan), region **Frankfurt (`aws-eu-central-1`)**. Ustawi `DATABASE_URL`.
+   Vercel → Settings → Functions → Function Region: **Frankfurt (`fra1`)**. Funkcja i baza muszą stać w tym samym regionie:
+   domyślny `iad1` (USA) dokłada ok. 100 ms do każdego zapytania, a zapis to 1–2 zapytania.
+   (`preferredRegion` w kodzie nie zadziała: Vercel honoruje go tylko dla runtime `edge`, a panel potrzebuje Node.)
+2. Vercel → Settings → Environment Variables: `PANEL_PASSWORD` i `SESSION_SECRET` (`openssl rand -base64 32`).
+3. Lokalnie: `vercel env pull .env.local`, potem `npm run db:migrate`.
+4. Redeploy. Pracownikom wysłać link `https://www.producent-profix.pl/panel` i hasło.
+   Na telefonie: „Dodaj do ekranu głównego”, żeby mieć ikonę „Silosy”.
+
+Zmiana hasła (np. gdy ktoś odchodzi): podmień `PANEL_PASSWORD` na Vercelu i zrób redeploy.
+Hasło musi mieć min. 10 znaków: limit prób działa per IP, więc siła hasła to główna ochrona.
+
+### Znane luki
+
+- **Kafelki satelitarne Esri** (`server.arcgisonline.com`) przy użyciu komercyjnym formalnie wymagają darmowego konta ArcGIS z kluczem. Do decyzji: założyć konto albo usunąć warstwę „Satelita”.
+- **RODO:** nazwy i komentarze pinezek mogą zawierać nazwiska i adresy budów klientów. Archiwum nie ma okresu retencji; trzeba ustalić z klientem, jak długo trzymać dane.
+- **Uśpienie bazy:** darmowy Neon usypia bazę po 5 min bezczynności; pierwsze otwarcie panelu po przerwie trwa ok. 0,5–1 s dłużej. Na darmowym planie nie da się tego wyłączyć.
+- **Wspólne hasło:** „dodał: Janek” to deklaracja, nie tożsamość. Do prawdziwego rozliczania potrzebne byłyby indywidualne konta.
 
 ## Klient - linki
 
