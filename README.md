@@ -58,7 +58,7 @@ Limit: 10 nieudanych logowań na 15 minut z jednego IP.
    Na telefonie: „Dodaj do ekranu głównego”, żeby mieć ikonę „Silosy”.
 
 Zmiana hasła (np. gdy ktoś odchodzi): podmień `PANEL_PASSWORD` na Vercelu i zrób redeploy.
-Hasło musi mieć min. 12 znaków: limit prób działa per IP, więc siła hasła to główna ochrona.
+Hasło musi mieć min. 10 znaków: limit prób działa per IP, więc siła hasła to główna ochrona.
 
 ### Znane luki
 

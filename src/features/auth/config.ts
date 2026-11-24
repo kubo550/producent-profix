@@ -4,7 +4,7 @@ import type { TokenSecrets } from './token';
  * Shared password + per-IP rate limit is only as strong as the password, hence
  * the length floor. No `server-only`: Proxy imports this too.
  */
-export const MIN_PASSWORD_LENGTH = 12;
+export const MIN_PASSWORD_LENGTH = 10;
 const MIN_SECRET_LENGTH = 32;
 
 export function getAuthSecrets(): TokenSecrets {
