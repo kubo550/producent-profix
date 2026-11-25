@@ -1,10 +1,12 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useState } from 'react';
+import { Eye, EyeOff } from 'lucide-react';
 import { login, type LoginState } from '@/features/auth/actions';
 
 export function LoginForm() {
   const [state, formAction, pending] = useActionState<LoginState, FormData>(login, {});
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <form action={formAction} className="space-y-5" noValidate>
@@ -33,15 +35,29 @@ export function LoginForm() {
         <label htmlFor="password" className="block text-sm font-medium">
           Hasło
         </label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          autoComplete="current-password"
-          required
-          aria-invalid={Boolean(state.fieldErrors?.password || state.error)}
-          className="panel-input w-full"
-        />
+        <div className="relative">
+          <input
+            id="password"
+            name="password"
+            type={showPassword ? 'text' : 'password'}
+            autoComplete="current-password"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
+            required
+            aria-invalid={Boolean(state.fieldErrors?.password || state.error)}
+            className="panel-input w-full pr-12"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword((v) => !v)}
+            aria-label={showPassword ? 'Ukryj hasło' : 'Pokaż hasło'}
+            aria-pressed={showPassword}
+            className="absolute inset-y-0 right-0 flex w-12 items-center justify-center rounded-r-[var(--radius-md)] text-fg-subtle hover:text-[var(--color-fg)] focus-visible:outline-2 focus-visible:outline-[var(--color-accent)]"
+          >
+            {showPassword ? <EyeOff size={20} aria-hidden /> : <Eye size={20} aria-hidden />}
+          </button>
+        </div>
         {state.fieldErrors?.password && (
           <p className="text-sm text-[var(--color-clay)]">{state.fieldErrors.password[0]}</p>
         )}
